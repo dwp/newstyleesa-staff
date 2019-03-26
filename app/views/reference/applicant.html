@@ -20,16 +20,6 @@
       <dt class="govuk-visually-hidden">Status:</dt>
       <dd class="dwp-key-details-bar__status">Special rules</dd>
     </div>
-{#     <div class="dwp-key-details-bar__body">
-      <dt>DOB:</dt>
-      <dd>24/03/1990</dd>
-      <dt>Postcode:</dt>
-      <dd>SA4W 7SH</dd>
-      <dt>Phone:</dt>
-      <dd>0161 1234564</dd>
-      <dt>Claim submitted:</dt>
-      <dd>17/09/2018</dd>
-    </div> #}
   </dl>
 </section>
   </div>{# /full-width-inner #}
@@ -51,12 +41,12 @@
       rows: [
         {
           key: {text: "Application submitted"},
-          value: {text: "15/10/19"},
+          value: {text: "15/10/2019"},
           actions: {items: [{ href: "", text: "", visuallyHiddenText: ""}]}
         },
         {
           key: {text: "Claim start date"},
-          value: {text: "15/10/19"},
+          value: {text: "15/10/2019"},
           actions: {items: [{ href: "", text: "", visuallyHiddenText: ""}]}
         },
         {
@@ -83,11 +73,6 @@
           key: {text: "Postcode"},
           value: {text: "NG1 5TY"},
           actions: {items: [{ href: "", text: "", visuallyHiddenText: "name"}]}
-        },
-        {
-          key: {text: "Jobcentre"},
-          value: {text: "[JOBCENTRE CODE]"},
-          actions: {items: [{ href: "", text: "", visuallyHiddenText: ""}]}
         }
       ]
     })}}
@@ -96,23 +81,23 @@
 
   <div class="govuk-grid-column-one-third">
     <aside class="app-related-items status-verified" role="complementary">
-      <h3 class="govuk-heading-m" id="claim-actions-title">Unverified</h3>
-      <p>
-        <a href="status" class="govuk-button">Update claim status</a>
-{#         {% if getData.verified %}
-        <a href="applicant?processed=true" class="govuk-button">Processed - Update claim status</a>
-        {% elif getData.processed %}
-        <a href="status" class="govuk-button">Verified - Update claim status</a>
-        {% elif getData.failedtoattend %}
-        <a href="applicant?processed=true" class="govuk-button">Failed to att - Update claim status</a>
-        {% elif getData.failedtoattend %}
-        <a href="applicant?processed=true" class="govuk-button">Failed to att - Update claim status</a>
-        {% else %}
-        <a href="status" class="govuk-button">Verified - Update claim status</a>
-        {% endif %} #}
-        <br>
-        <a href="#" style="margin-top: -10px; margin-bottom: 50px; display: block">Download application (PDF)</a>
-      </p>
+      {% if getData.verified %}
+        <h3 class="govuk-heading-m" id="claim-actions-title">Verified</h3>
+        <a href="status?verified=true" class="govuk-button">Update claim status</a>
+      {% elif getData.processed %}
+        <h3 class="govuk-heading-m" id="claim-actions-title">Processed</h3>
+        <a href="status?processed=true" class="govuk-button">Update claim status</a>
+      {% elif getData.failedtoattend %}
+        <h3 class="govuk-heading-m" id="claim-actions-title">Failed to attend</h3>
+        <a href="status?failedtoattend=true" class="govuk-button">Update claim status</a>
+      {% elif getData.readytobeprocessed %}
+        <h3 class="govuk-heading-m" id="claim-actions-title">Ready to be processed</h3>
+        <a href="status?readytobeprocessed=true" class="govuk-button">Update claim status</a>
+      {% else %}
+        <h3 class="govuk-heading-m" id="claim-actions-title">Unverified</h3>
+        <a href="status?unverified=true" class="govuk-button">Update claim status</a>
+      {% endif %}
+      <p><a href="#" style="margin-top: -10px; margin-bottom: 50px; display: block">Download application (PDF)</a></p>
     </aside>
   </div>{# /govuk-grid-column-one-third #}
 
