@@ -13,19 +13,42 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-one-half">
 
-    <h1 class="govuk-heading-l">Designs for DWP staff</h1>
+    <h1 class="govuk-heading-l">Staff user interface</h1>
 
     <h2 class="govuk-heading-m">Reference screens for developers</h2>
 
+    <h3 class="govuk-heading-s">Search</h3>
     <ul class="govuk-list govuk-list--bullet">
       <li><a href="reference/search">Search</a></li>
       <li><a href="reference/search-not-found">Search (claimant not found)</a></li>
       <li><a href="reference/search-validation">Search (non valid National Insurance number)</a></li>
+    </ul>
+
+    <h3 class="govuk-heading-s">Application summary</h3>
+    <ul class="govuk-list govuk-list--bullet">
       <li><a href="reference/applicant">Application - unverified</a></li>
       <li><a href="reference/applicant?failedtoattend=true">Application - failed to attend</a></li>
       <li><a href="reference/applicant?verified=true">Application - verified</a></li>
       <li><a href="reference/applicant?readytobeprocessed=true">Application - ready to be processed</a></li>
       <li><a href="/reference/applicant?processed=true">Application - processed</a></li>
+    </ul>
+
+    <h3 class="govuk-heading-s">Change status</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="reference/status?unverified=true">Status - unverified</a></li>
+      <li><a href="reference/status?failedtoattend=true">Status - failed to attend</a></li>
+      <li><a href="reference/status?verified=true">Status - verified</a></li>
+      <li><a href="reference/status?readytobeprocessed=true">Status - ready to be processed</a></li>
+      <li><a href="/reference/status?processed=true">Status - processed</a></li>
+    </ul>
+
+    <h3 class="govuk-heading-s">Status changed</h3>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="reference/status-confirmation?unverified=true">Status - unverified</a></li>
+      <li><a href="reference/status-confirmation?failedtoattend=true">Status - failed to attend</a></li>
+      <li><a href="reference/status-confirmation?verified=true">Status - verified</a></li>
+      <li><a href="reference/status-confirmation?readytobeprocessed=true">Status - ready to be processed</a></li>
+      <li><a href="/reference/status-confirmation?processed=true">Status - processed</a></li>
     </ul>
     
   </div>{# /govuk-grid-column-one-half #}
