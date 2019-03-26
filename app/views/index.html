@@ -1,0 +1,35 @@
+{% extends "layout_staff.html" %}
+
+{% block pageTitle %}
+  Find an applicant - Apply for new style Employment and Support Allowance
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-!-margin-bottom-6"></div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+
+    <h1 class="govuk-heading-l">Designs for DWP staff</h1>
+
+    <h2 class="govuk-heading-m">Reference screens for developers</h2>
+
+    <p>Needs input from content designers.</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="reference/search">Search</a></li>
+      <li><a href="reference/search-not-found">Search (claimant not found)</a></li>
+      <li><a href="reference/search-validation">Search (non valid National Insurance number)</a></li>
+      <li><a href="reference/applicant">Application - unverified</a></li>
+      <li><a href="reference/applicant?failedtoattend=true">Application - failed to attend</a></li>
+      <li><a href="reference/applicant?verified=true">Application - verified</a></li>
+      <li><a href="/reference/applicant?processed=true">Application - processed</a></li>
+    </ul>
+    
+  </div>{# /govuk-grid-column-one-half #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
