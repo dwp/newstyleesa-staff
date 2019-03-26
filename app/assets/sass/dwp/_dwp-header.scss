@@ -31,29 +31,3 @@
     }
   }
 }
-
-// Full width blue header
-
-.hero-header {
-  overflow-x: hidden;
-  .dwp-header {
-    margin-bottom: 0;
-  }
-  .govuk-main-wrapper {
-    padding: 0;
-  }
-  .govuk-hero {
-    background-color: govuk-colour("blue");
-  }
-  .full-width {
-    width: 100vw;
-    position: relative;
-    left: 50%;
-    right: 50%;
-    margin-left: -50vw;
-  }
-  .full-width-inner {
-    max-width: 960px;
-    margin: 0 auto;
-  }
-}

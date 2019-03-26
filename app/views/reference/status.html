@@ -1,0 +1,111 @@
+{% extends "layout_staff.html" %}
+
+{% block pageTitle %}
+  Fred Flintstone - Apply for new style Employment and Support Allowance
+{% endblock %}
+
+{% set bodyClasses = "hero-header" %}
+
+{% block content %}
+
+<div class="full-width govuk-hero">
+  <div class="full-width-inner">
+    <section class="dwp-key-details-bar dwp-print-hide" role="contentinfo" aria-label="Key details">
+  <dl class="dwp-key-details-bar__contents govuk-width-container">
+    <div class="dwp-key-details-bar__header">
+      <dt class="govuk-visually-hidden">Name:</dt>
+      <dd class="dwp-key-details-bar__name">Fred Flintstone</dd>
+      <dt class="govuk-visually-hidden">National Insurance number:</dt>
+      <dd class="dwp-key-details-bar__nino">QQ 12 34 56 C</dd>
+      <dt class="govuk-visually-hidden">Status:</dt>
+      <dd class="dwp-key-details-bar__status">Special rules</dd>
+    </div>
+{#     <div class="dwp-key-details-bar__body">
+      <dt>DOB:</dt>
+      <dd>24/03/1990</dd>
+      <dt>Postcode:</dt>
+      <dd>SA4W 7SH</dd>
+      <dt>Phone:</dt>
+      <dd>0161 1234564</dd>
+      <dt>Claim submitted:</dt>
+      <dd>17/09/2018</dd>
+    </div> #}
+  </dl>
+</section>
+  </div>{# /full-width-inner #}
+</div>{# /full-width #}
+
+
+<div style="margin-bottom: 30px;">
+  {{ govukBackLink({
+    text: "Back",
+    href: "applicant"
+  }) }}
+</div>
+
+<div class="govuk-grid-row container">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="status-changed" method="post">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Update the status of this claim
+            </h1>
+          </legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="unverified" name="status" type="radio" value="unverified" checked>
+              <label class="govuk-label govuk-radios__label govuk-label--s" for="unverified">
+                Unverified
+              </label>
+              <span id="sign-in-1-item-hint" class="govuk-hint govuk-radios__hint">New claim.</span>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="failed-to-attend" name="status" type="radio" value="scotland">
+              <label class="govuk-label govuk-radios__label govuk-label--s" for="failed-to-attend">
+                Failed to attend
+              </label>
+              <span id="sign-in-1-item-hint" class="govuk-hint govuk-radios__hint">The claimant failed to attend their appointment. They have 30 days to book another appointment. After 30 days their claim will be closed.</span>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="verified" name="status" type="radio" value="verified">
+              <label class="govuk-label govuk-radios__label govuk-label--s" for="verified">
+                Verified
+              </label>
+              <span id="sign-in-1-item-hint" class="govuk-hint govuk-radios__hint">The claimant attended their appointment, proved their identity and gave evidence to support their claim.</span>
+            </div>
+            
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="ready-to-be-processed" name="status" type="radio" value="wales">
+              <label class="govuk-label govuk-radios__label govuk-label--s" for="ready-to-be-processed">
+                Ready to be processed
+              </label>
+              <span id="sign-in-1-item-hint" class="govuk-hint govuk-radios__hint">You’ve added the claimant’s details to the tracker.</span>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="processed" name="status" type="radio" value="processed">
+              <label class="govuk-label govuk-radios__label govuk-label--s" for="processed">
+                Processed
+              </label>
+              <span id="sign-in-1-item-hint" class="govuk-hint govuk-radios__hint">You’ve entered the claimant’s details in JSAPS and made a decision.</span>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button type="submit" class="govuk-button">
+        Continue
+      </button>
+
+    </form>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

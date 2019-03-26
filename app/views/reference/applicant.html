@@ -18,9 +18,9 @@
       <dt class="govuk-visually-hidden">National Insurance number:</dt>
       <dd class="dwp-key-details-bar__nino">QQ 12 34 56 C</dd>
       <dt class="govuk-visually-hidden">Status:</dt>
-      <dd class="dwp-key-details-bar__status">Unverified</dd>
+      <dd class="dwp-key-details-bar__status">Special rules</dd>
     </div>
-    <div class="dwp-key-details-bar__body">
+{#     <div class="dwp-key-details-bar__body">
       <dt>DOB:</dt>
       <dd>24/03/1990</dd>
       <dt>Postcode:</dt>
@@ -29,17 +29,15 @@
       <dd>0161 1234564</dd>
       <dt>Claim submitted:</dt>
       <dd>17/09/2018</dd>
-    </div>
+    </div> #}
   </dl>
 </section>
   </div>{# /full-width-inner #}
 </div>{# /full-width #}
 
-
-
 <div style="margin-bottom: 30px;">
   {{ govukBackLink({
-    text: "Back",
+    text: "Back to search",
     href: "search"
   }) }}
 </div>
@@ -97,86 +95,25 @@
   </div>{# /govuk-grid-column-two-thirds #}
 
   <div class="govuk-grid-column-one-third">
-
-    <div id="sticky-sidebar">
-      <div class="sticky-sidebar__inner">
-
-        {% if getData.verified %}
-          {# Verified #}
-          <aside class="app-related-items status-verified" role="complementary">
-            <h3 class="govuk-heading-m" id="claim-actions-title">Verified</h3>
-            <p>
-              <a href="applicant?processed=true" class="govuk-button">Mark as processed</a>
-              <br>
-              <a href="#" style="margin-top: -10px; margin-bottom: 50px; display: block">Download PDF</a>
-            </p>
-
-            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-            <details class="govuk-details" style="margin-top: -40px">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  More actions
-                </span>
-              </summary>
-              <div class="">
-                <a href="applicant" class="govuk-button secondary govuk-!-margin-top-2 govuk-!-margin-bottom-3">Mark as unverified</a>
-              </div>
-            </details>
-          </aside>
+    <aside class="app-related-items status-verified" role="complementary">
+      <h3 class="govuk-heading-m" id="claim-actions-title">Unverified</h3>
+      <p>
+        <a href="status" class="govuk-button">Update claim status</a>
+{#         {% if getData.verified %}
+        <a href="applicant?processed=true" class="govuk-button">Processed - Update claim status</a>
         {% elif getData.processed %}
-          {# Processed #}
-          <aside class="app-related-items status-processed" role="complementary">
-            <h3 class="govuk-heading-m" id="claim-actions-title">Processed</h3>
-            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-            <br>
-            <p><a href="#" style="margin-top: -30px; margin-bottom: 30px; display: block">Download PDF</a></p>
-
-            <details class="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  More actions
-                </span>
-              </summary>
-              <div class="">
-                <a href="applicant?verified=true" class="govuk-button secondary govuk-!-margin-top-2 govuk-!-margin-bottom-3">Mark as not processed</a>
-              </div>
-            </details>
-          </aside>
+        <a href="status" class="govuk-button">Verified - Update claim status</a>
         {% elif getData.failedtoattend %}
-          {# Processed #}
-          <aside class="app-related-items status-failedtoattend" role="complementary">
-            <h3 class="govuk-heading-m" id="claim-actions-title">Failed to attend</h3>
-            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-            <br>
-            <p><a href="#" style="margin-top: -30px; margin-bottom: 30px; display: block">Download PDF</a></p>
-            <details class="govuk-details">
-              <summary class="govuk-details__summary">
-                <span class="govuk-details__summary-text">
-                  More actions
-                </span>
-              </summary>
-              <div class="">
-                <a href="applicant?verified=true" class="govuk-button secondary govuk-!-margin-top-2 govuk-!-margin-bottom-3">Mark verified</a>
-              </div>
-            </details>
-          </aside>
+        <a href="applicant?processed=true" class="govuk-button">Failed to att - Update claim status</a>
+        {% elif getData.failedtoattend %}
+        <a href="applicant?processed=true" class="govuk-button">Failed to att - Update claim status</a>
         {% else %}
-          {# New application #}
-          <aside class="app-related-items status-new" role="complementary">
-            <h3 class="govuk-heading-m" id="claim-actions-title">Unverified</h3>
-            <p>
-              <a href="applicant?verified=true" class="govuk-button">Mark as verified</a>
-              <a href="applicant?failedtoattend=true" class="govuk-button secondary" style="margin-top: -15px;">Mark as failed to attend</a>
-              <br>
-              <a href="#" style="margin-top: -10px; margin-bottom: 60px; display: block">Download PDF</a>
-            </p>
-            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </aside>
-        {% endif %}
-
-      </div>{# /sticky-sidebar #}
-    </div> {# /sticky-sidebar__inner #}
-
+        <a href="status" class="govuk-button">Verified - Update claim status</a>
+        {% endif %} #}
+        <br>
+        <a href="#" style="margin-top: -10px; margin-bottom: 50px; display: block">Download application (PDF)</a>
+      </p>
+    </aside>
   </div>{# /govuk-grid-column-one-third #}
 
 </div>{# /govuk-grid-row #}

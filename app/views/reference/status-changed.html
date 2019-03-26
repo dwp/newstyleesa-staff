@@ -1,0 +1,59 @@
+{% extends "layout_staff.html" %}
+
+{% block pageTitle %}
+  Fred Flintstone - Apply for new style Employment and Support Allowance
+{% endblock %}
+
+{% set bodyClasses = "hero-header" %}
+
+{% block content %}
+
+<div class="full-width govuk-hero">
+  <div class="full-width-inner">
+    <section class="dwp-key-details-bar dwp-print-hide" role="contentinfo" aria-label="Key details">
+  <dl class="dwp-key-details-bar__contents govuk-width-container">
+    <div class="dwp-key-details-bar__header">
+      <dt class="govuk-visually-hidden">Name:</dt>
+      <dd class="dwp-key-details-bar__name">Fred Flintstone</dd>
+      <dt class="govuk-visually-hidden">National Insurance number:</dt>
+      <dd class="dwp-key-details-bar__nino">QQ 12 34 56 C</dd>
+      <dt class="govuk-visually-hidden">Status:</dt>
+      <dd class="dwp-key-details-bar__status">Unverified</dd>
+    </div>
+{#     <div class="dwp-key-details-bar__body">
+      <dt>DOB:</dt>
+      <dd>24/03/1990</dd>
+      <dt>Postcode:</dt>
+      <dd>SA4W 7SH</dd>
+      <dt>Phone:</dt>
+      <dd>0161 1234564</dd>
+      <dt>Claim submitted:</dt>
+      <dd>17/09/2018</dd>
+    </div> #}
+  </dl>
+</section>
+  </div>{# /full-width-inner #}
+</div>{# /full-width #}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full govuk-!-margin-top-4">
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
+      <h1 class="govuk-panel__title">
+        Claim verified 
+      </h1>
+      <div class="govuk-panel__body">
+        You have successfully verified Fred Flintstone’s claim.
+      </div>
+    </div>
+
+    <a href="search" role="button" draggable="false" class="govuk-button">
+    Find another claim
+  </a>
+
+
+  </div>
+
+</div>
+
+{% endblock %}
