@@ -28,30 +28,41 @@
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-full govuk-!-margin-top-4">
-    
-    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
-      {% if getData.verified %}
+
+    {% if getData.verified %}
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
         <h1 class="govuk-panel__title">Claim verified </h1>
         <div class="govuk-panel__body">You have successfully verified Fred Flintstone’s claim.</div>
-      {% elif getData.readytobeprocessed %}
+      </div>
+      <a href="search?unverified=true" role="button" draggable="false" class="govuk-button">Find another claim</a>
+    {% elif getData.readytobeprocessed %}
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
         <h1 class="govuk-panel__title">Ready to be processed</h1>
         <div class="govuk-panel__body">You have successfully sent Fred Flintstone’s claim to be processed.</div>
-      {% elif getData.failedtoattend %}
+      </div>
+      <a href="search?verified=true" role="button" draggable="false" class="govuk-button">Find another claim</a>
+    {% elif getData.failedtoattend %}
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
         <h1 class="govuk-panel__title">Failed to attend</h1>
         <div class="govuk-panel__body">You have marked Fred Flintstone as failed to attend.</div>
-      {% elif getData.processed %}
+      </div>
+      <a href="search" role="button" draggable="false" class="govuk-button">Find another claim</a>
+    {% elif getData.processed %}
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
         <h1 class="govuk-panel__title">Claim processed</h1>
         <div class="govuk-panel__body">You have made a decision and processed Fred Flintstone’s claim.</div>
-      {% else %}
+      </div>
+      <a href="search?readytobeprocessed=true" role="button" draggable="false" class="govuk-button">Find another claim</a>
+    {% else %}
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
         <h1 class="govuk-panel__title">Claim verified</h1>
         <div class="govuk-panel__body">You have successfully verified Fred Flintstone’s claim.</div>
-      {% endif %}
-    </div>
+      </div>
+      <a href="search?unverified=true" role="button" draggable="false" class="govuk-button">Find another claim</a>
+    {% endif %}
 
-    <a href="search" role="button" draggable="false" class="govuk-button">Find another claim</a>
+  </div>{# /govuk-grid-column-full #}
 
-  </div>
-
-</div>
+</div>{# /govuk-grid-row #}
 
 {% endblock %}
