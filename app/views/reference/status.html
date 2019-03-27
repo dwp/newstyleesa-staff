@@ -47,43 +47,42 @@
           </legend>
           <div class="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="unverified" name="status" type="radio" value="unverified" {% if getData.unverified %}checked{% endif %}>
+              <input class="govuk-radios__input" id="unverified" name="status" type="radio" value="unverified" aria-describedby="hint-unverified" {% if getData.unverified %}checked{% endif %}>
               <label class="govuk-label govuk-radios__label govuk-label--s" for="unverified">
                 Unverified
               </label>
-              <span id="sign-in-1-item-hint" class="govuk-hint govuk-radios__hint">New claim.</span>
+              <span id="hint-unverified" class="govuk-hint govuk-radios__hint">New claim.</span>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="failed-to-attend" name="status" type="radio" value="failed-to-attend" {% if getData.failedtoattend %}checked{% endif %}>
+              <input class="govuk-radios__input" id="failed-to-attend" name="status" type="radio" value="failed-to-attend" aria-describedby="hint-failed-to-attend" {% if getData.failedtoattend %}checked{% endif %}>
               <label class="govuk-label govuk-radios__label govuk-label--s" for="failed-to-attend">
                 Failed to attend
               </label>
-              <span id="sign-in-1-item-hint" class="govuk-hint govuk-radios__hint">The claimant failed to attend their appointment. They have 30 days to book another appointment. After 30 days their claim will be closed.</span>
+              <span id="hint-failed-to-attend" class="govuk-hint govuk-radios__hint">The claimant failed to attend their appointment. They have 30 days to book another appointment. After 30 days their claim will be closed.</span>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="verified" name="status" type="radio" value="verified" {% if getData.verified %}checked{% endif %}>
+              <input class="govuk-radios__input" id="verified" name="status" type="radio" value="verified" aria-describedby="hint-verified" {% if getData.verified %}checked{% endif %}>
               <label class="govuk-label govuk-radios__label govuk-label--s" for="verified">
                 Verified
               </label>
-              <span id="sign-in-1-item-hint" class="govuk-hint govuk-radios__hint">The claimant attended their appointment, proved their identity and gave evidence to support their claim.</span>
+              <span id="hint-verified" class="govuk-hint govuk-radios__hint">The claimant attended their appointment, proved their identity and gave evidence to support their claim.</span>
             </div>
-            
             {% if getData.verified or getData.readytobeprocessed or getData.processed %}
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="ready-to-be-processed" name="status" type="radio" value="ready-to-be-processed" {% if getData.readytobeprocessed %}checked{% endif %}>
+                <input class="govuk-radios__input" id="ready-to-be-processed" name="status" type="radio" value="ready-to-be-processed" aria-describedby="hint-ready-to-be-processed" {% if getData.readytobeprocessed %}checked{% endif %}>
                 <label class="govuk-label govuk-radios__label govuk-label--s" for="ready-to-be-processed">
                   Ready to be processed
                 </label>
-                <span id="sign-in-1-item-hint" class="govuk-hint govuk-radios__hint">You’ve added the claimant’s details to the tracker.</span>
+                <span id="hint-ready-to-be-processed" class="govuk-hint govuk-radios__hint">You’ve added the claimant’s details to the tracker.</span>
               </div>
             {% endif %}
             {% if getData.readytobeprocessed or getData.processed %}
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="processed" name="status" type="radio" value="processed" {% if getData.processed %}checked{% endif %}>
+                <input class="govuk-radios__input" id="processed" name="status" type="radio" value="processed" aria-describedby="hint-processed" {% if getData.processed %}checked{% endif %}>
                 <label class="govuk-label govuk-radios__label govuk-label--s" for="processed">
                   Processed
                 </label>
-                <span id="sign-in-1-item-hint" class="govuk-hint govuk-radios__hint">You’ve entered the claimant’s details in JSAPS and made a decision.</span>
+                <span id="hint-processed" class="govuk-hint govuk-radios__hint">You’ve entered the claimant’s details in JSAPS and made a decision.</span>
               </div>
             {% endif %}
           </div>
