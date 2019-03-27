@@ -22,7 +22,19 @@
         </label>
         <input class="govuk-input govuk-input--width-20" id="search" name="search" type="text">
       </div>
-      <a href="applicant" class="govuk-button">Find claim</a>
+
+      {% if getData.verified %}
+        <a href="applicant?verified=true" class="govuk-button">Find claim</a>
+      {% elif getData.readytobeprocessed %}
+        <a href="applicant?readytobeprocessed=true" class="govuk-button">Find claim</a>
+      {% elif getData.failedtoattend %}
+        <a href="applicant?failedtoattend=true" class="govuk-button">Find claim</a>
+      {% elif getData.processed %}
+        <a href="applicant?processed=true" class="govuk-button">Find claim</a>
+      {% else %}
+        <a href="applicant" class="govuk-button">Find claim</a>
+      {% endif %}
+
     </form>
   </div>{# /govuk-grid-column-one-half #}
 
