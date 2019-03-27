@@ -32,7 +32,7 @@ router.post('/reference/status-changing', function (req, res) {
   } else if (status === 'verified') {
     res.redirect('status-confirmation?verified=true')
   } else if (status === 'ready-to-be-processed') {
-    res.redirect('status-confirmation?ready-to-be-processed=true')
+    res.redirect('status-confirmation?readytobeprocessed=true')
   } else if (status === 'processed') {
     res.redirect('status-confirmation?processed=true')
   } else {
