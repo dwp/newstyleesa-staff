@@ -1,0 +1,48 @@
+{% extends "layout_staff.html" %}
+
+{% block pageTitle %}
+  Update status - Fred Flintstone - Apply for new style Employment and Support Allowance
+{% endblock %}
+
+{% set bodyClasses = "hero-header" %}
+
+{% block content %}
+
+<div class="full-width govuk-hero">
+  <div class="full-width-inner">
+    <section class="dwp-key-details-bar dwp-print-hide" role="contentinfo" aria-label="Key details">
+      <dl class="dwp-key-details-bar__contents govuk-width-container">
+        <div class="dwp-key-details-bar__header">
+          <dt class="govuk-visually-hidden">Name:</dt>
+          <dd class="dwp-key-details-bar__name">Fred Flintstone</dd>
+          <dt class="govuk-visually-hidden">National Insurance number:</dt>
+          <dd class="dwp-key-details-bar__nino">QQ 12 34 56 C</dd>
+          <dt class="govuk-visually-hidden">Status:</dt>
+          <dd class="dwp-key-details-bar__status">Unverified</dd>
+        </div>
+      </dl>
+    </section>
+  </div>{# /full-width-inner #}
+</div>{# /full-width #}
+
+<div style="margin-bottom: 30px;">
+  {{ govukBackLink({
+    text: "Back",
+    href: "applicant"
+  }) }}
+</div>
+
+<div class="govuk-grid-row container">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Download the PDF and upload it to&nbsp;DRS</h1>
+
+    <p>Content to be confirmed. Instructions will be here.</p>
+    <a href="status-confirmation?verified=true" class="govuk-button">Confirm and mark as verified</a>
+    
+  </div>{# /govuk-grid-column-two-thirds #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

@@ -15,6 +15,7 @@ $govuk-global-styles: true;
 @import 'dwp/dwp-search-box';
 @import 'dwp/dwp-secondary-navigation';
 @import 'dwp/dwp-buttons';
+@import 'dwp/dwp-tags';
 
 // Patterns that aren't in Frontend
 // @import 'patterns/check-your-answers';
@@ -35,3 +36,15 @@ $govuk-global-styles: true;
 @import 'components/bar';
 @import 'components/debug';
 @import 'components/tag';
+
+
+.search-results {
+  dt {
+    background-color: red;
+    margin: 0;
+  }
+  dd {
+    background-color: green;
+    margin: 0;
+  }
+}
