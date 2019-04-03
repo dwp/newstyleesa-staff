@@ -16,7 +16,6 @@ router.use(function(req, res, next){
   next();
 });
 
-
 // Branching on the status updates screen
 
 router.post('/v1/search-entry', function (req, res) {
@@ -55,8 +54,6 @@ router.post('/v1/search-entry', function (req, res) {
   }
 })
 
-
-
 router.post('/v1/status-changing', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
@@ -64,33 +61,20 @@ router.post('/v1/status-changing', function (req, res) {
 
   let status = req.session.data['status']
 
-  if (status === 'unverified') {
-    res.redirect('status-confirmation?unverified=true')
-  } else if (status === 'failed-to-attend') {
-    res.redirect('status-confirmation?failedtoattend=true')
+  let nino = req.session.data['nino']
+
+  if (status === 'failed-to-attend') {
+    res.redirect(`status-confirmation?nino=${nino}&status=failedtoattend`)
   } else if (status === 'verified') {
-    res.redirect('pdf')
-  } else if (status === 'ready-to-be-processed') {
-    res.redirect('status-confirmation?readytobeprocessed=true')
-  } else if (status === 'processed') {
-    res.redirect('status-confirmation?processed=true')
+    res.redirect(`pdf?nino=${nino}`)
   } else {
     res.redirect('error')
   }
 })
 
-
-
 // end branching
 
-
-
-
-
 module.exports = router
-
-
-
 
 // {% if getData.verified %}
 //         <h3 class="govuk-heading-m" id="claim-actions-title">Verified</h3>

@@ -8,30 +8,7 @@
 
 {% block content %}
 
-<div class="full-width govuk-hero">
-  <div class="full-width-inner">
-    <section class="dwp-key-details-bar dwp-print-hide" role="contentinfo" aria-label="Key details">
-      <dl class="dwp-key-details-bar__contents govuk-width-container">
-        <div class="dwp-key-details-bar__header">
-          <dt class="govuk-visually-hidden">Name:</dt>
-          <dd class="dwp-key-details-bar__name">Fred Flintstone</dd>
-          <dt class="govuk-visually-hidden">National Insurance number:</dt>
-          <dd class="dwp-key-details-bar__nino">QQ 12 34 56 C</dd>
-          <dt class="govuk-visually-hidden">Status:</dt>
-          <dd class="dwp-key-details-bar__status">
-            {% if getData.verified %}
-              Verified
-            {% elif getData.failedtoattend %}
-              Failed to attend
-            {% else %}
-              Unverified
-            {% endif %}
-          </dd>
-        </div>
-      </dl>
-    </section>
-  </div>{# /full-width-inner #}
-</div>{# /full-width #}
+{% include "v1/_header.html" %}
 
 <div style="margin-bottom: 30px;">
   <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
@@ -50,16 +27,17 @@
               Update the status of this claim
             </h1>
           </legend>
+          <input id="nino" name="nino" type="hidden" value="{{getData.nino}}">
           <div class="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="verified" name="status" type="radio" value="verified" aria-describedby="hint-verified" {% if getData.verified %}checked{% endif %}>
+              <input class="govuk-radios__input" id="verified" name="status" type="radio" value="verified" aria-describedby="hint-verified">
               <label class="govuk-label govuk-radios__label govuk-label--s" for="verified">
                 Verified
               </label>
               <span id="hint-verified" class="govuk-hint govuk-radios__hint">The claimant attended their appointment, proved their identity and gave evidence to support their claim.</span>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="failed-to-attend" name="status" type="radio" value="failed-to-attend" aria-describedby="hint-failed-to-attend" {% if getData.failedtoattend %}checked{% endif %}>
+              <input class="govuk-radios__input" id="failed-to-attend" name="status" type="radio" value="failed-to-attend" aria-describedby="hint-failed-to-attend">
               <label class="govuk-label govuk-radios__label govuk-label--s" for="failed-to-attend">
                 Failed to attend
               </label>
