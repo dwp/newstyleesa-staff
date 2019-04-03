@@ -75,20 +75,3 @@ router.post('/v1/status-changing', function (req, res) {
 // end branching
 
 module.exports = router
-
-// {% if getData.verified %}
-//         <h3 class="govuk-heading-m" id="claim-actions-title">Verified</h3>
-//         <a href="status?verified=true" class="govuk-button">Update claim status</a>
-//       {% elif getData.processed %}
-//         <h3 class="govuk-heading-m" id="claim-actions-title">Processed</h3>
-//         <a href="status?processed=true" class="govuk-button">Update claim status</a>
-//       {% elif getData.failedtoattend %}
-//         <h3 class="govuk-heading-m" id="claim-actions-title">Failed to attend</h3>
-//         <a href="status?failedtoattend=true" class="govuk-button">Update claim status</a>
-//       {% elif getData.readytobeprocessed %}
-//         <h3 class="govuk-heading-m" id="claim-actions-title">Ready to be processed</h3>
-//         <a href="status?readytobeprocessed=true" class="govuk-button">Update claim status</a>
-//       {% else %}
-//         <h3 class="govuk-heading-m" id="claim-actions-title">Unverified</h3>
-//         <a href="status?unverified=true" class="govuk-button">Update claim status</a>
-//       {% endif %}
