@@ -36,15 +36,3 @@ $govuk-global-styles: true;
 @import 'components/bar';
 @import 'components/debug';
 @import 'components/tag';
-
-
-.search-results {
-  dt {
-    background-color: red;
-    margin: 0;
-  }
-  dd {
-    background-color: green;
-    margin: 0;
-  }
-}
