@@ -46,6 +46,9 @@ router.post('/v1/search-entry', function (req, res) {
   // daffy
   } else if (search === 'QQ 22 22 33 V' || search ==='QQ222233V') {
     res.redirect('applicant?nino=QQ222233V&status=verified')
+  // sponge bob
+  } else if (search === 'QQ 11 22 33 M' || search ==='QQ112233M') {
+    res.redirect('applicant?nino=QQ112233M&status=failedtoattend')
   // multiple-results
   } else if (search === 'QQ 01 01 01 A' || search ==='QQ010101A') {
     res.redirect('search-multiple-results')
