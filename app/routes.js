@@ -52,6 +52,9 @@ router.post('/v1/search-entry', function (req, res) {
   // multiple-results
   } else if (search === 'QQ 01 01 01 A' || search ==='QQ010101A') {
     res.redirect('search-multiple-results')
+  // multiple-results
+  } else if (search === 'QQ 11 22 33 Z' || search ==='QQ112233Z') {
+    res.redirect('applicant?nino=QQ112233Z&status=unverified')
   } else {
     res.redirect('back')
   }
