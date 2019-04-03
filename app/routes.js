@@ -55,6 +55,9 @@ router.post('/v1/search-entry', function (req, res) {
   // multiple-results
   } else if (search === 'QQ 11 22 33 Z' || search ==='QQ112233Z') {
     res.redirect('applicant?nino=QQ112233Z&status=unverified')
+  // Scrooge
+  } else if (search === 'QQ 11 11 22 G' || search ==='QQ111122G') {
+    res.redirect('applicant?nino=QQ111122G&status=failedtoattend')
   } else {
     res.redirect('back')
   }
