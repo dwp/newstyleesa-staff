@@ -1,0 +1,29 @@
+{% extends "layout_unbranded.html" %}
+
+{% block pageTitle %}
+  Find an applicant - Apply for new style Employment and Support Allowance
+{% endblock %}
+
+{% block content %}
+
+<br>
+<br>
+<br>
+
+<div class="govuk-grid-row container">
+
+  <div class="govuk-grid-column-full">
+    {% include "pdf-application/_answers-dates.html" %}
+    {% include "pdf-application/_answers-personal-details.html" %}
+    {% include "pdf-application/_answers-paid-work.html" %}
+    {% include "pdf-application/_answers-voluntary-work.html" %}
+    {% include "pdf-application/_answers-pensions-health-insurance.html" %}
+    {% include "pdf-application/_answers-statutory-pay.html" %}
+    {% include "pdf-application/_answers-health-conditions.html" %}
+    {% include "pdf-application/_answers-consent-to-request.html" %}
+    {% include "pdf-application/_answers-payment-method.html" %}
+  </div>{# /govuk-grid-column-full #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
