@@ -39,7 +39,9 @@ router.post('/v1/search-entry', function (req, res) {
     res.redirect('applicant?nino=QQ112233A&status=unverified&sr=true')
   // not found
   } else if (search === 'QQ 12 34 56 Z' || search ==='QQ123456Z') {
-    res.redirect('search-not-found')
+    res.redirect('search-not-found?nino=QQ123456Z')
+  } else if (search === 'QQ 12 12 12 A' || search ==='QQ121212A') {
+    res.redirect('search-not-found?nino=QQ121212A')
   // barney
   } else if (search === 'QQ 11 11 11 Z' || search ==='QQ111111Z') {
     res.redirect('applicant?nino=QQ111111Z&status=unverified')
