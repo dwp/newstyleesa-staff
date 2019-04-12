@@ -1,0 +1,36 @@
+{% extends "layout_staff.html" %}
+
+{% block pageTitle %}
+  Update status - Fred Flintstone - Apply for new style Employment and Support Allowance
+{% endblock %}
+
+{% set bodyClasses = "hero-header" %}
+
+{% block content %}
+
+{% include "v2/_header.html" %}
+
+<div style="margin-bottom: 30px;">
+  {{ govukBackLink({
+    text: "Back",
+    href: "applicant"
+  }) }}
+</div>
+
+<div class="govuk-grid-row container">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Upload their application to&nbsp;DRS</h1>
+
+    <p>Download their application form and upload it to DRS. Use the document type ‘ESA1 Digital’.</p>
+
+    <p><a href="/public/pdf/application.pdf">[NAME] application (PDF)</a></p>
+
+    <a href="status-confirmation?status=verified&amp;nino={{getData.nino}}" class="govuk-button">Done, verify their claim</a>
+    
+  </div>{# /govuk-grid-column-two-thirds #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

@@ -1,0 +1,67 @@
+{% extends "layout_staff.html" %}
+
+{% block pageTitle %}
+  Fred Flintstone - Apply for new style Employment and Support Allowance
+{% endblock %}
+
+{% set bodyClasses = "hero-header" %}
+
+{% block content %}
+
+{% include "v2/_header.html" %}
+
+<div style="margin-bottom: 30px;">
+  <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back to search</a>
+</div>
+
+<div class="govuk-grid-row container">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    {% if getData.sr %}
+    {{ govukWarningText({
+      text: "Special rules apply for this claimant",
+      iconFallbackText: "Warning"
+    }) }}
+    {% endif %}
+
+    {% if getData.nino === "QQ111111Z" %}
+      {% include "v2/_applicant-QQ111111Z.html" %}
+    {% elif getData.nino === "QQ001122A" %}
+      {% include "v2/_applicant-QQ001122A.html" %}
+    {% elif getData.nino === "QQ111122B" %}
+      {% include "v2/_applicant-QQ111122B.html" %}
+    {% elif getData.nino === "QQ112233A" %}
+      {% include "v2/_applicant-QQ112233A.html" %}
+    {% elif getData.nino === "QQ123456C" %}
+      {% include "v2/_applicant-QQ123456C.html" %}
+    {% elif getData.nino === "QQ222233V" %}
+      {% include "v2/_applicant-QQ222233V.html" %}
+    {% elif getData.nino === "QQ112233M" %}
+      {% include "v2/_applicant-QQ112233M.html" %}
+    {% elif getData.nino === "QQ112233Z" %}
+      {% include "v2/_applicant-QQ112233Z.html" %}
+    {% elif getData.nino === "MM001122A" %}
+      {% include "v2/_applicant-MM001122A.html" %}
+    {% elif getData.nino === "MM001122A2" %}
+      {% include "v2/_applicant-MM001122A2.html" %}
+    {% elif getData.nino === "QQ111122G" %}
+      {% include "v2/_applicant-QQ111122G.html" %}
+    {% else %}
+      Error
+    {% endif %}
+  </div>{# /govuk-grid-column-two-thirds #}
+
+  {% if getData.status === "verified" %}
+  {% else %}
+    <div class="govuk-grid-column-one-third">
+      <aside class="app-related-items status-verified" role="complementary">
+        <h3 class="govuk-heading-m" id="claim-actions-title">Claim actions</h3>
+        <a href="status?nino={{getData.nino}}&amp;status={{getData.status}}" class="govuk-button">Update claim status</a>
+      </aside>
+    </div>{# /govuk-grid-column-one-third #}
+  {% endif %}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

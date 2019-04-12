@@ -1,0 +1,47 @@
+{% extends "layout_staff.html" %}
+
+{% block pageTitle %}
+  Update status - Fred Flintstone - Apply for new style Employment and Support Allowance
+{% endblock %}
+
+{% set bodyClasses = "hero-header" %}
+
+{% block content %}
+
+{% include "v2/_header.html" %}
+
+<div style="margin-bottom: 30px;">
+  {{ govukBackLink({
+    text: "Back",
+    href: "applicant"
+  }) }}
+</div>
+
+<div class="govuk-grid-row container">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Before you can verify their claim</h1>
+
+    <p>You now need to download their application form and upload it to DRS. Use the document type ‘ESA1 Digital’.</p>
+
+    <p><a href="/public/pdf/Fred-Flintstone application-form.pdf" download>Download ‘Fred Flintstone application form’ (PDF)</a></p>
+
+    <div class="govuk-form-group">
+      <div class="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="verified" name="status" type="checkbox" value="verified" aria-describedby="hint-verified">
+          <label class="govuk-label govuk-checkboxes__label" for="verified">
+            I have uploaded this application form to DRS
+          </label>
+        </div>
+      </div>{# /govuk-checkboxes #}
+    </div>
+
+    <p><a href="status-confirmation?status=verified&amp;nino={{getData.nino}}" class="govuk-button">Verify the claim</a></p>
+    
+  </div>{# /govuk-grid-column-two-thirds #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

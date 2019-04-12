@@ -1,0 +1,40 @@
+{% extends "layout_staff.html" %}
+
+{% block pageTitle %}
+  Apply for new style Employment and Support Allowance
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-!-margin-bottom-6"></div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Agent UI screens for MVP</h1>
+
+    <h2 class="govuk-heading-m">Search</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="search?nino=QQ123456C">Search</a></li>
+      <li><a href="search-not-found?nino=QQ123456C">Search no results found</a></li>
+      <li><a href="search-validation">Search validation message</a></li>
+    </ul>
+
+    <h2 class="govuk-heading-m">Claimant</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="applicant?nino=QQ123456C&status=unverified">Claimant summary</a></li>
+      <li><a href="status?nino=QQ123456C&status=unverified">Change status</a></li>
+      <li>Change status validation (to follow)</li>
+      <li><a href="pdf?nino=QQ123456C&status=verified">Before you can verify</a></li>
+      <li>Before you can verify validation (to follow)</li>
+      <li><a href="status-confirmation?status=verified&nino=QQ123456C">Confirmation - claim verified</a></li>
+    </ul>
+    
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
