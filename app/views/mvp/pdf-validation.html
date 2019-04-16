@@ -21,14 +21,30 @@
 
   <div class="govuk-grid-column-two-thirds">
 
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <li>
+            <a href="#drs-confirm">Confirm that you have uploaded their application to DRS</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
     <form action="status-changing" method="post">
-      <div class="govuk-form-group">
+      <div class="govuk-form-group govuk-form-group--error">
         <fieldset class="govuk-fieldset" aria-describedby="nationality-hint status-error">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">Before you can verify their claim</h1>
           </legend>
           <p>You now need to download their application form and upload it to DRS. Use the document type ‘ESA1 Digital’.</p>
           <p><a href="/public/pdf/Fred-Flintstone application-form.pdf" download>Download ‘Fred Flintstone application form’ (PDF)</a></p>
+          <span id="status-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Confirm that you have uploaded their application to DRS
+          </span>
 
           <div class="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
