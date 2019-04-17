@@ -1,17 +1,17 @@
 {% extends "layout_staff.html" %}
 
 {% block pageTitle %}
-  Fred Flintstone - Apply for new style Employment and Support Allowance
+  Claim summary - Fred Flintstone - Apply for ‘new style’ Employment and Support Allowance
 {% endblock %}
 
 {% set bodyClasses = "hero-header" %}
 
 {% block content %}
 
-{% include "v2/_header.html" %}
+{% include "iteration-1/_header.html" %}
 
 <div style="margin-bottom: 30px;">
-  <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back to search</a>
+  <a href="applications-unverified" rel="prev" class="govuk-back-link">Back</a>
 </div>
 
 <div class="govuk-grid-row container">
@@ -25,31 +25,43 @@
     }) }}
     {% endif %}
 
-    {% if getData.nino === "QQ111111Z" %}
-      {% include "v2/_applicant-QQ111111Z.html" %}
-    {% elif getData.nino === "QQ001122A" %}
-      {% include "v2/_applicant-QQ001122A.html" %}
-    {% elif getData.nino === "QQ111122B" %}
-      {% include "v2/_applicant-QQ111122B.html" %}
-    {% elif getData.nino === "QQ112233A" %}
-      {% include "v2/_applicant-QQ112233A.html" %}
-    {% elif getData.nino === "QQ123456C" %}
-      {% include "v2/_applicant-QQ123456C.html" %}
-    {% elif getData.nino === "QQ222233V" %}
-      {% include "v2/_applicant-QQ222233V.html" %}
-    {% elif getData.nino === "QQ112233M" %}
-      {% include "v2/_applicant-QQ112233M.html" %}
-    {% elif getData.nino === "QQ112233Z" %}
-      {% include "v2/_applicant-QQ112233Z.html" %}
-    {% elif getData.nino === "MM001122A" %}
-      {% include "v2/_applicant-MM001122A.html" %}
-    {% elif getData.nino === "MM001122A2" %}
-      {% include "v2/_applicant-MM001122A2.html" %}
-    {% elif getData.nino === "QQ111122G" %}
-      {% include "v2/_applicant-QQ111122G.html" %}
-    {% else %}
-      Error
-    {% endif %}
+    <div class="govuk-tabs" data-module="tabs">
+
+      <h2 class="govuk-tabs__title">Contents</h2>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab govuk-tabs__tab--selected" href="#summary">
+            Summary
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#full">
+            Full application
+          </a>
+        </li>
+      </ul>
+
+      <section class="govuk-tabs__panel" id="summary" style="border: none; padding-left: 0; padding-right: 0;">
+        {% include "v2/_applicant-QQ123456C.html" %}
+      </section>
+
+      <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="full" style="border: none; padding-left: 0; padding-right: 0;">
+        {% include "v2/answers/_answers-dates.html" %}
+        {% include "v2/answers/_answers-personal-details.html" %}
+        {% include "v2/answers/_answers-paid-work.html" %}
+        {% include "v2/answers/_answers-voluntary-work.html" %}
+        {% include "v2/answers/_answers-pensions-health-insurance.html" %}
+        {% include "v2/answers/_answers-statutory-pay.html" %}
+        {% include "v2/answers/_answers-health-conditions.html" %}
+        {% include "v2/answers/_answers-consent-to-request.html" %}
+        {% include "v2/answers/_answers-payment-method.html" %}
+      </section>
+      
+    </div>{# /govuk-tabs #}
+
+    <br>
+    <br>
+
   </div>{# /govuk-grid-column-two-thirds #}
 
   {% if getData.status === "verified" %}

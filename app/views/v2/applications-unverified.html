@@ -5,14 +5,10 @@
   GOV.UK Prototype Kit
 {% endblock %}
 
-{% block beforeContent %}
-<div class=""></div>
-{% endblock %}
-
 {% block content %}
 
 <div style="margin-bottom: 30px;">
-  <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
+{#   <a href="applcations-unverified" rel="prev" class="govuk-back-link">Back</a> #}
 </div>
 
 <div class="govuk-grid-row">
@@ -24,12 +20,17 @@
     <ul class="govuk-tabs__list">
       <li class="govuk-tabs__list-item">
         <a class="govuk-tabs__tab govuk-tabs__tab--selected" href="#">
-          <strong>Unverified (89)</strong>
+          <strong>Unverified</strong>
         </a>
       </li>
       <li class="govuk-tabs__list-item">
         <a class="govuk-tabs__tab" href="applications-processed">
-          Verified (300)
+          Verified
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="applications-processed">
+          Recently archived
         </a>
       </li>
     </ul>
@@ -38,10 +39,8 @@
       <h3>Showing:</h3>
       <ul>
         <li><strong>All</strong></li>
-{#         <li><a href="#">Special rules</a></li> #}
         <li><a href="#">Duplicate NINOs</a></li>
-        <li><a href="#">Duplicate Names</a></li>
-{#         <li><a href="#">Appointment confirmed</a></li> #}
+        <li><a href="#">Duplicate names</a></li>
       </ul>
     </div>{# /filters #}
 
@@ -59,12 +58,12 @@
         <tbody class="govuk-table__body">
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
-              <a href="applicant">
-                <span class="table-link">Jimmy Olsen</span>
+              <a href="applicant?nino=QQ123456C&status=unverified&sr=true">
+                <span class="table-link">Fred Flintstone</span>
               </a>
             </td>
-            <td class="govuk-table__cell">QQ654321Q</td>
-            <td class="govuk-table__cell">31 March 2019 at 9:05am</td>
+            <td class="govuk-table__cell">QQ123456C</td>
+            <td class="govuk-table__cell">31 March, 9:05am</td>
             <td class="govuk-table__cell">
               <div class="govuk-warning-text" style="margin-bottom: 0; padding: 0">
               <span class="govuk-warning-text__icon" aria-hidden="true" style="border: none; font-size: 20px; margin-top: -18px">!</span>
@@ -81,7 +80,7 @@
               </a>
             </td>
             <td class="govuk-table__cell">QQ654321Q</td>
-            <td class="govuk-table__cell">31 March 2019 at 9:05am</td>
+            <td class="govuk-table__cell">1 April, 8:14pm</td>
             <td class="govuk-table__cell">
               <div class="govuk-warning-text" style="margin-bottom: 0; padding: 0">
               <span class="govuk-warning-text__icon" aria-hidden="true" style="border: none; font-size: 20px; margin-top: -18px">!</span>
@@ -94,31 +93,81 @@
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
               <a href="applicant">
-                <span class="table-link">Jimmy Olsen</span>
+                <span class="table-link">Barney Rubble</span>
               </a>
             </td>
             <td class="govuk-table__cell">QQ654321Q</td>
-            <td class="govuk-table__cell">31 March 2019 at 9:05am</td>
+            <td class="govuk-table__cell">13 March, 9:05am</td>
             <td class="govuk-table__cell"></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
               <a href="applicant">
-                <span class="table-link">Jimmy Olsen</span>
+                <span class="table-link">Daffy Duck</span>
               </a>
             </td>
-            <td class="govuk-table__cell">QQ654321Q</td>
-            <td class="govuk-table__cell">31 March 2019 at 9:05am</td>
+            <td class="govuk-table__cell">QQ222222Q</td>
+            <td class="govuk-table__cell">15 March at 4:09pm</td>
             <td class="govuk-table__cell"></td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
               <a href="applicant">
-                <span class="table-link">Jimmy Olsen</span>
+                <span class="table-link">Minnie Mouse</span>
               </a>
             </td>
-            <td class="govuk-table__cell">QQ654321Q</td>
-            <td class="govuk-table__cell">31 March 2019 at 9:05am</td>
+            <td class="govuk-table__cell">QQ333333Q</td>
+            <td class="govuk-table__cell">15 March, 9:05am</td>
+            <td class="govuk-table__cell"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <a href="applicant">
+                <span class="table-link">Snow White</span>
+              </a>
+            </td>
+            <td class="govuk-table__cell">QQ444444Q</td>
+            <td class="govuk-table__cell">16 March, 9:05am</td>
+            <td class="govuk-table__cell"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <a href="applicant">
+                <span class="table-link">Sponge Bob</span>
+              </a>
+            </td>
+            <td class="govuk-table__cell">QQ987654Q</td>
+            <td class="govuk-table__cell">16 March, 9:05am</td>
+            <td class="govuk-table__cell"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <a href="applicant">
+                <span class="table-link">Donald Duck</span>
+              </a>
+            </td>
+            <td class="govuk-table__cell">QQ765365Q</td>
+            <td class="govuk-table__cell">17 March, 9:05am</td>
+            <td class="govuk-table__cell"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <a href="applicant">
+                <span class="table-link">Donald Duck</span>
+              </a>
+            </td>
+            <td class="govuk-table__cell">QQ765365Q</td>
+            <td class="govuk-table__cell">17 March, 10:41am</td>
+            <td class="govuk-table__cell"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <a href="applicant">
+                <span class="table-link">Santa Claus</span>
+              </a>
+            </td>
+            <td class="govuk-table__cell">QQ111111Q</td>
+            <td class="govuk-table__cell">17 March, 9:05am</td>
             <td class="govuk-table__cell"></td>
           </tr>
         </tbody>
