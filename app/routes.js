@@ -153,7 +153,7 @@ router.post('/v2/status-changing', function (req, res) {
   }
 })
 
-router.post('/mvp/status-changing', function (req, res) {
+router.post('/iteration-1/status-changing', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
