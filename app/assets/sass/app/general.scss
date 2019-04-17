@@ -1,3 +1,162 @@
+* {
+ font-family: "nta", Arial, sans-serif
+}
+
 .govuk-summary-list__key {
   width: 50%;
+}
+
+// Tables
+
+/////////////////////////////////
+// Tables
+/////////////////////////////////
+
+ thead th {
+  padding: 0;
+ }
+
+ table {
+  margin-bottom: 0 !important;
+ }
+
+table {
+  th, td {
+    // @include copy-16;
+    padding: 7px;
+    vertical-align: top;
+
+  }
+  td {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
+  th {
+    font-weight: bold;
+  }
+  tbody tr {
+  }
+  a {
+    display: block;
+    text-decoration: none;
+  }
+  .table-link {
+    text-decoration: underline;
+  }
+  .highlight {
+    margin-left: 10px;
+    @extend %govuk-body-s;
+  }
+}
+
+// Sortable table styles
+
+th.right,
+td.right {
+  text-align: right;
+  padding-right: 2%;
+}
+
+th.right.padding-right {
+  padding-right: 25px;
+}
+
+tr.table-header-sortable th {
+  cursor: pointer;
+  padding-right: 0;
+  &:hover {
+    text-decoration: underline;
+  }
+  span {
+    padding-right: 14px;
+    background-repeat: no-repeat;
+    background-position: right 6px;
+  }
+}
+
+.sorting_asc span {
+  background-image: url(/public/images/icons/arrow-small-up-blue.svg);
+}
+
+.sorting_desc span {
+  background-image: url(/public/images/icons/arrow-small-down-blue.svg);
+  background-position: right 7px;
+}
+
+// Fixed header table styles
+
+.fixedHeader-floating {
+  position: fixed;
+  background-color: govuk-colour("white");
+} 
+
+.fixedHeader-floating th {
+  border-bottom: 2px solid govuk-colour("grey-2");
+}
+
+// Horizontal scrollable tables
+
+.table-scrollable-wrapper {
+  // overflow: auto;
+  position: relative;
+  clear: both;
+  .table-scrollable {
+    min-width: 550px;
+    overflow: auto;
+  }
+
+}
+
+// /////////////////////////////////
+// // FILTERS
+// /////////////////////////////////
+
+.filters {
+  clear: both;
+  margin-bottom: 20px;
+  width: 60%;
+  float: left;
+  font-size: 19px;
+  line-height: 25px;
+  padding-top: 20px;
+
+  h3 {
+    display: inline-block;
+    margin-right: 5px;
+    font-size: 19px;
+    line-height: 25px;
+    font-weight: normal;
+  }
+  ul {
+    display: inline-block;
+    padding: 0;
+  }
+  li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+}
+
+.dataTables_filter {
+  position: absolute;
+  right: 0;
+  width: 200px;
+  float: right;
+  top: -72px;
+  z-index: 9999;
+  label {
+    position: relative;
+    display: block;
+    input {
+      position: absolute;
+      right: 0;
+      font-size: 16px;
+      padding: 5px;
+      width: 300px;
+      border: 2px solid govuk-colour("black");
+      padding: 6px 5px 4px 5px;
+      font-size: 19px;
+      line-height: 25px;
+    }
+  }
 }

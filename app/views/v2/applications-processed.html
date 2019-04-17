@@ -1,0 +1,218 @@
+
+{% extends "layout_staff.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="/index">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">Applications</h1>
+
+    <ul class="govuk-tabs__list">
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="applications-not-processed">
+          Not processed (14)
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab govuk-tabs__tab--selected" href="applications-processed">
+          <strong>Processed (24)</strong>
+        </a>
+      </li>
+    </ul>
+
+    <div class="filters">
+      <h3>Showing</h3>
+      <ul>
+        <li><strong>All</strong></li>
+        <li><a href="#">Special rules</a></li>
+      </ul>
+    </div>{# /filters #}
+
+    <div class="table-scrollable-wrapper">
+
+      <table cellspacing="0" width="100%" class="govuk-table listing-table">
+        <thead>
+          <tr>
+            <th class="govuk-table__header" style="width: 20%"><span>Date processed</span></th>
+            <th class="govuk-table__header" style="width: 30%"><span>Applicant</span></th>
+            <th class="govuk-table__header"><span>National Insurance number</span></th>
+            <th class="govuk-table__header"><span>Submission to processed</span></th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">3 February</td>
+            <td class="govuk-table__cell"><a href="applicant"><span class="table-link">Haywood Harrod</span></a></td>
+            <td class="govuk-table__cell">QQ654321Q</td>
+            <td class="govuk-table__cell">12 days</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">3 February</td>
+            <td class="govuk-table__cell"><a href="applicant"><span class="table-link">Wade Waterfield</span></a></td>
+            <td class="govuk-table__cell">QQ654321Q</td>
+            <td class="govuk-table__cell">12 days</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">2 February</td>
+            <td class="govuk-table__cell"><a href="applicant"><span class="table-link">Magali Moberg</span></a></td>
+            <td class="govuk-table__cell">QQ654321Q</td>
+            <td class="govuk-table__cell">10 days</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">2 February</td>
+            <td class="govuk-table__cell"><a href="applicant"><span class="table-link">Reena Rother</span> <strong class="app-c-tag app-c-tag--special-rules">Special rules</strong></a></td>
+            <td class="govuk-table__cell">QQ654321Q</td>
+            <td class="govuk-table__cell">14 days</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">1 February</td>
+            <td class="govuk-table__cell"><a href="applicant"><span class="table-link">Walton Walworth</span></a></td>
+            <td class="govuk-table__cell">QQ654321Q</td>
+            <td class="govuk-table__cell">22 days</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">31 January</td>
+            <td class="govuk-table__cell"><a href="applicant"><span class="table-link">Milagro Michaels</span></a></td>
+            <td class="govuk-table__cell">QQ654321Q</td>
+            <td class="govuk-table__cell">25 days</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">31 January</td>
+            <td class="govuk-table__cell"><a href="applicant"><span class="table-link">Brande Brafford</span></a></td>
+            <td class="govuk-table__cell">QQ654321Q</td>
+            <td class="govuk-table__cell">9 days</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">30 January</td>
+            <td class="govuk-table__cell"><a href="applicant"><span class="table-link">Trudie Than</span></a></td>
+            <td class="govuk-table__cell">QQ654321Q</td>
+            <td class="govuk-table__cell">4 days</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">29 January</td>
+            <td class="govuk-table__cell"><a href="applicant"><span class="table-link">Marry Mcnair</span></a></td>
+            <td class="govuk-table__cell">QQ654321Q</td>
+            <td class="govuk-table__cell">5 days</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">29 January</td>
+            <td class="govuk-table__cell"><a href="applicant"><span class="table-link">Darnell Devillier</span> <strong class="app-c-tag app-c-tag--special-rules">Special rules</strong></a></td>
+            <td class="govuk-table__cell">QQ654321Q</td>
+            <td class="govuk-table__cell">6 days</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">27 January</td>
+            <td class="govuk-table__cell"><a href="applicant"><span class="table-link">Cordia Chuang</span></a></td>
+            <td class="govuk-table__cell">QQ654321Q</td>
+            <td class="govuk-table__cell">19 days</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">25 January</td>
+            <td class="govuk-table__cell"><a href="applicant"><span class="table-link">Tomi Tweed</span></a></td>
+            <td class="govuk-table__cell">QQ654321Q</td>
+            <td class="govuk-table__cell">18 days</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">25 January</td>
+            <td class="govuk-table__cell"><a href="applicant"><span class="table-link">Sarina Subia</span></a></td>
+            <td class="govuk-table__cell">QQ654321Q</td>
+            <td class="govuk-table__cell">26 days</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">25 January</td>
+            <td class="govuk-table__cell"><a href="applicant"><span class="table-link">Valerie Verhoeven</span></a></td>
+            <td class="govuk-table__cell">QQ654321Q</td>
+            <td class="govuk-table__cell">4 days</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">25 January</td>
+            <td class="govuk-table__cell"><a href="applicant"><span class="table-link">Magali Moberg</span></a></td>
+            <td class="govuk-table__cell">QQ654321Q</td>
+            <td class="govuk-table__cell">10 days</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">25 January</td>
+            <td class="govuk-table__cell"><a href="applicant"><span class="table-link">Reena Rother</span> <strong class="app-c-tag app-c-tag--special-rules">Special rules</strong></a></td>
+            <td class="govuk-table__cell">QQ654321Q</td>
+            <td class="govuk-table__cell">14 days</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">24 January</td>
+            <td class="govuk-table__cell"><a href="applicant"><span class="table-link">Walton Walworth</span></a></td>
+            <td class="govuk-table__cell">QQ654321Q</td>
+            <td class="govuk-table__cell">22 days</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">24 January</td>
+            <td class="govuk-table__cell"><a href="applicant"><span class="table-link">Milagro Michaels</span></a></td>
+            <td class="govuk-table__cell">QQ654321Q</td>
+            <td class="govuk-table__cell">25 days</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">24 January</td>
+            <td class="govuk-table__cell"><a href="applicant"><span class="table-link">Brande Brafford</span></a></td>
+            <td class="govuk-table__cell">QQ654321Q</td>
+            <td class="govuk-table__cell">9 days</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">24 January</td>
+            <td class="govuk-table__cell"><a href="applicant"><span class="table-link">Trudie Than</span></a></td>
+            <td class="govuk-table__cell">QQ654321Q</td>
+            <td class="govuk-table__cell">4 days</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">24 January</td>
+            <td class="govuk-table__cell"><a href="applicant"><span class="table-link">Marry Mcnair</span></a></td>
+            <td class="govuk-table__cell">QQ654321Q</td>
+            <td class="govuk-table__cell">5 days</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">23 January</td>
+            <td class="govuk-table__cell"><a href="applicant"><span class="table-link">Darnell Devillier</span> <strong class="app-c-tag app-c-tag--special-rules">Special rules</strong></a></td>
+            <td class="govuk-table__cell">QQ654321Q</td>
+            <td class="govuk-table__cell">6 days</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">23 January</td>
+            <td class="govuk-table__cell"><a href="applicant"><span class="table-link">Cordia Chuang</span></a></td>
+            <td class="govuk-table__cell">QQ654321Q</td>
+            <td class="govuk-table__cell">19 days</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">23 January</td>
+            <td class="govuk-table__cell"><a href="applicant"><span class="table-link">Tomi Tweed</span></a></td>
+            <td class="govuk-table__cell">QQ654321Q</td>
+            <td class="govuk-table__cell">18 days</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">23 January</td>
+            <td class="govuk-table__cell"><a href="applicant"><span class="table-link">Sarina Subia</span></a></td>
+            <td class="govuk-table__cell">QQ654321Q</td>
+            <td class="govuk-table__cell">26 days</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">22 January</td>
+            <td class="govuk-table__cell"><a href="applicant"><span class="table-link">Valerie Verhoeven</span></a></td>
+            <td class="govuk-table__cell">QQ654321Q</td>
+            <td class="govuk-table__cell">4 days</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>{# /table-scrollable-wrapper #}
+    
+  </div>{# /govuk-grid-column-full #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

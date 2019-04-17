@@ -1,0 +1,133 @@
+
+{% extends "layout_staff.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+<div class=""></div>
+{% endblock %}
+
+{% block content %}
+
+<div style="margin-bottom: 30px;">
+  <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">Applications</h1>
+
+    <ul class="govuk-tabs__list">
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab govuk-tabs__tab--selected" href="#">
+          <strong>Unverified (89)</strong>
+        </a>
+      </li>
+      <li class="govuk-tabs__list-item">
+        <a class="govuk-tabs__tab" href="applications-processed">
+          Verified (300)
+        </a>
+      </li>
+    </ul>
+
+    <div class="filters">
+      <h3>Showing:</h3>
+      <ul>
+        <li><strong>All</strong></li>
+{#         <li><a href="#">Special rules</a></li> #}
+        <li><a href="#">Duplicate NINOs</a></li>
+        <li><a href="#">Duplicate Names</a></li>
+{#         <li><a href="#">Appointment confirmed</a></li> #}
+      </ul>
+    </div>{# /filters #}
+
+    <div class="table-scrollable-wrapper">
+
+      <table cellspacing="0" width="100%" class="govuk-table listing-table">
+        <thead>
+          <tr>
+            <th class="govuk-table__header"><span>Name</span></th>
+            <th class="govuk-table__header"><span>National Insurance number</span></th>
+            <th class="govuk-table__header"><span>Application submitted</span></th>
+            <th class="govuk-table__header"><span class="govuk-visually-hidden">Considerations</span></th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <a href="applicant">
+                <span class="table-link">Jimmy Olsen</span>
+              </a>
+            </td>
+            <td class="govuk-table__cell">QQ654321Q</td>
+            <td class="govuk-table__cell">31 March 2019 at 9:05am</td>
+            <td class="govuk-table__cell">
+              <div class="govuk-warning-text" style="margin-bottom: 0; padding: 0">
+              <span class="govuk-warning-text__icon" aria-hidden="true" style="border: none; font-size: 20px; margin-top: -18px">!</span>
+                <strong class="govuk-warning-text__text" style="padding-left: 42px">
+                  <span class="govuk-warning-text__assistive">Warning</span>Special rules
+                </strong>
+              </div>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <a href="applicant">
+                <span class="table-link">Jimmy Olsen</span>
+              </a>
+            </td>
+            <td class="govuk-table__cell">QQ654321Q</td>
+            <td class="govuk-table__cell">31 March 2019 at 9:05am</td>
+            <td class="govuk-table__cell">
+              <div class="govuk-warning-text" style="margin-bottom: 0; padding: 0">
+              <span class="govuk-warning-text__icon" aria-hidden="true" style="border: none; font-size: 20px; margin-top: -18px">!</span>
+                <strong class="govuk-warning-text__text" style="padding-left: 42px">
+                  <span class="govuk-warning-text__assistive">Warning</span>Special rules
+                </strong>
+              </div>
+            </td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <a href="applicant">
+                <span class="table-link">Jimmy Olsen</span>
+              </a>
+            </td>
+            <td class="govuk-table__cell">QQ654321Q</td>
+            <td class="govuk-table__cell">31 March 2019 at 9:05am</td>
+            <td class="govuk-table__cell"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <a href="applicant">
+                <span class="table-link">Jimmy Olsen</span>
+              </a>
+            </td>
+            <td class="govuk-table__cell">QQ654321Q</td>
+            <td class="govuk-table__cell">31 March 2019 at 9:05am</td>
+            <td class="govuk-table__cell"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <a href="applicant">
+                <span class="table-link">Jimmy Olsen</span>
+              </a>
+            </td>
+            <td class="govuk-table__cell">QQ654321Q</td>
+            <td class="govuk-table__cell">31 March 2019 at 9:05am</td>
+            <td class="govuk-table__cell"></td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>{# /table-scrollable-wrapper #}
+    
+  </div>{# /govuk-grid-column-full #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
