@@ -19,14 +19,15 @@
         <h1 class="govuk-panel__title">Claim verified</h1>
         <div class="govuk-panel__body">Their claim is now ready for processing.</div>
       </div>
-      <a href="search?unverified=true" role="button" draggable="false" class="govuk-button">Find another claim</a>
     {% elif getData.status === "archived" %}
       <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
         <h1 class="govuk-panel__title">Archived</h1>
         <div class="govuk-panel__body">This claim has been archived. It will automatically be removed from the database after XX days.</div>
       </div>
-      <a href="search" role="button" draggable="false" class="govuk-button">Find another claim</a>
     {% endif %}
+
+
+    <a href="search" role="button" draggable="false" class="govuk-button">Find another claim</a>
 
   </div>{# /govuk-grid-column-full #}
 

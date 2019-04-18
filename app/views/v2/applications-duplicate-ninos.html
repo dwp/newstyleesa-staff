@@ -8,51 +8,49 @@
 {% block content %}
 
 <div style="margin-bottom: 30px;">
-{#   <a href="applcations-unverified" rel="prev" class="govuk-back-link">Back</a> #}
+  <a href="index" rel="prev" class="govuk-back-link">Back</a>
 </div>
 
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-full">
 
-    <h1 class="govuk-heading-l">Applications</h1>
+    <h1 class="govuk-heading-l">Manage duplicate and old applications</h1>
 
     <ul class="govuk-tabs__list">
+      
       <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="applications-unverified">
-          Unverified
+        <a class="govuk-tabs__tab govuk-tabs__tab--selected" href="applications-duplicate-ninos">
+          Duplicate NINOs
         </a>
       </li>
       <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab govuk-tabs__tab--selected" href="applications-verified">
-          Recently verified
+        <a class="govuk-tabs__tab" href="applications-duplicate-names">
+          Duplicate names
         </a>
       </li>
       <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="applications-archived">
-          Recently archived
+        <a class="govuk-tabs__tab" href="applications-old">
+          More than 30 days old
         </a>
       </li>
     </ul>
 
-    <div class="filters">
-{#       <p></p> #}
-      <h3>After XX days, verified claims are removed from the system.</h3>
-      <ul>
-        <li>&nbsp;</li>
-      </ul>
-    </div>{# /filters #}
+{#     <p style="width: 70%; position: relative; clear: both; top: 25px; margin-bottom: 45px">If an application can be removed, update the claim status to ‘discarded’.</p> #}
+
+        <p style="width: 70%; position: relative; clear: both; top: 25px; margin-bottom: 15px">&nbsp;</p>
+
+    <div style="clear: both"></div>
 
     <div class="table-scrollable-wrapper">
 
-      <table cellspacing="0" width="100%" class="govuk-table listing-table">
+      <table cellspacing="0" width="100%" class="govuk-table">
         <thead>
           <tr>
-            <th class="govuk-table__header" style="width: 21%"><span>Date submitted</span></th>
+            <th class="govuk-table__header" style="width: 21%;"><span>Date submitted</span></th>
             <th class="govuk-table__header"><span>Name</span></th>
-            <th class="govuk-table__header"><span>NINo</span></th>
+            <th class="govuk-table__header"><span>National Insurance number</span></th>
             <th class="govuk-table__header"><span class="govuk-visually-hidden">Considerations</span></th>
-            <th class="govuk-table__header right">Time to verify</th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
@@ -72,7 +70,17 @@
                 </strong>
               </div>
             </td>
-            <td class="govuk-table__cell right">12 days</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">31 March, 9:45am</td>
+            <td class="govuk-table__cell">
+              <a href="applicant?nino=QQ123456C&status=unverified&sr=true">
+                <span class="table-link">Fred Flintstone</span>
+              </a>
+            </td>
+            <td class="govuk-table__cell">QQ123456C</td>
+            <td class="govuk-table__cell">
+            </td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">1 April, 8:14pm</td>
@@ -90,7 +98,6 @@
                 </strong>
               </div>
             </td>
-            <td class="govuk-table__cell right">12 days</td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">13 March, 9:05am</td>
@@ -101,10 +108,9 @@
             </td>
             <td class="govuk-table__cell">QQ654321Q</td>
             <td class="govuk-table__cell"></td>
-            <td class="govuk-table__cell right">12 days</td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">15 March at 4:09pm</td>
+            <td class="govuk-table__cell">15 March at 4:09am</td>
             <td class="govuk-table__cell">
               <a href="applicant">
                 <span class="table-link">Daffy Duck</span>
@@ -112,10 +118,19 @@
             </td>
             <td class="govuk-table__cell">QQ222222Q</td>
             <td class="govuk-table__cell"></td>
-            <td class="govuk-table__cell right">12 days</td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">15 March, 9:05am</td>
+            <td class="govuk-table__cell">15 March at 4:10am</td>
+            <td class="govuk-table__cell">
+              <a href="applicant">
+                <span class="table-link">Daffy Duck</span>
+              </a>
+            </td>
+            <td class="govuk-table__cell">QQ222222Q</td>
+            <td class="govuk-table__cell"></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">30 March, 8:00am</td>
             <td class="govuk-table__cell">
               <a href="applicant">
                 <span class="table-link">Minnie Mouse</span>
@@ -123,62 +138,36 @@
             </td>
             <td class="govuk-table__cell">QQ333333Q</td>
             <td class="govuk-table__cell"></td>
-            <td class="govuk-table__cell right">12 days</td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">16 March, 9:05am</td>
+            <td class="govuk-table__cell">30 March, 8:13am</td>
             <td class="govuk-table__cell">
               <a href="applicant">
-                <span class="table-link">Snow White</span>
+                <span class="table-link">Minnie Mouse</span>
               </a>
             </td>
-            <td class="govuk-table__cell">QQ444444Q</td>
+            <td class="govuk-table__cell">QQ333333Q</td>
             <td class="govuk-table__cell"></td>
-            <td class="govuk-table__cell right">12 days</td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">16 March, 9:05am</td>
+            <td class="govuk-table__cell">30 March, 9:00am</td>
             <td class="govuk-table__cell">
               <a href="applicant">
-                <span class="table-link">Sponge Bob</span>
+                <span class="table-link">Minnie Mouse</span>
               </a>
             </td>
-            <td class="govuk-table__cell">QQ987654Q</td>
+            <td class="govuk-table__cell">QQ333333Q</td>
             <td class="govuk-table__cell"></td>
-            <td class="govuk-table__cell right">12 days</td>
           </tr>
           <tr class="govuk-table__row">
-            <td class="govuk-table__cell">17 March, 9:05am</td>
+            <td class="govuk-table__cell">31 March, 7:40pm</td>
             <td class="govuk-table__cell">
               <a href="applicant">
-                <span class="table-link">Donald Duck</span>
+                <span class="table-link">Minnie Mouse</span>
               </a>
             </td>
-            <td class="govuk-table__cell">QQ765365Q</td>
+            <td class="govuk-table__cell">QQ333333Q</td>
             <td class="govuk-table__cell"></td>
-            <td class="govuk-table__cell right">12 days</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">17 March, 10:41am</td>
-            <td class="govuk-table__cell">
-              <a href="applicant">
-                <span class="table-link">Donald Duck</span>
-              </a>
-            </td>
-            <td class="govuk-table__cell">QQ765365Q</td>
-            <td class="govuk-table__cell"></td>
-            <td class="govuk-table__cell right">12 days</td>
-          </tr>
-          <tr class="govuk-table__row">
-            <td class="govuk-table__cell">17 March, 9:05am</td>
-            <td class="govuk-table__cell">
-              <a href="applicant">
-                <span class="table-link">Santa Claus</span>
-              </a>
-            </td>
-            <td class="govuk-table__cell">QQ111111Q</td>
-            <td class="govuk-table__cell"></td>
-            <td class="govuk-table__cell right">12 days</td>
           </tr>
         </tbody>
       </table>

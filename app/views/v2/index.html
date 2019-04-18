@@ -1,0 +1,37 @@
+{% extends "layout_staff.html" %}
+
+{% block pageTitle %}
+  Claim summary - Fred Flintstone - Apply for ‘new style’ Employment and Support Allowance
+{% endblock %}
+
+{% set bodyClasses = "hero-header" %}
+
+{% block content %}
+
+<br>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-half">
+    <a href="/v2/search" class="tile tile--blue">
+      <div class="tile__contents">
+        <h2 class="tile__title">Find a claim</h2>
+      </div>
+    </a>
+  </div>
+  <div class="govuk-grid-column-one-half">
+    <a href="/v2/applications-duplicate-ninos" class="tile tile--blue">
+      <div class="tile__contents">
+{#         <h2 class="tile__title">Check which claims can be removed</h2> #}
+        <h2 class="tile__title">Manage duplicate and old applications</h2>
+      </div>
+    </a>
+  </div>
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+{% endblock %}
