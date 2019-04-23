@@ -144,8 +144,10 @@ router.post('/v2/status-changing', function (req, res) {
 
   let nino = req.session.data['nino']
 
-  if (status === 'archived') {
-    res.redirect(`status-confirmation?nino=${nino}&status=archived`)
+  if (status === 'discarded') {
+    res.redirect(`status-confirmation?nino=${nino}&status=discarded`)
+  } else if (status === 'nocontact') {
+    res.redirect(`status-confirmation?nino=${nino}&status=nocontact`)
   } else if (status === 'verified') {
     res.redirect(`pdf?nino=${nino}&status=verified`)
   } else {
