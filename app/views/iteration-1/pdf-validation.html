@@ -11,10 +11,7 @@
 {% include "v2/_header.html" %}
 
 <div style="margin-bottom: 30px;">
-  {{ govukBackLink({
-    text: "Back",
-    href: "applicant"
-  }) }}
+  <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
 </div>
 
 <div class="govuk-grid-row container">
