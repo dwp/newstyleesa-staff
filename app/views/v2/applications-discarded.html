@@ -8,42 +8,26 @@
 {% block content %}
 
 <div style="margin-bottom: 30px;">
-{#   <a href="applcations-unverified" rel="prev" class="govuk-back-link">Back</a> #}
+  <a href="search" rel="prev" class="govuk-back-link">Back</a>
 </div>
 
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-full">
 
-    <h1 class="govuk-heading-l">Applications</h1>
+    <h1 class="govuk-heading-l">Recently discarded applications</h1>
 
-    <ul class="govuk-tabs__list">
-      <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="applications-unverified">
-          Unverified
-        </a>
-      </li>
-      <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab" href="applications-verified">
-          Verified
-        </a>
-      </li>
-      <li class="govuk-tabs__list-item">
-        <a class="govuk-tabs__tab govuk-tabs__tab--selected" href="applications-archived">
-          Recently archived
-        </a>
-      </li>
-    </ul>
+    <p>These stay on the system for XXX day   
+      s before they are automatically deleted.</p>
 
-    <div class="filters">
+    {# <div class="filters">
       <h3>Showing:</h3>
       <ul>
         <li><strong>All</strong></li>
-        <li><a href="#">30 days old</a></li>
-        <li><a href="#">Duplicate NINOs</a></li>
-        <li><a href="#">Duplicate names</a></li>
+        <li><a href="#">Today</a></li>
+        <li><a href="#">This week</a></li>
       </ul>
-    </div>{# /filters #}
+    </div> #}{# /filters #}
 
     <div class="table-scrollable-wrapper">
 
@@ -52,8 +36,8 @@
           <tr>
             <th class="govuk-table__header"><span>Name</span></th>
             <th class="govuk-table__header"><span>National Insurance number</span></th>
-            <th class="govuk-table__header"><span>Application submitted</span></th>
-            <th class="govuk-table__header"><span class="govuk-visually-hidden">Considerations</span></th>
+            <th class="govuk-table__header"><span>Date discarded</span></th>
+            <th class="govuk-table__header"><span>Person who discarded it</span></th>
           </tr>
         </thead>
         <tbody class="govuk-table__body">
@@ -64,15 +48,8 @@
               </a>
             </td>
             <td class="govuk-table__cell">QQ123456C</td>
-            <td class="govuk-table__cell">31 March, 9:05am</td>
-            <td class="govuk-table__cell">
-              <div class="govuk-warning-text" style="margin-bottom: 0; padding: 0">
-              <span class="govuk-warning-text__icon" aria-hidden="true" style="border: none; font-size: 20px; margin-top: -18px">!</span>
-                <strong class="govuk-warning-text__text" style="padding-left: 42px">
-                  <span class="govuk-warning-text__assistive">Warning</span>Special rules
-                </strong>
-              </div>
-            </td>
+            <td class="govuk-table__cell">31 March, 5:00pm</td>
+            <td class="govuk-table__cell">Dave Smith</td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
@@ -81,15 +58,8 @@
               </a>
             </td>
             <td class="govuk-table__cell">QQ654321Q</td>
-            <td class="govuk-table__cell">1 April, 8:14pm</td>
-            <td class="govuk-table__cell">
-              <div class="govuk-warning-text" style="margin-bottom: 0; padding: 0">
-              <span class="govuk-warning-text__icon" aria-hidden="true" style="border: none; font-size: 20px; margin-top: -18px">!</span>
-                <strong class="govuk-warning-text__text" style="padding-left: 42px">
-                  <span class="govuk-warning-text__assistive">Warning</span>Special rules
-                </strong>
-              </div>
-            </td>
+            <td class="govuk-table__cell">31 March, 4:30pm</td>
+            <td class="govuk-table__cell">Dave Smith</td>
           </tr>
           <tr class="govuk-table__row">
             <td class="govuk-table__cell">
@@ -98,7 +68,7 @@
               </a>
             </td>
             <td class="govuk-table__cell">QQ654321Q</td>
-            <td class="govuk-table__cell">13 March, 9:05am</td>
+            <td class="govuk-table__cell">30 March, 3:15pm</td>
             <td class="govuk-table__cell"></td>
           </tr>
           <tr class="govuk-table__row">
@@ -108,7 +78,7 @@
               </a>
             </td>
             <td class="govuk-table__cell">QQ222222Q</td>
-            <td class="govuk-table__cell">15 March at 4:09pm</td>
+            <td class="govuk-table__cell">29 March at 4:09pm</td>
             <td class="govuk-table__cell"></td>
           </tr>
           <tr class="govuk-table__row">
@@ -118,7 +88,7 @@
               </a>
             </td>
             <td class="govuk-table__cell">QQ333333Q</td>
-            <td class="govuk-table__cell">15 March, 9:05am</td>
+            <td class="govuk-table__cell">29 March, 9:05am</td>
             <td class="govuk-table__cell"></td>
           </tr>
           <tr class="govuk-table__row">
@@ -128,7 +98,7 @@
               </a>
             </td>
             <td class="govuk-table__cell">QQ444444Q</td>
-            <td class="govuk-table__cell">16 March, 9:05am</td>
+            <td class="govuk-table__cell">29 March, 9:05am</td>
             <td class="govuk-table__cell"></td>
           </tr>
           <tr class="govuk-table__row">
@@ -138,7 +108,7 @@
               </a>
             </td>
             <td class="govuk-table__cell">QQ987654Q</td>
-            <td class="govuk-table__cell">16 March, 9:05am</td>
+            <td class="govuk-table__cell">29 March, 9:05am</td>
             <td class="govuk-table__cell"></td>
           </tr>
           <tr class="govuk-table__row">
@@ -148,7 +118,7 @@
               </a>
             </td>
             <td class="govuk-table__cell">QQ765365Q</td>
-            <td class="govuk-table__cell">17 March, 9:05am</td>
+            <td class="govuk-table__cell">29 March, 9:05am</td>
             <td class="govuk-table__cell"></td>
           </tr>
           <tr class="govuk-table__row">
@@ -158,7 +128,7 @@
               </a>
             </td>
             <td class="govuk-table__cell">QQ765365Q</td>
-            <td class="govuk-table__cell">17 March, 10:41am</td>
+            <td class="govuk-table__cell">29 March, 10:41am</td>
             <td class="govuk-table__cell"></td>
           </tr>
           <tr class="govuk-table__row">
@@ -168,7 +138,7 @@
               </a>
             </td>
             <td class="govuk-table__cell">QQ111111Q</td>
-            <td class="govuk-table__cell">17 March, 9:05am</td>
+            <td class="govuk-table__cell">29 March, 9:05am</td>
             <td class="govuk-table__cell"></td>
           </tr>
         </tbody>

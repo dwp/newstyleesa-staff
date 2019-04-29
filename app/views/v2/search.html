@@ -16,18 +16,27 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l">Find a claim</h1>
+    <h1 class="govuk-heading-l">Staff user interface</h1>
+
+    <h2 class="govuk-heading-m">Find a claim</h2>
+
     <form action="/v2/search-entry" method="post">
       <div class="govuk-form-group">
         <label class="govuk-label" for="search">
-          Enter the claimant’s National Insurance number
+          Enter the claimant’s name or National Insurance number
         </label>
         <input class="govuk-input govuk-input--width-20" id="search" name="search" type="text" autocomplete="off" value="{% if getData.nino %}{{getData.nino}}{% endif %}">
       </div>
       <a class="govuk-button" href="applicant?nino=QQ123456C&status=unverified">Find claim</a>
     </form>
 
-    <p><a href="/v2/applications-duplicate-ninos">Manage duplicate and old applications</a></p>
+
+    <h2 class="govuk-heading-m">Manage applications</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="/v2/applications-duplicate-ninos">Manage duplicate and old applications</a></li>
+      <li><a href="/v2/applications-discarded">View recently discarded applications</a></li>
+    </ul>
 
   </div>{# /govuk-grid-column-two-thirds #}
 </div>{# /govuk-grid-row #}
