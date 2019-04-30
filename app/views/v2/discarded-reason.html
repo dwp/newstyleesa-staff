@@ -1,0 +1,89 @@
+{% extends "layout_staff.html" %}
+
+{% block pageTitle %}
+  Update status - Fred Flintstone - Apply for new style Employment and Support Allowance
+{% endblock %}
+
+{% set bodyClasses = "hero-header" %}
+
+{% block content %}
+
+{% include "v2/_header.html" %}
+
+<div style="margin-bottom: 30px;">
+  <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
+</div>
+
+<div class="govuk-grid-row container">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="status-changing" method="post">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              What’s the reason you’re discarding this application?
+            </h1>
+          </legend>
+
+          <input id="nino" name="nino" type="hidden" value="{{getData.nino}}">
+
+            <div class="govuk-radios">
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="duplicate" name="reason" type="radio" value="duplicate" aria-describedby="hint-duplicate">
+                <label class="govuk-label govuk-radios__label govuk-label--s" for="duplicate">
+                  Duplicate application
+                </label>
+                <span id="hint-duplicate" class="govuk-hint govuk-radios__hint">The claimant has filled in multiple application forms and it has been confirmed that this one can be discarded.</span>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="withdrawn" name="reason" type="radio" value="withdrawn" aria-describedby="hint-withdrawn">
+                <label class="govuk-label govuk-radios__label govuk-label--s" for="withdrawn">
+                  The claimant has withdrawn their application
+                </label>
+                <span id="hint-duplicate" class="govuk-hint govuk-radios__hint">The claimant has confirmed that they wish to cancel this application. This may be because they have found work or their circumstances have changed.</span>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="died" name="reason" type="radio" value="died" aria-describedby="hint-died">
+                <label class="govuk-label govuk-radios__label govuk-label--s" for="died">
+                  The claimant has died
+                </label>
+                <span id="hint-died" class="govuk-hint govuk-radios__hint">We have received confirmation that the claimant has died.</span>
+              </div>
+
+            </div>{# /govuk-radios #}
+          </fieldset>
+
+      </div>{# /govuk-form-group #}
+
+      {% from "textarea/macro.njk" import govukTextarea %}
+
+      {{ govukTextarea({
+        name: "comments",
+        id: "comments",
+        label: {
+          text: "Comments"
+        },
+        hint: {
+          text: "Supply a summary of anything you think is useful."
+        }
+      }) }}
+
+      <a href="status-confirmation?nino={{getData.nino}}&amp;status=discarded" class="govuk-button">
+        Continue
+      </a>
+
+    </form>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

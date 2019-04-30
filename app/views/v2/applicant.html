@@ -18,6 +18,18 @@
 
   <div class="govuk-grid-column-two-thirds">
 
+    {% if getData.status === "discarded" %}
+      <div class="blue-border">
+        <h2 class="govuk-heading-m">Discarded by Dave Smith, 31 March, 5:00pm</h2>
+        <h3 class="govuk-heading-s" style="margin-bottom: 0">Reason</h3> 
+        <p>Duplicate application</p>
+        <h3 class="govuk-heading-s" style="margin-bottom: 0">Notes</h3> 
+        <p>Fred had submitted 2 application forms. I called him up on 31 March at 4:30 and he told me to use the second one.</p>
+        <a href="applicant?nino={{getData.nino}}&amp;status=unverified" class="govuk-button secondary" style="margin-bottom: 0;">Remove ‘discarded’ status</a>
+      </div>
+      <br>
+    {% endif %}
+
     {% if getData.sr %}
     {{ govukWarningText({
       text: "Special rules apply for this claimant",
@@ -64,7 +76,7 @@
 
   </div>{# /govuk-grid-column-two-thirds #}
 
-  {% if getData.status === "verified" %}
+  {% if getData.status === "verified" or getData.status === "discarded" %}
   {% else %}
     <div class="govuk-grid-column-one-third">
       <aside class="app-related-items status-verified" role="complementary">

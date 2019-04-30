@@ -145,7 +145,7 @@ router.post('/v2/status-changing', function (req, res) {
   let nino = req.session.data['nino']
 
   if (status === 'discarded') {
-    res.redirect(`status-confirmation?nino=${nino}&status=discarded`)
+    res.redirect(`discarded-reason?nino=${nino}&status=unverified`)
   } else if (status === 'nocontact') {
     res.redirect(`status-confirmation?nino=${nino}&status=nocontact`)
   } else if (status === 'verified') {

@@ -45,13 +45,24 @@
                 </label>
                 <span id="hint-nocontact" class="govuk-hint govuk-radios__hint">We’ve not had any response from the claimant for 30 days. This will close their claim and they will need to complete another application&nbsp;form.</span>
               </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="discarded" name="status" type="radio" value="discarded" aria-describedby="hint-discarded">
-                <label class="govuk-label govuk-radios__label govuk-label--s" for="discarded">
-                  Discarded
-                </label>
-                <span id="hint-discarded" class="govuk-hint govuk-radios__hint">This application can be removed. This normally applies to duplicate applications. The claimant will not be notified that their application has been discarded.</span>
-              </div>
+
+              {% if getData.status === "discarded" %}
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="unverified" name="status" type="radio" value="unverified" aria-describedby="hint-discarded">
+                  <label class="govuk-label govuk-radios__label govuk-label--s" for="unverified">
+                    Unverified
+                  </label>
+                  <span id="hint-discarded" class="govuk-hint govuk-radios__hint">The claim was marked as ‘discarded’ in error.</span>
+                </div>
+              {% else %}
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="discarded" name="status" type="radio" value="discarded" aria-describedby="hint-discarded">
+                  <label class="govuk-label govuk-radios__label govuk-label--s" for="discarded">
+                    Discarded
+                  </label>
+                  <span id="hint-discarded" class="govuk-hint govuk-radios__hint">This application can be removed. This normally applies to duplicate applications. The claimant will not be notified that their application has been discarded.</span>
+                </div>
+              {% endif %}
               
             </div>{# /govuk-radios #}
 
