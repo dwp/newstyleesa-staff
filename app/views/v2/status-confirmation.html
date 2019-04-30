@@ -19,14 +19,14 @@
         <h1 class="govuk-panel__title">Claim verified</h1>
         <div class="govuk-panel__body">Their claim is now ready for processing.</div>
       </div>
-    {% elif getData.status === "nocontact" %}
+{#     {% elif getData.status === "nocontact" %}
       <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
         <h1 class="govuk-panel__title">No contact from claimant</h1>
         <div class="govuk-panel__body">You now need to send a letter to tell them they need to complete another application form.</div>
-      </div>
-    {% elif getData.status === "discarded" %}
+      </div> #}
+    {% elif getData.status === "cancelled" %}
       <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
-        <h1 class="govuk-panel__title">Application form discarded</h1>
+        <h1 class="govuk-panel__title">Application cancelled</h1>
         <div class="govuk-panel__body">It will automatically be removed from this database after XX days.</div>
       </div>
     {% endif %}

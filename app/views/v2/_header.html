@@ -34,10 +34,8 @@
       <dd class="dwp-key-details-bar__status">
         {% if getData.status === "verified" %}
           Verified
-        {% elif getData.status === "nocontact" %}
-          No contact from claimant
-        {% elif getData.status === "discarded" %}
-          Discarded
+        {% elif getData.status === "cancelled" %}
+          Cancelled
         {% else %}
           Unverified
         {% endif %}

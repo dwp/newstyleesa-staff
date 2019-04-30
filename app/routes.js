@@ -144,16 +144,33 @@ router.post('/v2/status-changing', function (req, res) {
 
   let nino = req.session.data['nino']
 
-  if (status === 'discarded') {
-    res.redirect(`discarded-reason?nino=${nino}&status=unverified`)
-  } else if (status === 'nocontact') {
-    res.redirect(`status-confirmation?nino=${nino}&status=nocontact`)
+  if (status === 'cancelled') {
+    res.redirect(`cancelled-reason?nino=${nino}&status=unverified`)
   } else if (status === 'verified') {
     res.redirect(`pdf?nino=${nino}&status=verified`)
   } else {
     res.redirect('error')
   }
 })
+
+router.post('/v2/cancelled-logic', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let reason = req.session.data['reason']
+
+  let nino = req.session.data['nino']
+
+  if (reason === 'nocontact') {
+    res.redirect(`letter?nino=${nino}&status=unverified`)
+  } else {
+    res.redirect(`status-confirmation?nino=${nino}&status=cancelled`)
+  }
+})
+
+
+
 
 router.post('/iteration-1/status-changing', function (req, res) {
   // Get the answer from session data

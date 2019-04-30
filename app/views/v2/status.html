@@ -25,7 +25,7 @@
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              Update the status of this claim
+              Update the status of this application
             </h1>
           </legend>
           <input id="nino" name="nino" type="hidden" value="{{getData.nino}}">
@@ -36,33 +36,17 @@
                 <label class="govuk-label govuk-radios__label govuk-label--s" for="verified">
                   Verified
                 </label>
-                <span id="hint-verified" class="govuk-hint govuk-radios__hint">The claimant has proved their identity and signed their claimant commitment.</span>
+                <span id="hint-verified" class="govuk-hint govuk-radios__hint">The applicant has proved their identity and signed their claimant commitment.</span>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="nocontact" name="status" type="radio" value="nocontact" aria-describedby="hint-nocontact">
-                <label class="govuk-label govuk-radios__label govuk-label--s" for="nocontact">
-                  No contact from claimant
+                <input class="govuk-radios__input" id="cancelled" name="status" type="radio" value="cancelled" aria-describedby="hint-cancelled">
+                <label class="govuk-label govuk-radios__label govuk-label--s" for="cancelled">
+                  Cancelled
                 </label>
-                <span id="hint-nocontact" class="govuk-hint govuk-radios__hint">We’ve not had any response from the claimant for 30 days. This will close their claim and they will need to complete another application&nbsp;form.</span>
+                <span id="hint-cancelled" class="govuk-hint govuk-radios__hint">The application is not needed anymore or we’ve not had any contact with them for 30 days.</span>
               </div>
 
-              {% if getData.status === "discarded" %}
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="unverified" name="status" type="radio" value="unverified" aria-describedby="hint-discarded">
-                  <label class="govuk-label govuk-radios__label govuk-label--s" for="unverified">
-                    Unverified
-                  </label>
-                  <span id="hint-discarded" class="govuk-hint govuk-radios__hint">The claim was marked as ‘discarded’ in error.</span>
-                </div>
-              {% else %}
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="discarded" name="status" type="radio" value="discarded" aria-describedby="hint-discarded">
-                  <label class="govuk-label govuk-radios__label govuk-label--s" for="discarded">
-                    Discarded
-                  </label>
-                  <span id="hint-discarded" class="govuk-hint govuk-radios__hint">This application can be removed. This normally applies to duplicate applications. The claimant will not be notified that their application has been discarded.</span>
-                </div>
-              {% endif %}
+           
               
             </div>{# /govuk-radios #}
 
