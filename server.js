@@ -216,7 +216,7 @@ if (useAutoStoreData === 'true') {
   }
 }
 
-// Middleware making the origin property accessible to every template
+// Middleware making the origin property accessible to every template (working with Steven)
 
 app.use((req, res, next) => {
   res.locals.origin = req.session.origin;
