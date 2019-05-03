@@ -1,9 +1,24 @@
 * {
- font-family: "nta", Arial, sans-serif
+ font-family: "nta", Arial, sans-serif;
 }
 
 .govuk-summary-list__key {
   width: 50%;
+}
+
+// /////////////////////////////////
+// Search button
+// /////////////////////////////////
+
+.govuk-button.search {
+  background-image: url("/public/images/search.svg");
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 44px;
+  text-indent: -9999em;
+  position: relative;
+  left: -47px;
+  height: 38px;
 }
 
 
