@@ -10,8 +10,16 @@
 
 {% include "v2/_header.html" %}
 
+
+
 <div style="margin-bottom: 30px;">
-  <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+  {% if origin === "cancelled" %}
+      <a href="/v2/applications-cancelled" class="govuk-back-link">Back</a>
+    {% elif origin === "duplicates" %}
+      <a href="/v2/applications-duplicate-ninos" class="govuk-back-link">Back</a>
+    {% else %}
+      <a href="/v2/" class="govuk-back-link">Back</a>
+    {% endif %}
 </div>
 
 <div class="govuk-grid-row container">

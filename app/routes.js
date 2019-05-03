@@ -19,6 +19,37 @@ router.use(function(req, res, next){
 // Branching on the status updates screen
 
 
+
+// Session stuff for dynamic 'back links'
+
+// Code from Steven for dealing with variables on list page
+
+router.get('/v2/applications-duplicate-ninos', (req, res, next) => {
+  if (req.query.origin) {
+    req.session.origin = req.query.origin
+  };
+  res.render('v2/applications-duplicate-ninos.html', {origin: req.session.origin});
+});
+
+router.get('/v2/applications-cancelled', (req, res, next) => {
+  if (req.query.origin) {
+    req.session.origin = req.query.origin
+  };
+  res.render('v2/applications-cancelled.html', {origin: req.session.origin});
+});
+
+router.get('/v2/applicant', (req, res, next) => {
+  if (req.query.origin) {
+    req.session.origin = req.query.origin
+  };
+  res.render('v2/applicant.html', {origin: req.session.origin});
+});
+
+// End session stuff for dynamic 'back links'
+
+
+
+
 // V1 ROUTING
 
 router.post('/v1/search-entry', function (req, res) {

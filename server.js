@@ -216,6 +216,15 @@ if (useAutoStoreData === 'true') {
   }
 }
 
+// Middleware making the origin property accessible to every template
+
+app.use((req, res, next) => {
+  res.locals.origin = req.session.origin;
+  next();
+})
+
+// End middleware making the origin property accessible to every template
+
 // Clear all data in session if you open /prototype-admin/clear-data
 app.post('/prototype-admin/clear-data', function (req, res) {
   req.session.data = {}

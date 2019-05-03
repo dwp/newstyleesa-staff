@@ -31,7 +31,15 @@
       </div>
     {% endif %}
 
-    <a href="/v2/" role="button" draggable="false" class="govuk-button">Find another claim</a>
+    {% if origin === "duplicates" %}
+      <a href="/v2/applications-duplicate-ninos" role="button" draggable="false" class="govuk-button">Back to duplicate and old applications</a>
+    {% else %}
+      <a href="/v2/" role="button" draggable="false" class="govuk-button">Find another claim</a>
+    {% endif %}
+
+    
+
+    
 
   </div>{# /govuk-grid-column-full #}
 

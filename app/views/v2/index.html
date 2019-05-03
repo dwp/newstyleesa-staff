@@ -25,15 +25,15 @@
           Enter the applicant’s name or National Insurance number
         </label>
         <input class="govuk-input govuk-input--width-20" id="search" name="search" type="text" autocomplete="off" value="{% if getData.nino %}{{getData.nino}}{% endif %}">
-        <a class="govuk-button search" href="/v2/applicant?nino=QQ123456C&status=unverified">Find application</a>
+        <a class="govuk-button search" href="/v2/applicant?origin=find&nino=QQ123456C&status=unverified">Find application</a>
       </div>
     </form>
 
     <h2 class="govuk-heading-m">Manage applications</h2>
 
     <ul class="govuk-list govuk-list--bullet">
-      <li><a href="/v2/applications-duplicate-ninos">Check if you need to cancel any applications</a></li>
-      <li><a href="/v2/applications-cancelled">View recently cancelled applications</a></li>
+      <li><a href="/v2/applications-duplicate-ninos?origin=duplicates">Check if you need to cancel any applications</a></li>
+      <li><a href="/v2/applications-cancelled?origin=cancelled">View recently cancelled applications</a></li>
     </ul>
 
   </div>{# /govuk-grid-column-two-thirds #}
