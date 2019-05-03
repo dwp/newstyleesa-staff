@@ -178,7 +178,7 @@ router.post('/v2/status-changing', function (req, res) {
   if (status === 'cancelled') {
     res.redirect(`cancelled-reason?nino=${nino}&status=unverified`)
   } else if (status === 'verified') {
-    res.redirect(`pdf?nino=${nino}&status=verified`)
+    res.redirect(`pdf?nino=${nino}&status=unverified`)
   } else {
     res.redirect('error')
   }
