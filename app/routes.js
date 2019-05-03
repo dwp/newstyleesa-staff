@@ -45,9 +45,9 @@ router.get('/v2/applicant', (req, res, next) => {
   res.render('v2/applicant.html', {origin: req.session.origin});
 });
 
+// This code works with the code in server.js - Middleware making the origin property accessible to every template (working with Steven)
+
 // End session stuff for dynamic 'back links'
-
-
 
 
 // V1 ROUTING
