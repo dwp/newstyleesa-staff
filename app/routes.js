@@ -111,7 +111,7 @@ router.post('/v1/status-changing', function (req, res) {
   if (status === 'failed-to-attend') {
     res.redirect(`status-confirmation?nino=${nino}&status=failedtoattend`)
   } else if (status === 'verified') {
-    res.redirect(`status-confirmation?nino=${nino}&status=verified`)
+    res.redirect(`pdf?nino=${nino}&status=unverified`)
   } else {
     res.redirect('error')
   }
