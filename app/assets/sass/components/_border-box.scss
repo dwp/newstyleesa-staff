@@ -1,0 +1,32 @@
+.blue-border {
+  border: 5px solid govuk-colour("blue");
+  padding: 15px;
+  margin-bottom: 20px;
+  @include govuk-media-query($from: tablet) {
+    padding: 20px;
+  }
+  h2 {
+    margin-top: 0;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.orange-border {
+  border: 5px solid govuk-colour("orange");
+  padding: 15px;
+  margin-bottom: 20px;
+  @include govuk-media-query($from: tablet) {
+    padding: 20px;
+  }
+  h2 {
+    margin-top: 0;
+  }
+  p:last-child {
+    margin-bottom: 0;
+  }
+  .govuk-warning-text {
+    margin-bottom: 0;
+  }
+}

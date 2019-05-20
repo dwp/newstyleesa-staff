@@ -1,0 +1,53 @@
+{% extends "layout_staff.html" %}
+
+{% block pageTitle %}
+  Claim summary - Fred Flintstone - Apply for ‘new style’ Employment and Support Allowance
+{% endblock %}
+
+{% set bodyClasses = "hero-header" %}
+
+{% block content %}
+
+{% include "iteration-2/_header.html" %}
+
+<div style="margin-bottom: 30px;">
+  <a href="#" rel="prev" class="govuk-back-link">Back to search</a>
+</div>
+
+<div class="govuk-grid-row container">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="orange-border">
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-warning-text__assistive">Warning</span>
+          Special rules
+        </strong>
+      </div>
+    </div>
+
+    {% include "iteration-2/_applicant-QQ123456C.html" %}
+
+    <div style="margin: -30px 0 50px 0;">
+      <p><a href="/public/pdf/Fred-Flintstone application-form.pdf" target="_blank">Fred Flintstone application form (opens a new tab)</a></p>
+    </div>
+
+    
+
+  </div>{# /govuk-grid-column-two-thirds #}
+
+  {% if getData.status === "verified" %}
+  {% else %}
+    <div class="govuk-grid-column-one-third">
+      <aside class="app-related-items status-verified" role="complementary">
+        <h3 class="govuk-heading-m" id="claim-actions-title">Claim actions</h3>
+        <a href="#" class="govuk-button">Update claim status</a>
+      </aside>
+    </div>{# /govuk-grid-column-one-third #}
+  {% endif %}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
