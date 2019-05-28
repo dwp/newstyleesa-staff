@@ -19,10 +19,15 @@
   <div class="govuk-grid-column-two-thirds">
 
     {% if getData.sr %}
-    {{ govukWarningText({
-      text: "Special rules apply for this claimant",
-      iconFallbackText: "Warning"
-    }) }}
+    <div class="orange-border">
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-warning-text__assistive">Warning</span>
+          Special rules
+        </strong>
+      </div>
+    </div>
     {% endif %}
 
     {% if getData.nino === "QQ111111Z" %}
