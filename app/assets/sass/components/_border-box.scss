@@ -15,10 +15,10 @@
 
 .orange-border {
   border: 5px solid govuk-colour("orange");
-  padding: 15px;
+  padding: 10px 15px;
   margin-bottom: 20px;
   @include govuk-media-query($from: tablet) {
-    padding: 20px;
+    padding: 10px 20px;
   }
   h2 {
     margin-top: 0;
