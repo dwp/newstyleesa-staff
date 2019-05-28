@@ -1,0 +1,63 @@
+{% extends "layout_staff.html" %}
+
+{% block pageTitle %}
+  Apply for new style Employment and Support Allowance
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-!-margin-bottom-6"></div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Version 3 – BA visit on 16&nbsp;May to Burnley</h1>
+
+    <h2 class="govuk-heading-l">Prototype changes since last time</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Removed ‘fail to attend’ status</li>
+      <li>Made the upload their claim to DRS clearer and added a checkbox</li>
+      <li>Changed the definition of ‘verified’ – this is now based on proving identity, rather than supplying all evidence needed</li>
+      <li>Added the time next the date the application was submitted</li>
+    </ul>
+
+    <h2 class="govuk-heading-l">Screens discussed</h2>
+
+    <h3 class="govuk-heading-m">Search</h3>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="search?nino=QQ123456C">Search</a></li>
+      <li><a href="search-not-found?nino=QQ123456C">Search no results found</a></li>
+      <li><a href="search-validation">Search validation message</a></li>
+      <li><a href="search-multiple-results">Multiple results found</a></li>
+    </ul>
+
+    <h3 class="govuk-heading-m">Claims</h3>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="applicant?nino=QQ123456C&status=unverified">Claimant summary (unverified)</a></li>
+      <li><a href="applicant?nino=QQ123456C&status=unverified&sr=true">Claimant summary with ‘special rules’ (unverified)</a></li>
+      <li><a href="applicant?nino=QQ123456C&status=verified">Claimant summary (verified)</a></li>
+      <li><a href="status?nino=QQ123456C&status=unverified">Change status</a></li>
+      <li><a href="status-validation?nino=QQ123456C&status=unverified">Change status validation</a></li>
+      <li><a href="pdf?nino=QQ123456C&status=unverified">Before you can verify</a></li>
+      <li><a href="pdf-validation?nino=QQ123456C&status=unverified">Before you can verify validation</a></li>
+      <li><a href="status-confirmation?status=verified&nino=QQ123456C">Confirmation (claim verified)</a></li>
+    </ul>
+
+    <h2 class="govuk-heading-l">What we learned</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Staff were concerned that the ‘Special rules’ label might get missed and suggested it should be made more prominent</li>
+      <li>Processors in Burnley won’t be uploading the PDF at the verification stage</li>
+    </ul>
+
+
+    
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

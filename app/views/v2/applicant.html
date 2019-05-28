@@ -1,7 +1,7 @@
 {% extends "layout_staff.html" %}
 
 {% block pageTitle %}
-  Claim summary - Fred Flintstone - Apply for ‘new style’ Employment and Support Allowance
+  Fred Flintstone - Apply for new style Employment and Support Allowance
 {% endblock %}
 
 {% set bodyClasses = "hero-header" %}
@@ -11,30 +11,12 @@
 {% include "v2/_header.html" %}
 
 <div style="margin-bottom: 30px;">
-  {% if origin === "cancelled" %}
-      <a href="/v2/applications-cancelled" class="govuk-back-link">Back</a>
-    {% elif origin === "duplicates" %}
-      <a href="/v2/applications-duplicate-ninos" class="govuk-back-link">Back</a>
-    {% else %}
-      <a href="/v2/" class="govuk-back-link">Back</a>
-    {% endif %}
+  <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back to search</a>
 </div>
 
 <div class="govuk-grid-row container">
 
   <div class="govuk-grid-column-two-thirds">
-
-    {% if getData.status === "cancelled" %}
-      <div class="blue-border">
-        <h2 class="govuk-heading-m">Cancelled by Dave Smith, 31 March, 5:00pm</h2>
-        <h3 class="govuk-heading-s" style="margin-bottom: 0">Reason</h3> 
-        <p>Duplicate application</p>
-        <h3 class="govuk-heading-s" style="margin-bottom: 0">Notes</h3> 
-        <p>Fred had submitted 2 application forms. I called him up on 31 March at 4:30 and he told me to use the second one.</p>
-{#         <a href="applicant?nino={{getData.nino}}&amp;status=unverified" class="govuk-button secondary" style="margin-bottom: 0;">Remove ‘cancelled’ status</a> #}
-      </div>
-      <br>
-    {% endif %}
 
     {% if getData.sr %}
     {{ govukWarningText({
@@ -43,51 +25,39 @@
     }) }}
     {% endif %}
 
-    <div class="govuk-tabs" data-module="tabs">
-
-      <h2 class="govuk-tabs__title">Contents</h2>
-      <ul class="govuk-tabs__list">
-        <li class="govuk-tabs__list-item">
-          <a class="govuk-tabs__tab govuk-tabs__tab--selected" href="#summary">
-            Summary
-          </a>
-        </li>
-        <li class="govuk-tabs__list-item">
-          <a class="govuk-tabs__tab" href="#full">
-            Full application
-          </a>
-        </li>
-      </ul>
-
-      <section class="govuk-tabs__panel" id="summary" style="border: none; padding-left: 0; padding-right: 0;">
-        {% include "v2/_applicant-QQ123456C.html" %}
-      </section>
-
-      <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="full" style="border: none; padding-left: 0; padding-right: 0;">
-        {% include "v2/answers/_answers-dates.html" %}
-        {% include "v2/answers/_answers-personal-details.html" %}
-        {% include "v2/answers/_answers-paid-work.html" %}
-        {% include "v2/answers/_answers-voluntary-work.html" %}
-        {% include "v2/answers/_answers-pensions-health-insurance.html" %}
-        {% include "v2/answers/_answers-statutory-pay.html" %}
-        {% include "v2/answers/_answers-health-conditions.html" %}
-        {% include "v2/answers/_answers-consent-to-request.html" %}
-        {% include "v2/answers/_answers-payment-method.html" %}
-      </section>
-      
-    </div>{# /govuk-tabs #}
-
-    <br>
-    <br>
-
+    {% if getData.nino === "QQ111111Z" %}
+      {% include "v2/_applicant-QQ111111Z.html" %}
+    {% elif getData.nino === "QQ001122A" %}
+      {% include "v2/_applicant-QQ001122A.html" %}
+    {% elif getData.nino === "QQ111122B" %}
+      {% include "v2/_applicant-QQ111122B.html" %}
+    {% elif getData.nino === "QQ112233A" %}
+      {% include "v2/_applicant-QQ112233A.html" %}
+    {% elif getData.nino === "QQ123456C" %}
+      {% include "v2/_applicant-QQ123456C.html" %}
+    {% elif getData.nino === "QQ222233V" %}
+      {% include "v2/_applicant-QQ222233V.html" %}
+    {% elif getData.nino === "QQ112233M" %}
+      {% include "v2/_applicant-QQ112233M.html" %}
+    {% elif getData.nino === "QQ112233Z" %}
+      {% include "v2/_applicant-QQ112233Z.html" %}
+    {% elif getData.nino === "MM001122A" %}
+      {% include "v2/_applicant-MM001122A.html" %}
+    {% elif getData.nino === "MM001122A2" %}
+      {% include "v2/_applicant-MM001122A2.html" %}
+    {% elif getData.nino === "QQ111122G" %}
+      {% include "v2/_applicant-QQ111122G.html" %}
+    {% else %}
+      Error
+    {% endif %}
   </div>{# /govuk-grid-column-two-thirds #}
 
-  {% if getData.status === "verified" or getData.status === "cancelled" %}
+  {% if getData.status === "verified" %}
   {% else %}
     <div class="govuk-grid-column-one-third">
       <aside class="app-related-items status-verified" role="complementary">
-        <h3 class="govuk-heading-m" id="claim-actions-title">Application actions</h3>
-        <a href="status?nino={{getData.nino}}&amp;status={{getData.status}}" class="govuk-button">Update application status</a>
+        <h3 class="govuk-heading-m" id="claim-actions-title">Claim actions</h3>
+        <a href="status?nino={{getData.nino}}&amp;status={{getData.status}}" class="govuk-button">Update claim status</a>
       </aside>
     </div>{# /govuk-grid-column-one-third #}
   {% endif %}

@@ -1,13 +1,11 @@
-
 {% extends "layout_staff.html" %}
 
 {% block pageTitle %}
-  Verify new claims - Apply for ‘new style’ Employment and Support Allowance
+  Apply for new style Employment and Support Allowance
 {% endblock %}
 
 {% block beforeContent %}
-<div style="margin-bottom: 30px;">
-</div>
+  <div class="govuk-!-margin-bottom-6"></div>
 {% endblock %}
 
 {% block content %}
@@ -15,27 +13,52 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l">Verify new claims</h1>
+    <h1 class="govuk-heading-xl">Version 2 – tested on 9&nbsp;April in Belfast</h1>
 
-    <h2 class="govuk-heading-m">Find an application</h2>
-
-    <form action="/v2/applicant?nino=QQ123456C&status=unverified" method="post">
-      <div class="govuk-form-group" style="margin-bottom: 10px">
-        <label class="govuk-label" for="search">
-          Enter the applicant’s name or National Insurance number
-        </label>
-        <input class="govuk-input govuk-input--width-20" id="search" name="search" type="text" autocomplete="off" value="{% if getData.nino %}{{getData.nino}}{% endif %}">
-        <a class="govuk-button search" href="/v2/applicant?origin=find&nino=QQ123456C&status=unverified">Find application</a>
-      </div>
-    </form>
-
-    <h2 class="govuk-heading-m">Manage applications</h2>
+    <h2 class="govuk-heading-l">Prototype changes since last time</h2>
 
     <ul class="govuk-list govuk-list--bullet">
-      <li><a href="/v2/applications-duplicate-ninos?origin=duplicates">Check if you need to cancel any applications</a></li>
-      <li><a href="/v2/applications-cancelled?origin=cancelled">View recently cancelled applications</a></li>
+      <li>Reduced number of statuses – just ‘verified’ and ‘failed to attend’</li>
+      <li>UI refresh – learned from the Job Seeker’s Allowance team and followed some of their conventions for styling</li>
     </ul>
 
+    <h2 class="govuk-heading-l">Screens tested</h2>
+
+    <h3 class="govuk-heading-m">Inbox checkers</h3>
+
+    <ol class="govuk-list govuk-list--number">
+      <li><a href="v2/search?nino=QQ123456C">Attended interview, all documentation is present</a></li>
+      <li><a href="v2/search?nino=QQ111111Z">Another attended interview, all documentation is present</a></li>
+      <li><a href="v2/search?nino=QQ001122A">Attended interview, some documentation missing</a></li>
+      <li><a href="v2/search?nino=QQ123456Z">No matches for the National Insurance number</a></li>
+      <li><a href="v2/search?nino=QQ111122B">Failed to attend</a></li>
+      <li><a href="v2/search?nino=QQ010101A">National Insurance number returns multiple applications</a></li>
+      <li><a href="v2/search?nino=QQ112233A">Special rules case</a></li>
+      <li><a href="v2/search?nino=QQ112233M">Previously marked as failed to attend</a></li>
+      <li><a href="v2/search?nino=QQ112233Z">Unable to verify</a></li>
+      <li><a href="v2/search?nino=QQ111122G">Failed to attend for the second time</a></li>
+      <li><a href="v2/search?nino=QQ121212A">No matches for the National Insurance number (claimant never filled out application form</a></li>
+    </ol>
+
+    <h3 class="govuk-heading-m">Registration team</h3>
+
+    <ol class="govuk-list govuk-list--number">
+      <li><a href="v2/search?nino=QQ222233V">Verified example</a></li>
+    </ol>
+
+    <h3 class="govuk-heading-m">Processors</h3>
+
+    <ol class="govuk-list govuk-list--number">
+      <li><a href="pdf-application">PDF application</a></li>
+    </ol>
+
+    <h2 class="govuk-heading-l">What we learned</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Something here</li>
+      <li>Something else here</li>
+    </ul>
+    
   </div>{# /govuk-grid-column-two-thirds #}
 </div>{# /govuk-grid-row #}
 

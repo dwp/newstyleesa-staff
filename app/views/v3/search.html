@@ -2,7 +2,7 @@
 {% extends "layout_staff.html" %}
 
 {% block pageTitle %}
-  Find an applicant - Apply for new style Employment and Support Allowance
+  Find a claim - Apply for ‘new style’ Employment and Support Allowance
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,15 +13,10 @@
 
 <div class="govuk-grid-row">
 
-  <div class="govuk-grid-column-one-half">
-
-    
-
-
-
+  <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">Find a claim</h1>
-    <form action="/v1/search-entry" method="post">
+    <form action="/v2/search-entry" method="post">
       <div class="govuk-form-group">
         <label class="govuk-label" for="search">
           Enter the claimant’s National Insurance number
@@ -29,12 +24,10 @@
         <input class="govuk-input govuk-input--width-20" id="search" name="search" type="text" autocomplete="off" value="{% if getData.nino %}{{getData.nino}}{% endif %}">
       </div>
 
-      <button type="submit" class="govuk-button">
-        Find claim
-      </button>
+      <a class="govuk-button" href="applicant?nino=QQ123456C&status=unverified">Find claim</a>
 
     </form>
-  </div>{# /govuk-grid-column-one-half #}
+  </div>{# /govuk-grid-column-two-thirds #}
 
 </div>{# /govuk-grid-row #}
 

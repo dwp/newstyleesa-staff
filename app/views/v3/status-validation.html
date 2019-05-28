@@ -1,0 +1,63 @@
+{% extends "layout_staff.html" %}
+
+{% block pageTitle %}
+  Error - Update claim status - Fred Flintstone - Apply for ‘new style’ Employment and Support Allowance
+{% endblock %}
+
+{% set bodyClasses = "hero-header" %}
+
+{% block content %}
+
+{% include "v2/_header.html" %}
+
+<div style="margin-bottom: 30px;">
+  <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
+</div>
+
+<div class="govuk-grid-row container">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+      <h2 class="govuk-error-summary__title" id="error-summary-title">
+        There is a problem
+      </h2>
+      <div class="govuk-error-summary__body">
+        <ul class="govuk-list govuk-error-summary__list">
+          <li>
+            <a href="#verified">Confirm that their claim can be verified</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <form action="status-changing" method="post">
+      <div class="govuk-form-group govuk-form-group--error">
+        <fieldset class="govuk-fieldset" aria-describedby="nationality-hint status-error">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Update the status of this claim
+            </h1>
+          </legend>
+          <span id="status-error" class="govuk-error-message">
+            <span class="govuk-visually-hidden">Error:</span> Confirm that their claim can be verified
+          </span>
+          <div class="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="verified" name="status" type="radio" value="verified" aria-describedby="hint-verified">
+              <label class="govuk-label govuk-checkboxes__label govuk-label--s" for="verified">
+                Verified
+              </label>
+              <span id="hint-verified" class="govuk-hint govuk-radios__hint">The claimant has proved their identity and signed their claimant&nbsp;commitment.</span>
+            </div>
+          </div>{# /govuk-checkboxes #}
+        </fieldset>
+      </div>
+      <button type="submit" class="govuk-button">Continue</button>
+    </form>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
