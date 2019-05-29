@@ -86,7 +86,7 @@ router.post('/v2/search-entry', function (req, res) {
   } else if (search === 'QQ 11 22 33 M' || search ==='QQ112233M') {
     res.redirect('applicant?nino=QQ112233M&status=failedtoattend')
   // multiple-results
-  } else if (search === 'QQ 01 01 01 A' || search ==='QQ010101A') {
+  } else if (search === 'MM 00 11 22 A' || search ==='MM001122A') {
     res.redirect('search-multiple-results')
   // multiple-results
   } else if (search === 'QQ 11 22 33 Z' || search ==='QQ112233Z') {
@@ -173,7 +173,7 @@ router.post('/v4/search-entry', function (req, res) {
   } else if (search === 'QQ 11 22 33 M' || search ==='QQ112233M') {
     res.redirect('applicant?nino=QQ112233M&status=failedtoattend')
   // multiple-results
-  } else if (search === 'QQ 01 01 01 A' || search ==='QQ010101A') {
+  } else if (search === 'MM 00 11 22 A' || search ==='MM001122A') {
     res.redirect('search-multiple-results')
   // multiple-results
   } else if (search === 'QQ 11 22 33 Z' || search ==='QQ112233Z') {
