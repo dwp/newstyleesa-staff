@@ -1,0 +1,65 @@
+{% extends "layout_staff.html" %}
+
+{% block pageTitle %}
+  Fred Flintstone - Apply for new style Employment and Support Allowance
+{% endblock %}
+
+{% set bodyClasses = "hero-header" %}
+
+{% block content %}
+
+{% include "v5/_header.html" %}
+
+<div style="margin-bottom: 30px;">
+  <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back to search</a>
+</div>
+
+<div class="govuk-grid-row container">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    {% if getData.sr %}
+    <div class="orange-border">
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-warning-text__assistive">Warning</span>
+          Special rules
+        </strong>
+      </div>
+    </div>
+    {% endif %}
+
+    {% if getData.nino === "QQ111111Z" %}
+      {% include "v5/_applicant-QQ111111Z.html" %}
+    {% elif getData.nino === "QQ001122A" %}
+      {% include "v5/_applicant-QQ001122A.html" %}
+    {% elif getData.nino === "QQ111122B" %}
+      {% include "v5/_applicant-QQ111122B.html" %}
+    {% elif getData.nino === "QQ112233A" %}
+      {% include "v5/_applicant-QQ112233A.html" %}
+    {% elif getData.nino === "QQ123456C" %}
+      {% include "v5/_applicant-QQ123456C.html" %}
+    {% elif getData.nino === "QQ222233V" %}
+      {% include "v5/_applicant-QQ222233V.html" %}
+    {% elif getData.nino === "QQ112233M" %}
+      {% include "v5/_applicant-QQ112233M.html" %}
+    {% elif getData.nino === "QQ112233Z" %}
+      {% include "v5/_applicant-QQ112233Z.html" %}
+    {% elif getData.nino === "MM001122A" %}
+      {% include "v5/_applicant-MM001122A.html" %}
+    {% elif getData.nino === "MM001122A2" %}
+      {% include "v5/_applicant-MM001122A2.html" %}
+    {% elif getData.nino === "QQ111122G" %}
+      {% include "v5/_applicant-QQ111122G.html" %}
+    {% else %}
+      Error
+    {% endif %}
+
+    <p style="margin-top: -30px; margin-bottom: 80px;"><a href="/public/pdf/application.pdf" target="_blank">View application form (PDF)</a></p>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

@@ -1,0 +1,37 @@
+<div class="full-width govuk-hero">
+  <div class="full-width-inner">
+    <section class="dwp-key-details-bar dwp-print-hide" role="contentinfo" aria-label="Key details">
+  <dl class="dwp-key-details-bar__contents govuk-width-container">
+    <div class="dwp-key-details-bar__header">
+
+      {% if getData.nino === "QQ111111Z" %}
+        {% include "v5/_applicant-QQ111111Z-head.html" %}
+      {% elif getData.nino === "QQ001122A" %}
+        {% include "v5/_applicant-QQ001122A-head.html" %}
+      {% elif getData.nino === "QQ111122B" %}
+        {% include "v5/_applicant-QQ111122B-head.html" %}
+      {% elif getData.nino === "QQ112233A" %}
+        {% include "v5/_applicant-QQ112233A-head.html" %}
+      {% elif getData.nino === "QQ123456C" %}
+        {% include "v5/_applicant-QQ123456C-head.html" %}
+      {% elif getData.nino === "QQ222233V" %}
+        {% include "v5/_applicant-QQ222233V-head.html" %}
+      {% elif getData.nino === "QQ112233M" %}
+        {% include "v5/_applicant-QQ112233M-head.html" %}
+      {% elif getData.nino === "QQ112233Z" %}
+        {% include "v5/_applicant-QQ112233Z-head.html" %}
+      {% elif getData.nino === "MM001122A" %}
+        {% include "v5/_applicant-MM001122A-head.html" %}
+      {% elif getData.nino === "MM001122A2" %}
+        {% include "v5/_applicant-MM001122A2-head.html" %}
+      {% elif getData.nino === "QQ111122G" %}
+        {% include "v5/_applicant-QQ111122G-head.html" %}
+      {% else %}
+        Error
+      {% endif %}
+
+    </div>
+  </dl>
+</section>
+  </div>{# /full-width-inner #}
+</div>{# /full-width #}

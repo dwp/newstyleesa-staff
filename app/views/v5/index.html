@@ -1,0 +1,50 @@
+{% extends "layout_staff.html" %}
+
+{% block pageTitle %}
+  Apply for new style Employment and Support Allowance
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-!-margin-bottom-6"></div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Version 5 – to be tested via Skype with members of the Burnley tracker team</h1>
+
+    <h2 class="govuk-heading-l">Prototype changes since last time</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Simplification of applicant screen - removed any reference to the status</li>
+      <li>Removed status badge from header</li>
+      <li>Removed ‘update application status’ button</li>
+    </ul>
+
+    <h2 class="govuk-heading-l">Screens to test</h2>
+
+    <h3 class="govuk-heading-m">Inbox checkers</h3>
+
+    <ol class="govuk-list govuk-list--number">
+      <li><a href="v5/search?nino=QQ123456C">Attended interview, all documentation is present</a></li>
+      <li><a href="v5/search?nino=QQ111111Z">Another attended interview, all documentation is present</a></li>
+      <li><a href="v5/search?nino=QQ001122A">Attended interview, pension details missing</a></li>
+      <li><a href="v5/search?nino=QQ123456Z">No matches for the National Insurance number</a></li>
+      <li><a href="v5/search?nino=MM001122A">National Insurance number returns multiple applications</a></li>
+      <li><a href="v5/search?nino=QQ112233A">Special rules case</a></li>
+      <li><a href="v5/search?nino=QQ112233Z">Unable to verify</a></li>
+      <li><a href="v5/search?nino=QQ121212A">No matches for the National Insurance number (claimant never filled out application form</a></li>
+    </ol>
+
+    <h2 class="govuk-heading-l">What we learned</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>TTo follow</li>
+    </ul>
+    
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

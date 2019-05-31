@@ -1,0 +1,57 @@
+
+{% extends "layout_staff.html" %}
+
+{% block pageTitle %}
+  Find an applicant - Apply for new style Employment and Support Allowance
+{% endblock %}
+
+{% block beforeContent %}
+<div class=""></div>
+{% endblock %}
+
+{% block content %}
+
+<div style="margin-bottom: 30px;">
+  <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back to search</a>
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">Search results for MM001122A</h1>
+
+    <table class="govuk-table">
+      <caption class="govuk-visually-hidden">Search results</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col">Name</th>
+          <th class="govuk-table__header" scope="col">Status</th>
+          <th class="govuk-table__header" scope="col">Special rules</th>
+          <th class="govuk-table__header" scope="col">Application submitted</th>
+          <th class="govuk-table__header" scope="col"><span class="govuk-visually-hidden">Actions</span></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Minnie Mouse</td>
+          <td class="govuk-table__cell"><span class="app-c-tag">Unverified</span></td>
+          <td class="govuk-table__cell">No</td>
+          <td class="govuk-table__cell">31 March 2019, 10:30pm</td>
+          <td class="govuk-table__cell"><a href="applicant?nino=MM001122A&amp;status=unverified">View claim</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Minnie Mouse</td>
+          <td class="govuk-table__cell"><span class="app-c-tag">Unverified</span></td>
+          <td class="govuk-table__cell">No</td>
+          <td class="govuk-table__cell">30 March 2019, 8:32am</td>
+          <td class="govuk-table__cell"><a href="applicant?nino=MM001122A2&amp;status=unverified">View claim</a></td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>{# /govuk-grid-column-full #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
