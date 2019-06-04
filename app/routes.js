@@ -266,6 +266,8 @@ router.post('/v5/status-changing', function (req, res) {
     res.redirect(`cancelled-reason?nino=${nino}&status=unverified`)
   } else if (status === 'verified') {
     res.redirect(`status-confirmation?status=verified&nino=${nino}`)
+  } else if (status === 'fta') {
+    res.redirect(`status-confirmation?status=fta&nino=${nino}`)
   } else {
     res.redirect('error')
   }

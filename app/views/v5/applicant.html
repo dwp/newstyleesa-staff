@@ -48,7 +48,7 @@
     </div>
     {% endif %}
 
-    <div class="govuk-tabs" data-module="tabs">
+    <div class="govuk-tabs" data-module="tabs" style="margin-bottom: 0;">
 
       <h2 class="govuk-tabs__title">Contents</h2>
       <ul class="govuk-tabs__list">
@@ -64,11 +64,11 @@
         </li>
       </ul>
 
-      <section class="govuk-tabs__panel" id="summary" style="border: none; padding-left: 0; padding-right: 0;">
+      <section class="govuk-tabs__panel" id="summary" style="border: none; padding-left: 0; padding-right: 0; margin-bottom: 0; padding-bottom: 0">
         {% include "v5/_applicant-QQ123456C.html" %}
       </section>
 
-      <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="full" style="border: none; padding-left: 0; padding-right: 0;">
+      <section class="govuk-tabs__panel govuk-tabs__panel--hidden" id="full" style="border: none; padding-left: 0; padding-right: 0; margin-bottom: 0; padding-bottom: 0">
         {% include "v5/answers/_answers-dates.html" %}
         {% include "v5/answers/_answers-personal-details.html" %}
         {% include "v5/answers/_answers-paid-work.html" %}
@@ -82,10 +82,14 @@
       
     </div>{# /govuk-tabs #}
 
+    <p style="margin-top: -30px"><a href="/public/pdf/application.pdf" target="_blank" >View PDF application form (opens new tab)</a></p>
+
     <br>
     <br>
 
   </div>{# /govuk-grid-column-two-thirds #}
+
+
 
   {% if getData.status === "verified" or getData.status === "cancelled" %}
   {% else %}

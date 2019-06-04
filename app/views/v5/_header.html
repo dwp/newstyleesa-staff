@@ -36,6 +36,8 @@
           Verified
         {% elif getData.status === "cancelled" %}
           Cancelled
+        {% elif getData.status === "fta" %}
+          Failed to attend
         {% else %}
           Unverified
         {% endif %}
