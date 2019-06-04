@@ -240,7 +240,7 @@ router.post('/v5/search-entry', function (req, res) {
   } else if (search === 'QQ 11 22 33 M' || search ==='QQ112233M') {
     res.redirect('applicant?nino=QQ112233M&status=failedtoattend')
   // multiple-results
-  } else if (search === 'MM 00 11 22 A' || search ==='MM001122A') {
+  } else if (search === 'QQ 01 01 01 A' || search ==='QQ010101A') {
     res.redirect('search-multiple-results')
   // multiple-results
   } else if (search === 'QQ 11 22 33 Z' || search ==='QQ112233Z') {
@@ -250,6 +250,40 @@ router.post('/v5/search-entry', function (req, res) {
     res.redirect('applicant?nino=QQ111122G&status=failedtoattend')
   } else {
     res.redirect('back')
+  }
+})
+
+router.post('/v5/status-changing', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let status = req.session.data['status']
+
+  let nino = req.session.data['nino']
+
+  if (status === 'cancelled') {
+    res.redirect(`cancelled-reason?nino=${nino}&status=unverified`)
+  } else if (status === 'verified') {
+    res.redirect(`status-confirmation?status=verified&nino=${nino}`)
+  } else {
+    res.redirect('error')
+  }
+})
+
+router.post('/v5/cancelled-logic', function (req, res) {
+  // Get the answer from session data
+  // The name between the quotes is the same as the 'name' attribute on the input elements
+  // However in JavaScript we can't use hyphens in variable names
+
+  let reason = req.session.data['reason']
+
+  let nino = req.session.data['nino']
+
+  if (reason === 'nocontact') {
+    res.redirect(`letter?nino=${nino}&status=unverified`)
+  } else {
+    res.redirect(`status-confirmation?nino=${nino}&status=cancelled`)
   }
 })
 

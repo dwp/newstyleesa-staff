@@ -1,0 +1,109 @@
+{% extends "layout_staff.html" %}
+
+{% block pageTitle %}
+  GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div style="margin-bottom: 30px;">
+  <a href="/v5/" rel="prev" class="govuk-back-link">Back</a>
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l" style="margin-bottom: 50px;">Recently cancelled applications</h1>
+
+    <p style="position: relative; top: -20px;">These stay on the system for XXX days before they are automatically deleted.</p>
+
+{#     <div class="filters">
+      <h3>&nbsp;</h3>
+      <ul>
+        <li>These stay on the system for 30 days before they are automatically deleted.</li>
+      </ul>
+    </div> #}{# /filters #} 
+
+    <div class="table-scrollable-wrapper">
+
+      <table cellspacing="0" width="100%" class="govuk-table listing-table">
+        <thead>
+          <tr>
+            <th class="govuk-table__header"><span>Name</span></th>
+            <th class="govuk-table__header"><span>National Insurance number</span></th>
+            <th class="govuk-table__header"><span>Date cancelled</span></th>
+            <th class="govuk-table__header"><span>Person who cancelled it</span></th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <a href="applicant?nino=QQ123456C&status=cancelled">
+                <span class="table-link">Fred Flintstone</span>
+              </a>
+            </td>
+            <td class="govuk-table__cell">QQ123456C</td>
+            <td class="govuk-table__cell">31 March, 5:00pm</td>
+            <td class="govuk-table__cell">Dave Smith</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <a href="#">
+                <span class="table-link">Jimmy Olsen</span>
+              </a>
+            </td>
+            <td class="govuk-table__cell">QQ654321Q</td>
+            <td class="govuk-table__cell">31 March, 4:30pm</td>
+            <td class="govuk-table__cell">Dave Smith</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <a href="#">
+                <span class="table-link">Barney Rubble</span>
+              </a>
+            </td>
+            <td class="govuk-table__cell">QQ654321Q</td>
+            <td class="govuk-table__cell">30 March, 3:15pm</td>
+            <td class="govuk-table__cell">Dave Smith</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <a href="#">
+                <span class="table-link">Daffy Duck</span>
+              </a>
+            </td>
+            <td class="govuk-table__cell">QQ222222Q</td>
+            <td class="govuk-table__cell">29 March at 4:09pm</td>
+            <td class="govuk-table__cell">Dave Smith</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <a href="#">
+                <span class="table-link">Minnie Mouse</span>
+              </a>
+            </td>
+            <td class="govuk-table__cell">QQ333333Q</td>
+            <td class="govuk-table__cell">29 March, 9:05am</td>
+            <td class="govuk-table__cell">Joe Bloggs</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">
+              <a href="#">
+                <span class="table-link">Snow White</span>
+              </a>
+            </td>
+            <td class="govuk-table__cell">QQ444444Q</td>
+            <td class="govuk-table__cell">25 March, 8:01am</td>
+            <td class="govuk-table__cell">Joe Bloggs</td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>{# /table-scrollable-wrapper #}
+    
+  </div>{# /govuk-grid-column-full #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
