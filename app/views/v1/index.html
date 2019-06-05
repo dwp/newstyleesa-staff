@@ -1,0 +1,39 @@
+{% extends "layout_staff.html" %}
+
+{% block pageTitle %}
+  Apply for new style Employment and Support Allowance
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-!-margin-bottom-6"></div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Version 1 – tested on 14&nbsp;February in Belfast</h1>
+
+    <p>This was our initial design based on what we knew at the time and assumptions we wanted to verify.</p>
+
+    <h2 class="govuk-heading-l">Screens tested</h2>
+
+    <p><a href="/public/pdf/agent-ui-v1.pdf">
+      <img src="/public/images/screens-thumbnail.png" style="width: 100%;">
+
+    View screens (PDF)</a></p>
+
+    <h2 class="govuk-heading-l">What we learned</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Information on the summary screen met the needs of inbox checkers and the case registration team</li>
+      <li>Ability to find jobcentres would remove the need to use the desk aid</li>
+      <li>Noticed status change from unverified to verified etc</li>
+      <li>Disproved hypothesis that a ‘processed’ status would be required (local tracker used)</li>
+    </ul>
+    
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
