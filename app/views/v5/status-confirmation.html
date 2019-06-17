@@ -26,8 +26,8 @@
       </div> #}
     {% elif getData.status === "cancelled" %}
       <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
-        <h1 class="govuk-panel__title">Application cancelled</h1>
-        <div class="govuk-panel__body">It will automatically be removed from this database after XX days.</div>
+        <h1 class="govuk-panel__title">Claim cancelled</h1>
+        <div class="govuk-panel__body">The claim data will automatically be removed from this database after XX days.</div>
       </div>
     {% elif getData.status === "fta" %}
       <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
@@ -39,7 +39,7 @@
     {% if origin === "duplicates" %}
       <a href="/v5/applications-duplicate-ninos" role="button" draggable="false" class="govuk-button">Back to duplicate and old applications</a>
     {% else %}
-      <a href="/v5/home" role="button" draggable="false" class="govuk-button">Find another application</a>
+      <a href="/v5/home" role="button" draggable="false" class="govuk-button">Find another claim</a>
     {% endif %}
 
   </div>{# /govuk-grid-column-full #}

@@ -25,7 +25,7 @@
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              Why are you cancelling their application?
+              Why are you cancelling their claim?
             </h1>
           </legend>
 
@@ -36,15 +36,15 @@
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="nocontact" name="reason" type="radio" value="nocontact" aria-describedby="hint-nocontact">
                 <label class="govuk-label govuk-radios__label govuk-label--s" for="nocontact">
-                  No contact from applicant
+                  No contact from claimant
                 </label>
-                <span id="hint-nocontact" class="govuk-hint govuk-radios__hint">We’ve not had any contact with the applicant for 30 days. They will need to complete another application&nbsp;form.</span>
+                <span id="hint-nocontact" class="govuk-hint govuk-radios__hint">We’ve not had any contact with the claimant for 30 days. They will need to complete another application&nbsp;form.</span>
               </div>
 
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="duplicate" name="reason" type="radio" value="duplicate" aria-describedby="hint-duplicate">
                 <label class="govuk-label govuk-radios__label govuk-label--s" for="duplicate">
-                  Duplicate application
+                  Duplicate claim
                 </label>
                 <span id="hint-duplicate" class="govuk-hint govuk-radios__hint">They’ve filled in multiple application forms and confirmed that you can discard this one.</span>
               </div>
@@ -52,9 +52,9 @@
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="withdrawn" name="reason" type="radio" value="withdrawn" aria-describedby="hint-withdrawn">
                 <label class="govuk-label govuk-radios__label govuk-label--s" for="withdrawn">
-                  The applicant has withdrawn their application
+                  The applicant has withdrawn their claim
                 </label>
-                <span id="hint-duplicate" class="govuk-hint govuk-radios__hint">They’ve confirmed that they wish to cancel this application. This may be because they have found work or their circumstances have changed.</span>
+                <span id="hint-duplicate" class="govuk-hint govuk-radios__hint">They’ve confirmed that they wish to cancel this claim. This may be because they have found work or their circumstances have changed.</span>
               </div>
 
             </div>{# /govuk-radios #}
@@ -76,7 +76,7 @@
       }) }}
 
       <button type="submit" class="govuk-button">
-        Confirm you want to cancel their application
+        Confirm you want to cancel their claim
       </button>
 
     </form>
