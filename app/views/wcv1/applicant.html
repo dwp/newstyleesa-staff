@@ -1,0 +1,108 @@
+{% extends "layout_staff.html" %}
+
+{% block pageTitle %}
+  Claim summary - Fred Flintstone - Apply for ‘new style’ Employment and Support Allowance
+{% endblock %}
+
+{% set bodyClasses = "hero-header" %}
+
+{% block content %}
+
+{% include "wcv1/_header.html" %}
+
+<div style="margin-bottom: 30px;">
+  {% if origin === "cancelled" %}
+      <a href="/wcv1/applications-cancelled" class="govuk-back-link">Back</a>
+    {% elif origin === "duplicates" %}
+      <a href="/wcv1/applications-duplicate-ninos" class="govuk-back-link">Back</a>
+    {% else %}
+      <a href="/wcv1/home" class="govuk-back-link">Back</a>
+  {% endif %}
+</div>
+
+<div class="govuk-grid-row container">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    {% if getData.sr %}
+    <div class="orange-border">
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-warning-text__assistive">Warning</span>
+          Special rules
+        </strong>
+      </div>
+    </div>
+    {% endif %}
+
+    <h1 class="govuk-heading-l">Claim information</h1>
+
+    <section>
+      <h2 class="govuk-heading-m">Evidence to check</h2>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>One 'primary' identity document</li>
+        <li>Two 'secondary' identity documents</li>
+        <li>fit notes (also known as sick notes)</li>
+        <li>SSP1 form</li>
+        <li>P45 form</li>
+        <li>your 2 most recent monthly pay slips from Boots</li>
+      </ul>
+    </section>
+
+    <details class="govuk-details dwp-print-hide">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Help with identity documents
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <h3 id='primary-identity-documents'>Primary identity documents</h3>
+        <p>Examples include:</p>
+        <ul>
+          <li>current passport</li>
+          <li>driving licence</li>
+          <li>biometric residence permit</li>
+          <li>certificate of naturalisation as a British citizen</li>
+          <li>permanent residence card</li>
+        </ul>
+        <h3 id='secondary-identity-documents'>Secondary identity documents</h3>
+        <p>Examples of proof of date of birth include:</p>
+        <ul>
+          <li>birth certificate</li>
+          <li>marriage certificate</li>
+          <li>NHS medical card</li>
+        </ul>
+        <p>Examples of proof of address include a recent:</p>
+        <ul>
+          <li>utility bill</li>
+          <li>bank statement</li>
+          <li>Council Tax bill</li>
+        </ul>
+      </div>
+    </details>
+
+    <br>
+    <br>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+
+  {% if getData.status === "cancelled" %}
+  {% else %}
+
+    <div class="govuk-grid-column-one-third">
+      <aside class="app-related-items status-verified" role="complementary">
+        <h3 class="govuk-heading-m" id="claim-actions-title">Claim actions</h3>
+        <nav role="navigation" aria-labelledby="claim-actions-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li><a href="answers?nino={{getData.nino}}&amp;status={{getData.status}}">View the claimant’s application form</a></li>
+        </ul>
+      </nav>
+        <a href="status?nino={{getData.nino}}&amp;status={{getData.status}}" class="govuk-button">Update claim status</a>
+      </aside>
+    </div>{# /govuk-grid-column-one-third #}
+  {% endif %}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

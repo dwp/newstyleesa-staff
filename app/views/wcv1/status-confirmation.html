@@ -1,0 +1,49 @@
+{% extends "layout_staff.html" %}
+
+{% block pageTitle %}
+  Status updated - Fred Flintstone - Apply for new style Employment and Support Allowance
+{% endblock %}
+
+{% set bodyClasses = "hero-header" %}
+
+{% block content %}
+
+{% include "wcv1/_header.html" %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full govuk-!-margin-top-4">
+
+    {% if getData.status === "verified" %}
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
+        <h1 class="govuk-panel__title">Claim verified</h1>
+        <div class="govuk-panel__body">Their claim has been forwarded to the processing team.</div>
+      </div>
+{#     {% elif getData.status === "nocontact" %}
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
+        <h1 class="govuk-panel__title">No contact from claimant</h1>
+        <div class="govuk-panel__body">You now need to send a letter to tell them they need to complete another application form.</div>
+      </div> #}
+    {% elif getData.status === "cancelled" %}
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
+        <h1 class="govuk-panel__title">Application cancelled</h1>
+        <div class="govuk-panel__body">It will automatically be removed from this database after XX days.</div>
+      </div>
+    {% elif getData.status === "fta" %}
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
+        <h1 class="govuk-panel__title">Marked as ‘failed to attend’</h1>
+        <div class="govuk-panel__body">You do not need to anything else right now.</div>
+      </div>
+    {% endif %}
+
+    {% if origin === "duplicates" %}
+      <a href="/wcv1/applications-duplicate-ninos" role="button" draggable="false" class="govuk-button">Back to duplicate and old applications</a>
+    {% else %}
+      <a href="/wcv1/home" role="button" draggable="false" class="govuk-button">Find another application</a>
+    {% endif %}
+
+  </div>{# /govuk-grid-column-full #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
