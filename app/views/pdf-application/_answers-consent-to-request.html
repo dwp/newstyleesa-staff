@@ -1,4 +1,4 @@
-<h2 class="govuk-heading-m">Consent to request more information</h2>
+<h2 class="govuk-heading-m">Consent to share information</h2>
 
 {{ govukSummaryList({
   classes: 'govuk-!-margin-bottom-9',
@@ -6,6 +6,11 @@
     {
       key: {text: "Doctor’s consent"},
       value: {text: "Yes, the doctor can share details with DWP"},
+      actions: {items: [{ href: "", text: "", visuallyHiddenText: ""}]}
+    }
+    {
+      key: {text: "DWP's consent"},
+      value: {text: "Yes, the DWP can share the outcome of an assessment"},
       actions: {items: [{ href: "", text: "", visuallyHiddenText: ""}]}
     }
   ]
