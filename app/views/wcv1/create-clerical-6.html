@@ -1,0 +1,79 @@
+
+{% extends "layout_staff.html" %}
+
+{% block pageTitle %}
+  Verify new claims - Apply for ‘new style’ Employment and Support Allowance
+{% endblock %}
+
+{% block beforeContent %}
+<div class=""></div>
+{% endblock %}
+
+{% block content %}
+
+<div style="margin-bottom: 30px;">
+  <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            Which documents are missing that you should have seen?
+          </h1>
+        </legend>
+        <span id="waste-hint" class="govuk-hint">
+          Select all that apply.
+        </span>
+        <div class="govuk-checkboxes">
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="option1" name="option1" type="checkbox" value="mines">
+            <label class="govuk-label govuk-checkboxes__label" for="option1">
+              Fit notes
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="option2" name="option2" type="checkbox" value="farm">
+            <label class="govuk-label govuk-checkboxes__label" for="option2">
+              SSP1 form (this confirms when their Statutory Sick Pay ends)
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="option3" name="option3" type="checkbox" value="farm">
+            <label class="govuk-label govuk-checkboxes__label" for="option3">
+              P45 form
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="option4" name="option4" type="checkbox" value="farm">
+            <label class="govuk-label govuk-checkboxes__label" for="option4">
+              Pay slips
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="option6" name="option6" type="checkbox" value="farm">
+            <label class="govuk-label govuk-checkboxes__label" for="option6">
+              Proof of pensions
+            </label>
+          </div>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="option7" name="option7" type="checkbox" value="farm">
+            <label class="govuk-label govuk-checkboxes__label" for="option7">
+              Proof of permanent health insurance
+            </label>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <a href="create-clerical-check-answers" class="govuk-button">Continue</a>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

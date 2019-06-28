@@ -1,0 +1,94 @@
+
+{% extends "layout_staff.html" %}
+
+{% block pageTitle %}
+  Verify new claims - Apply for ‘new style’ Employment and Support Allowance
+{% endblock %}
+
+{% block beforeContent %}
+<div class=""></div>
+{% endblock %}
+
+{% block content %}
+
+<div style="margin-bottom: 30px;">
+  <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
+</div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Check your answers before adding this&nbsp;claim</h1>
+
+{#     <h2 class="govuk-heading-m">Claim start date</h2> #}
+
+{#     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Claim start date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          27 June 2019
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> name</span>
+          </a>
+        </dd>
+      </div>
+    </dl> #}
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Personal details
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Rubble<br>
+          Barney<br>
+          QQ123456C
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Special rules
+        </dt>
+        <dd class="govuk-summary-list__value">
+          No
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Missing documents
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Fit notes<br>
+          Pay slips<br>
+          Proof of pensions
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> date of birth</span>
+          </a>
+        </dd>
+      </div>
+    </dl>
+
+    <a href="create-clerical-confirmation" class="govuk-button">Confirm details and add this claim</a>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

@@ -351,7 +351,7 @@ router.post('/wcv1/status-changing', function (req, res) {
   if (status === 'cancelled') {
     res.redirect(`cancelled-reason?nino=${nino}&status=unverified`)
   } else if (status === 'verified') {
-    res.redirect(`documents-to-check?status=verified&nino=${nino}`)
+    res.redirect(`documents-to-check?status=unverified&nino=${nino}`)
   } else if (status === 'fta') {
     res.redirect(`status-confirmation?status=fta&nino=${nino}`)
   } else {

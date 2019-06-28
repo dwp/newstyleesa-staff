@@ -25,7 +25,8 @@
   <div class="govuk-grid-column-two-thirds">
 
     {% if getData.sr %}
-    <div class="orange-border">
+
+    <div class="govuk-inset-text alert-yellow" style="margin-top: 0;">
       <div class="govuk-warning-text">
         <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
         <strong class="govuk-warning-text__text">
@@ -34,6 +35,17 @@
         </strong>
       </div>
     </div>
+
+{#     <div class="orange-border">
+      <div class="govuk-warning-text">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-warning-text__assistive">Warning</span>
+          Special rules
+        </strong>
+      </div>
+    </div> #}
+
     {% endif %}
 
     <h1 class="govuk-heading-l">Claim information</h1>
@@ -95,7 +107,7 @@
         <h3 class="govuk-heading-m" id="claim-actions-title">Claim actions</h3>
         <nav role="navigation" aria-labelledby="claim-actions-title">
         <ul class="govuk-list govuk-!-font-size-16">
-          <li><a href="answers?nino={{getData.nino}}&amp;status={{getData.status}}">View the claimant’s application form</a></li>
+          <li><a href="answers?nino={{getData.nino}}&amp;status={{getData.status}}">View or update the claim</a></li>
         </ul>
       </nav>
         <a href="status?nino={{getData.nino}}&amp;status={{getData.status}}" class="govuk-button">Update claim status</a>
