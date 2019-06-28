@@ -32,7 +32,7 @@
 
     {% include "iteration-1/_applicant-QQ123456C.html" %}
 
-    <p style="margin-top: -30px; margin-bottom: 80px;"><a href="/public/pdf/application.pdf" target="_blank">View application form (PDF)</a></p>
+    <p style="margin-top: -30px; margin-bottom: 80px;"><a href="/public/pdf/application.pdf" target="_blank">Fred Flintstone application form (opens a new tab)</a></p>
 
   </div>{# /govuk-grid-column-two-thirds #}
 
@@ -40,8 +40,8 @@
   {% else %}
     <div class="govuk-grid-column-one-third">
       <aside class="app-related-items status-verified" role="complementary">
-        <h3 class="govuk-heading-m" id="claim-actions-title">Application actions</h3>
-        <a href="status?nino={{getData.nino}}&amp;status={{getData.status}}" class="govuk-button">Update application status</a>
+        <h3 class="govuk-heading-m" id="claim-actions-title">Claim actions</h3>
+        <a href="status?nino={{getData.nino}}&amp;status={{getData.status}}" class="govuk-button">Update claim status</a>
       </aside>
     </div>{# /govuk-grid-column-one-third #}
   {% endif %}

@@ -1,0 +1,27 @@
+<h2 class="govuk-heading-m">Payment method</h2>
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+    {
+      key: {text: "Sort code"},
+      value: {text: "11-22-33"},
+      actions: {items: [{ href: "", text: "", visuallyHiddenText: ""}]}
+    },
+    {
+      key: {text: "Account number"},
+      value: {text: "12345678"},
+      actions: {items: [{ href: "", text: "", visuallyHiddenText: ""}]}
+    },
+    {
+      key: {text: "Account name"},
+      value: {text: "N Briggs"},
+      actions: {items: [{ href: "", text: "", visuallyHiddenText: ""}]}
+    },
+    {
+      key: {text: "Building society roll number"},
+      value: {text: "AA123456789"},
+      actions: {items: [{ href: "", text: "", visuallyHiddenText: ""}]}
+    }
+  ]
+})}}

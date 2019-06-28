@@ -8,6 +8,7 @@ $govuk-global-styles: true;
 @import 'app/general';
 
 // DWP components
+@import 'dwp/dwp-alerts';
 @import 'dwp/dwp-header';
 @import 'dwp/dwp-timeline';
 @import 'dwp/dwp-key-details-bar';
@@ -22,6 +23,7 @@ $govuk-global-styles: true;
 @import 'patterns/related-items';
 
 // Components that aren't in Frontend
+@import "patterns/check-your-answers";
 @import 'components/cookie-banner';
 @import 'components/input-overrides';
 @import 'components/info-box';

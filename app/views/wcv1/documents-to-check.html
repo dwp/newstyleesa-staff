@@ -1,0 +1,85 @@
+{% extends "layout_staff.html" %}
+
+{% block pageTitle %}
+  Update status - Fred Flintstone - Apply for new style Employment and Support Allowance
+{% endblock %}
+
+{% set bodyClasses = "hero-header" %}
+
+{% block content %}
+
+{% include "wcv1/_header.html" %}
+
+<div style="margin-bottom: 30px;">
+  <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
+</div>
+
+<div class="govuk-grid-row container">
+
+  <div class="govuk-grid-column-two-thirds">
+
+   <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Which documents have you seen?
+        </h1>
+      </legend>
+      <span id="waste-hint" class="govuk-hint">
+        Select all that apply.
+      </span>
+      <div class="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="option1" name="option1" type="checkbox" value="mines">
+          <label class="govuk-label govuk-checkboxes__label" for="option1">
+            Fit notes
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="option2" name="option2" type="checkbox" value="farm">
+          <label class="govuk-label govuk-checkboxes__label" for="option2">
+            SSP1 form (this confirms when their Statutory Sick Pay ends)
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="option3" name="option3" type="checkbox" value="farm">
+          <label class="govuk-label govuk-checkboxes__label" for="option3">
+            P45 form
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="option4" name="option4" type="checkbox" value="farm">
+          <label class="govuk-label govuk-checkboxes__label" for="option4">
+            5 most recent weekly pay slips from Co-op
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="option5" name="option5" type="checkbox" value="farm">
+          <label class="govuk-label govuk-checkboxes__label" for="option5">
+            2 most recent monthly pay slips from Boots
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="option6" name="option6" type="checkbox" value="farm">
+          <label class="govuk-label govuk-checkboxes__label" for="option6">
+            Proof of pensions
+          </label>
+        </div>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="option7" name="option7" type="checkbox" value="farm">
+          <label class="govuk-label govuk-checkboxes__label" for="option7">
+            Proof of permanent health insurance
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+    <p><a href="upload" class="govuk-button">Continue</a></p>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

@@ -1,0 +1,41 @@
+
+{% extends "layout_staff.html" %}
+
+{% block pageTitle %}
+  Verify new claims - Apply for ‘new style’ Employment and Support Allowance
+{% endblock %}
+
+{% block beforeContent %}
+<div style="margin-bottom: 30px;">
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-half">
+
+    <h1 class="govuk-heading-l">Claims</h1>
+
+    <h2 class="govuk-heading-m">Find a claim</h2>
+
+    <form action="/wcv1/search-entry" method="post">
+      <div class="govuk-form-group" style="margin-bottom: 10px">
+        <label class="govuk-label" for="search">
+          Enter the claimant’s National Insurance number or name
+        </label>
+        <input class="govuk-input govuk-input--width-20" id="search" name="search" type="text" autocomplete="off" value="{% if getData.nino %}{{getData.nino}}{% endif %}">
+        <a class="govuk-button search" href="applicant?nino=QQ123456C&status=unverified&sr=true">Find application</a>
+      </div>
+    </form>
+
+    <h2 class="govuk-heading-m">New clerical claims</h2>
+
+    <p><a href="create-clerical-personal-details">Create a new clerical claim</a></p>
+
+  </div>{# /govuk-grid-column-one-half #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

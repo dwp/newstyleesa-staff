@@ -1,0 +1,40 @@
+{% extends "layout_staff.html" %}
+
+{% block pageTitle %}
+  Update status - Fred Flintstone - Apply for new style Employment and Support Allowance
+{% endblock %}
+
+{% set bodyClasses = "hero-header" %}
+
+{% block content %}
+
+{% include "wcv1/_header.html" %}
+
+<div style="margin-bottom: 30px;">
+  <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
+</div>
+
+<div class="govuk-grid-row container">
+
+  <div class="govuk-grid-column-two-thirds">
+
+   <div class="govuk-form-group">
+    <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Upload the documents here
+        </h1>
+      </legend>
+      <p>Information about which documents should be included here.</p>
+      <p>Upload form here</p>
+    </fieldset>
+  </div>
+
+  <p><a href="status-confirmation?status=verified" class="govuk-button">Continue</a></p>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

@@ -1,0 +1,48 @@
+<h2 class="govuk-heading-m">Health conditions</h2>
+
+{{ govukSummaryList({
+  classes: 'govuk-!-margin-bottom-9',
+  rows: [
+    {
+      key: {text: "Conditions"},
+      value: {html: "0001<br>Abdominal pain<br>Started: 02/05/18<br><br>0070<br>Broken leg<br>Started: 20/11/18<br><br>Cold<br>Started: 02/04/19"},
+      actions: {items: [{ href: "", text: "", visuallyHiddenText: ""}]}
+    },
+    {
+      key: {text: "Doctor’s details"},
+      value: {html: "
+        Dr Sarah Philips<br>
+        Manor Surgery<br>
+        72 Guild street<br>
+        London<br>
+        SF23 6FH<br>
+        020 7946 0809"},
+      actions: {items: [{ href: "", text: "", visuallyHiddenText: ""}]}
+    },
+    {
+      key: {text: "Life expectancy"},
+      value: {text: "Could be less than 6 months"},
+      actions: {items: [{ href: "", text: "", visuallyHiddenText: ""}]}
+    },
+    {
+      key: {text: "Doctor has sent DS1500 form"},
+      value: {text: "No"},
+      actions: {items: [{ href: "", text: "", visuallyHiddenText: ""}]}
+    },
+    {
+      key: {text: "Currently in hospital"},
+      value: {text: "Yes"},
+      actions: {items: [{ href: "", text: "", visuallyHiddenText: ""}]}
+    },
+    {
+      key: {text: "Hospital details"},
+      value: {html: "
+        Ear, nose and throat ward<br>
+        Hallamshire Hospital
+        <br><br>
+
+        Admitted on 19/12/2018"},
+      actions: {items: [{ href: "", text: "", visuallyHiddenText: ""}]}
+    }
+  ]
+})}}

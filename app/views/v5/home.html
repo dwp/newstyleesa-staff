@@ -17,23 +17,23 @@
 
     <h1 class="govuk-heading-l">Digital claims</h1>
 
-    <h2 class="govuk-heading-m">Find an application</h2>
+    <h2 class="govuk-heading-m">Find a claim</h2>
 
     <form action="/v5/applicant?nino=QQ123456C&status=unverified" method="post">
       <div class="govuk-form-group" style="margin-bottom: 10px">
         <label class="govuk-label" for="search">
-          Enter the claimant’s name or National Insurance number
+          Enter the claimant’s National Insurance number or name
         </label>
         <input class="govuk-input govuk-input--width-20" id="search" name="search" type="text" autocomplete="off" value="{% if getData.nino %}{{getData.nino}}{% endif %}">
         <a class="govuk-button search" href="/v5/applicant?origin=find&nino=QQ123456C&status=unverified">Find application</a>
       </div>
     </form>
 
-    <h2 class="govuk-heading-m">Manage applications</h2>
+    <h2 class="govuk-heading-m">Manage claims</h2>
 
     <ul class="govuk-list govuk-list--bullet">
-      <li><a href="/v5/applications-duplicate-ninos?origin=duplicates">Check if you need to cancel any applications</a></li>
-      <li><a href="/v5/applications-cancelled?origin=cancelled">View recently cancelled applications</a></li>
+      <li><a href="/v5/applications-duplicate-ninos?origin=duplicates">Check if you need to cancel any claims</a></li>
+      <li><a href="/v5/applications-cancelled?origin=cancelled">View recently cancelled claims</a></li>
     </ul>
 
   </div>{# /govuk-grid-column-two-thirds #}
