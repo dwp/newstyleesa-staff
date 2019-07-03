@@ -28,9 +28,9 @@
       <div class="blue-border">
         <h2 class="govuk-heading-m">Cancelled by Dave Smith, 9 June, 5:00pm</h2>
         <h3 class="govuk-heading-s" style="margin-bottom: 0">Reason</h3> 
-        <p>Duplicate application</p>
+        <p>Duplicate claim</p>
         <h3 class="govuk-heading-s" style="margin-bottom: 0">Notes</h3> 
-        <p>Fred had submitted 2 application forms. I called him up on 9 June at 4:30 and he told me to use the second one.</p>
+        <p>Fred had submitted 2 claim forms. I called him up on 9 June at 4:30 and he told me to use the second one.</p>
 {#         <a href="applicant?nino={{getData.nino}}&amp;status=unverified" class="govuk-button secondary" style="margin-bottom: 0;">Remove ‘cancelled’ status</a> #}
       </div>
       <br>
@@ -59,7 +59,7 @@
         </li>
         <li class="govuk-tabs__list-item">
           <a class="govuk-tabs__tab" href="#full">
-            Full application
+            Full claim
           </a>
         </li>
       </ul>
@@ -82,7 +82,7 @@
       
     </div>{# /govuk-tabs #}
 
-    <p style="margin-top: -30px"><a href="/public/pdf/application.pdf" target="_blank" >View PDF application form (opens new tab)</a></p>
+    <p style="margin-top: -30px"><a href="/public/pdf/application.pdf" target="_blank" >View PDF claim form (opens new tab)</a></p>
 
     <br>
     <br>
@@ -96,7 +96,7 @@
     <div class="govuk-grid-column-one-third">
       <aside class="app-related-items status-verified" role="complementary">
         <h3 class="govuk-heading-m" id="claim-actions-title">Claim actions</h3>
-        <a href="status?nino={{getData.nino}}&amp;status={{getData.status}}" class="govuk-button">Update claim status</a>
+        <a href="status?nino={{getData.nino}}&amp;status={{getData.status}}" class="govuk-button">Change claim status</a>
       </aside>
     </div>{# /govuk-grid-column-one-third #}
   {% endif %}

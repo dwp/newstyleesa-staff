@@ -20,64 +20,6 @@
 
     <form action="status-changing" method="post">
 
-<<<<<<< HEAD
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset">
-
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading">
-              Update the status of this application
-            </h1>
-          </legend>
-          <input id="nino" name="nino" type="hidden" value="{{getData.nino}}">
-
-            <div class="govuk-radios govuk-radios--conditional" data-module="radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="verified" name="status" type="radio" value="verified" aria-describedby="hint-verified">
-                <label class="govuk-label govuk-radios__label govuk-label--s" for="verified">
-                  Verified
-                </label>
-                <span id="hint-verified" class="govuk-hint govuk-radios__hint">The work coach has told us the claimant has proved their identity and signed their claimant commitment.</span>
-              </div>
-
-
-
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="fta" name="status" type="radio" value="fta" data-aria-controls="conditional-how-contacted-conditional-1" aria-describedby="hint-fta">
-                <label class="govuk-label govuk-radios__label govuk-label--s" for="fta">
-                  Failed to attend
-                </label>
-                <span id="hint-fta" class="govuk-hint govuk-radios__hint">The work coach has told us the claimant failed to attend their appointment.</span>
-              </div>
-
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-1">
-
-                <div class="govuk-date-input" id="passport-issued">
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                        Day
-                      </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="number" pattern="[0-9]*">
-                    </div>
-                  </div>
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-                        Month
-                      </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="number" pattern="[0-9]*"value="6">
-                    </div>
-                  </div>
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                        Year
-                      </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="number" pattern="[0-9]*" value="2019">
-                    </div>
-                  </div>
-=======
       {% if getData.status === "verified" %}
 
 
@@ -86,7 +28,7 @@
 
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                Update the status of this claim
+                Change the status of this claim
               </h1>
             </legend>
             <input id="nino" name="nino" type="hidden" value="{{getData.nino}}">
@@ -98,7 +40,7 @@
                   <label class="govuk-label govuk-radios__label govuk-label--s" for="cancelled">
                     Cancelled
                   </label>
-                  <span id="hint-cancelled" class="govuk-hint govuk-radios__hint">The claim is not needed anymore or we’ve not had any contact with them for 1 month.</span>
+                  <span id="hint-cancelled" class="govuk-hint govuk-radios__hint">The claim is not needed anymore or we’ve not had any contact with the claimant for 1 month.</span>
                 </div>
                 
               </div>{# /govuk-radios #}
@@ -113,7 +55,7 @@
 
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
               <h1 class="govuk-fieldset__heading">
-                Update the status of this claim
+                Change the status of this claim
               </h1>
             </legend>
             <input id="nino" name="nino" type="hidden" value="{{getData.nino}}">
@@ -125,7 +67,6 @@
                     Verified
                   </label>
                   <span id="hint-verified" class="govuk-hint govuk-radios__hint">The work coach has told us the claimant has proved their identity and signed their claimant commitment.</span>
->>>>>>> d0bb7134fb1aae4f18de21f6728848a12ae81da6
                 </div>
 
                 <div class="govuk-radios__item">
@@ -167,27 +108,15 @@
 
                 </div>#}
 
-<<<<<<< HEAD
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="cancelled" name="status" type="radio" value="cancelled" aria-describedby="hint-cancelled">
-                <label class="govuk-label govuk-radios__label govuk-label--s" for="cancelled">
-                  Cancelled
-                </label>
-                <span id="hint-cancelled" class="govuk-hint govuk-radios__hint">The application is not needed anymore or we’ve not had any contact with the claimant for 1 calendar month.</span>
-              </div>
-
-            </div>{# /govuk-radios #}
-=======
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="cancelled" name="status" type="radio" value="cancelled" aria-describedby="hint-cancelled">
                   <label class="govuk-label govuk-radios__label govuk-label--s" for="cancelled">
                     Cancelled
                   </label>
-                  <span id="hint-cancelled" class="govuk-hint govuk-radios__hint">The claim is not needed anymore or we’ve not had any contact with them for 1 month.</span>
+                  <span id="hint-cancelled" class="govuk-hint govuk-radios__hint">The claim is not needed anymore or we’ve not had any contact with the claimant for 1 month.</span>
                 </div>
                 
               </div>{# /govuk-radios #}
->>>>>>> d0bb7134fb1aae4f18de21f6728848a12ae81da6
 
           </fieldset>
         </div>{# /govuk-form-group #}
