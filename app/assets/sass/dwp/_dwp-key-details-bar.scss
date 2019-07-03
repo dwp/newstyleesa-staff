@@ -33,6 +33,7 @@ $key-details-bar-break-point-sm: 640px;
 
     dd,
     dt {
+
       float: left;
       font-family: 'nta', Arial, sans-serif; // TODO: Refactor
       font-size: 19px;
@@ -171,7 +172,6 @@ $key-details-bar-break-point-sm: 640px;
     margin-left: -50vw;
   }
   .full-width-inner {
-    max-width: 960px;
     margin: 0 auto;
   }
 }
