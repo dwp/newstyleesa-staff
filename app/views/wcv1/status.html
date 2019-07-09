@@ -25,7 +25,7 @@
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              Update the status of this claim
+              Change the status of this claim
             </h1>
           </legend>
           <input id="nino" name="nino" type="hidden" value="{{getData.nino}}">
@@ -40,56 +40,46 @@
               </div>
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="fta" name="status" type="radio" value="fta" data-aria-controls="conditional-how-contacted-conditional-1" aria-describedby="hint-fta">
+                <input class="govuk-radios__input" id="fta" name="status" type="radio" value="fta" aria-describedby="hint-fta">
                 <label class="govuk-label govuk-radios__label govuk-label--s" for="fta">
                   Failed to attend
                 </label>
                 <span id="hint-fta" class="govuk-hint govuk-radios__hint">The claimant failed to attend their appointment.</span>
               </div>
 
-              <div class="govuk-radios " id="conditional-how-contacted-conditional-1">
-
-{#                 <div class="govuk-date-input" id="passport-issued">
-                  <p>Enter the date the appointment was missed</p>
-                  <div class="govuk-date-input__item">
-
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="passport-issued-day">
-                        Day
-                      </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-day" name="passport-issued-day" type="number" pattern="[0-9]*" value="18">
-                    </div>
-                  </div>
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="passport-issued-month">
-                        Month
-                      </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="passport-issued-month" name="passport-issued-month" type="number" pattern="[0-9]*" value="6">
-                    </div>
-                  </div>
-                  <div class="govuk-date-input__item">
-                    <div class="govuk-form-group">
-                      <label class="govuk-label govuk-date-input__label" for="passport-issued-year">
-                        Year
-                      </label>
-                      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="passport-issued-year" name="passport-issued-year" type="number" pattern="[0-9]*" value="2019">
-                    </div>
-                  </div>
-                </div> #}
-
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="withdrawn" name="status" type="radio" value="withdrawn" aria-describedby="hint-withdrawn">
+                <label class="govuk-label govuk-radios__label govuk-label--s" for="withdrawn">
+                  Withdrawn (or duplicate)
+                </label>
+                <span id="hint-withdrawn" class="govuk-hint govuk-radios__hint">The claimant has chosen not to continue with this claim. This might be because they no longer need the benefit or they have confirmed that this claim is a duplicate.</span>
               </div>
 
-
+{#               <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="disallowed" name="status" type="radio" value="disallowed" aria-describedby="hint-disallowed">
+                <label class="govuk-label govuk-radios__label govuk-label--s" for="disallowed">
+                  Disallowed
+                </label>
+                <span id="hint-disallowed" class="govuk-hint govuk-radios__hint">We do not have enough evidence to continue with the claim. This might be because the claimant has not signed their claimant commitment or been able to prove their identity.</span>
+              </div> #}
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="cancelled" name="status" type="radio" value="cancelled" aria-describedby="hint-cancelled">
-                <label class="govuk-label govuk-radios__label govuk-label--s" for="cancelled">
-                  Cancelled
+                <input class="govuk-radios__input" id="disallowed" name="status" type="radio" value="disallowed" aria-describedby="hint-disallowed" data-aria-controls="conditional-how-contacted-conditional-3">
+                <label class="govuk-label govuk-radios__label govuk-label--s" for="disallowed">
+                  Disallowed
                 </label>
-                <span id="hint-cancelled" class="govuk-hint govuk-radios__hint">The application is not needed anymore or we’ve not had any contact with them for 1 month.</span>
+                <span id="hint-disallowed" class="govuk-hint govuk-radios__hint">We do not have enough evidence to continue with the claim. This might be because the claimant has not signed their claimant commitment or been able to prove their identity.</span>
               </div>
-              
+
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-3">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="reason">
+                    Enter the reason why
+                  </label>
+                  <textarea class="govuk-textarea" id="reason" name="reason" rows="5"></textarea>
+                </div>
+              </div>
+
             </div>{# /govuk-radios #}
 
         </fieldset>
