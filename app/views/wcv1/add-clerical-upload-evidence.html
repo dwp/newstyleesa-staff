@@ -1,0 +1,50 @@
+{% extends "layout_staff.html" %}
+
+{% block pageTitle %}
+  Update status - Fred Flintstone - Apply for new style Employment and Support Allowance
+{% endblock %}
+
+{% set bodyClasses = "hero-header" %}
+
+{% block content %}
+
+<div style="margin-bottom: 30px;">
+  <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
+</div>
+
+<div class="govuk-grid-row container">
+
+  <div class="govuk-grid-column-full">
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            Upload the supporting evidence
+          </h1>
+        </legend>
+        <span id="more-detail-hint" class="govuk-hint">
+          You do not need to upload their claimant commitment or identity documents.
+        </span>
+        <div class="upload-wrapper" style="border: 1px solid #bfc1c3; padding: 30px; padding-top: 10px;padding-bottom: -20px">
+          <br>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="file-upload-1">
+              Upload a file
+            </label>
+            <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+          </div>
+          <br>
+          <p style="margin-bottom: -20px"><a href="add-clerical-upload-evidence-2" class="govuk-button">Upload</a></p>
+        </div>{# /upload-wrapper #}
+      </fieldset>
+    </div>
+
+    <p><a href="add-clerical-status-confirmation?status=verified" class="govuk-button">Continue</a></p>
+
+  </div>{# /govuk-grid-column-full #}
+
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

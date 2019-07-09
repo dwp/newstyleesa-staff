@@ -48,22 +48,29 @@
               </div>
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="withdrawn" name="status" type="radio" value="withdrawn" aria-describedby="hint-withdrawn">
+                <input class="govuk-radios__input" id="withdrawn" name="status" type="radio" value="withdrawn" aria-describedby="hint-withdrawn" data-aria-controls="conditional-withdrawn">
                 <label class="govuk-label govuk-radios__label govuk-label--s" for="withdrawn">
                   Withdrawn (or duplicate)
                 </label>
                 <span id="hint-withdrawn" class="govuk-hint govuk-radios__hint">The claimant has chosen not to continue with this claim. This might be because they no longer need the benefit or they have confirmed that this claim is a duplicate.</span>
               </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-withdrawn">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="reason">
+                    Enter the reason why
+                  </label>
+                  <textarea class="govuk-textarea" id="reason" name="reason" rows="5"></textarea>
+                </div>
+              </div>
 
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="disallowed" name="status" type="radio" value="disallowed" aria-describedby="hint-disallowed" data-aria-controls="conditional-how-contacted-conditional-3">
+                <input class="govuk-radios__input" id="disallowed" name="status" type="radio" value="disallowed" aria-describedby="hint-disallowed" data-aria-controls="conditional-disallowed">
                 <label class="govuk-label govuk-radios__label govuk-label--s" for="disallowed">
                   Disallowed
                 </label>
                 <span id="hint-disallowed" class="govuk-hint govuk-radios__hint">We do not have enough evidence to continue with the claim. This might be because the claimant has not signed their claimant commitment or been able to prove their identity.</span>
               </div>
-
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-3">
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-disallowed">
                 <div class="govuk-form-group">
                   <label class="govuk-label" for="reason">
                     Enter the reason why
