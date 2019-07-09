@@ -18,7 +18,7 @@
 
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="upload" method="post">
+    <form action="status-changing" method="post">
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
@@ -54,6 +54,14 @@
                 </label>
                 <span id="hint-withdrawn" class="govuk-hint govuk-radios__hint">The claimant has chosen not to continue with this claim. This might be because they no longer need the benefit or they have confirmed that this claim is a duplicate.</span>
               </div>
+
+{#               <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="disallowed" name="status" type="radio" value="disallowed" aria-describedby="hint-disallowed">
+                <label class="govuk-label govuk-radios__label govuk-label--s" for="disallowed">
+                  Disallowed
+                </label>
+                <span id="hint-disallowed" class="govuk-hint govuk-radios__hint">We do not have enough evidence to continue with the claim. This might be because the claimant has not signed their claimant commitment or been able to prove their identity.</span>
+              </div> #}
 
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="disallowed" name="status" type="radio" value="disallowed" aria-describedby="hint-disallowed" data-aria-controls="conditional-how-contacted-conditional-3">
