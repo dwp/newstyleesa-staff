@@ -1,0 +1,172 @@
+{% extends "layout_staff.html" %}
+
+{% block pageTitle %}
+  Apply for new style Employment and Support Allowance
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-!-margin-bottom-6"></div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Work coach view - version 1</h1>
+
+    <h2 class="govuk-heading-l">What we want to learn</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Stuff here</li>
+    </ul>
+
+    <h2 class="govuk-heading-l">Scenarios to test</h2>
+
+    <ol class="govuk-list govuk-list--number govuk-body-l" style="font-weight: bold">
+      <li>
+        <h3 class="govuk-heading-m"><a href="/wcv1/home?nino=QQ111111Z">Barney Rubble, QQ111111Z</a></h3>
+        <p>Attends and provides:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>ID</li>
+          <li>SSP1</li>
+          <li>fit notes</li>
+          <li>pension statement</li>
+        </ul>
+        <div class="govuk-inset-text">
+          Changes status to ‘verified’ and uploads supporting evidence.
+        </div>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      </li>
+      <li>
+        <h3 class="govuk-heading-m"><a href="/wcv1/home?nino=QQ112233A">Clark Kent, QQ112233A (special rules)</a></h3>
+        <p>Attends and provides:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>ID</li>
+          <li>SSP1</li>
+          <li>Fit notes</li>
+        </ul>
+        <div class="govuk-inset-text">
+          Changes status to ‘verified’ and uploads supporting evidence.
+        </div>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      </li>
+      <li>
+        <h3 class="govuk-heading-m"><a href="/wcv1/home?nino=QQ000011A">Buzz Lightyear, QQ000011A (special rules)</a></h3>
+        <p>Fails to attend.</p>
+        <div class="govuk-inset-text">
+          Changes status to ‘New appointment needed’ which begins 1 month countdown to deletion of digital claim form.
+        </div>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      </li>
+      <li>
+        <h3 class="govuk-heading-m"><a href="/wcv1/home?nino=QQ111122B">Lois Lane, QQ111122B</a></h3>
+        <p>Fails to attend.</p>
+        <div class="govuk-inset-text">
+          Changes status to ‘New appointment needed’ which begins 1 month countdown to deletion of digital claim form.
+        </div>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      </li>
+      <li>
+        <h3 class="govuk-heading-m"><a href="/wcv1/home?nino=QQ112233Z">Micky Mouse, QQ112233Z (part 1)</a></h3>
+        <p>Attends and provides:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>fit notes</li>
+          <li>pension statement</li>
+        </ul>
+        <p>Doesn’t provide ID.</p>
+        <div class="govuk-inset-text">
+          Changes status to ‘New appointment needed’ which begins 1 month countdown to deletion of digital claim form.
+        </div>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      </li>
+      <li>
+        <h3 class="govuk-heading-m"><a href="/wcv1/home?nino=QQ112233Z">Micky Mouse, QQ112233Z (part 2)</a></h3>
+        <p>Returns to the Jobcentre and provides:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>SSP1</li>
+          <li>ID</li>
+          <li>fit notes</li>
+        </ul>
+        <div class="govuk-inset-text">
+          Once ID check is complete, agent changes status to ‘verified’ and uploads supporting evidence
+        </div>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      </li>
+      <li>
+        <h3 class="govuk-heading-m"><a href="/wcv1/home?nino=QQ112233Z">Marge Simpson, QQ112233Z (part 1)</a></h3>
+        <p>Attends and provides:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>ID</li>
+          <li>SSP1</li>
+          <li>fit notes</li>
+          <li>Pension statement</li>
+        </ul>
+        <p>Chooses not to sign claimant commitment.</p>
+        <div class="govuk-inset-text">
+          Changes status to ‘New appointment needed’ which begins 1 month countdown to deletion of digital claim form.
+        </div>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      </li>
+      <li>
+        <h3 class="govuk-heading-m"><a href="/wcv1/home?nino=QQ112233Z">Marge Simpson, QQ112233Z (part 2)</a></h3>
+        <p>Attends and signs claimant commitment.</p>
+        <div class="govuk-inset-text">
+          Changes status to ‘verified’ and uploads supporting evidence.
+        </div>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      </li>
+      <li>
+        <h3 class="govuk-heading-m"><a href="/wcv1/home?nino=QQ112233B">Fred Flintstone, QQ112233B</a></h3>
+        <p>Attends and provides:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Pension statement</li>
+          <li>SSP1</li>
+          <li>ID</li>
+        </ul>
+        <p>Fit notes are missing.</p>
+        <div class="govuk-inset-text">
+          Changes status to ‘verified’ and uploads supporting evidence.
+        </div>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      </li>
+      <li>
+        <h3 class="govuk-heading-m"><a href="/wcv1/home?nino=QQ112233C">Homer Simpson, QQ112233C</a></h3>
+        <p>Attends and provides:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>ID</li>
+          <li>fit notes</li>
+          <li>pension statements</li>
+          <li>SSP1</li>
+        </ul>
+        <p>He’s submitted 2 claims as he needed to change some information.</p>
+        <div class="govuk-inset-text">
+          Checks with customer which form to use, then changes status to ’verified’ and uploads supporting evidence and changes status to ‘withdrawn’ for all other application forms.
+        </div>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      </li>
+      <li>
+        <h3 class="govuk-heading-m"><a href="/wcv1/home?nino=QQ121212A">Snow White, QQ121212A</a></h3>
+        <p>Attends and provides:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>ID</li>
+          <li>fit notes</li>
+          <li>SSP1</li>
+        </ul>
+        <p>She was going to fill in the form online but got a bit confused by the questions and so they stopped completing it. She decides to complete a paper form instead.</p>
+        <div class="govuk-inset-text">
+          <p>Asks her if she’s submitted a digital application and then checks to see if she’d prefer to complete a digital or clerical form.</p>
+          <p>Once action has been taken to complete clerical form, agent adds new clerical claim, uploads claim form and supporting evidence.</p>
+        </div>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      </li>
+    </ol>
+
+    <h2 class="govuk-heading-l">What we learned</h2>
+
+    <p>To follow.</p>
+    
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
