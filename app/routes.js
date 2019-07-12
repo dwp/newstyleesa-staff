@@ -299,41 +299,33 @@ router.post('/wcv1/search-entry', function (req, res) {
 
   let search = req.session.data['search']
 
-  // fred
-  if (search === 'QQ 12 34 56 C' || search === 'QQ123456C') {
-    res.redirect('applicant?nino=QQ123456C&status=unverified')
-  // lex
-  } else if (search === 'QQ 00 11 22 A' || search === 'QQ001122A') {
-    res.redirect('applicant?nino=QQ001122A&status=unverified')
-  // lois
-  } else if (search === 'QQ 11 11 22 B' || search === 'QQ111122B') {
-    res.redirect('applicant?nino=QQ111122B&status=unverified')
-  // clark
-  } else if (search === 'QQ 11 22 33 A' || search === 'QQ112233A') {
-    res.redirect('applicant?nino=QQ112233A&status=unverified&sr=true')
-  // not found
-  } else if (search === 'QQ 12 34 56 Z' || search ==='QQ123456Z') {
-    res.redirect('search-not-found?nino=QQ123456Z')
-  } else if (search === 'QQ 12 12 12 A' || search ==='QQ121212A') {
-    res.redirect('search-not-found?nino=QQ121212A')
-  // barney
-  } else if (search === 'QQ 11 11 11 Z' || search ==='QQ111111Z') {
-    res.redirect('applicant?nino=QQ111111Z&status=unverified')
-  // daffy
-  } else if (search === 'QQ 22 22 33 V' || search ==='QQ222233V') {
-    res.redirect('applicant?nino=QQ222233V&status=verified')
-  // sponge bob
-  } else if (search === 'QQ 11 22 33 M' || search ==='QQ112233M') {
-    res.redirect('applicant?nino=QQ112233M&status=failedtoattend')
-  // multiple-results
-  } else if (search === 'QQ 01 01 01 A' || search ==='QQ010101A') {
-    res.redirect('search-multiple-results')
-  // multiple-results
-  } else if (search === 'QQ 11 22 33 Z' || search ==='QQ112233Z') {
-    res.redirect('applicant?nino=QQ112233Z&status=unverified')
-  // Scrooge
-  } else if (search === 'QQ 11 11 22 G' || search ==='QQ111122G') {
-    res.redirect('applicant?nino=QQ111122G&status=failedtoattend')
+  // Barney Rubble
+  if (search === 'QQ 11 11 11 Z' || search === 'QQ111111Z' || search === 'barney rubble' || search === 'Barney Rubble' || search === 'barney' || search === 'Barney') {
+    res.redirect('claimant?nino=QQ111111Z&status=unverified&ssp1=true&fitnotes=true&pension=true')
+  // Clark Kent
+  } else if (search === 'QQ 11 22 33 A' || search === 'QQ112233A' || search === 'clark kent' || search === 'Clark Kent' || search === 'clark' || search === 'Clark') {
+    res.redirect('claimant?nino=QQ112233A&status=unverified&sr=true&ssp1=true&fitnotes=true')
+  // Buzz Lightyear
+  } else if (search === 'QQ000011A' || search === 'QQ000011A' || search === 'buzz lightyear' || search === 'Buzz Lightyear' || search === 'buzz' || search === 'Buzz') {
+    res.redirect('claimant?nino=QQ000011A&status=unverified&sr=true&ssp1=true&fitnotes=true')
+  // Lois Lane
+  } else if (search === 'QQ 11 11 22 B' || search === 'QQ111122B' || search === 'lois lane' || search === 'Lois Lane' || search === 'lois' || search === 'Lois') {
+    res.redirect('claimant?nino=QQ111122B&status=unverified&fitnotes=true&pension=true')
+  // Micky Mouse
+  } else if (search === 'QQ 11 22 33 Z' || search ==='QQ112233Z' || search === 'micky mouse' || search === 'Micky Mouse' || search === 'micky' || search === 'Micky') {
+    res.redirect('claimant?nino=QQ112233Z&status=unverified&ssp1=true&fitnotes=true&pension=true')
+  // Marge Simpson
+  } else if (search === 'QQ 23 12 34 Z' || search ==='QQ231234Z' || search === 'marge simpson' || search === 'Marge Simpson' || search === 'marge' || search === 'Marge') {
+    res.redirect('claimant?nino=QQ231234Z&status=unverified&ssp1=true&fitnotes=true&pension=true')
+  // Fred Flintstone
+  } else if (search === 'QQ 11 22 33 B' || search ==='QQ112233B' || search === 'fred flintstone' || search === 'Fred Flintstone' || search === 'fred' || search === 'Fred') {
+    res.redirect('claimant?nino=QQ112233B&status=unverified&ssp1=true&pension=true')
+  // Homer Simpson
+  } else if (search === 'QQ 11 22 33 C' || search ==='QQ112233C' || search === 'homer simpson' || search === 'Homer Simpson' || search === 'homer' || search === 'Homer') {
+    res.redirect('claimant?nino=QQ112233C&status=unverified&ssp1=true&ssp1=true&fitnotes=true&pension=true')
+  // Snow White
+  } else if (search === 'QQ 12 12 12 A' || search ==='QQ121212A' || search === 'snow white' || search === 'Snow White' || search === 'snow' || search === 'Snow') {
+    res.redirect('claimant?nino=QQ121212A&status=unverified&ssp1=true&fitnotes=true')
   } else {
     res.redirect('back')
   }
@@ -348,30 +340,31 @@ router.post('/wcv1/status-changing', function (req, res) {
 
   let nino = req.session.data['nino']
 
-  if (status === 'cancelled') {
-    res.redirect(`cancelled-reason?nino=${nino}&status=unverified`)
-  } else if (status === 'verified') {
-    res.redirect(`documents-to-check?status=unverified&nino=${nino}`)
-  } else if (status === 'fta') {
-    res.redirect(`status-confirmation?status=fta&nino=${nino}`)
+  if (status === 'verified') {
+    res.redirect(`upload?status=unverified&nino=${nino}`)
+  } else if (status === 'newappointmentneeded') {
+    res.redirect(`status-confirmation?status=newappointmentneeded&nino=${nino}`)
+  } else if (status === 'withdrawn') {
+    res.redirect(`status-confirmation?status=withdrawn&nino=${nino}`)
   } else {
     res.redirect('error')
   }
 })
 
-router.post('/wcv1/cancelled-logic', function (req, res) {
+
+router.post('/wcv1/upload-logic', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
 
-  let reason = req.session.data['reason']
+  let file = req.session.data['file-upload-1']
 
   let nino = req.session.data['nino']
 
-  if (reason === 'nocontact') {
-    res.redirect(`letter?nino=${nino}&status=unverified`)
+  if (file) {
+    res.redirect(`upload?file1=true&nino=${nino}&filename1=${file}`)
   } else {
-    res.redirect(`status-confirmation?nino=${nino}&status=cancelled`)
+    res.redirect(`upload?error=true&nino=${nino}`)
   }
 })
 
@@ -457,9 +450,6 @@ router.post('/va/cancelled-logic', function (req, res) {
     res.redirect(`status-confirmation?nino=${nino}&status=cancelled`)
   }
 })
-
-
-
 
 router.post('/iteration-1/status-changing', function (req, res) {
   // Get the answer from session data

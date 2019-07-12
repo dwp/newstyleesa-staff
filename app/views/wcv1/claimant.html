@@ -1,7 +1,7 @@
 {% extends "layout_staff.html" %}
 
 {% block pageTitle %}
-  Claim summary - Fred Flintstone - Apply for ‘new style’ Employment and Support Allowance
+  Claim summary - Apply for ‘new style’ Employment and Support Allowance
 {% endblock %}
 
 {% set bodyClasses = "hero-header" %}
@@ -50,36 +50,14 @@
     <p>The claimant should also bring the following evidence:</p>
 
     <ul class="govuk-list govuk-list--bullet">
-      <li>fit notes</li>
-      <li>SSP1 form</li>
-      <li>P45 form</li>
-      <li>their 2 most recent monthly pay slips from Boots</li>
+      {% if getData.fitnotes %}<li>fit notes</li>{% endif %}
+      {% if getData.ssp1 %}<li>SSP1 form</li>{% endif %}
+      {% if getData.p45 %}<li>P45 form</li>{% endif %}
+      {% if getData.boots %}<li>their 2 most recent monthly pay slips from Boots</li>{% endif %}
+      {% if getData.pension %}<li>their pensions statements</li>{% endif %}
     </ul>
 
     <p>If they do not bring this supporting evidence, you can still send the claim for processing. Other evidence will be requested later.</p>
-
-
-
-
-{#     <p>You will need to see the following identity documents:</p>
-
-    <ul class="govuk-list govuk-list--bullet">
-      <li>One ‘primary’ identity document<br>(current passport, driving licence or bank card)</li>
-      <li>Two ‘secondary’ identity documents<br>(proof of their name and address, such as a utility bill, bank statement, hospital letter or birth certificate)</li>
-    </ul>
-
-    <p>Something about biometrics if the claimant hasn’t brought all these with them.</p>
-
-    <p>The claimant should also bring the following evidence:</p>
-
-     <ul class="govuk-list govuk-list--bullet">
-      <li>fit notes</li>
-      <li>SSP1 form</li>
-      <li>P45 form</li>
-      <li>their 2 most recent monthly pay slips from Boots</li>
-    </ul>
-
-    <p>The claim can sent to be processed with just the identity and claimant commitment, but the other evidence will be requested later.</p> #}
 
     <br>
     <br>
