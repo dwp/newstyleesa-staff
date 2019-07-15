@@ -292,6 +292,13 @@ router.post('/v5/cancelled-logic', function (req, res) {
 
 // wcv1 ROUTING
 
+
+router.get('/wcv1/home', function (req, res) {
+  req.session.destroy()
+  res.render('wcv1/home')
+})
+
+
 router.post('/wcv1/search-entry', function (req, res) {
   // Get the answer from session data
   // The name between the quotes is the same as the 'name' attribute on the input elements
@@ -324,10 +331,10 @@ router.post('/wcv1/search-entry', function (req, res) {
   } else if (search === 'QQ 11 22 33 C' || search ==='QQ112233C' || search === 'homer simpson' || search === 'Homer Simpson' || search === 'homer' || search === 'Homer') {
     res.redirect('claimant?nino=QQ112233C&status=unverified&ssp1=true&ssp1=true&fitnotes=true&pension=true')
   // Snow White
-  } else if (search === 'QQ 12 12 12 A' || search ==='QQ121212A' || search === 'snow white' || search === 'Snow White' || search === 'snow' || search === 'Snow') {
-    res.redirect('claimant?nino=QQ121212A&status=unverified&ssp1=true&fitnotes=true')
+  // } else if (search === 'QQ 12 12 12 A' || search ==='QQ121212A' || search === 'snow white' || search === 'Snow White' || search === 'snow' || search === 'Snow') {
+  //   res.redirect('claimant?nino=QQ121212A&status=unverified&ssp1=true&fitnotes=true')
   } else {
-    res.redirect('back')
+    res.redirect(`search-not-found?nino=${search}`)
   }
 })
 
@@ -357,14 +364,23 @@ router.post('/wcv1/upload-logic', function (req, res) {
   // The name between the quotes is the same as the 'name' attribute on the input elements
   // However in JavaScript we can't use hyphens in variable names
 
-  let file = req.session.data['file-upload-1']
+  let file1 = req.session.data['file-upload-1']
+  let file2 = req.session.data['file-upload-2']
+  let file3 = req.session.data['file-upload-3']
 
   let nino = req.session.data['nino']
 
-  if (file) {
-    res.redirect(`upload?file1=true&nino=${nino}&filename1=${file}`)
+  if (file3) {
+    // res.redirect(`yabba`)
+    res.redirect(`upload?nino=${nino}&file1=true&filename1=${file1}&file2=true&filename2=${file2}&file3=true&filename3=${file3}`)
+  } else if (file2) {
+    res.redirect(`upload?nino=${nino}&file1=true&filename1=${file1}&file2=true&filename2=${file2}`)
   } else {
-    res.redirect(`upload?error=true&nino=${nino}`)
+    if (file1) {
+      res.redirect(`upload?nino=${nino}&file1=true&filename1=${file1}`)
+    } else {
+      res.redirect(`upload?nino=${nino}&error=true`)
+    }
   }
 })
 
