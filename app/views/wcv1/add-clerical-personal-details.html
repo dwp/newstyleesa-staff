@@ -17,31 +17,37 @@
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-two-thirds">
+
+    <form action="/wcv1/add-clerical-special-rules" method="post">
   
-    <h1 class="govuk-heading-l">Claimant’s personal details</h1>
+      <h1 class="govuk-heading-l">Claimant’s personal details</h1>
 
-    <div class="govuk-form-group">
-      <label class="govuk-label" for="first-name">
-        First name
-      </label>
-      <input class="govuk-input govuk-input--width-20" id="first-name" name="width-20" type="text">
-    </div>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="first-name">
+          First name
+        </label>
+        <input class="govuk-input govuk-input--width-20" id="first-name" name="firstname" type="text">
+      </div>
 
-    <div class="govuk-form-group">
-      <label class="govuk-label" for="last-name">
-        Last name
-      </label>
-      <input class="govuk-input govuk-input--width-20" id="last-name" name="width-20" type="text">
-    </div>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="last-name">
+          Last name
+        </label>
+        <input class="govuk-input govuk-input--width-20" id="last-name" name="lastname" type="text">
+      </div>
 
-    <div class="govuk-form-group">
-      <label class="govuk-label" for="nino">
-        National Insurance number
-      </label>
-      <input class="govuk-input govuk-input--width-10" id="nino" name="width-10" type="text">
-    </div>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="nino">
+          National Insurance number
+        </label>
+        <input class="govuk-input govuk-input--width-10" id="nino" name="nationalinsurance" type="text">
+      </div>
 
-    <a href="add-clerical-special-rules" class="govuk-button">Continue</a>
+      <button type="submit" class="govuk-button">Continue</button>
+
+{#       <a href="add-clerical-special-rules" class="govuk-button">Continue</a> #}
+
+    </form>
 
   </div>{# /govuk-grid-column-two-thirds #}
 

@@ -26,9 +26,9 @@
           Personal details
         </dt>
         <dd class="govuk-summary-list__value">
-          Snow<br>
-          White<br>
-          QQ121212A
+          {{ data['firstname'] }}<br>
+          {{ data['lastname'] }}<br>
+          {{ data['nationalinsurance'] }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#">
@@ -41,7 +41,7 @@
           Special rules
         </dt>
         <dd class="govuk-summary-list__value">
-          No
+         {{ data['specialrules'] }}
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#">

@@ -131,7 +131,7 @@
         </div>
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       </li>
-      <li>
+{#       <li>
         <h3 class="govuk-heading-m"><a href="/wcv1/home?nino=QQ112233B">Fred Flintstone, QQ112233B</a></h3>
         <p>Attends and provides:</p>
         <ul class="govuk-list govuk-list--bullet">
@@ -144,7 +144,7 @@
           Changes status to ‘verified’ and uploads supporting evidence.
         </div>
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-      </li>
+      </li> #}
       <li>
         <h3 class="govuk-heading-m"><a href="/wcv1/home?nino=QQ112233C">Homer Simpson, QQ112233C</a></h3>
         <p>Attends and provides:</p>
@@ -176,17 +176,47 @@
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       </li>
       <li>
-        <h3 class="govuk-heading-m">Email templates</h3>
+        <h3 class="govuk-heading-m"><a href="/wcv1/home?nino=QQ010101A">Minnie Mouse, QQ010101A</a></h3>
+        <p>Attends and provides:</p>
         <ul class="govuk-list govuk-list--bullet">
-          <li><a href="mailto:inbox@testing.gov.uk?subject=Digital%20claim%20-%20%5BNAME%20OF%20CLAIMANT%20GOES%20HERE%5D&body=This%20claimant%20has%20signed%20the%20claimant%20commitment%20and%20verified%20their%20identity.%0A%0A%5BATTACH%20SCANNED%20EVIDENCE%20HERE%5D">Verified digital claim</a></li>
-          <li><a href="mailto:inbox@testing.gov.uk?subject=Special%20rules%20-%20Digital%20claim%20-%20%5BNAME%20OF%20CLAIMANT%20GOES%20HERE%5D&body=This%20claimant%20has%20signed%20the%20claimant%20commitment%20and%20verified%20their%20identity.%0A%0A%5BATTACH%20SCANNED%20EVIDENCE%20HERE%5D">Verified digital claim (special rules)</a></li>
-          <li><a href="mailto:inbox@testing.gov.uk?subject=Clerical%20claim%20-%20%5BNAME%20OF%20CLAIMANT%20GOES%20HERE%5D&body=This%20claimant%20has%20signed%20the%20claimant%20commitment%20and%20verified%20their%20identity.%0A%0A%5BATTACH%20SCANNED%20CLAIM%20FORM%20AND%20%20EVIDENCE%20HERE%5D">Verified clerical claim</a></li>
-          <li><a href="mailto:inbox@testing.gov.uk?subject=Special%20rules%20-%20Clerical%20claim%20-%20%5BNAME%20OF%20CLAIMANT%20GOES%20HERE%5D&body=This%20claimant%20has%20signed%20the%20claimant%20commitment%20and%20verified%20their%20identity.%0A%0A%5BATTACH%20SCANNED%20CLAIM%20FORM%20AND%20%20EVIDENCE%20HERE%5D">Verified clerical claim (special rules)</a></li>
-        {#   <li><a href="#">Failed to attend digital claim</a></li> #}
-      </ul>
+          <li>ID</li>
+          <li>fit notes</li>
+          <li>SSP1</li>
+        </ul>
+        <p>She wasn’t sure it worked out the first time she filled in the form online, so filled it in again, but knows the information was the same on both.</p>
+        <p>During discussions, she realises she is able to claim from an earlier date.</p>
+        <div class="govuk-inset-text">
+          <p>Checks with claimant which form to use, edits the claim date, then changes status to ‘verified’ and uploads supporting evidence and changes status to ‘withdrawn’ for all other application forms.</p>
+        </div>
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      </li>
+      <li>
+        <h3 class="govuk-heading-m"><a href="/wcv1/home?nino=QQ123456Z">Bugs Bunny, QQ123456Z</a></h3>
+        <p>Attends and provides:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>ID</li>
+          <li>fit notes</li>
+          <li>SSP1</li>
+        </ul>
+        <p>Bugs Bunny thinks they have completed the form online. Bugs Bunny decides to complete a paper claim form.</p>
+        <div class="govuk-inset-text">
+          <p>Searches for claimant by name vs. NINO. Or agent uses Searchlight/CIS to confirm details.</p>
+          <p>Asks customer if they have submitted a digital application and asks them to complete a digital or clerical form.</p>
+          <p>Once action has been taken to complete clerical form, agent adds new clerical claim, uploads claim form and supporting evidence.</p>
+        </div>
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       </li>
     </ol>
+
+    <h2 class="govuk-heading-l">Email templates</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="mailto:inbox@testing.gov.uk?subject=Digital%20claim%20-%20%5BNAME%20OF%20CLAIMANT%20GOES%20HERE%5D&body=This%20claimant%20has%20signed%20the%20claimant%20commitment%20and%20verified%20their%20identity.%0A%0A%5BATTACH%20SCANNED%20EVIDENCE%20HERE%5D">Verified digital claim</a></li>
+      <li><a href="mailto:inbox@testing.gov.uk?subject=Special%20rules%20-%20Digital%20claim%20-%20%5BNAME%20OF%20CLAIMANT%20GOES%20HERE%5D&body=This%20claimant%20has%20signed%20the%20claimant%20commitment%20and%20verified%20their%20identity.%0A%0A%5BATTACH%20SCANNED%20EVIDENCE%20HERE%5D">Verified digital claim (special rules)</a></li>
+      <li><a href="mailto:inbox@testing.gov.uk?subject=Clerical%20claim%20-%20%5BNAME%20OF%20CLAIMANT%20GOES%20HERE%5D&body=This%20claimant%20has%20signed%20the%20claimant%20commitment%20and%20verified%20their%20identity.%0A%0A%5BATTACH%20SCANNED%20CLAIM%20FORM%20AND%20%20EVIDENCE%20HERE%5D">Verified clerical claim</a></li>
+      <li><a href="mailto:inbox@testing.gov.uk?subject=Special%20rules%20-%20Clerical%20claim%20-%20%5BNAME%20OF%20CLAIMANT%20GOES%20HERE%5D&body=This%20claimant%20has%20signed%20the%20claimant%20commitment%20and%20verified%20their%20identity.%0A%0A%5BATTACH%20SCANNED%20CLAIM%20FORM%20AND%20%20EVIDENCE%20HERE%5D">Verified clerical claim (special rules)</a></li>
+    {#   <li><a href="#">Failed to attend digital claim</a></li> #}
+  </ul>
 
     <h2 class="govuk-heading-l">What we learned</h2>
 

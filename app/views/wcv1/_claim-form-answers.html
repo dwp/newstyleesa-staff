@@ -6,7 +6,11 @@
       Claim submitted
     </dt>
     <dd class="govuk-summary-list__value">
-      12/07/2019, 10:30pm
+      {% if getData.early %}
+        12/07/2019, 9:15pm
+      {% else %}
+        12/07/2019, 10:30pm
+      {% endif %}
     </dd>
     <dd class="govuk-summary-list__actions">
     </dd>
@@ -50,6 +54,8 @@
         Homer
       {% elif getData.nino === "QQ121212A" %}
         Snow
+      {% elif getData.nino === "QQ010101A" %}
+        Minnie
       {% else %}
         –
       {% endif %}
@@ -81,6 +87,8 @@
         Simpson
       {% elif getData.nino === "QQ121212A" %}
         White
+      {% elif getData.nino === "QQ010101A" %}
+        Mouse
       {% else %}
         –
       {% endif %}
@@ -111,6 +119,8 @@
       {% elif getData.nino === "QQ112233C" %}
         08/08/1968
       {% elif getData.nino === "QQ121212A" %}
+        01/02/1962
+      {% elif getData.nino === "QQ010101A" %}
         01/02/1962
       {% else %}
         –
@@ -167,6 +177,8 @@
         LS4 9AA
       {% elif getData.nino === "QQ121212A" %}
         NG6 8VB
+      {% elif getData.nino === "QQ010101A" %}
+        NG8 4FG
       {% else %}
         –
       {% endif %}

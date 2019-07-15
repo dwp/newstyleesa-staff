@@ -25,6 +25,8 @@
               Homer Simpson
             {% elif getData.nino === "QQ121212A" %}
               Snow White
+            {% elif getData.nino === "QQ010101A" %}
+              Minnie Mouse
             {% else %}
               –
             {% endif %}
@@ -73,6 +75,8 @@
               08/08/1968
             {% elif getData.nino === "QQ121212A" %}
               01/02/1962
+            {% elif getData.nino === "QQ010101A" %}
+              01/02/1962
             {% else %}
               –
             {% endif %}
@@ -97,6 +101,8 @@
               LS4 9AA
             {% elif getData.nino === "QQ121212A" %}
               NG6 8VB
+            {% elif getData.nino === "QQ010101A" %}
+              NG8 4FG
             {% else %}
               –
             {% endif %}
@@ -104,7 +110,13 @@
           <dt>Phone:</dt>
           <dd>01234 567890</dd>
           <dt>Claim submitted:</dt>
-          <dd>12/07/2019</dd>
+          <dd>
+            {% if getData.early %}
+              12/07/2019, 9:15pm
+            {% else %}
+              12/07/2019, 10:30pm
+            {% endif %}
+          </dd>
         </div>
       </dl>
 

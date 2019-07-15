@@ -19,29 +19,33 @@
 
   <div class="govuk-grid-column-two-thirds">
 
-    <div class="govuk-form-group">
-      <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-          <h1 class="govuk-fieldset__heading">
-            Do special rules apply for this claimant?
-          </h1>
-        </legend>
-        <div class="govuk-radios">
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="changed-name-1" name="changed-name" type="radio" value="yes">
-            <label class="govuk-label govuk-radios__label" for="changed-name-1">
-              Yes
-            </label> </div>
-          <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
-            <label class="govuk-label govuk-radios__label" for="changed-name-2">
-              No
-            </label> </div>
-        </div>
-      </fieldset>
-    </div>
+    <form action="/wcv1/add-clerical-check-answers" method="post">
 
-    <a href="add-clerical-check-answers" class="govuk-button">Continue</a>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Do special rules apply for this claimant?
+            </h1>
+          </legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changed-name-1" name="specialrules" type="radio" value="Yes">
+              <label class="govuk-label govuk-radios__label" for="changed-name-1">
+                Yes
+              </label> </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="changed-name-2" name="specialrules" type="radio" value="No">
+              <label class="govuk-label govuk-radios__label" for="changed-name-2">
+                No
+              </label> </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button type="submit" class="govuk-button">Continue</button>
+
+    </form>
 
   </div>{# /govuk-grid-column-two-thirds #}
 
