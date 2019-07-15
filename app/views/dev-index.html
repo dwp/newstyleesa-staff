@@ -1,0 +1,41 @@
+{% extends "layout_staff.html" %}
+
+{% block pageTitle %}
+  Apply for new style Employment and Support Allowance
+{% endblock %}
+
+{# {% block beforeContent %}
+  <div class="govuk-!-margin-bottom-6"></div>
+{% endblock %} #}
+
+{% block content %}
+
+<div style="margin-bottom: 30px;">
+  <a href="index" rel="prev" class="govuk-back-link">Index page</a>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Agent user interface screens for developer stories</h1>
+
+    <div class="blue-border" style="margin-bottom: 40px">
+      <h2 class="govuk-heading-m">
+        <span class="app-step-nav-related__pretitle">MVP</span>
+      </h2>
+      <p>
+        <a href="/mvp/search?nino=QQ123456C" class="govuk-button" style="margin-bottom: 0">View latest MVP</a>
+      </p>
+      <p><a href="/mvp/" style="margin-bottom: 0">List of screens</a></p>
+    </div>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="pdf-application">PDF design reference</a></li>
+      <li><a href="iteration-1/">Iteration 1</a></li>
+      <li><a href="iteration-2/">Iteration 2</a></li>
+    </ul>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

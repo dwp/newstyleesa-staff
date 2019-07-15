@@ -1,0 +1,54 @@
+{% extends "layout_staff.html" %}
+
+{% block pageTitle %}
+  Apply for new style Employment and Support Allowance
+{% endblock %}
+
+{# {% block beforeContent %}
+  <div class="govuk-!-margin-bottom-6"></div>
+{% endblock %} #}
+
+{% block content %}
+
+<div style="margin-bottom: 30px;">
+  <a href="index" rel="prev" class="govuk-back-link">Index page</a>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Agent user interface prototypes</h1>
+
+    <h2 class="govuk-heading-m">Processing centre</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="v1">Version 1</a><br>
+      14 February 2019, Belfast
+      </li>
+      <li><a href="v2">Version 2</a><br>
+      9 April 2019, Belfast
+      </li>
+      <li><a href="v3/">Version 3 (BA visit)</a><br>
+        16 May 2019, Burnley
+      </li>
+      <li><a href="v4">Version 4</a><br>
+        30 May 2019, Burnley
+      </li>
+      <li><a href="v5">Version 5</a><br>
+        25 June 2019 (not tested with users)<br>
+        Built for exploration and feedback from stakeholders 
+      </li>
+    </ul>
+
+    <h2 class="govuk-heading-m">Jobcentre</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="wcv1/index">Work coach view – version 1</a><br>
+      18 July 2019, Hull Jobcentre
+      </li>
+    </ul>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

@@ -5,68 +5,33 @@
 {% endblock %}
 
 {% block beforeContent %}
-  <div class="govuk-!-margin-bottom-6"></div>
+  <div class="govuk-!-margin-bottom-8"></div>
 {% endblock %}
 
 {% block content %}
 
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-two-thirds">
+<h1 class="govuk-heading-l">Agent user interface</h1>
 
-    <h1 class="govuk-heading-xl">Agent user interface screens</h1>
+<div class="govuk-!-margin-top-8">
+  <div class="govuk-grid-row">
 
-    <div class="blue-border" style="margin-bottom: 40px">
-      <h2 class="govuk-heading-l">
-        <span class="app-step-nav-related__pretitle">MVP</span>
-      </h2>
-      <p>
-        <a href="/mvp/search?nino=QQ123456C" class="govuk-button" style="margin-bottom: 0">View latest MVP</a>
-      </p>
-      <p><a href="/mvp/" style="margin-bottom: 0">List of screens</a></p>
+    <div class="govuk-grid-column-one-half">
+      <a href="proto-index" class="tile tile--blue">
+        <div class="tile__contents">
+          <h2 class="tile__title">Prototypes for testing in user research</h2>
+        </div>
+      </a>
     </div>
-
-    <h2 class="govuk-heading-l">Prototypes for testing</h2>
-
-    <h3 class="govuk-heading-m">User research</h3>
-
-    <h4 class="govuk-heading-s">Processing centre</h4>
-
-    <ul class="govuk-list govuk-list--bullet">
-      <li><a href="v1">Version 1</a><br>
-      14 February 2019, Belfast
-      </li>
-      <li><a href="v2">Version 2</a><br>
-      9 April 2019, Belfast
-      </li>
-      <li><a href="v3/">Version 3 (BA visit)</a><br>
-        16 May 2019, Burnley
-      </li>
-      <li><a href="v4">Version 4</a><br>
-        30 May 2019, Burnley
-      </li>
-      <li><a href="v5">Version 5</a><br>
-        25 June 2019 (not tested with users)<br>
-        Built for exploration and feedback from stakeholders 
-      </li>
-    </ul>
-
-    <h4 class="govuk-heading-s">Jobcentre</h4>
-
-    <ul class="govuk-list govuk-list--bullet">
-      <li><a href="wcv1/index">Work coach view – version 1</a><br>
-      (work in progress)
-      </li>
-    </ul>
-
-    <h2 class="govuk-heading-l">Screens for developer stories</h2>
-
-    <ul class="govuk-list govuk-list--bullet">
-      <li><a href="pdf-application">PDF design reference</a></li>
-      <li><a href="iteration-1/">Iteration 1</a></li>
-      <li><a href="iteration-2/">Iteration 2</a></li>
-    </ul>
-
-  </div>{# /govuk-grid-column-two-thirds #}
-</div>{# /govuk-grid-row #}
+    
+    <div class="govuk-grid-column-one-half">
+      <a href="dev-index" class="tile tile--blue">
+        <div class="tile__contents">
+          <h2 class="tile__title">Screens for developer stories</h2>
+        </div>
+      </a>
+    </div>
+    
+  </div>
+</div>
 
 {% endblock %}
