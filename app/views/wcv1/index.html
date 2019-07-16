@@ -1,21 +1,21 @@
-{% extends "layout_staff.html" %}
+{% extends "layout_staff_master.html" %}
 
 {% block pageTitle %}
   Apply for new style Employment and Support Allowance
 {% endblock %}
 
-{% block beforeContent %}
-  <div class="govuk-!-margin-bottom-6"></div>
-{% endblock %}
-
 {% block content %}
+
+<div style="margin-bottom: 30px;">
+  <a href="/proto-index" rel="prev" class="govuk-back-link">Back to prototypes for testing in user research</a>
+</div>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">Work coach view - version 1</h1>
+    <h1 class="govuk-heading-l">Work coach view - version 1</h1>
 
-    <h2 class="govuk-heading-l">What we want to learn</h2>
+    <h2 class="govuk-heading-m">What we want to learn</h2>
 
     <ul class="govuk-list govuk-list--bullet">
       <li>How do they know about appointments? Do they use Q Flow?</li>
@@ -40,11 +40,11 @@
 
     </ul>
 
-    <h2 class="govuk-heading-l">Scenarios to test</h2>
+    <h2 class="govuk-heading-m">Scenarios to test</h2>
 
-    <ol class="govuk-list govuk-list--number govuk-body-l" style="font-weight: bold">
+    <ol class="govuk-list govuk-list--number govuk-body-m" style="font-weight: bold">
       <li>
-        <h3 class="govuk-heading-m"><a href="/wcv1/home?nino=QQ111111Z">Barney Rubble, QQ111111Z</a></h3>
+        <h3 class="govuk-heading-s"><a href="/wcv1/home?nino=QQ111111Z">Barney Rubble, QQ111111Z</a></h3>
         <p>Attends and provides:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>ID</li>
@@ -58,7 +58,7 @@
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       </li>
       <li>
-        <h3 class="govuk-heading-m"><a href="/wcv1/home?nino=QQ112233A">Clark Kent, QQ112233A (special rules)</a></h3>
+        <h3 class="govuk-heading-s"><a href="/wcv1/home?nino=QQ112233A">Clark Kent, QQ112233A (special rules)</a></h3>
         <p>Attends and provides:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>ID</li>
@@ -71,7 +71,7 @@
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       </li>
       <li>
-        <h3 class="govuk-heading-m"><a href="/wcv1/home?nino=QQ000011A">Buzz Lightyear, QQ000011A (special rules)</a></h3>
+        <h3 class="govuk-heading-s"><a href="/wcv1/home?nino=QQ000011A">Buzz Lightyear, QQ000011A (special rules)</a></h3>
         <p>Fails to attend.</p>
         <div class="govuk-inset-text">
           Changes status to ‘New appointment needed’ which begins 1 month countdown to deletion of digital claim form.
@@ -79,7 +79,7 @@
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       </li>
       <li>
-        <h3 class="govuk-heading-m"><a href="/wcv1/home?nino=QQ111122B">Lois Lane, QQ111122B</a></h3>
+        <h3 class="govuk-heading-s"><a href="/wcv1/home?nino=QQ111122B">Lois Lane, QQ111122B</a></h3>
         <p>Fails to attend.</p>
         <div class="govuk-inset-text">
           Changes status to ‘New appointment needed’ which begins 1 month countdown to deletion of digital claim form.
@@ -87,7 +87,7 @@
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       </li>
       <li>
-        <h3 class="govuk-heading-m"><a href="/wcv1/home?nino=QQ112233Z">Micky Mouse, QQ112233Z (part 1)</a></h3>
+        <h3 class="govuk-heading-s"><a href="/wcv1/home?nino=QQ112233Z">Micky Mouse, QQ112233Z (part 1)</a></h3>
         <p>Attends and provides:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>fit notes</li>
@@ -100,7 +100,7 @@
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       </li>
       <li>
-        <h3 class="govuk-heading-m"><a href="/wcv1/home?nino=QQ112233Z">Micky Mouse, QQ112233Z (part 2)</a></h3>
+        <h3 class="govuk-heading-s"><a href="/wcv1/home?nino=QQ112233Z">Micky Mouse, QQ112233Z (part 2)</a></h3>
         <p>Returns to the Jobcentre and provides:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>ID</li>
@@ -112,7 +112,7 @@
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       </li>
       <li>
-        <h3 class="govuk-heading-m"><a href="/wcv1/home?nino=QQ231234Z">Marge Simpson, QQ231234Z (part 1)</a></h3>
+        <h3 class="govuk-heading-s"><a href="/wcv1/home?nino=QQ231234Z">Marge Simpson, QQ231234Z (part 1)</a></h3>
         <p>Attends and provides:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>ID</li>
@@ -127,7 +127,7 @@
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       </li>
       <li>
-        <h3 class="govuk-heading-m"><a href="/wcv1/home?nino=QQ231234Z">Marge Simpson, QQ231234Z (part 2)</a></h3>
+        <h3 class="govuk-heading-s"><a href="/wcv1/home?nino=QQ231234Z">Marge Simpson, QQ231234Z (part 2)</a></h3>
         <p>Attends and signs claimant commitment.</p>
         <div class="govuk-inset-text">
           Changes status to ‘verified’ and uploads supporting evidence.
@@ -135,7 +135,7 @@
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       </li>
       <li>
-        <h3 class="govuk-heading-m"><a href="/wcv1/home?nino=QQ001122A">Lex Luther, QQ001122A (part 1)</a></h3>
+        <h3 class="govuk-heading-s"><a href="/wcv1/home?nino=QQ001122A">Lex Luther, QQ001122A (part 1)</a></h3>
         <p>Attends and provides:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>ID</li>
@@ -149,7 +149,7 @@
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       </li>
       <li>
-        <h3 class="govuk-heading-m"><a href="/wcv1/home?nino=QQ001122A">Lex Luther, QQ001122A (part 2)</a></h3>
+        <h3 class="govuk-heading-s"><a href="/wcv1/home?nino=QQ001122A">Lex Luther, QQ001122A (part 2)</a></h3>
         <p>Returns to jobcentre and provides the following:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>fit notes</li>
@@ -161,7 +161,7 @@
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       </li>
       <li>
-        <h3 class="govuk-heading-m"><a href="/wcv1/home?nino=QQ010101A">Minnie Mouse, QQ010101A</a></h3>
+        <h3 class="govuk-heading-s"><a href="/wcv1/home?nino=QQ010101A">Minnie Mouse, QQ010101A</a></h3>
         <p>Attends and provides:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>ID</li>
@@ -176,7 +176,7 @@
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       </li>
       <li>
-        <h3 class="govuk-heading-m"><a href="/wcv1/home?nino=QQ112233B">Fred Flintstone, QQ112233B (part 1)</a></h3>
+        <h3 class="govuk-heading-s"><a href="/wcv1/home?nino=QQ112233B">Fred Flintstone, QQ112233B (part 1)</a></h3>
         <p>Attends and provides:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>only one form of ID</li>
@@ -190,7 +190,7 @@
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       </li>
       <li>
-        <h3 class="govuk-heading-m"><a href="/wcv1/home?nino=QQ112233B">Fred Flintstone, QQ112233B (part 2)</a></h3>
+        <h3 class="govuk-heading-s"><a href="/wcv1/home?nino=QQ112233B">Fred Flintstone, QQ112233B (part 2)</a></h3>
         <p>Returns to jobcentre and provides the following:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>full ID</li>
@@ -201,7 +201,7 @@
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       </li>
       <li>
-        <h3 class="govuk-heading-m"><a href="/wcv1/home?nino=QQ112233C">Homer Simpson, QQ112233C</a></h3>
+        <h3 class="govuk-heading-s"><a href="/wcv1/home?nino=QQ112233C">Homer Simpson, QQ112233C</a></h3>
         <p>Attends and provides:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>ID</li>
@@ -216,7 +216,7 @@
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       </li>
       <li>
-        <h3 class="govuk-heading-m"><a href="/wcv1/home?nino=QQ121212A">Snow White, QQ121212A</a></h3>
+        <h3 class="govuk-heading-s"><a href="/wcv1/home?nino=QQ121212A">Snow White, QQ121212A</a></h3>
         <p>Attends and provides:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>ID</li>
@@ -232,7 +232,7 @@
       </li>
       
       <li>
-        <h3 class="govuk-heading-m"><a href="/wcv1/home?nino=QQ123456Z">Bugs Bunny, QQ123456Z</a></h3>
+        <h3 class="govuk-heading-s"><a href="/wcv1/home?nino=QQ123456Z">Bugs Bunny, QQ123456Z</a></h3>
         <p>Attends and provides:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>ID</li>
@@ -249,7 +249,7 @@
       </li>
     </ol>
 
-    <h2 class="govuk-heading-l">Email templates</h2>
+    <h2 class="govuk-heading-m">Email templates</h2>
 
     <ul class="govuk-list govuk-list--bullet">
       <li><a href="mailto:inbox@testing.gov.uk?subject=Digital%20claim%20-%20%5BNAME%20OF%20CLAIMANT%20GOES%20HERE%5D&body=This%20claimant%20has%20signed%20the%20claimant%20commitment%20and%20verified%20their%20identity.%0A%0A%5BATTACH%20SCANNED%20EVIDENCE%20HERE%5D">Verified digital claim</a></li>
@@ -259,9 +259,9 @@
     {#   <li><a href="#">Failed to attend digital claim</a></li> #}
   </ul>
 
-    <h2 class="govuk-heading-l">What we learned</h2>
+    <h2 class="govuk-heading-m">What we learned</h2>
 
-    <p>To follow.</p>
+    <p>To follow&hellip;</p>
     
   </div>{# /govuk-grid-column-two-thirds #}
 </div>{# /govuk-grid-row #}

@@ -1,21 +1,21 @@
-{% extends "layout_staff.html" %}
+{% extends "layout_staff_master.html" %}
 
 {% block pageTitle %}
   Apply for new style Employment and Support Allowance
 {% endblock %}
 
-{% block beforeContent %}
-  <div class="govuk-!-margin-bottom-6"></div>
-{% endblock %}
-
 {% block content %}
+
+<div style="margin-bottom: 30px;">
+  <a href="/proto-index" rel="prev" class="govuk-back-link">Back to prototypes for testing in user research</a>
+</div>
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">Version 2 – tested on 9&nbsp;April in Belfast</h1>
+    <h1 class="govuk-heading-l">Version 2 – tested on 9&nbsp;April in Belfast</h1>
 
-    <h2 class="govuk-heading-l">Changes in this version</h2>
+    <h2 class="govuk-heading-m">Changes in this version</h2>
 
     <ul class="govuk-list govuk-list--bullet">
       <li>Reduced number of statuses – we now just have ‘verified’ and ‘failed to attend’ (the ‘processed’ status isn’t needed as the tracker contains this information)</li>
@@ -25,9 +25,9 @@
 
       </ul>
 
-    <h2 class="govuk-heading-l">Screens tested</h2>
+    <h2 class="govuk-heading-m">Screens tested</h2>
 
-    <h3 class="govuk-heading-m">Inbox checkers</h3>
+    <h3 class="govuk-heading-s">Inbox checkers</h3>
 
     <ol class="govuk-list govuk-list--number">
       <li><a href="v2/search?nino=QQ123456C">Attended interview, all documentation is present</a></li>
@@ -43,19 +43,19 @@
       <li><a href="v2/search?nino=QQ121212A">No matches for the National Insurance number (claimant never filled out application form</a></li>
     </ol>
 
-    <h3 class="govuk-heading-m">Registration team</h3>
+    <h3 class="govuk-heading-s">Registration team</h3>
 
     <ol class="govuk-list govuk-list--number">
       <li><a href="v2/search?nino=QQ222233V">Verified example</a></li>
     </ol>
 
-    <h3 class="govuk-heading-m">Processors</h3>
+    <h3 class="govuk-heading-s">Processors</h3>
 
     <ol class="govuk-list govuk-list--number">
       <li><a href="pdf-application">PDF application</a></li>
     </ol>
 
-    <h2 class="govuk-heading-l">What we learned</h2>
+    <h2 class="govuk-heading-m">What we learned</h2>
 
     <ul class="govuk-list govuk-list--bullet">
       <li>Spaces in the National Insurance number are unhelpful</li>
