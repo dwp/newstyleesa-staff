@@ -24,6 +24,11 @@
         <h1 class="govuk-panel__title">New appointment needed</h1>
 {#         <div class="govuk-panel__body">Something here.</div> #}
       </div>
+    {% elif getData.status === "appointmentbooked" %}
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
+        <h1 class="govuk-panel__title">Appointment booked</h1>
+{#         <div class="govuk-panel__body">Something here.</div> #}
+      </div>
     {% elif getData.status === "withdrawn" %}
       <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
         <h1 class="govuk-panel__title">Withdrawn</h1>

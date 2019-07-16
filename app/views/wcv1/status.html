@@ -39,6 +39,15 @@
                 <span id="hint-verified" class="govuk-hint govuk-radios__hint">The claimant has proved their identity and signed their claimant commitment.</span>
               </div>
 
+              {% if getData.status === "newappointmentneeded" %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="appointmentbooked" name="status" type="radio" value="appointmentbooked" aria-describedby="hint-appointmentbooked">
+                <label class="govuk-label govuk-radios__label govuk-label--s" for="appointmentbooked">
+                 Appointment booked
+                </label>
+                <span id="hint-fta" class="govuk-hint govuk-radios__hint">Something here.</span>
+              </div>
+              {% else %}
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="newappointmentneeded" name="status" type="radio" value="newappointmentneeded" aria-describedby="hint-newappointmentneeded">
                 <label class="govuk-label govuk-radios__label govuk-label--s" for="newappointmentneeded">
@@ -46,6 +55,7 @@
                 </label>
                 <span id="hint-fta" class="govuk-hint govuk-radios__hint">The claimant failed to attend their appointment, could not prove their identity or needs more time to consider their claimant commitment.</span>
               </div>
+              {% endif %}
 
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="withdrawn" name="status" type="radio" value="withdrawn" aria-describedby="hint-withdrawn" data-aria-controls="conditional-withdrawn">

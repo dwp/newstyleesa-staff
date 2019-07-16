@@ -305,56 +305,48 @@ router.post('/wcv1/search-entry', function (req, res) {
   let search = req.session.data['search']
   let part2 = req.session.data['part2']
 
-  // let part2 = req.query.part2
-
-  // if (part2 === 'QQ112233Z'){
-  //   res.redirect('yes')
-  // } else {
-  //   res.redirect('no')
-  // }
-
   // Barney Rubble
   if (search === 'QQ 11 11 11 Z' || search === 'QQ111111Z' || search === 'barney rubble' || search === 'Barney Rubble' || search === 'barney' || search === 'Barney' || search === 'rubble' || search === 'Rubble'){
-    res.redirect('claimant?nino=QQ111111Z&status=unverified&ssp1=true&fitnotes=true&pension=true')
+    res.redirect('claimant?nino=QQ111111Z&status=appointmentbooked&ssp1=true&fitnotes=true&pension=true')
   // Clark Kent
   } else if (search === 'QQ 11 22 33 A' || search === 'QQ112233A' || search === 'clark kent' || search === 'Clark Kent' || search === 'clark' || search === 'Clark' || search === 'kent' || search === 'Kent') {
-    res.redirect('claimant?nino=QQ112233A&status=unverified&sr=true&ssp1=true&fitnotes=true')
+    res.redirect('claimant?nino=QQ112233A&status=appointmentbooked&sr=true&ssp1=true&fitnotes=true')
   // Buzz Lightyear
   } else if (search === 'QQ000011A' || search === 'QQ000011A' || search === 'buzz lightyear' || search === 'Buzz Lightyear' || search === 'buzz' || search === 'Buzz' || search === 'lightyear' || search === 'Lightyear') {
-    res.redirect('claimant?nino=QQ000011A&status=unverified&sr=true&ssp1=true&fitnotes=true')
+    res.redirect('claimant?nino=QQ000011A&status=appointmentbooked&sr=true&ssp1=true&fitnotes=true')
   // Lois Lane
   } else if (search === 'QQ 11 11 22 B' || search === 'QQ111122B' || search === 'lois lane' || search === 'Lois Lane' || search === 'lois' || search === 'Lois' || search === 'lane' || search === 'Lane') {
-    res.redirect('claimant?nino=QQ111122B&status=unverified&fitnotes=true&pension=true')
+    res.redirect('claimant?nino=QQ111122B&status=appointmentbooked&fitnotes=true&pension=true')
   // Micky Mouse
   } else if (search === 'QQ 11 22 33 Z' || search ==='QQ112233Z' || search === 'micky mouse' || search === 'Micky Mouse' || search === 'micky' || search === 'Micky' || search === 'mouse' || search === 'Mouse') {
     if (part2 === 'QQ112233Z') {
       res.redirect('claimant?nino=QQ112233Z&status=newappointmentneeded&ssp1=true&fitnotes=true&pension=true')
     } else {
-      res.redirect('claimant?nino=QQ112233Z&status=unverified&ssp1=true&fitnotes=true&pension=true')
+      res.redirect('claimant?nino=QQ112233Z&status=appointmentbooked&ssp1=true&fitnotes=true&pension=true')
     }
   // Marge Simpson
   } else if (search === 'QQ 23 12 34 Z' || search ==='QQ231234Z' || search === 'marge simpson' || search === 'Marge Simpson' || search === 'marge' || search === 'Marge' || search === 'simpson' || search === 'Simpson') {
     if (part2 === 'QQ231234Z') {
       res.redirect('claimant?nino=QQ231234Z&status=newappointmentneeded&ssp1=true&fitnotes=true&pension=true')
       } else {
-      res.redirect('claimant?nino=QQ231234Z&status=unverified&ssp1=true&fitnotes=true&pension=true')
+      res.redirect('claimant?nino=QQ231234Z&status=appointmentbooked&ssp1=true&fitnotes=true&pension=true')
     }
   // Lex Luther
   } else if (search === 'QQ 00 11 22 A' || search ==='QQ001122A' || search === 'lex luther' || search === 'Lex Luther' || search === 'lex' || search === 'Lex' || search === 'luther' || search === 'Luther') {
     if (part2 === 'QQ001122A') {
       res.redirect('claimant?nino=QQ001122A&status=verified&ssp1=true&fitnotes=true')
       } else {
-      res.redirect('claimant?nino=QQ001122A&status=unverified&ssp1=true&fitnotes=true')
+      res.redirect('claimant?nino=QQ001122A&status=appointmentbooked&ssp1=true&fitnotes=true')
     }
   // Fred Flintstone
   } else if (search === 'QQ 11 22 33 B' || search ==='QQ112233B' || search === 'fred flintstone' || search === 'Fred Flintstone' || search === 'fred' || search === 'Fred' || search === 'flintstone' || search === 'Flintstone') {
-    res.redirect('claimant?nino=QQ112233B&status=unverified&ssp1=true')
+    res.redirect('claimant?nino=QQ112233B&status=appointmentbooked&ssp1=true')
   // Homer Simpson
   } else if (search === 'QQ 11 22 33 C' || search ==='QQ112233C' || search === 'homer simpson' || search === 'Homer Simpson' || search === 'homer' || search === 'Homer' || search === 'simpson' || search === 'Simpson') {
-    res.redirect('claimant?nino=QQ112233C&status=unverified&ssp1=true&ssp1=true&fitnotes=true&pension=true')
+    res.redirect('claimant?nino=QQ112233C&status=appointmentbooked&ssp1=true&ssp1=true&fitnotes=true&pension=true')
   // Minnie Mouse
   } else if (search === 'QQ 01 01 01 A' || search ==='QQ010101A' || search === 'minnie mouse' || search === 'Minnie Mouse' || search === 'minnie' || search === 'Minnie' || search === 'mouse' || search === 'Mouse') {
-    res.redirect(`multiple-results-minnie?nino=QQ010101A&status=unverified&ssp1=true&ssp1=true&fitnotes=true&searchterm=${search}`)
+    res.redirect(`multiple-results-minnie?nino=QQ010101A&status=appointmentbooked&ssp1=true&ssp1=true&fitnotes=true&searchterm=${search}`)
   } else {
     res.redirect(`search-not-found?searchterm=${search}`)
   }
@@ -376,6 +368,8 @@ router.post('/wcv1/status-changing', function (req, res) {
     res.redirect(`status-confirmation?status=newappointmentneeded&nino=${nino}`)
   } else if (status === 'withdrawn') {
     res.redirect(`status-confirmation?status=withdrawn&nino=${nino}`)
+  } else if (status === 'appointmentbooked') {
+    res.redirect(`status-confirmation?status=appointmentbooked&nino=${nino}`)
   } else {
     res.redirect('error')
   }
