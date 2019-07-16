@@ -347,6 +347,8 @@ router.post('/wcv1/search-entry', function (req, res) {
   // Minnie Mouse
   } else if (search === 'QQ 01 01 01 A' || search ==='QQ010101A' || search === 'minnie mouse' || search === 'Minnie Mouse' || search === 'minnie' || search === 'Minnie' || search === 'mouse' || search === 'Mouse') {
     res.redirect(`multiple-results-minnie?nino=QQ010101A&status=appointmentbooked&ssp1=true&ssp1=true&fitnotes=true&searchterm=${search}`)
+  } else if (search === '') {
+    res.redirect(`home?error=empty`)
   } else {
     res.redirect(`search-not-found?searchterm=${search}`)
   }
@@ -363,7 +365,7 @@ router.post('/wcv1/status-changing', function (req, res) {
   let nino = req.session.data['nino']
 
   if (status === 'verified') {
-    res.redirect(`upload?status=unverified&nino=${nino}`)
+    res.redirect(`upload?status=appointmentbooked&nino=${nino}`)
   } else if (status === 'newappointmentneeded') {
     res.redirect(`status-confirmation?status=newappointmentneeded&nino=${nino}`)
   } else if (status === 'withdrawn') {
