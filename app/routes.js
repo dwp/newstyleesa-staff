@@ -18,8 +18,6 @@ router.use(function(req, res, next){
 
 // Branching on the status updates screen
 
-
-
 // Session stuff for dynamic 'back links'
 
 // Code from Steven for dealing with variables on list page
@@ -305,6 +303,15 @@ router.post('/wcv1/search-entry', function (req, res) {
   // However in JavaScript we can't use hyphens in variable names
 
   let search = req.session.data['search']
+  let part2 = req.session.data['part2']
+
+  // let part2 = req.query.part2
+
+  // if (part2 === 'QQ112233Z'){
+  //   res.redirect('yes')
+  // } else {
+  //   res.redirect('no')
+  // }
 
   // Barney Rubble
   if (search === 'QQ 11 11 11 Z' || search === 'QQ111111Z' || search === 'barney rubble' || search === 'Barney Rubble' || search === 'barney' || search === 'Barney' || search === 'rubble' || search === 'Rubble'){
@@ -320,13 +327,25 @@ router.post('/wcv1/search-entry', function (req, res) {
     res.redirect('claimant?nino=QQ111122B&status=unverified&fitnotes=true&pension=true')
   // Micky Mouse
   } else if (search === 'QQ 11 22 33 Z' || search ==='QQ112233Z' || search === 'micky mouse' || search === 'Micky Mouse' || search === 'micky' || search === 'Micky' || search === 'mouse' || search === 'Mouse') {
-    res.redirect('claimant?nino=QQ112233Z&status=unverified&ssp1=true&fitnotes=true&pension=true')
+    if (part2 === 'QQ112233Z') {
+      res.redirect('claimant?nino=QQ112233Z&status=newappointmentneeded&ssp1=true&fitnotes=true&pension=true')
+    } else {
+      res.redirect('claimant?nino=QQ112233Z&status=unverified&ssp1=true&fitnotes=true&pension=true')
+    }
   // Marge Simpson
   } else if (search === 'QQ 23 12 34 Z' || search ==='QQ231234Z' || search === 'marge simpson' || search === 'Marge Simpson' || search === 'marge' || search === 'Marge' || search === 'simpson' || search === 'Simpson') {
-    res.redirect('claimant?nino=QQ231234Z&status=unverified&ssp1=true&fitnotes=true&pension=true')
+    if (part2 === 'QQ231234Z') {
+      res.redirect('claimant?nino=QQ231234Z&status=newappointmentneeded&ssp1=true&fitnotes=true&pension=true')
+      } else {
+      res.redirect('claimant?nino=QQ231234Z&status=unverified&ssp1=true&fitnotes=true&pension=true')
+    }
   // Lex Luther
   } else if (search === 'QQ 00 11 22 A' || search ==='QQ001122A' || search === 'lex luther' || search === 'Lex Luther' || search === 'lex' || search === 'Lex' || search === 'luther' || search === 'Luther') {
-    res.redirect('claimant?nino=QQ231234Z&status=unverified&ssp1=true&fitnotes=true')
+    if (part2 === 'QQ001122A') {
+      res.redirect('claimant?nino=QQ001122A&status=verified&ssp1=true&fitnotes=true')
+      } else {
+      res.redirect('claimant?nino=QQ001122A&status=unverified&ssp1=true&fitnotes=true')
+    }
   // Fred Flintstone
   } else if (search === 'QQ 11 22 33 B' || search ==='QQ112233B' || search === 'fred flintstone' || search === 'Fred Flintstone' || search === 'fred' || search === 'Fred' || search === 'flintstone' || search === 'Flintstone') {
     res.redirect('claimant?nino=QQ112233B&status=unverified&ssp1=true')
@@ -339,6 +358,7 @@ router.post('/wcv1/search-entry', function (req, res) {
   } else {
     res.redirect(`search-not-found?searchterm=${search}`)
   }
+
 })
 
 router.post('/wcv1/status-changing', function (req, res) {
@@ -360,7 +380,6 @@ router.post('/wcv1/status-changing', function (req, res) {
     res.redirect('error')
   }
 })
-
 
 router.post('/wcv1/upload-logic', function (req, res) {
   // Get the answer from session data

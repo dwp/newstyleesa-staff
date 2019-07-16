@@ -20,11 +20,14 @@
 
     <h2 class="govuk-heading-m">Find a claim</h2>
 
+
+
     <form action="/wcv1/search-entry" method="post">
       <div class="govuk-form-group" style="margin-bottom: 10px">
         <label class="govuk-label" for="search">
           Enter the claimant’s National Insurance number or name
         </label>
+        <input id="part2" name="part2" type="hidden" value="{{getData.part2}}">
         <input class="govuk-input govuk-input--width-20" id="search" name="search" type="text" autocomplete="off" value="{% if getData.nino %}{{getData.nino}}{% endif %}">
         <button type="submit" class="govuk-button search">Find claim</button>
       </div>
