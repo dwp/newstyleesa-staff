@@ -324,9 +324,12 @@ router.post('/wcv1/search-entry', function (req, res) {
   // Marge Simpson
   } else if (search === 'QQ 23 12 34 Z' || search ==='QQ231234Z' || search === 'marge simpson' || search === 'Marge Simpson' || search === 'marge' || search === 'Marge' || search === 'simpson' || search === 'Simpson') {
     res.redirect('claimant?nino=QQ231234Z&status=unverified&ssp1=true&fitnotes=true&pension=true')
+  // Lex Luther
+  } else if (search === 'QQ 00 11 22 A' || search ==='QQ001122A' || search === 'lex luther' || search === 'Lex Luther' || search === 'lex' || search === 'Lex' || search === 'luther' || search === 'Luther') {
+    res.redirect('claimant?nino=QQ231234Z&status=unverified&ssp1=true&fitnotes=true')
   // Fred Flintstone
   } else if (search === 'QQ 11 22 33 B' || search ==='QQ112233B' || search === 'fred flintstone' || search === 'Fred Flintstone' || search === 'fred' || search === 'Fred' || search === 'flintstone' || search === 'Flintstone') {
-    res.redirect('claimant?nino=QQ112233B&status=unverified&ssp1=true&pension=true')
+    res.redirect('claimant?nino=QQ112233B&status=unverified&ssp1=true')
   // Homer Simpson
   } else if (search === 'QQ 11 22 33 C' || search ==='QQ112233C' || search === 'homer simpson' || search === 'Homer Simpson' || search === 'homer' || search === 'Homer' || search === 'simpson' || search === 'Simpson') {
     res.redirect('claimant?nino=QQ112233C&status=unverified&ssp1=true&ssp1=true&fitnotes=true&pension=true')
