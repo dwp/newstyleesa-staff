@@ -208,7 +208,7 @@
   </div>
 </dl>
 
-<h2 class="govuk-heading-m">Paid work (1 of 2)</h2>
+<h2 class="govuk-heading-m">Paid work (1 of {% if getData.twojobs === "true" %}2{% else %}1{% endif %})</h2>
 
 <dl class="govuk-summary-list govuk-!-margin-bottom-9">
   <div class="govuk-summary-list__row">
@@ -334,6 +334,9 @@
     </dd>
   </div>
 </dl>
+
+
+{% if getData.twojobs === "true"  %}
 
 <h2 class="govuk-heading-m">Paid work (2 of 2)</h2>
 
@@ -461,78 +464,8 @@
     </dd>
   </div>
 </dl>
-
-<h2 class="govuk-heading-m">Voluntary work (1 of 1)</h2>
-
-<dl class="govuk-summary-list govuk-!-margin-bottom-9">
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Voluntary organisation
-    </dt>
-    <dd class="govuk-summary-list__value">
-      Oxfam
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="">Change</a>
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Address
-    </dt>
-    <dd class="govuk-summary-list__value">
-      72 Guild street<br>
-      London
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="">Change</a>
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Postcode
-    </dt>
-    <dd class="govuk-summary-list__value">
-      SF23 6FH
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="">Change</a>
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Telephone number
-    </dt>
-    <dd class="govuk-summary-list__value">
-      02079460809
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="">Change</a>
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Type of voluntary work
-    </dt>
-    <dd class="govuk-summary-list__value">
-      Spend some time helping on the tills and washing clothes before they go on sale.
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="">Change</a>
-    </dd>
-  </div>
-  <div class="govuk-summary-list__row">
-    <dt class="govuk-summary-list__key">
-      Hours they volunteer each week
-    </dt>
-    <dd class="govuk-summary-list__value">
-      1
-    </dd>
-    <dd class="govuk-summary-list__actions">
-      <a class="govuk-link" href="">Change</a>
-    </dd>
-  </div>
-</dl>
+{% else %}
+{% endif %}
 
 <h2 class="govuk-heading-m">Pension (1 of 1)</h2>
 

@@ -341,9 +341,11 @@ router.post('/wcv1/search-entry', function (req, res) {
   // Fred Flintstone
   } else if (search === 'QQ 11 22 33 B' || search ==='QQ112233B' || search === 'fred flintstone' || search === 'Fred Flintstone' || search === 'fred' || search === 'Fred' || search === 'flintstone' || search === 'Flintstone') {
     res.redirect('claimant?nino=QQ112233B&status=appointmentbooked&ssp1=true')
+
   // Homer Simpson
   } else if (search === 'QQ 11 22 33 C' || search ==='QQ112233C' || search === 'homer simpson' || search === 'Homer Simpson' || search === 'homer' || search === 'Homer' || search === 'simpson' || search === 'Simpson') {
-    res.redirect('claimant?nino=QQ112233C&status=appointmentbooked&ssp1=true&ssp1=true&fitnotes=true&pension=true')
+    res.redirect(`multiple-results-homer?nino=QQ112233C&status=appointmentbooked&ssp1=true&ssp1=true&fitnotes=true&pension=true&searchterm=${search}`)
+
   // Minnie Mouse
   } else if (search === 'QQ 01 01 01 A' || search ==='QQ010101A' || search === 'minnie mouse' || search === 'Minnie Mouse' || search === 'minnie' || search === 'Minnie' || search === 'mouse' || search === 'Mouse') {
     res.redirect(`multiple-results-minnie?nino=QQ010101A&status=appointmentbooked&ssp1=true&ssp1=true&fitnotes=true&searchterm=${search}`)
@@ -364,14 +366,16 @@ router.post('/wcv1/status-changing', function (req, res) {
 
   let nino = req.session.data['nino']
 
+  let early = req.session.data['early']
+
   if (status === 'verified') {
-    res.redirect(`upload?status=appointmentbooked&nino=${nino}`)
+    res.redirect(`upload?status=appointmentbooked&nino=${nino}&early=${early}`)
   } else if (status === 'newappointmentneeded') {
-    res.redirect(`status-confirmation?status=newappointmentneeded&nino=${nino}`)
+    res.redirect(`status-confirmation?status=newappointmentneeded&nino=${nino}&early=${early}`)
   } else if (status === 'withdrawn') {
-    res.redirect(`status-confirmation?status=withdrawn&nino=${nino}`)
+    res.redirect(`status-confirmation?status=withdrawn&nino=${nino}&early=${early}`)
   } else if (status === 'appointmentbooked') {
-    res.redirect(`status-confirmation?status=appointmentbooked&nino=${nino}`)
+    res.redirect(`status-confirmation?status=appointmentbooked&nino=${nino}&early=${early}`)
   } else {
     res.redirect('error')
   }
@@ -387,17 +391,19 @@ router.post('/wcv1/upload-logic', function (req, res) {
   let file3 = req.session.data['file-upload-3']
 
   let nino = req.session.data['nino']
+  let early = req.session.data['early']
+  let status = req.session.data['status']
 
   if (file3) {
     // res.redirect(`yabba`)
-    res.redirect(`upload?nino=${nino}&file1=true&filename1=${file1}&file2=true&filename2=${file2}&file3=true&filename3=${file3}`)
+    res.redirect(`upload?nino=${nino}&file1=true&filename1=${file1}&file2=true&filename2=${file2}&file3=true&filename3=${file3}&early=${early}&status=${status}`)
   } else if (file2) {
-    res.redirect(`upload?nino=${nino}&file1=true&filename1=${file1}&file2=true&filename2=${file2}`)
+    res.redirect(`upload?nino=${nino}&file1=true&filename1=${file1}&file2=true&filename2=${file2}&early=${early}&status=${status}`)
   } else {
     if (file1) {
-      res.redirect(`upload?nino=${nino}&file1=true&filename1=${file1}`)
+      res.redirect(`upload?nino=${nino}&file1=true&filename1=${file1}&early=${early}&status=${status}`)
     } else {
-      res.redirect(`upload?nino=${nino}&error=true`)
+      res.redirect(`upload?nino=${nino}&error=true&early=${early}&status=${status}`)
     }
   }
 })

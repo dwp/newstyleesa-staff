@@ -20,6 +20,8 @@
 
     <form action="upload-logic" method="post">
 
+      <input type="hidden" name="early" value="{{getData.early}}">
+
       {% if getData.error %}
 
         <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
@@ -137,7 +139,7 @@
       </div>
     </form>
 
-    <p><a href="status-confirmation?status=verified&nino={{getData.nino}}" class="govuk-button">Continue</a></p>
+    <p><a href="status-confirmation?status=verified&nino={{getData.nino}}&early={{getData.early}}" class="govuk-button">Continue</a></p>
 
   </div>{# /govuk-grid-column-full #}
 
