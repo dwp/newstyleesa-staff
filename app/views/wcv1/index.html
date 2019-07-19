@@ -134,32 +134,6 @@
         </div>
         <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
       </li>
-{#       <li>
-        <h3 class="govuk-heading-s"><a href="/wcv1/home?nino=QQ001122A">Lex Luther, QQ001122A (part 1)</a></h3>
-        <p>Attends and provides:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>ID</li>
-          <li>SSP1</li>
-          <li>fit notes</li>
-        </ul>
-        <p>Pension statement is missing.</p>
-        <div class="govuk-inset-text">
-          Agent changes status to ‘verified’ and uploads supporting evidence
-        </div>
-        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-      </li>
-      <li>
-        <h3 class="govuk-heading-s"><a href="/wcv1/home?nino=QQ001122A">Lex Luther, QQ001122A (part 2)</a></h3>
-        <p>Returns to jobcentre and provides the following:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>fit notes</li>
-          <li>pension statement</li>
-        </ul>
-        <div class="govuk-inset-text">
-          Agent uploads further supporting evidence
-        </div>
-        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-      </li> #}
       <li>
         <h3 class="govuk-heading-s"><a href="/wcv1/home?nino=QQ010101A">Minnie Mouse, QQ010101A</a></h3>
         <p>Attends and provides:</p>
@@ -273,12 +247,85 @@ National Insurance number%0A
 [NATIONAL INSURANCE NUMBER]">Failed to attend digital claim (special rules)</a>
       </li>
 
-  </ul>
+    </ul>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
     <h2 class="govuk-heading-m">What we learned</h2>
 
-    <p>To follow&hellip;</p>
+    <h2 class="govuk-heading-s">Current process for clerical claims</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Work coaches look through the claim form before seeing the claimant.</li>
+      <li>Processes vary from work coach to work coach:
+        <ul class="govuk-list govuk-list--bullet">
+          <li>What is the correct process for booking another appointment (if haven’t got enough ID etc)?</li>
+          <li>When should a bio test be done? Why can’t it be done if a claimant has forgotten their ID?</li>
+          <li>We need to make it super clear that ID and claimant commitment don’t need to be uploaded</li>
+        </ul>
+      </li>
+      <li>Can we eliminate the need for follow up ID appointments by always doing a bio check?</li>
+      <li>Half of claimants who’ve completed a clerical form need to make a change when they see a work coach before it gets sent to be processed. A clear need here.</li>
+      <li>The only relevant things on the claimant commitment for ESA claimants are the information about letting us know about change of circumstances and to continue sending fit notes.</li>
+      <li>Work coaches need to enter information in LMS that isn’t used, just because LMS requires it. LMS is only really used for a conversation history. Work coaches like the UC system because the conversation history is in one place and clear.</li>
+    </ul>
+
+    <h2 class="govuk-heading-s">General UI</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Special rules notice didn’t seem to be spotted as clearly – might need to do some more testing on styles of this.</li>
+      <li>Didn’t seem to be any important info missing from blue header. Most seem to find it all useful in order to quickly check that they’re looking at the right person, rather than having to go into the full claim form to check.</li>
+      <li>‘View or update the claim’ was understood.</li>
+    </ul>
+
+    <h2 class="govuk-heading-s">Searching for a claimant</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Work coaches are used to typing lowercase National Insurance numbers in the search box.</li>
+      <li>Being able to search by name is useful, especially if there are no results for a National Insurance number.</li>
+      <li>Work coaches are used to searching for a claimant using their name. They often abbreviate the name when typing, so they could enter ‘joh smi’ instead of typing ‘john smith’.</li>
+    </ul>
+
+    <h2 class="govuk-heading-s">Statuses</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>The ‘Verified’ status was understood.</li>
+      <li>‘New appointment needed’ doesn’t seem like quite the right label. Seems like this should be split up into two statuses - ‘failed to attend’ and ‘follow up appointment needed’ perhaps?
+      <li>‘Fail to attend’ is term that is understood.</li>
+      <li>What about a status if they book the new appointment themselves? More to think about here&hellip;</li>
+      <li>Maybe don’t need the notes text box if we have an explicit ‘failed to attend’ status.</li>
+      <li>The ‘withdrawn (or duplicate)’ status was understood.</li>
+      <li>All work coaches entered information in the text box that appeared. None felt the need to enter any information about who they were (staff number etc).</li>
+      <li>One work coach questioned whether the supporting evidence related to this claim or was generic – this could be made clearer.</li>
+      <li>There was no need identified for work coaches to be able to ‘disallow’ a claim.</li>
+    </ul>
+
+    <h2 class="govuk-heading-s">Duplicate claims</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Work coaches understood what they’d need to do if someone had come in and completed two forms – withdraw the one that wasn’t need.</li>
+    </ul>
+
+    <h2 class="govuk-heading-s">File uploads</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>File upload process caused no issues. All work coaches had used this pattern in the UC system.</li>
+      <li>Work coaches will need a way of adding attachments after a claim has been verified - would be ideal for them to let processors know that a claimant will be giving evidence to them, rather than processors chasing up the same stuff.</li>
+      <li>One work coach said a notes box to say which documents are being uploaded would be useful. This is worth exploring and is something we do currently with in email template..</li>
+    </ul>
+
+    <h2 class="govuk-heading-s">Adding a new clerical claim</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>No issues adding a clerical claim.</li>
+    </ul>
+
+    <h2 class="govuk-heading-s">Email templates</h2>
     
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Email templates worked fine on the work coach we tested them with instinctively knew how to populate them with the correct information. The hyphens weren’t displaying correctly, so we should change how these are being encoded.</li>
+    </ul>
+
   </div>{# /govuk-grid-column-two-thirds #}
 </div>{# /govuk-grid-row #}
 
