@@ -1,0 +1,120 @@
+
+{% extends "layout_staff_v1.html" %}
+
+{% block pageTitle %}
+  Unverified digital claims
+{% endblock %}
+
+{% block content %}
+
+<div style="margin-bottom: 30px;"></div>
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">Unverified digital claims</h1>
+
+    <table cellspacing="0" width="100%" class="govuk-table">
+      <thead>
+        <tr>
+          <th class="govuk-table__header" style="width: 21%;"><span>Date submitted</span></th>
+          <th class="govuk-table__header" style="width: 22%;"><span>Name</span></th>
+          <th class="govuk-table__header"><span>National Insurance number</span></th>
+          <th class="govuk-table__header"><span>Postcode</span></th>
+          <th class="govuk-table__header"><span class="govuk-visually-hidden">Considerations</span></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">22 July, 9:05am</td>
+          <td class="govuk-table__cell">
+            <a href="applicant?nino=QQ123456C&status=unverified&sr=true">
+              <span class="table-link">Fred Flintstone</span>
+            </a>
+          </td>
+          <td class="govuk-table__cell">QQ123456C</td>
+          <td class="govuk-table__cell">NG9 4FT</td>
+          <td class="govuk-table__cell">&nbsp;</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">21 July, 8:49am</td>
+          <td class="govuk-table__cell">
+            <a href="applicant?nino=QQ123456C&status=unverified&sr=true">
+              <span class="table-link">Fred Flintstone</span>
+            </a>
+          </td>
+          <td class="govuk-table__cell">QQ123456C</td>
+          <td class="govuk-table__cell">LS6 3FF</td>
+          <td class="govuk-table__cell">&nbsp;</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">20 July, 8:14pm</td>
+          <td class="govuk-table__cell">
+            <a href="applicant">
+              <span class="table-link">Jimmy Olsen</span>
+            </a>
+          </td>
+          <td class="govuk-table__cell">QQ654321Q</td>
+          <td class="govuk-table__cell">LS1 2DR</td>
+          <td class="govuk-table__cell">
+            <div class="govuk-warning-text" style="margin-bottom: 0; padding: 0">
+            <span class="govuk-warning-text__icon" aria-hidden="true" style="border: none; font-size: 20px; margin-top: -18px">!</span>
+              <strong class="govuk-warning-text__text" style="padding-left: 42px">
+                <span class="govuk-warning-text__assistive">Warning</span>Special rules
+              </strong>
+            </div>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">20 July, 4:00pm</td>
+          <td class="govuk-table__cell">
+            <a href="applicant">
+              <span class="table-link">Barney Rubble</span>
+            </a>
+          </td>
+          <td class="govuk-table__cell">QQ654321Q</td>
+          <td class="govuk-table__cell">NG9 1FT</td>
+          <td class="govuk-table__cell">&nbsp;</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">20 July, 9:05am</td>
+          <td class="govuk-table__cell">
+            <a href="applicant">
+              <span class="table-link">Daffy Duck</span>
+            </a>
+          </td>
+          <td class="govuk-table__cell">QQ222222Q</td>
+          <td class="govuk-table__cell">NG9 1FT</td>
+          <td class="govuk-table__cell">&nbsp;</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">19 July, 8:13am</td>
+          <td class="govuk-table__cell">
+            <a href="applicant">
+              <span class="table-link">Minnie Mouse</span>
+            </a>
+          </td>
+          <td class="govuk-table__cell">QQ333333Q</td>
+          <td class="govuk-table__cell">NG9 1FT</td>
+          <td class="govuk-table__cell">&nbsp;</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">19 July, 7:00am</td>
+          <td class="govuk-table__cell">
+            <a href="applicant">
+              <span class="table-link">Sponge Bob</span>
+            </a>
+          </td>
+          <td class="govuk-table__cell">QQ987654Q</td>
+          <td class="govuk-table__cell">NG9 1FT</td>
+          <td class="govuk-table__cell">&nbsp;</td>
+        </tr>
+      </tbody>
+    </table>
+    
+  </div>{# /govuk-grid-column-full #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
