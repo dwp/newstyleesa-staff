@@ -1,0 +1,26 @@
+{% extends "layout_master.html" %}
+
+{% block pageTitle %}
+  Iteration 1 &ndash; Reference screens &ndash; {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div style="margin-bottom: 30px;">
+  <a href="/dev-index" rel="prev" class="govuk-back-link">Back to reference screens for JIRA stories</a>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Agent user interface (iteration 3)</h1>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="/iteration-3/search">Search (with new link)</a></li>
+      <li><a href="/iteration-3/email-templates">Email templates</a></li>
+    </ul>
+    
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
