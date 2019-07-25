@@ -1,0 +1,29 @@
+{% extends "layout_staff_v2.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+<div class="govuk-!-margin-bottom-6"></div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-half">
+
+    <h1 class="govuk-heading-l">Claimant not found</h1>
+
+    <p class="govuk-body-l">There are no claims matching your search&nbsp;term: <span class="govuk-!-font-weight-bold">{{getData.searchterm}}</span>.</p>
+    
+    <a href="home" role="button" draggable="false" class="govuk-button">
+    Back to search
+    </a>
+
+  </div>{# /govuk-grid-column-one-half #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

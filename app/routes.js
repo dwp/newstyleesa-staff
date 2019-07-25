@@ -23,6 +23,7 @@ module.exports = {
 
     // Work coach versions
     require('./routes/wcv1.js')(app);
+    require('./routes/wcv2.js')(app);
 
     // Screens for JIRA stories
     require('./routes/iteration-1.js')(app);

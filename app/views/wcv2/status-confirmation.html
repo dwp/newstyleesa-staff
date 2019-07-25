@@ -1,0 +1,49 @@
+{% extends "layout_staff_v2.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% set bodyClasses = "hero-header" %}
+
+{% block content %}
+
+{% include "wcv2/_header.html" %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full govuk-!-margin-top-4">
+
+    {% if getData.status === "verified" %}
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
+        <h1 class="govuk-panel__title">Claim verified</h1>
+        <div class="govuk-panel__body">This claim will now be picked up by the processing&nbsp;team.</div>
+      </div>
+    {% elif getData.status === "newappointmentneeded" %}
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
+        <h1 class="govuk-panel__title">New appointment needed</h1>
+{#         <div class="govuk-panel__body">Something here.</div> #}
+      </div>
+    {% elif getData.status === "appointmentbooked" %}
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
+        <h1 class="govuk-panel__title">Appointment booked</h1>
+{#         <div class="govuk-panel__body">Something here.</div> #}
+      </div>
+    {% elif getData.status === "withdrawn" %}
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
+        <h1 class="govuk-panel__title">Withdrawn</h1>
+{#         <div class="govuk-panel__body">Something here.</div> #}
+      </div>
+    {% endif %}
+
+    {% if origin === "duplicates" %}
+      <a href="/wcv2/applications-duplicate-ninos" role="button" draggable="false" class="govuk-button">Back to duplicate and old applications</a>
+    {% else %}
+      <a href="/wcv2/home?part2={{getData.nino}}" role="button" draggable="false" class="govuk-button">Finish</a>
+    {% endif %}
+
+  </div>{# /govuk-grid-column-full #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

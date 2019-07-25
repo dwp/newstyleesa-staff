@@ -1,0 +1,37 @@
+{% extends "layout_master.html" %}
+
+{% block pageTitle %}
+  Work coach view &ndash; Version 1 &ndash; Prototypes &ndash; {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div style="margin-bottom: 30px;">
+  <a href="/proto-index" rel="prev" class="govuk-back-link">Back to prototypes for testing in user research</a>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Work coach view – version 2</h1>
+
+    <h2 class="govuk-heading-m">What we want to learn</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Is the information in the blue header useful?</li>
+      <li>They spot the ‘special rules’ message</li>
+    </ul>
+
+    <h2 class="govuk-heading-m">Screens</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="/wcv2/home">Home</a></li>
+      <li><a href="/wcv2/claimant?nino=QQ111111Z&status=appointmentbooked&ssp1=true&fitnotes=true&pension=true">Claimant</a></li>
+      <li><a href="/wcv2/claimant?nino=QQ000011A&status=appointmentbooked&sr=true&ssp1=true&fitnotes=true">Claimant (with special rules)</a></li>
+      <li>They spot the ‘special rules’ message</li>
+    </ul>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

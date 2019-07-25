@@ -1,0 +1,132 @@
+<div class="full-width govuk-hero">
+  <div class="full-width-inner">
+    
+    <section class="dwp-key-details-bar dwp-print-hide" role="contentinfo" aria-label="Key details">
+
+      <dl class="dwp-key-details-bar__contents govuk-width-container">
+        <div class="dwp-key-details-bar__header">
+          <dt class="govuk-visually-hidden">Name:</dt>
+          <dd class="dwp-key-details-bar__name">
+            {% if getData.nino === "QQ111111Z" %}
+              Barney Rubble
+            {% elif getData.nino === "QQ112233A" %}
+              Clark Kent
+            {% elif getData.nino === "QQ000011A" %}
+              Buzz Lightyear
+            {% elif getData.nino === "QQ111122B" %}
+              Lois Lane
+            {% elif getData.nino === "QQ112233Z" %}
+              Micky Mouse
+            {% elif getData.nino === "QQ231234Z" %}
+              Marge Simpson
+            {% elif getData.nino === "QQ112233B" %}
+              Fred Flintstone
+            {% elif getData.nino === "QQ112233C" %}
+              Homer Simpson
+            {% elif getData.nino === "QQ121212A" %}
+              Snow White
+            {% elif getData.nino === "QQ010101A" %}
+              Minnie Mouse
+            {% elif getData.nino === "QQ001122A" %}
+              Lex Luther
+            {% else %}
+              –
+            {% endif %}
+          </dd>
+          <dt class="govuk-visually-hidden">National Insurance number:</dt>
+          <dd class="dwp-key-details-bar__nino">{{getData.nino}}</dd>
+          <dt class="govuk-visually-hidden">Status:</dt>
+          <dd class="dwp-key-details-bar__status">
+            {% if getData.status === "verified" %}
+              Verified
+            {% elif getData.status === "newappointmentneeded" %}
+              New appointment needed
+            {% elif getData.status === "appointmentbooked" %}
+              Appointment booked
+            {% elif getData.status === "newclaim" %}
+              New claim
+            {% elif getData.status === "processed" %}
+              Processed
+            {% elif getData.status === "withdrawn" %}
+              Withdrawn
+            {% elif getData.status === "fta" %}
+              Failed to attend
+            {% else %}
+              Unverified
+            {% endif %}
+          </dd>
+        </div>
+        <div class="dwp-key-details-bar__body">
+          <dt>DOB:</dt>
+          <dd>
+            {% if getData.nino === "QQ111111Z" %}
+              19/11/1980
+            {% elif getData.nino === "QQ112233A" %}
+              22/09/1964
+            {% elif getData.nino === "QQ000011A" %}
+              14/04/1992
+            {% elif getData.nino === "QQ111122B" %}
+              22/06/1985
+            {% elif getData.nino === "QQ112233Z" %}
+              04/08/1982
+            {% elif getData.nino === "QQ231234Z" %}
+              02/09/1978
+            {% elif getData.nino === "QQ112233B" %}
+              01/02/1989
+            {% elif getData.nino === "QQ112233C" %}
+              08/08/1968
+            {% elif getData.nino === "QQ121212A" %}
+              01/02/1962
+            {% elif getData.nino === "QQ010101A" %}
+              01/02/1962
+            {% elif getData.nino === "QQ001122A" %}
+              08/08/1968
+            {% else %}
+              –
+            {% endif %}
+          </dd>
+          <dt>Postcode:</dt>
+          <dd>
+            {% if getData.nino === "QQ111111Z" %}
+              NG9 4TY
+            {% elif getData.nino === "QQ112233A" %}
+              NG9 1JH
+            {% elif getData.nino === "QQ000011A" %}
+              BH8 2FG
+            {% elif getData.nino === "QQ111122B" %}
+              BH3 2GH
+            {% elif getData.nino === "QQ112233Z" %}
+              BH12 4DY
+            {% elif getData.nino === "QQ231234Z" %}
+              LS6 4DD
+            {% elif getData.nino === "QQ112233B" %}
+              LS8 4TG
+            {% elif getData.nino === "QQ112233C" %}
+              LS4 9AA
+            {% elif getData.nino === "QQ121212A" %}
+              NG6 8VB
+            {% elif getData.nino === "QQ010101A" %}
+              NG8 4FG
+            {% elif getData.nino === "QQ001122A" %}
+              LS6 4DD
+            {% else %}
+              –
+            {% endif %}
+          </dd>
+          <dt>Phone:</dt>
+          <dd>01234 567890</dd>
+          <dt>Claim submitted:</dt>
+          <dd>
+            {% if getData.early %}
+              12/07/2019, 9:15pm
+            {% else %}
+              12/07/2019, 10:30pm
+            {% endif %}
+          </dd>
+        </div>
+      </dl>
+
+    </section>
+
+  </div>{# /full-width-inner #}
+</div>{# /full-width #}
