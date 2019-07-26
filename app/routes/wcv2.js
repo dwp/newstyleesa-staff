@@ -96,12 +96,16 @@ module.exports = function (app) {
 
     if (status === 'verified') {
       res.redirect(`upload?status=appointmentbooked&nino=${nino}&early=${early}`)
+    } else if (status === 'not-verified') {
+      res.redirect(`not-verified-another-appointment?status=appointmentbooked&nino=${nino}&early=${early}`)
     } else if (status === 'newappointmentneeded') {
       res.redirect(`status-confirmation?status=newappointmentneeded&nino=${nino}&early=${early}`)
     } else if (status === 'withdrawn') {
       res.redirect(`status-confirmation?status=withdrawn&nino=${nino}&early=${early}`)
     } else if (status === 'appointmentbooked') {
       res.redirect(`status-confirmation?status=appointmentbooked&nino=${nino}&early=${early}`)
+    } else if (status === 'fta') {
+      res.redirect(`status-confirmation?status=fta&nino=${nino}&early=${early}`)
     } else {
       res.redirect('error')
     }
@@ -131,6 +135,41 @@ module.exports = function (app) {
       } else {
         res.redirect(`upload?nino=${nino}&error=true&early=${early}&status=${status}`)
       }
+    }
+  })
+
+  app.post('/wcv2/not-verified-another-appointment-logic', function (req, res) {
+
+    let futureappointment = req.session.data['futureappointment']
+
+    let nino = req.session.data['nino']
+
+    let early = req.session.data['early']
+
+    if (futureappointment === 'yes') {
+      res.redirect(`not-verified-has-another?status=newappointmentbooked&nino=${nino}&early=${early}`)
+    } else if (futureappointment === 'no') {
+      res.redirect(`status-confirmation?status=unverified&nino=${nino}&early=${early}`)
+    } else {
+      res.redirect('error')
+    }
+  })
+
+
+  app.post('/wcv2/not-verified-has-another-logic', function (req, res) {
+
+    let another = req.session.data['another']
+
+    let nino = req.session.data['nino']
+
+    let early = req.session.data['early']
+
+    if (another === 'yes') {
+      res.redirect(`status-confirmation?status=appointmentbooked&nino=${nino}&early=${early}`)
+    } else if (another === 'no') {
+      res.redirect(`status-confirmation?status=newappointmentneeded&nino=${nino}&early=${early}`)
+    } else {
+      res.redirect('error')
     }
   })
 
