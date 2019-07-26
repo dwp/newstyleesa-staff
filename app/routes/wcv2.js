@@ -18,12 +18,12 @@ module.exports = function (app) {
 
   // Destroy the session after coming back to the home screen
   
-  app.get('/wcv1/home', function (req, res) {
+  app.get('/wcv2/home', function (req, res) {
     req.session.destroy()
-    res.render('wcv1/home')
+    res.render('wcv2/home')
   })
 
-  app.post('/wcv1/search-entry', function (req, res) {
+  app.post('/wcv2/search-entry', function (req, res) {
     // Get the answer from session data
     // The name between the quotes is the same as the 'name' attribute on the input elements
     // However in JavaScript we can't use hyphens in variable names
@@ -83,7 +83,7 @@ module.exports = function (app) {
 
   })
 
-  app.post('/wcv1/status-changing', function (req, res) {
+  app.post('/wcv2/status-changing', function (req, res) {
     // Get the answer from session data
     // The name between the quotes is the same as the 'name' attribute on the input elements
     // However in JavaScript we can't use hyphens in variable names
@@ -107,7 +107,7 @@ module.exports = function (app) {
     }
   })
 
-  app.post('/wcv1/upload-logic', function (req, res) {
+  app.post('/wcv2/upload-logic', function (req, res) {
     // Get the answer from session data
     // The name between the quotes is the same as the 'name' attribute on the input elements
     // However in JavaScript we can't use hyphens in variable names

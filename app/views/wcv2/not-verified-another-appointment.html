@@ -1,0 +1,65 @@
+{% extends "layout_staff_v2.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% set bodyClasses = "hero-header" %}
+
+{% block content %}
+
+{% include "wcv2/_header.html" %}
+
+<div style="margin-bottom: 30px;">
+  <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
+</div>
+
+<div class="govuk-grid-row container">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="status-changing" method="post">
+
+      <div class="govuk-form-group">
+
+        <fieldset class="govuk-fieldset">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">Do they need another appointment?</h1>
+          </legend>
+
+          <input id="nino" name="nino" type="hidden" value="{{getData.nino}}">
+
+          <div class="govuk-form-group">
+
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="where-do-you-live-1" name="where-do-you-live" type="radio" value="england">
+                <label class="govuk-label govuk-radios__label" for="where-do-you-live-1">
+                  Yes, they would like to make a future appointment
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
+                <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                  No, the do not need future appointment 
+                </label>
+              </div>
+            </div>
+
+          </div>{# /govuk-form-group #}
+
+        </fieldset>
+
+      </div>{# /govuk-form-group #}
+
+      <button type="submit" class="govuk-button">Continue</button>
+
+    </form>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

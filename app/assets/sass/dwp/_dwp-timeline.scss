@@ -1,5 +1,5 @@
 .dwp-timeline {
-  border-left: 3px solid $govuk-blue;
+  border-left: 3px solid govuk-colour("blue");
 }
 
 .dwp-timeline__entry {
@@ -8,7 +8,7 @@
   position: relative;
 
   &::before {
-    background-color: $govuk-blue;
+    background-color: govuk-colour("blue");
     content: ' ';
     height: 3px;
     left: 0;
@@ -20,11 +20,13 @@
   .dwp-timeline__title {
     display: block;
     font-weight: 700;
+    margin-bottom: 10px;
+    // display:none;
   }
 
   .dwp-timeline__author,
   .dwp-timeline__date {
-    color: $secondary-text-colour;
+    color: $govuk-secondary-text-colour;
     display: block;
   }
 

@@ -43,12 +43,11 @@
         <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              Upload the supporting evidence
+              Upload the supporting evidence{# <br>(no need for the claimant commitment or ID) #}
             </h1>
           </legend>
-          <span id="more-detail-hint" class="govuk-hint">
-            You do not need to upload their claimant commitment or identity documents.
-          </span>
+
+          <p>Do not include their claimant commitment or identity documents.</p>
 
           <div class="upload-wrapper" style="border: 1px solid #bfc1c3; padding: 30px; padding-bottom: -20px">
 
@@ -136,10 +135,12 @@
           </div>{# /upload-wrapper #}
 
         </fieldset>
+
       </div>
+
     </form>
 
-    <p><a href="status-confirmation?status=verified&nino={{getData.nino}}&early={{getData.early}}" class="govuk-button">Continue</a></p>
+    <p><a href="upload-check?status=verified&nino={{getData.nino}}&early={{getData.early}}&filename1={{getData.filename1}}&filename2={{getData.filename2}}&filename3={{getData.filename3}}" class="govuk-button">Continue</a></p>
 
   </div>{# /govuk-grid-column-full #}
 

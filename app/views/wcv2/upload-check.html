@@ -1,0 +1,42 @@
+{% extends "layout_staff_v2.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% set bodyClasses = "hero-header" %}
+
+{% block content %}
+
+{% include "wcv2/_header.html" %}
+
+<div style="margin-bottom: 30px;">
+  <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
+</div>
+
+<div class="govuk-grid-row container">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <p>Check the documents you’ve uploaded here and add some notes</p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      {% if getData.filename1 %}<li><a href="#">{{data.filename1}}</a></li>{% endif %}
+      {% if getData.filename2 %}<li><a href="#">{{data.filename2}}</a></li>{% endif %}
+      {% if getData.filename3 %}<li><a href="#">{{data.filename3}}</a></li>{% endif %}
+    </ul>
+    
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="reason">
+        Notes here
+      </label>
+      <textarea class="govuk-textarea" id="reason" name="reason" rows="5"></textarea>
+    </div>
+
+    <p><a href="status-confirmation?status=verified&nino={{getData.nino}}&early={{getData.early}}" class="govuk-button">Continue</a></p>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

@@ -1,0 +1,73 @@
+{% extends "layout_staff_v2.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% set bodyClasses = "hero-header" %}
+
+{% block content %}
+
+{% include "wcv2/_header.html" %}
+
+<div style="margin-bottom: 30px;">
+  <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
+</div>
+
+<div class="govuk-grid-row container">
+
+  <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Claim history</h1>
+
+      <ol class="dwp-timeline govuk-list">
+
+        <li class="dwp-timeline__entry">
+          <h3 class="dwp-timeline__title">Claim submitted</h3>
+          <p class="dwp-timeline__info">
+{#             <span class="govuk-visually-hidden visually-hidden">Claim submitted</span> #}
+{#             <span class="dwp-timeline__author">by John Smith</span> #}
+            <span class="dwp-timeline__date">12 July 2019 at 1:02pm</span>
+          </p>
+{#           <p class="dwp-timeline__body">
+            Claimant over state pension age.
+          </p> #}
+        </li>
+
+        <li class="dwp-timeline__entry">
+          <h3 class="dwp-timeline__title">Status changed to ‘appointment booked’</h3>
+          <p class="dwp-timeline__info">
+            <span class="dwp-timeline__author">by John Smith</span>
+            <span class="dwp-timeline__date">13 July 2019 at 5pm</span>
+          </p>
+          <p class="dwp-timeline__body">
+            Marriage certificate uploaded to DRS.
+          </p>
+        </li>
+
+        <li class="dwp-timeline__entry">
+          <h3 class="dwp-timeline__title">Status changed to ‘new appointment needed’</h3>
+          <p class="dwp-timeline__info">
+            <span class="dwp-timeline__author">by Paul Graham</span>
+            <span class="dwp-timeline__date">17 July 2019 at 3pm</span>
+          </p>
+          <p class="dwp-timeline__body">
+            Claimant couldn’t prove their identity, so a follow up appointment appointment is needed.
+          </p>
+        </li>
+
+        <li class="dwp-timeline__entry">
+          <h3 class="dwp-timeline__title">Status changed to ‘appointment booked’</h3>
+          <p class="dwp-timeline__info">
+            <span class="dwp-timeline__author">by John Smith</span>
+            <span class="dwp-timeline__date">13 July 2019 at 5pm</span>
+          </p>
+        </li>
+
+      </ol>
+    
+  </div>{# /govuk-grid-column-two-thirds #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
