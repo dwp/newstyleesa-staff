@@ -43,6 +43,8 @@
               New appointment needed
             {% elif getData.status === "appointmentbooked" %}
               Appointment booked
+            {% elif getData.status === "newappointmentbooked" %}
+              New appointment booked
             {% elif getData.status === "newclaim" %}
               New claim
             {% elif getData.status === "processed" %}
@@ -51,6 +53,8 @@
               Withdrawn
             {% elif getData.status === "fta" %}
               Failed to attend
+            {% elif getData.status === "disallowed" %}
+              Disallowed
             {% else %}
               Unverified
             {% endif %}
@@ -114,7 +118,7 @@
             {% endif %}
           </dd>
           <dt>Phone:</dt>
-          <dd>01234 567890</dd>
+          <dd>01234 567 890</dd>
           <dt>Claim submitted:</dt>
           <dd>
             {% if getData.early %}

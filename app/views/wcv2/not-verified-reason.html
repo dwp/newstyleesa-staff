@@ -18,14 +18,14 @@
 
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="status-changing" method="post">
+    <form action="not-verified-reason-logic" method="post">
 
       <div class="govuk-form-group">
 
         <fieldset class="govuk-fieldset">
 
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading">Why couldn’t they be verified?</h1>
+            <h1 class="govuk-fieldset__heading">Why are you unable to verify the claim?</h1>
           </legend>
 
           <input id="nino" name="nino" type="hidden" value="{{getData.nino}}">
@@ -40,7 +40,7 @@
               <div class="govuk-checkboxes__item">
                 <input class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="carcasses">
                 <label class="govuk-label govuk-checkboxes__label" for="waste-1">
-                  Could not prove identity
+                  Could not prove their identity
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
@@ -55,7 +55,7 @@
 
           <div class="govuk-form-group">
             <label class="govuk-label" for="reason">
-              Notes here
+              Notes
             </label>
             <textarea class="govuk-textarea" id="reason" name="reason" rows="5"></textarea>
           </div>
@@ -63,8 +63,8 @@
         </fieldset>
 
         <button type="submit" class="govuk-button">
-        Continue
-      </button>
+          Continue
+        </button>
 
       </div>{# /govuk-form-group #}
 

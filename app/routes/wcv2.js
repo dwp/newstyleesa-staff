@@ -14,7 +14,7 @@ module.exports = function (app) {
     next();
   });
 
-  // WORK COACH V1
+  // WORK COACH V2
 
   // Destroy the session after coming back to the home screen
   
@@ -94,18 +94,33 @@ module.exports = function (app) {
 
     let early = req.session.data['early']
 
+    // Verified
     if (status === 'verified') {
       res.redirect(`upload?status=appointmentbooked&nino=${nino}&early=${early}`)
-    } else if (status === 'not-verified') {
-      res.redirect(`not-verified-another-appointment?status=appointmentbooked&nino=${nino}&early=${early}`)
-    } else if (status === 'newappointmentneeded') {
-      res.redirect(`status-confirmation?status=newappointmentneeded&nino=${nino}&early=${early}`)
-    } else if (status === 'withdrawn') {
-      res.redirect(`status-confirmation?status=withdrawn&nino=${nino}&early=${early}`)
-    } else if (status === 'appointmentbooked') {
-      res.redirect(`status-confirmation?status=appointmentbooked&nino=${nino}&early=${early}`)
+    // Failed to attend
     } else if (status === 'fta') {
       res.redirect(`status-confirmation?status=fta&nino=${nino}&early=${early}`)
+    // Could not be verified
+    } else if (status === 'not-verified') {
+      res.redirect(`not-verified-reason?status=appointmentbooked&nino=${nino}&early=${early}`)
+    // New appointment needed (is this still a thing?)
+    } else if (status === 'newappointmentneeded') {
+      res.redirect(`status-confirmation?status=newappointmentneeded&nino=${nino}&early=${early}`)
+    // Appointment booked
+    } else if (status === 'appointmentbooked') {
+      res.redirect(`status-confirmation?status=appointmentbooked&nino=${nino}&early=${early}`)
+    // New appointment booked
+    } else if (status === 'newappointmentbooked') {
+      res.redirect(`status-confirmation?status=newappointmentbooked&nino=${nino}&early=${early}`)
+    // Withdrawn or duplicate
+    } else if (status === 'withdrawn') {
+      res.redirect(`status-confirmation?status=withdrawn&nino=${nino}&early=${early}`)
+    // Processed
+    } else if (status === 'processed') {
+      res.redirect(`status-confirmation?status=processed&nino=${nino}&early=${early}`)
+    // Disallowed
+    } else if (status === 'disallowed') {
+      res.redirect(`status-confirmation?status=disallowed&nino=${nino}&early=${early}`)
     } else {
       res.redirect('error')
     }
@@ -138,6 +153,18 @@ module.exports = function (app) {
     }
   })
 
+  app.post('/wcv2/not-verified-reason-logic', function (req, res) {
+
+    let futureappointment = req.session.data['futureappointment']
+
+    let nino = req.session.data['nino']
+
+    let early = req.session.data['early']
+
+    res.redirect(`not-verified-another-appointment?status=appointmentbooked&nino=${nino}&early=${early}`)
+
+  })
+
   app.post('/wcv2/not-verified-another-appointment-logic', function (req, res) {
 
     let futureappointment = req.session.data['futureappointment']
@@ -147,7 +174,7 @@ module.exports = function (app) {
     let early = req.session.data['early']
 
     if (futureappointment === 'yes') {
-      res.redirect(`not-verified-has-another?status=newappointmentbooked&nino=${nino}&early=${early}`)
+      res.redirect(`not-verified-has-another?status=appointmentbooked&nino=${nino}&early=${early}`)
     } else if (futureappointment === 'no') {
       res.redirect(`status-confirmation?status=unverified&nino=${nino}&early=${early}`)
     } else {
@@ -165,7 +192,7 @@ module.exports = function (app) {
     let early = req.session.data['early']
 
     if (another === 'yes') {
-      res.redirect(`status-confirmation?status=appointmentbooked&nino=${nino}&early=${early}`)
+      res.redirect(`not-verified-book-confirm?status=appointmentbooked&nino=${nino}&early=${early}`)
     } else if (another === 'no') {
       res.redirect(`status-confirmation?status=newappointmentneeded&nino=${nino}&early=${early}`)
     } else {
@@ -173,6 +200,6 @@ module.exports = function (app) {
     }
   })
 
-  // END OF WORK COACH V1
+  // END OF WORK COACH V2
 
 }

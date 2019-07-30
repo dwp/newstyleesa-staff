@@ -18,7 +18,9 @@
 
   <div class="govuk-grid-column-two-thirds">
 
-    <p>Check the documents you’ve uploaded here and add some notes</p>
+    <h1 class="govuk-heading-l">Check the documents before you verify their claim</h1>
+
+    <p>These links will open in a new window:</p>
 
     <ul class="govuk-list govuk-list--bullet">
       {% if getData.filename1 %}<li><a href="#">{{data.filename1}}</a></li>{% endif %}
@@ -28,8 +30,11 @@
     
     <div class="govuk-form-group">
       <label class="govuk-label" for="reason">
-        Notes here
+        Notes
       </label>
+      <span id="more-detail-hint" class="govuk-hint">
+        Add a note if there is something the processing team should know. For example, if anything is missing or you are waiting for more evidence.
+      </span>
       <textarea class="govuk-textarea" id="reason" name="reason" rows="5"></textarea>
     </div>
 

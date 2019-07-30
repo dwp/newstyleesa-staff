@@ -1,4 +1,4 @@
-{% extends "layout_staff_v2.html" %}
+ {% extends "layout_staff_v2.html" %}
 
 {% block pageTitle %}
   {{ serviceName }}
@@ -32,65 +32,177 @@
 
     {% endif %}
 
-    <h1 class="govuk-heading-l">Documents to check at the appointment</h1>
+    {% if getData.status === "verified" %}
 
-    <h2 class="govuk-heading-m">Identity documents</h2>
+      <h1 class="govuk-heading-l">Uploaded evidence</h1>
 
-    <p>You will need to see the following identity documents:</p>
+      <p>Links to documents open in a new tab:</p>
 
-    <ul class="govuk-list govuk-list--bullet">
-      <li>1 primary identity document, such as a current passport, driving licence or bank card</li>
-      <li>2 secondary identity documents that prove their name and address, such as a utility bill, bank statement, hospital letter or birth certificate</li>
-    </ul>
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="#">SSP-1 (pdf)</a></li>
+        <li><a href="#">ff-fitnote-1234 (jpg)</a></li>
+        <li><a href="#">pension (jpg)</a></li>
+      </ul>
 
-    <p>If they do not have their identity documents, you should do a <span style="color: red; font-weight: bold">biometric check</span>.</p>
+      <p><a href="#">Upload more documents</a></p>
 
-    <h2 class="govuk-heading-m">Supporting evidence</h2>
+      <h1 class="govuk-heading-m">Notes</h1>
 
-    <p>
-      {% if getData.nino === "QQ111111Z" %}
-        Barney Rubble
-      {% elif getData.nino === "QQ112233A" %}
-        Clark Kent
-      {% elif getData.nino === "QQ000011A" %}
-        Buzz Lightyear
-      {% elif getData.nino === "QQ111122B" %}
-        Lois Lane
-      {% elif getData.nino === "QQ112233Z" %}
-        Micky Mouse
-      {% elif getData.nino === "QQ231234Z" %}
-        Marge Simpson
-      {% elif getData.nino === "QQ112233B" %}
-        Fred Flintstone
-      {% elif getData.nino === "QQ112233C" %}
-        Homer Simpson
-      {% elif getData.nino === "QQ121212A" %}
-        Snow White
-      {% elif getData.nino === "QQ010101A" %}
-        Minnie Mouse
-      {% elif getData.nino === "QQ001122A" %}
-        Lex Luther
-      {% else %}
-        The claimant
-      {% endif %}
-    should also bring the following evidence:</p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-    <ul class="govuk-list govuk-list--bullet">
-      {% if getData.fitnotes %}<li>fit notes</li>{% endif %}
-      {% if getData.ssp1 %}<li>SSP1 form</li>{% endif %}
-      {% if getData.p45 %}<li>P45 form</li>{% endif %}
-      {% if getData.boots %}<li>their 2 most recent monthly pay slips from Boots</li>{% endif %}
-      {% if getData.pension %}<li>their pension statements</li>{% endif %}
-    </ul>
+      <h3 class="heading-small">Louis Lane <span class="font-xsmall"> – 20 July 2019, 11:10am </span></h3>
+      <p>Uploaded Barney’s SSP1. Still missing the fit note and pension statement. Barney is due to bring those into the jobcentre tomorrow.</p>
 
-    <p>If they do not bring this supporting evidence, you can still send the claim for processing. Other evidence will be requested later.</p>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-    <br>
-    <br>
+      <h3 class="heading-small">Louis Lane <span class="font-xsmall"> – 21 July 2019, 3pm </span></h3>
+      <p>Added Barney’s fit note and pension document.</p>
+      
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    {% elif getData.status === "withdrawn" %}
+
+      <div class="blue-border" style="margin-bottom: 40px">
+        <h2 class="govuk-heading-s" style="margin-bottom: 10px">Withdrawn by Dave Smith on 20 July, 9:05am</h2>
+        <p>Claimant confirmed that this is a duplicate claim.</p>
+      </div>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+
+    {% else %}
+
+    {% if getData.status === "fta" %}
+
+      <div class="blue-border" style="margin-bottom: 40px">
+        <h2 class="govuk-heading-s" style="margin-bottom: 10px">Marked as ‘failed to attend’ by Dave Smith, 20 July, 9:05am</h2>
+        <p>Tried to ring them at 9:00am on 20 July.</p>
+      </div>
+
+    {% endif %}
+
+    {% if getData.status === "unverified" %}
+
+      <div class="blue-border" style="margin-bottom: 40px">
+        <h2 class="govuk-heading-s" style="margin-bottom: 10px">Marked as ‘unverified’ by Dave Smith, 20 July, 9:05am</h2>
+        <p>Barney could not prove their identity in his last appointment. You do not need to book a new appointment unless they asks for it.</p>
+      </div>
+
+    {% endif %}
+
+
+      <h1 class="govuk-heading-l">Documents to check at the appointment</h1>
+
+      <h2 class="govuk-heading-m">Identity documents</h2>
+
+      <p>You will need to see:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>1 current primary identity document</li>
+        <li>2 original secondary identity documents</li>
+      </ul>
+      
+      <details class="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            List of primary and secondary documents
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>Primary identity documents:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>UK passport</li>
+            <li>EEA passport</li>
+            <li>UK photo driving licence</li>
+            <li>national identity card</li>
+            <li>residence permit or card</li>
+            <li>immigration status document</li>
+            <li>registration or naturalisation certificate</li>
+          </ul>
+          <p>Secondary identity documents:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>birth certificate</li>
+            <li>recent bank or building society statement</li>
+            <li>council tax statement</li>
+            <li>NHS medical card</li>
+            <li>debit or charge card</li>
+            <li>expired passport</li>
+            <li>expired UK driving licence</li>
+            <li>local authority rent card</li>
+            <li>marriage or civil partnership certificate</li>
+            <li>registration or naturalisation certificate</li>
+            <li>tenancy agreement</li>
+          </ul>
+        </div>
+      </details>
+
+      <p>If they do not have their identity documents, you should do a <span style="color: red; font-weight: bold">biometric check</span>.</p>
+
+      <h2 class="govuk-heading-m">Supporting evidence</h2>
+
+      <p>
+        {% if getData.nino === "QQ111111Z" %}
+          Barney Rubble
+        {% elif getData.nino === "QQ112233A" %}
+          Clark Kent
+        {% elif getData.nino === "QQ000011A" %}
+          Buzz Lightyear
+        {% elif getData.nino === "QQ111122B" %}
+          Lois Lane
+        {% elif getData.nino === "QQ112233Z" %}
+          Micky Mouse
+        {% elif getData.nino === "QQ231234Z" %}
+          Marge Simpson
+        {% elif getData.nino === "QQ112233B" %}
+          Fred Flintstone
+        {% elif getData.nino === "QQ112233C" %}
+          Homer Simpson
+        {% elif getData.nino === "QQ121212A" %}
+          Snow White
+        {% elif getData.nino === "QQ010101A" %}
+          Minnie Mouse
+        {% elif getData.nino === "QQ001122A" %}
+          Lex Luther
+        {% else %}
+          The claimant
+        {% endif %}
+      should also bring their:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        {% if getData.fitnotes %}<li>fit notes</li>{% endif %}
+        {% if getData.ssp1 %}<li>SSP1 form</li>{% endif %}
+        {% if getData.p45 %}<li>P45 form</li>{% endif %}
+        {% if getData.boots %}<li>2 most recent monthly pay slips from Boots</li>{% endif %}
+        {% if getData.pension %}<li>pension statements</li>{% endif %}
+      </ul>
+
+      <p>If they do not bring this supporting evidence, you can still send the claim for processing. Other evidence will be requested later.</p>
+
+      <br>
+      <br>
+
+    {% endif %}
 
   </div>{# /govuk-grid-column-two-thirds #}
 
-  {% if getData.status === "cancelled" %}
+  {% if getData.status === "withdrawn" %}
+    <div class="govuk-grid-column-one-third">
+      <aside class="app-related-items status-verified" role="complementary">
+        <h3 class="govuk-heading-m" id="claim-actions-title">Claim details</h3>
+        <nav role="navigation" aria-labelledby="claim-actions-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li><a href="claim-form?nino={{getData.nino}}&amp;status={{getData.status}}&amp;sr={{getData.sr}}&amp;ssp1={{getData.ssp1}}&amp;fitnotes={{getData.fitnotes}}&amp;early={{getData.early}}&amp;twojobs={{getData.twojobs}}">View the claim</a></li>
+          <li><a href="claim-history?nino={{getData.nino}}&amp;status={{getData.status}}&amp;sr={{getData.sr}}&amp;ssp1={{getData.ssp1}}&amp;fitnotes={{getData.fitnotes}}&amp;early={{getData.early}}&amp;twojobs={{getData.twojobs}}">View claim history</a></li>
+        </ul>
+      </nav>
+{#         <a href="status?nino={{getData.nino}}&amp;status={{getData.status}}&amp;twojobs={{getData.twojobs}}&amp;early={{getData.early}}" class="govuk-button">Change claim status</a> #}
+      </aside>
+    </div>{# /govuk-grid-column-one-third #}
   {% else %}
 
     <div class="govuk-grid-column-one-third">
@@ -104,28 +216,8 @@
       </nav>
         <a href="status?nino={{getData.nino}}&amp;status={{getData.status}}&amp;twojobs={{getData.twojobs}}&amp;early={{getData.early}}" class="govuk-button">Change claim status</a>
       </aside>
-
-{#       <h2 class="heading-medium govuk-visually-hidden">Claim history</h2>
-      <ol class="dwp-timeline govuk-list govuk-!-font-size-16" style="margin-top: -20px">
-        <li class="dwp-timeline__entry">
-          <h3 class="dwp-timeline__title govuk-!-margin-bottom-0">Status changed to ‘Appointment booked’</h3>
-          <p class="dwp-timeline__info govuk-!-font-size-16">
-            <span class="dwp-timeline__author">by John Smith</span>
-            <span class="dwp-timeline__date">14/07/2019, 10:30pm</span>
-          </p>
-        </li>
-
-        <li class="dwp-timeline__entry">
-          <h3 class="dwp-timeline__title govuk-!-margin-bottom-0">Claim submitted</h3>
-          <p class="dwp-timeline__info govuk-!-font-size-16">
-            <span class="dwp-timeline__date">12/07/2019, 10:30pm</span>
-          </p>
-        </li>
-      </ol>
- #}
-
-
     </div>{# /govuk-grid-column-one-third #}
+
   {% endif %}
 
 </div>{# /govuk-grid-row #}

@@ -1,0 +1,32 @@
+{% extends "layout_staff_v2.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% set bodyClasses = "hero-header" %}
+
+{% block content %}
+
+{% include "wcv2/_header.html" %}
+
+<div style="margin-bottom: 30px;">
+  <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
+</div>
+
+<div class="govuk-grid-row container">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l" style="margin-top: 0">Book this appointment</h1>
+
+    <p>Add the new appointment to the calendar your jobcentre uses. This will probably be the Universal Credit diary.</p>
+         
+    <p><a href="status-confirmation?status=appointmentbooked&nino={{getData.nino}}&early=${early}" class="govuk-button">I’ve done this</a></p>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
