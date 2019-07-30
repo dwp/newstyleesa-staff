@@ -3,6 +3,11 @@
   background-color: mix(white, #2b8cc4, 90%);
 }
 
+.alert-orange {
+  border-color: govuk-colour("orange");
+  background-color: mix(white, #F47738, 90%);
+}
+
 .alert-yellow {
   border-color: govuk-colour("yellow");
   background-color: mix(white, #ffbf47, 90%);
