@@ -37,8 +37,8 @@
 }
 
 .tile--grey {
-  background: govuk-colour('grey-4');
-  border: 2px solid govuk-colour('grey-3');
+  background: govuk-colour('light-grey');
+  border: 2px solid govuk-colour('mid-grey');
 
   .tile__title,
   .tile__text {
@@ -46,7 +46,7 @@
   }
 
   &:hover {
-    background: govuk-colour('grey-3');
-    border-color: govuk-colour('grey-2');
+    background: #DAD9D8;
+    border-color: #9EA1A3;
   }
 }
