@@ -55,9 +55,11 @@
               <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-fta">
                 <div class="govuk-form-group">
                   <label class="govuk-label" for="reason-fta">
-                    Comments
+                    Can you provide more detail?
                   </label>
-                  <textarea class="govuk-textarea" id="reason-fta" name="reason-fta" rows="5"></textarea>
+                  <span id="reason-fta-hint" class="govuk-hint">
+                    For example, the date and time of their appointment, or whether you have spoken to them.</span>
+                  <textarea class="govuk-textarea" id="reason-fta" name="reason-fta" rows="5" aria-describedby="reason-fta-hint"></textarea>
                 </div>
               </div>
             {% endif %}
