@@ -33,10 +33,14 @@ module.exports = function (app) {
 
     // Barney Rubble
     if (search === 'QQ 11 11 11 Z' || search === 'QQ111111Z' || search === 'barney rubble' || search === 'Barney Rubble' || search === 'barney' || search === 'Barney' || search === 'rubble' || search === 'Rubble'){
-      res.redirect('claimant?nino=QQ111111Z&status=appointmentbooked&ssp1=true&fitnotes=true&pension=true')
+      if (part2 === 'QQ111111Z') {
+        res.redirect('claimant?nino=QQ111111Z&status=verified&ssp1=true&fitnotes=true&pension=true')
+      } else {
+        res.redirect('claimant?nino=QQ111111Z&status=appointmentbooked&ssp1=true&fitnotes=true&pension=true')
+      }
     // Clark Kent
     } else if (search === 'QQ 11 22 33 A' || search === 'QQ112233A' || search === 'clark kent' || search === 'Clark Kent' || search === 'clark' || search === 'Clark' || search === 'kent' || search === 'Kent') {
-      res.redirect('claimant?nino=QQ112233A&status=appointmentbooked&sr=true&ssp1=true&fitnotes=true')
+      res.redirect('claimant?nino=QQ112233A&status=withdrawn&ssp1=true&fitnotes=true')
     // Buzz Lightyear
     } else if (search === 'QQ000011A' || search === 'QQ000011A' || search === 'buzz lightyear' || search === 'Buzz Lightyear' || search === 'buzz' || search === 'Buzz' || search === 'lightyear' || search === 'Lightyear') {
       res.redirect('claimant?nino=QQ000011A&status=appointmentbooked&sr=true&ssp1=true&fitnotes=true')
@@ -46,9 +50,9 @@ module.exports = function (app) {
     // Micky Mouse
     } else if (search === 'QQ 11 22 33 Z' || search ==='QQ112233Z' || search === 'micky mouse' || search === 'Micky Mouse' || search === 'micky' || search === 'Micky' || search === 'mouse' || search === 'Mouse') {
       if (part2 === 'QQ112233Z') {
-        res.redirect('claimant?nino=QQ112233Z&status=newappointmentneeded&ssp1=true&fitnotes=true&pension=true')
+        res.redirect('claimant?nino=QQ112233Z&status=newappointmentbooked&ssp1=true&fitnotes=true')
       } else {
-        res.redirect('claimant?nino=QQ112233Z&status=appointmentbooked&ssp1=true&fitnotes=true&pension=true')
+        res.redirect('claimant?nino=QQ112233Z&status=appointmentbooked&ssp1=true&fitnotes=true')
       }
     // Marge Simpson
     } else if (search === 'QQ 23 12 34 Z' || search ==='QQ231234Z' || search === 'marge simpson' || search === 'Marge Simpson' || search === 'marge' || search === 'Marge' || search === 'simpson' || search === 'Simpson') {
@@ -66,7 +70,7 @@ module.exports = function (app) {
       }
     // Fred Flintstone
     } else if (search === 'QQ 11 22 33 B' || search ==='QQ112233B' || search === 'fred flintstone' || search === 'Fred Flintstone' || search === 'fred' || search === 'Fred' || search === 'flintstone' || search === 'Flintstone') {
-      res.redirect('claimant?nino=QQ112233B&status=appointmentbooked&ssp1=true')
+      res.redirect('claimant?nino=QQ112233B&status=fta&ssp1=true')
 
     // Homer Simpson
     } else if (search === 'QQ 11 22 33 C' || search ==='QQ112233C' || search === 'homer simpson' || search === 'Homer Simpson' || search === 'homer' || search === 'Homer' || search === 'simpson' || search === 'Simpson') {
