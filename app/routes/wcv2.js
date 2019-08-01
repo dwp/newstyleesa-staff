@@ -140,7 +140,6 @@ module.exports = function (app) {
     let status = req.session.data['status']
 
     if (file3) {
-      // res.redirect(`yabba`)
       res.redirect(`upload?nino=${nino}&file1=true&filename1=${file1}&file2=true&filename2=${file2}&file3=true&filename3=${file3}&early=${early}&status=${status}`)
     } else if (file2) {
       res.redirect(`upload?nino=${nino}&file1=true&filename1=${file1}&file2=true&filename2=${file2}&early=${early}&status=${status}`)
@@ -197,6 +196,32 @@ module.exports = function (app) {
       res.redirect(`status-confirmation?status=newappointmentneeded&nino=${nino}&early=${early}`)
     } else {
       res.redirect('error')
+    }
+  })
+
+  app.post('/wcv2/add-clerical-upload-evidence-logic', function (req, res) {
+    // Get the answer from session data
+    // The name between the quotes is the same as the 'name' attribute on the input elements
+    // However in JavaScript we can't use hyphens in variable names
+
+    let file1 = req.session.data['file-upload-1']
+    let file2 = req.session.data['file-upload-2']
+    let file3 = req.session.data['file-upload-3']
+
+    let nino = req.session.data['nino']
+    let early = req.session.data['early']
+    let status = req.session.data['status']
+
+    if (file3) {
+      res.redirect(`add-clerical-upload-evidence?nino=${nino}&file1=true&filename1=${file1}&file2=true&filename2=${file2}&file3=true&filename3=${file3}&early=${early}&status=${status}`)
+    } else if (file2) {
+      res.redirect(`add-clerical-upload-evidence?nino=${nino}&file1=true&filename1=${file1}&file2=true&filename2=${file2}&early=${early}&status=${status}`)
+    } else {
+      if (file1) {
+        res.redirect(`add-clerical-upload-evidence?nino=${nino}&file1=true&filename1=${file1}&early=${early}&status=${status}`)
+      } else {
+        res.redirect(`add-clerical-upload-evidence?nino=${nino}&error=true&early=${early}&status=${status}`)
+      }
     }
   })
 

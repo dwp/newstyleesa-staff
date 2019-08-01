@@ -1,0 +1,49 @@
+{% extends "layout_staff_v3.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% set bodyClasses = "hero-header" %}
+
+{% block content %}
+
+<div style="margin-bottom: 30px;">
+  <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
+</div>
+
+<div class="govuk-grid-row container">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="add-clerical-check-answers" method="post">
+
+      <fieldset class="govuk-fieldset" aria-describedby="passport-issued-hint" role="group">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            <label for="notes">
+            Notes
+          </label>
+          </h1>
+        </legend>
+        <div class="govuk-form-group">
+          <span id="more-detail-hint" class="govuk-hint">
+            Add a note if there is something the processing team should know. For example, if anything is missing or you are waiting for more evidence.
+          </span>
+          <textarea class="govuk-textarea" id="notes" name="notes" rows="5"></textarea>
+        </div>
+      </fieldset>
+
+      <div class="govuk-form-group">
+        <button type="submit" class="govuk-button">
+        Continue
+        </button>
+      </div>
+
+    </form>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

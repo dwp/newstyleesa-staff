@@ -49,9 +49,53 @@
           </a>
         </dd>
       </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Claim form
+        </dt>
+        <dd class="govuk-summary-list__value">
+         {{ data['file-upload-0'] }}
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> claim form</span>
+          </a>
+        </dd>
+      </div>
+      {% if data['file-upload-1'] %}
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Evidence
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Links open in a new window:
+            {% if data['file-upload-1'] %}<a href="#">{{ data['file-upload-1'] }}</a><br>{% endif %}
+            {% if data['file-upload-2'] %}<a href="#">{{ data['file-upload-2'] }}</a><br>{% endif %}
+            {% if data['file-upload-3'] %}<a href="#">{{ data['file-upload-3'] }}</a><br>{% endif %}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Change<span class="govuk-visually-hidden"> evidence</span>
+            </a>
+          </dd>
+        </div>
+      {% endif %}
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Notes
+        </dt>
+        <dd class="govuk-summary-list__value">
+         {{ data['notes'] }}<br>
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#">
+            Change<span class="govuk-visually-hidden"> notes</span>
+          </a>
+        </dd>
+      </div>
     </dl>
 
-    <a href="add-clerical-upload-claim-form" class="govuk-button">Continue</a>
+    <a href="add-clerical-status-confirmation" class="govuk-button" style="margin-top: -20px">I am ready to add this claimant</a>
 
   </div>{# /govuk-grid-column-two-thirds #}
 
