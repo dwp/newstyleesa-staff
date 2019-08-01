@@ -29,7 +29,6 @@ a:visited {
 // Tabs
 /////////////////////////////////
 
-
 .govuk-tabs__tab--selected {
   font-weight: bold;
 }
@@ -123,14 +122,12 @@ tr.table-header-sortable th {
 // Horizontal scrollable tables
 
 .table-scrollable-wrapper {
-  // overflow: auto;
   position: relative;
   clear: both;
   .table-scrollable {
     min-width: 550px;
     overflow: auto;
   }
-
 }
 
 // /////////////////////////////////
@@ -203,6 +200,3 @@ dl.qa {
     margin-bottom: 30px;
   }
 }
-
-
-
