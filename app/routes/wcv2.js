@@ -57,9 +57,9 @@ module.exports = function (app) {
     // Marge Simpson
     } else if (search === 'QQ 23 12 34 Z' || search ==='QQ231234Z' || search === 'marge simpson' || search === 'Marge Simpson' || search === 'marge' || search === 'Marge' || search === 'simpson' || search === 'Simpson') {
       if (part2 === 'QQ231234Z') {
-        res.redirect('claimant?nino=QQ231234Z&status=newappointmentneeded&ssp1=true&fitnotes=true&pension=true')
+        res.redirect('claimant?nino=QQ231234Z&status=unverified&reason=cc&ssp1=true&fitnotes=true')
         } else {
-        res.redirect('claimant?nino=QQ231234Z&status=appointmentbooked&ssp1=true&fitnotes=true&pension=true')
+        res.redirect('claimant?nino=QQ231234Z&status=appointmentbooked&ssp1=true&fitnotes=true')
       }
     // Lex Luther
     } else if (search === 'QQ 00 11 22 A' || search ==='QQ001122A' || search === 'lex luther' || search === 'Lex Luther' || search === 'lex' || search === 'Lex' || search === 'luther' || search === 'Luther') {
@@ -75,10 +75,13 @@ module.exports = function (app) {
     // Homer Simpson
     } else if (search === 'QQ 11 22 33 C' || search ==='QQ112233C' || search === 'homer simpson' || search === 'Homer Simpson' || search === 'homer' || search === 'Homer' || search === 'simpson' || search === 'Simpson') {
       res.redirect(`multiple-results-homer?nino=QQ112233C&status=appointmentbooked&ssp1=true&ssp1=true&fitnotes=true&pension=true&searchterm=${search}`)
-
     // Minnie Mouse
     } else if (search === 'QQ 01 01 01 A' || search ==='QQ010101A' || search === 'minnie mouse' || search === 'Minnie Mouse' || search === 'minnie' || search === 'Minnie' || search === 'mouse' || search === 'Mouse') {
-      res.redirect(`multiple-results-minnie?nino=QQ010101A&status=appointmentbooked&ssp1=true&ssp1=true&fitnotes=true&searchterm=${search}`)
+      if (part2 === 'QQ010101A') {
+        res.redirect('claimant?nino=QQ010101A&status=verified&ssp1=true&fitnotes=true')
+        } else {
+        res.redirect('claimant?nino=QQ010101A&status=appointmentbooked&ssp1=true&fitnotes=true')
+      }
     } else if (search === '') {
       res.redirect(`home?error=empty`)
     } else {

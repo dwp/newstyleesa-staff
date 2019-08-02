@@ -36,11 +36,14 @@
 
       <h1 class="govuk-heading-l">Uploaded evidence</h1>
 
-      <p>Links to documents open in a new tab:</p>
-
-      {% include "wcv2/_docs-list.html" %}
-
-      <p><a href="#" class="govuk-button govuk-button--secondary">Upload more documents</a></p>
+      {% if getData.nino === "QQ010101A" %}
+        <p>No evidence has been uploaded yet.</p>
+        <p><a href="#" class="govuk-button govuk-button--secondary">Upload documents</a></p>
+      {% else %}
+        <p>Links to documents open in a new tab:</p>
+        {% include "wcv2/_docs-list.html" %}
+        <p><a href="#" class="govuk-button govuk-button--secondary">Upload more documents</a></p>
+      {% endif %}
 
       <h1 class="govuk-heading-m">Notes on uploaded evidence</h1>
 
@@ -74,10 +77,21 @@
 
     {% if getData.status === "unverified" %}
 
-      <div class="blue-border" style="margin-bottom: 40px">
-        <h2 class="govuk-heading-s" style="margin-bottom: 10px">Marked as ‘unverified’ by Dave Smith, 20 July, 9:05am</h2>
-        <p>Barney could not prove their identity in their last appointment. You do not need to book a new appointment unless they ask for it.</p>
-      </div>
+      {% if getData.reason === "cc" %}
+
+        <div class="blue-border" style="margin-bottom: 40px">
+          <h2 class="govuk-heading-s" style="margin-bottom: 10px">Marked as ‘unverified’ by You, 5 August, 9:05am</h2>
+          <p>They chose not to sign the claimant commitment and not to have a follow-up appointment.</p>
+        </div>
+
+      {% else %}
+
+        <div class="blue-border" style="margin-bottom: 40px">
+          <h2 class="govuk-heading-s" style="margin-bottom: 10px">Marked as ‘unverified’ by You, 5 August, 9:05am</h2>
+          <p>They could not prove their identity in their last appointment. You do not need to book a new appointment unless they ask for it.</p>
+        </div>
+        
+      {% endif %}
 
     {% endif %}
 

@@ -90,9 +90,129 @@
 
     <h2 class="govuk-heading-m">Scenarios to test</h2>
 
-    <ul class="govuk-list govuk-list--bullet">
-      <li><a href="/wcv2/home">Home</a></li>
-    </ul>
+    <ol class="govuk-list govuk-list--number govuk-body-m scenario-list" style="font-weight: bold">
+      <li>
+        <h3 class="govuk-heading-s">Barney Rubble, QQ111111Z</h3>
+        <ol class="govuk-list">
+          <li>
+            <h4 class="govuk-heading-s"><a href="/wcv2/home?nino=QQ111111Z">Scenario 1, Part A</a></h4>
+            <p>Barney turns up, has ID and most of evidence. He doesn’t have his pension statement. He says he’ll bring his pension statement in tomorrow.</p>
+            <div class="govuk-inset-text">
+              Changes status to ‘Verified’, uploads supporting evidence and may add a note
+            </div>
+          </li>
+          <li>
+            <h4 class="govuk-heading-s"><a href="/wcv2/home?nino=QQ111111Z&part2=QQ111111Z">Scenario 1, Part B</a></h4>
+            <p>Tomorrow comes and Barney brings in his pension statement.</p>
+            <div class="govuk-inset-text">
+              Uploads additional evidence
+            </div>
+          </li>
+        </ol>
+        <li>
+          <h3 class="govuk-heading-s">Buzz Lightyear, QQ000011A</h3>
+          <h4 class="govuk-heading-s"><a href="/wcv2/home?nino=QQ000011A">Scenario 2</a></h4>
+          <p>Buzz hasn’t arrived for his appointment.</p>
+          <div class="govuk-inset-text">
+            Changes status to ‘Failed to attend’ and may add a note
+          </div>
+        </li>
+        <li>
+          <h3 class="govuk-heading-s">Micky Mouse, QQ112233Z</h3>
+          <ol class="govuk-list">
+            <li>
+              <h4 class="govuk-heading-s"><a href="/wcv2/home?nino=QQ112233Z">Scenario 3, Part A</a></h4>
+              <p>Micky arrives and provides evidence. He forgets his ID.</p>
+              <div class="govuk-inset-text">
+                If ID cannot be confirmed, agent changes status to ‘Could not be verified’, select reason and may add a note, selects appointment needed and chooses who will book it
+              </div>
+            </li>
+            <li>
+              <h4 class="govuk-heading-s"><a href="/wcv2/home?nino=QQ112233Z&part2=QQ112233Z">Scenario 3, Part B</a></h4>
+              <p>Minnie comes back in with ID</p>
+              <div class="govuk-inset-text">
+                Once ID check is complete, agent changes status to ‘Verified’, uploads supporting evidence and may add a note
+              </div>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <h3 class="govuk-heading-s">Minnie Mouse, QQ010101A</h3>
+          <ol class="govuk-list">
+            <li>
+              <h4 class="govuk-heading-s"><a href="/wcv2/home?nino=QQ010101A">Scenario 4. Part A</a></h4>
+              <p>Minnie proves ID, but doesn’t have any evidence</p>
+              <div class="govuk-inset-text">
+                Chooses ‘Could not be verified’ and follows process to book another appointment
+              </div>
+            </li>
+            <li>
+              <h4 class="govuk-heading-s"><a href="/wcv2/home?nino=QQ010101A&part2=QQ010101A">Scenario 4. Part B</a></h4>
+              <p>Minnie comes back in with evidence</p>
+              <div class="govuk-inset-text">
+                Changes status to ‘Verified’, uploads supporting evidence and may add a note
+              </div>
+            </li>
+          </ol>
+        </li>
+        <li>
+          <h3 class="govuk-heading-s">Marge Simpson, QQ231234Z</h3>
+          <ol class="govuk-list">
+            <li>
+              <h4 class="govuk-heading-s"><a href="/wcv2/home?nino=QQ231234Z">Scenario 5. Part A</a></h4>
+              <p>Marge decides not to sign the claimant commitment and doesn’t want a follow-up appointment.</p>
+              <div class="govuk-inset-text">
+                Agent changes status to ‘Could not be verified’, select reason and may add a note, selects no appointment needed
+              </div>
+            </li>
+            <li>
+              <h4 class="govuk-heading-s"><a href="/wcv2/home?nino=QQ010101A&part2=QQ231234Z">Scenario 5. Part B</a></h4>
+              <p>Marge changes her mind and contacts the jobcentre.</p>
+              <div class="govuk-inset-text">
+                Once claimant commitment is complete is complete, agent changes status to ‘Verified’ and uploads supporting evidence
+              </div>
+            </li>
+          </ol>
+        </li>
+      </li>
+      <li>
+        <h3 class="govuk-heading-s">Homer Simpson, QQ112233C</h3>
+        <h4 class="govuk-heading-s"><a href="/wcv2/home?nino=QQ112233C">Scenario 6, Part A</a></h4>
+        <p>Homer has filled in multiple application forms – they realised they needed to change some information, so they filled the form in again.</p>
+        <div class="govuk-inset-text">
+          Checks which form to use with claimant, then changes status to ‘Verified’, uploads supporting evidence, may add a note and changes status to ‘Withdrawn’ for all other application forms
+        </div>
+      </li>
+      <li>
+        <h3 class="govuk-heading-s">Bugs Bunny, QQ123456Z</h3>
+        <h4 class="govuk-heading-s"><a href="/wcv2/home?nino=QQ123456Z">Scenario 7</a></h4>
+        <p>Bugs thought he filled completed the digital form, but it can’t be found. He ends up completing a paper claim form.</p>
+        <div class="govuk-inset-text">
+          Agent searches for claimant to begin with and then follows the process to add a clerical claim
+        </div>
+      </li>
+      <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+      <li>
+        <h3 class="govuk-heading-s">Fred Flintstone, QQ112233B</h3>
+        <h4 class="govuk-heading-s"><a href="/wcv2/home?nino=QQ112233B">Scenario 8</a></h4>
+        <p>Fred Flintstone has contacted the jobcentre to enquire about their claim as they haven't received any money yet. They failed to attend their last appointment.</p>
+        <div class="govuk-inset-text">
+          Books another appointment for the claimant
+        </div>
+      </li>
+      <li>
+        <h3 class="govuk-heading-s">Clark Kent, QQ112233A</h3>
+        <h4 class="govuk-heading-s"><a href="/wcv2/home?nino=QQ112233A">Scenario 9</a></h4>
+        <p>Clark has contacted the Jobcentre to enquire about their claim as they haven't received any money yet. Their claim was previously withdrawn.</p>
+        <div class="govuk-inset-text">
+          Asks claimant to make a new application
+        </div>
+      </li>
+    </ol>
+
+    <h2 class="govuk-heading-m">What we learned</h2>
+
+    <p>Content to follow&hellip;</p>
 
   </div>{# /govuk-grid-column-two-thirds #}
 </div>{# /govuk-grid-row #}

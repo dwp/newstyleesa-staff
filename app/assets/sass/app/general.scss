@@ -200,3 +200,36 @@ dl.qa {
     margin-bottom: 30px;
   }
 }
+
+// /////////////////////////////////
+// SCENARIO LIST
+// /////////////////////////////////
+
+.scenario-list {
+  h4 {
+    margin-bottom: 5px !important;
+  }
+  p {
+    margin-top: 5px !important;
+    margin-bottom: 5px !important;
+  }
+  .govuk-inset-text {
+    margin-top: 15px !important;
+    margin-bottom: 20px !important;
+    background-color: govuk-colour("light-grey");
+  }
+  hr {
+    display: none !important;
+  }
+  li {
+    margin-bottom: 40px;
+  }
+  li li {
+    margin-bottom: 0px;
+  }
+}
+
+
+
+
+
