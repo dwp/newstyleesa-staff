@@ -17,12 +17,15 @@ a:visited {
 .govuk-button.search {
   background-image: url("/public/images/search.svg");
   background-repeat: no-repeat;
-  background-position: center center;
+  background-position: center 8px;
   width: 44px;
   text-indent: -9999em;
   position: relative;
   left: -3px;
   height: 38px;
+  &:focus {
+    background-position: center -192px;
+  }
 }
 
 /////////////////////////////////
