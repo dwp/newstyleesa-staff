@@ -26,6 +26,9 @@ a:visited {
   &:focus {
     background-position: center -192px;
   }
+  &:focus:active {
+    background-position: center 8px;
+  }
 }
 
 /////////////////////////////////
