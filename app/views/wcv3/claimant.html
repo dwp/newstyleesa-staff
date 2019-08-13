@@ -69,7 +69,11 @@
     {% if getData.status === "fta" %}
 
       <div class="blue-border" style="margin-bottom: 40px">
-        <h2 class="govuk-heading-s" style="margin-bottom: 10px">Marked as ‘failed to attend’ by Dave Smith, 20 July, 9:05am</h2>
+        <h2 class="dwp-timeline__title">Marked as ‘failed to attend’</h2>
+        <p class="dwp-timeline__info">
+          <span class="dwp-timeline__author">by John Smith, Work coach at Rotherham Jobcentre Plus</span>
+          <span class="dwp-timeline__date">21 July 2019 at 5pm</span>
+        </p>
         <p>Tried to ring them at 9:00am on 20 July.</p>
       </div>
 
@@ -79,10 +83,14 @@
 
       {% if getData.reason === "cc" %}
 
-        <div class="blue-border" style="margin-bottom: 40px">
-          <h2 class="govuk-heading-s" style="margin-bottom: 10px">Marked as ‘unverified’ by You, 5 August, 9:05am</h2>
-          <p>They chose not to sign the claimant commitment and not to have a follow-up appointment.</p>
-        </div>
+      <div class="blue-border" style="margin-bottom: 40px">
+        <h2 class="dwp-timeline__title">Marked as ‘unverified’</h2>
+        <p class="dwp-timeline__info">
+          <span class="dwp-timeline__author">by John Smith, Work coach at Rotherham Jobcentre Plus</span>
+          <span class="dwp-timeline__date">21 July 2019 at 5pm</span>
+        </p>
+        <p>They chose not to sign the claimant commitment and not to have a follow-up appointment.</p>
+      </div>
 
       {% else %}
 
@@ -210,7 +218,7 @@
         <nav role="navigation" aria-labelledby="claim-actions-title">
         <ul class="govuk-list govuk-!-font-size-16">
           <li><a href="claim-form?nino={{getData.nino}}&amp;status={{getData.status}}&amp;sr={{getData.sr}}&amp;ssp1={{getData.ssp1}}&amp;fitnotes={{getData.fitnotes}}&amp;early={{getData.early}}&amp;twojobs={{getData.twojobs}}">View or update the claim</a></li>
-          <li><a href="claim-history?nino={{getData.nino}}&amp;status={{getData.status}}&amp;sr={{getData.sr}}&amp;ssp1={{getData.ssp1}}&amp;fitnotes={{getData.fitnotes}}&amp;early={{getData.early}}&amp;twojobs={{getData.twojobs}}">View claim history</a></li>
+          <li><a href="timeline?nino={{getData.nino}}&amp;status={{getData.status}}&amp;sr={{getData.sr}}&amp;ssp1={{getData.ssp1}}&amp;fitnotes={{getData.fitnotes}}&amp;early={{getData.early}}&amp;twojobs={{getData.twojobs}}">Timeline</a></li>
         </ul>
       </nav>
         <a href="status?nino={{getData.nino}}&amp;status={{getData.status}}&amp;twojobs={{getData.twojobs}}&amp;early={{getData.early}}" class="govuk-button">Change claim status</a>

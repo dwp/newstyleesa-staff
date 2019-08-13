@@ -17,18 +17,6 @@
     width: 10px;
   }
 
-  .dwp-timeline__title {
-    display: block;
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
-
-  .dwp-timeline__author,
-  .dwp-timeline__date {
-    color: $govuk-secondary-text-colour;
-    display: block;
-  }
-
   .dwp-timeline__info {
     margin-top: 0;
   }
@@ -36,4 +24,16 @@
   .dwp-timeline__body {
     display: block;
   }
+}
+
+.dwp-timeline__title {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.dwp-timeline__author,
+.dwp-timeline__date {
+  color: $govuk-secondary-text-colour;
+  display: block;
 }
