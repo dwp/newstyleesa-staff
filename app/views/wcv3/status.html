@@ -1,0 +1,155 @@
+{% extends "layout_staff_v3.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% set bodyClasses = "hero-header" %}
+
+{% block content %}
+
+{% include "wcv3/_header.html" %}
+
+<div style="margin-bottom: 30px;">
+  <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
+</div>
+
+<div class="govuk-grid-row container">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="status-changing" method="post">
+
+      <div class="govuk-form-group">
+        
+        <fieldset class="govuk-fieldset">
+
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            Change the status of this claim
+          </h1>
+        </legend>
+
+        <input id="nino" name="nino" type="hidden" value="{{getData.nino}}">
+
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+
+            {# Verified #}
+            {% if getData.status === "appointmentbooked" or getData.status === "newappointmentbooked" %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="verified" name="status" type="radio" value="verified" aria-describedby="hint-verified">
+                <label class="govuk-label govuk-radios__label govuk-label--s" for="verified">
+                  Verified
+                </label>
+                <span id="hint-verified" class="govuk-radios__hint">Proved their identity and signed claimant commitment.</span>
+              </div>
+            {% endif %}
+
+            {# Failed to attend #}
+            {% if getData.status === "appointmentbooked" or getData.status === "newappointmentbooked" %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="fta" name="status" type="radio" value="fta" aria-describedby="hint-fta" data-aria-controls="conditional-fta">
+                <label class="govuk-label govuk-radios__label govuk-label--s" for="fta">
+                  Failed to attend
+                </label>
+                <span id="hint-fta" class="govuk-radios__hint">They missed their appointment.</span>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-fta">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="reason-fta">
+                    Can you provide more detail?
+                  </label>
+                  <span id="reason-fta-hint" class="govuk-hint">
+                    For example, the date and time of their appointment, or whether you have spoken to them.</span>
+                  <textarea class="govuk-textarea" id="reason-fta" name="reason-fta" rows="5" aria-describedby="reason-fta-hint"></textarea>
+                </div>
+              </div>
+            {% endif %}
+
+            {# Unverified #}
+            {% if getData.status === "appointmentbooked" or getData.status === "newappointmentbooked" %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="not-verified" name="status" type="radio" value="not-verified" aria-describedby="hint-not-verified">
+                <label class="govuk-label govuk-radios__label govuk-label--s" for="not-verified">
+                  Could not be verified
+                </label>
+                <span id="hint-not-verified" class="govuk-radios__hint">Attended, but could not prove their identity or did not sign their claimant commitment.</span>
+              </div>
+            {% endif %}
+
+            {# Processed #}
+            {% if getData.status === "verified" %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="processed" name="status" type="radio" value="processed" aria-describedby="hint-processed">
+                <label class="govuk-label govuk-radios__label govuk-label--s" for="processed">
+                  Processed
+                </label>
+                <span id="hint-processed" class="govuk-hint govuk-radios__hint">A decision has been made and JSAPS has been updated.</span>
+              </div>
+            {% endif %}
+
+            {# New appointment booked #}
+            {% if getData.status === "fta" or getData.status === "unverified" or getData.status === "newappointmentneeded" %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="newappointmentbooked" name="status" type="radio" value="newappointmentbooked" aria-describedby="hint-newappointmentbooked">
+                <label class="govuk-label govuk-radios__label govuk-label--s" for="newappointmentbooked">
+                  New appointment booked
+                </label>
+                <span id="hint-newappointmentbooked" class="govuk-hint govuk-radios__hint">An appointment has been added to the calendar.</span>
+              </div>
+            {% endif %}
+
+            {# Withdrawn #}
+            {% if getData.status === "unverified" or getData.status === "appointmentbooked" or getData.status === "newappointmentbooked" or getData.status === "fta" or getData.status === "verified" or getData.status === "newappointmentneeded" %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="withdrawn" name="status" type="radio" value="withdrawn" aria-describedby="hint-withdrawn" data-aria-controls="conditional-withdrawn">
+                <label class="govuk-label govuk-radios__label govuk-label--s" for="withdrawn">
+                  Withdrawn (or duplicate)
+                </label>
+                <span id="hint-withdrawn" class="govuk-radios__hint">They chose not to continue. This might be because they no longer need the benefit or have confirmed that this claim is a duplicate.</span>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-withdrawn">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="reason">
+                    Enter the reason why
+                  </label>
+                  <textarea class="govuk-textarea" id="reason" name="reason" rows="5"></textarea>
+                </div>
+              </div>
+            {% endif %}
+
+            {# Disallowed #}
+            {% if getData.status === "verified" %}
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="disallowed" name="status" type="radio" value="disallowed" aria-describedby="hint-disallowed" data-aria-controls="conditional-disallowed">
+                <label class="govuk-label govuk-radios__label govuk-label--s" for="disallowed">
+                  Disallowed
+                </label>
+                <span id="hint-disallowed" class="govuk-hint govuk-radios__hint">A decision has been made to disallow this claim.</span>
+              </div>
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-disallowed">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="reason-disallowed">
+                    Enter the reason why
+                  </label>
+                  <textarea class="govuk-textarea" id="reason-disallowed" name="reason-disallowed" rows="5"></textarea>
+                </div>
+              </div>
+            {% endif %}
+
+          </div>{# /govuk-radios #}
+
+        </fieldset>
+      </div>{# /govuk-form-group #}
+
+      <button type="submit" class="govuk-button">
+        Continue
+      </button>
+
+    </form>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

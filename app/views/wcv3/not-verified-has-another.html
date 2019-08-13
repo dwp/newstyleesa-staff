@@ -1,0 +1,64 @@
+{% extends "layout_staff_v3.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% set bodyClasses = "hero-header" %}
+
+{% block content %}
+
+{% include "wcv3/_header.html" %}
+
+<div style="margin-bottom: 30px;">
+  <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
+</div>
+
+<div class="govuk-grid-row container">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="not-verified-has-another-logic" method="post">
+
+      <div class="govuk-form-group">
+
+        <fieldset class="govuk-fieldset">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">Will you be booking this appointment for them?</h1>
+          </legend>
+
+          <input id="nino" name="nino" type="hidden" value="{{getData.nino}}">
+
+          <div class="govuk-form-group">
+
+            <div class="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="yes" name="another" type="radio" value="yes">
+                <label class="govuk-label govuk-radios__label" for="yes">
+                  Yes, I will book their appointment
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="no" name="another" type="radio" value="no">
+                <label class="govuk-label govuk-radios__label" for="no">
+                  No, someone else will book this (for example, the PAC team)
+                </label>
+              </div>
+            </div>
+
+          </div>{# /govuk-form-group #}
+
+        </fieldset>
+
+      </div>{# /govuk-form-group #}
+
+      <button type="submit" class="govuk-button">Continue</button>
+
+    </form>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

@@ -1,0 +1,77 @@
+{% extends "layout_staff_v3.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% set bodyClasses = "hero-header" %}
+
+{% block content %}
+
+{% include "wcv3/_header.html" %}
+
+<div style="margin-bottom: 30px;">
+  <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
+</div>
+
+<div class="govuk-grid-row container">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="not-verified-reason-logic" method="post">
+
+      <div class="govuk-form-group">
+
+        <fieldset class="govuk-fieldset">
+
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">Why are you unable to verify the claim?</h1>
+          </legend>
+
+          <input id="nino" name="nino" type="hidden" value="{{getData.nino}}">
+
+          <span id="waste-hint" class="govuk-hint">
+            Select all that apply.
+          </span>
+
+          <div class="govuk-form-group">
+
+            <div class="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="waste-1" name="waste" type="checkbox" value="carcasses">
+                <label class="govuk-label govuk-checkboxes__label" for="waste-1">
+                  Could not prove their identity
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+                <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                  Did not sign their claimant commitment
+                </label>
+              </div>
+            </div>
+
+          </div>{# /govuk-form-group #}
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="reason">
+              Notes
+            </label>
+            <textarea class="govuk-textarea" id="reason" name="reason" rows="5"></textarea>
+          </div>
+
+        </fieldset>
+
+        <button type="submit" class="govuk-button">
+          Continue
+        </button>
+
+      </div>{# /govuk-form-group #}
+
+    </form>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
