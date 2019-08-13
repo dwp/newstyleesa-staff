@@ -121,7 +121,9 @@ module.exports = function (app) {
       res.redirect(`status-confirmation?status=newappointmentbooked&nino=${nino}&early=${early}`)
     // Withdrawn or duplicate
     } else if (status === 'withdrawn') {
-      res.redirect(`status-confirmation?status=withdrawn&nino=${nino}&early=${early}`)
+      res.redirect(`withdrawn-confirmation?status=appointmentbooked&nino=${nino}`)
+    // } else if (status === 'withdrawn') {
+    //   res.redirect(`status-confirmation?status=withdrawn&nino=${nino}&early=${early}`)
     // Processed
     } else if (status === 'processed') {
       res.redirect(`status-confirmation?status=processed&nino=${nino}&early=${early}`)
@@ -229,6 +231,23 @@ module.exports = function (app) {
       } else {
         res.redirect(`add-clerical-upload-evidence?nino=${nino}&error=true&early=${early}&status=${status}`)
       }
+    }
+  })
+
+  app.post('/wcv3/withdrawn-confirmation-logic', function (req, res) {
+
+    let withdraw = req.session.data['withdraw']
+
+    let nino = req.session.data['nino']
+
+    let early = req.session.data['early']
+
+    if (withdraw === 'yes') {
+      res.redirect(`status-confirmation?status=withdrawn&nino=${nino}&early=${early}`)
+    } else if (withdraw === 'no') {
+      res.redirect(`claimant?status=appointmentbooked&nino=${nino}`)
+    } else {
+      res.redirect('error')
     }
   })
 
