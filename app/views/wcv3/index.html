@@ -18,19 +18,30 @@
     <h2 class="govuk-heading-m">Changes in this version</h2>
 
     <ul class="govuk-list govuk-list--bullet">
-      <li>Shorted hint text for status radio buttons</li>
-      <li>Could not be verified – made it clearer who was booking the appointment</li>
-      <li>Could not be verified – removed reference to the Universal Credit diary</li>
-      <li>Darken special rules background</li>
-      <li>Change ‘claim history’ to ‘timeline’</li>
-      <li>Re-order timeline so latest is at the top</li>
-      <li>Add job role and location in the blue summary box (‘marked as failed to attend’ etc)</li>
-      <li>Updated styling of content in the blue summary box so it matches that of the timeline</li>
-      <li>Added back to claim summary link on the full clam screen</li>
-      <li>Added confirmation step before withdrawing a claim</li>
+      <li>Shorter hint text for status radio buttons</li>
+      <li>Could not be verified status – made the options for who was booking the appointment</li>
+      <li>Could not be verified status – removed reference to the Universal Credit diary</li>
+      <li>Darkened special rules background</li>
+      <li>Changed ‘claim history’ to ‘timeline’</li>
+      <li>Re-ordered timeline so the latest is entry at the top</li>
+      <li>Added job role and location in the blue summary box (‘marked as failed to attend’ etc)</li>
+      <li>Updated styling of content in the blue summary box so it matches the timeline styles</li>
+      <li>Added ‘back to claim summary’ link on the claim details screen</li>
+      <li>Added a step before withdrawing a claim for confirmation</li>
+      <li>Separated notes from supporting evidence</li>
     </ul>
 
-    <p><a href="/wcv3/home">Link to home</a></p>
+    <h2 class="govuk-heading-m">Statuses</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="/wcv3/home?nino=QQ111111Z&status=appointmentbooked&ssp1=true&fitnotes=true">Appointment booked</a></li>
+      <li><a href="/wcv3/home?nino=QQ000011A&status=appointmentbooked&sr=true&ssp1=true&fitnotes=true">Appointment booked (special rules)</a></li>
+      <li><a href="/wcv3/home?nino=QQ112233C&status=appointmentbooked&ssp1=true&ssp1=true&fitnotes=true&pension=true&searchterm=QQ112233C">Appointment booked (multiple results)</a></li>
+      <li><a href="/wcv3/home?nino=QQ112233B&status=fta&ssp1=true&fitnotes=true">Failed to attend</a></li>
+      <li><a href="/wcv3/home?nino=QQ112233A&status=withdrawn&ssp1=true&fitnotes=true">Withdrawn</a></li>
+      <li><a href="/wcv3/home?nino=QQ112233A&status=verified&ssp1=true&fitnotes=true">Processed</a></li>
+      <li><a href="/wcv3/home?nino=QQ112233A&status=verified&ssp1=true&fitnotes=true">Verified</a></li>
+    </ul>
 
   </div>{# /govuk-grid-column-two-thirds #}
 </div>{# /govuk-grid-row #}
