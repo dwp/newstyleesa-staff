@@ -29,38 +29,16 @@
         {% if getData.filename2 %}<li><a href="#">{{data.filename2}}</a></li>{% endif %}
         {% if getData.filename3 %}<li><a href="#">{{data.filename3}}</a></li>{% endif %}
       </ul>
-      
-      <div class="govuk-form-group">
-        <label class="govuk-label" for="reason">
-          Notes
-        </label>
-        <span id="more-detail-hint" class="govuk-hint">
-          Add a note if there is something the processing team should know. For example, if anything is missing or you are waiting for more evidence.
-        </span>
-        <textarea class="govuk-textarea" id="reason" name="reason" rows="5"></textarea>
-      </div>
 
     {% else %}
 
-      <fieldset class="govuk-fieldset" aria-describedby="passport-issued-hint" role="group">
-        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-          <h1 class="govuk-fieldset__heading">
-            <label for="reason">
-            Notes
-          </label>
-          </h1>
-        </legend>
-        <div class="govuk-form-group">
-          <span id="more-detail-hint" class="govuk-hint">
-            Add a note if there is something the processing team should know. For example, if anything is missing or you are waiting for more evidence.
-          </span>
-          <textarea class="govuk-textarea" id="reason" name="reason" rows="5"></textarea>
-        </div>
-      </fieldset>
+      <script>
+        window.location = "notes?status=appointmentbooked&nino={{getData.nino}}&early={{getData.early}}";
+      </script>
 
     {% endif %}
 
-    <p><a href="status-confirmation?status=verified&nino={{getData.nino}}&early={{getData.early}}" class="govuk-button">Continue</a></p>
+    <p style="margin-top: 40px"><a href="notes?status=appointmentbooked&nino={{getData.nino}}&early={{getData.early}}" class="govuk-button">Continue</a></p>
 
   </div>{# /govuk-grid-column-two-thirds #}
 
