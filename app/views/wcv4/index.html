@@ -1,0 +1,64 @@
+{% extends "layout_master.html" %}
+
+{% block pageTitle %}
+  Work Coach view &ndash; Version 3 &ndash; Prototypes &ndash; {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div style="margin-bottom: 30px;">
+  <a href="/proto-index" rel="prev" class="govuk-back-link">Back to prototypes for testing in user research</a>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Work Coach view – version 3</h1>
+
+    <h2 class="govuk-heading-m">Changes in this version</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>Shorter hint text for status radio buttons</li>
+      <li>Could not be verified status – made the options for who was booking the appointment clearer</li>
+      <li>Could not be verified status – removed reference to the Universal Credit diary</li>
+      <li>Darkened special rules background</li>
+      <li>Changed ‘claim history’ to ‘timeline’</li>
+      <li>Re-ordered timeline so the latest is entry at the top</li>
+      <li>Added job role and location in the blue summary box (‘marked as failed to attend’ etc)</li>
+      <li>Updated styling of content in the blue summary box so it matches the timeline styles</li>
+      <li>Added ‘back to claim summary’ link on the claim details screen</li>
+      <li>Added a step before withdrawing a claim for confirmation</li>
+      <li>Separated notes from supporting evidence</li>
+    </ul>
+
+    <h2 class="govuk-heading-m">Statuses</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      
+      {# Barney Rubble #}
+      <li><a href="/wcv4/home?nino=QQ111111Z&status=appointmentbooked&ssp1=true&fitnotes=true">Appointment booked</a></li>
+
+      {# Buzz Lightyear #}
+      <li><a href="/wcv4/home?nino=QQ000011A&status=appointmentbooked&sr=true&ssp1=true&fitnotes=true">Appointment booked (special rules)</a></li>
+
+      {# Homer Simpson #}
+      <li><a href="/wcv4/home?nino=QQ112233C&status=appointmentbooked&ssp1=true&ssp1=true&fitnotes=true&pension=true&searchterm=QQ112233C">Appointment booked (multiple results)</a></li>
+
+      {# Fred Flintstone #}
+      <li><a href="/wcv4/home?nino=QQ112233B&status=fta&ssp1=true&fitnotes=true">Failed to attend</a></li>
+
+      {# Clark Kent #}
+      <li><a href="/wcv4/home?nino=QQ112233A&status=withdrawn&ssp1=true&fitnotes=true">Withdrawn</a></li>
+
+      {# Marge Simpson #}
+      <li><a href="/wcv4/home?nino=QQ231234Z">Unverified</a></li>
+
+      {# Lois Lane #}
+      <li><a href="/wcv4/home?nino=QQ111122B">Verified</a></li>
+
+    </ul>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

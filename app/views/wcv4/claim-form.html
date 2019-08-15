@@ -1,0 +1,35 @@
+{% extends "layout_staff_v3.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div style="margin-bottom: 30px;">
+  <a href="home" rel="prev" class="govuk-back-link">Find or add a claim</a>
+</div>
+
+{% include "wcv4/_header.html" %}
+
+<div class="govuk-grid-row container">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    {% include "wcv4/_special-rules-notice.html" %}
+
+    {% include "wcv4/_sub-nav.html" %}
+
+    <h1 class="govuk-visually-hidden">Claim form</h1>
+
+    <br>
+    
+    {% include "wcv4/_claim-form-answers.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+
+  {% include "wcv4/_claim-actions.html" %}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

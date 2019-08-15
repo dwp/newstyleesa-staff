@@ -1,0 +1,112 @@
+{% extends "layout_staff_v3.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div style="margin-bottom: 30px;">
+  <a href="home" rel="prev" class="govuk-back-link">Find or add a claim</a>
+</div>
+
+{% include "wcv4/_header.html" %}
+
+<div class="govuk-grid-row container">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    {% include "wcv4/_special-rules-notice.html" %}
+
+    {% include "wcv4/_sub-nav.html" %}
+
+    <h1 class="govuk-visually-hidden">Claim overview</h1>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9 summary-view">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          National Insurance number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          QQ123456C
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          05/01/1978
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Postcode
+        </dt>
+        <dd class="govuk-summary-list__value">
+          NG1 5TY
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Application submitted
+        </dt>
+        <dd class="govuk-summary-list__value">
+          15/10/2019, 10:30pm
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Claim start date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          22/10/2018
+        </dd>
+      </div>
+    </dl>
+
+    <h2 class="govuk-heading-m">Timeline</h2>
+
+      <ol class="dwp-timeline govuk-list">
+        <li class="dwp-timeline__entry">
+          <h3 class="govuk-heading-s" style="margin-bottom: 5px;">Status changed to ‘appointment booked’</h3>
+          <p class="dwp-timeline__info">
+            <span class="dwp-timeline__author">by John Smith, Work Coach at Rotherham Jobcentre Plus</span>
+            <span class="dwp-timeline__date">21 July 2019 at 5pm</span>
+          </p>
+        </li>
+        <li class="dwp-timeline__entry">
+          <h3 class="govuk-heading-s" style="margin-bottom: 5px;">Status changed to ‘new appointment needed’</h3>
+          <p class="dwp-timeline__info">
+            <span class="dwp-timeline__author">by Paul Graham, Work Coach at Rotherham Jobcentre Plus</span>
+            <span class="dwp-timeline__date">17 July 2019 at 3pm</span>
+          </p>
+          <p class="dwp-timeline__body">
+            Claimant couldn’t prove their identity, so a follow up appointment is needed.
+          </p>
+        </li>
+        <li class="dwp-timeline__entry">
+          <h3 class="govuk-heading-s" style="margin-bottom: 5px;">Status changed to ‘appointment booked’</h3>
+          <p class="dwp-timeline__info">
+            <span class="dwp-timeline__author">by John Smith, PAC at Rotherham Jobcentre Plus</span>
+            <span class="dwp-timeline__date">13 July 2019 at 5pm</span>
+          </p>
+          <p class="dwp-timeline__body">
+            Marriage certificate uploaded to DRS.
+          </p>
+        </li>
+        <li class="dwp-timeline__entry">
+          <h3 class="govuk-heading-s" style="margin-bottom: 5px;">Claim submitted</h3>
+          <p class="dwp-timeline__info">
+            <span class="dwp-timeline__date">12 July 2019 at 1:02pm</span>
+          </p>
+        </li>
+      </ol>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+
+  {% include "wcv4/_claim-actions.html" %}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

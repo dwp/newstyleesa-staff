@@ -1,0 +1,40 @@
+{% extends "layout_staff_v3.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div style="margin-bottom: 30px;">
+  <a href="home" rel="prev" class="govuk-back-link">Find or add a claim</a>
+</div>
+
+{% include "wcv4/_header.html" %}
+
+<div class="govuk-grid-row container">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    {% include "wcv4/_special-rules-notice.html" %}
+
+    {% include "wcv4/_sub-nav.html" %}
+
+    <h1 class="govuk-visually-hidden">Documents</h1>
+
+    <h2 class="govuk-heading-m">Uploaded evidence</h2>
+      
+    <p>Links to documents open in a new tab:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="#">ESANS_SSP1_BARNEY_RUBBLE.pdf</a></li>
+      <li><a href="#">ESANS_FITNOTE_BARNEY_RUBBLE.pdf</a></li>
+    </ul>
+    <p><a href="#" class="govuk-button govuk-button--secondary">Upload documents</a></p>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+
+  {% include "wcv4/_claim-actions.html" %}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
