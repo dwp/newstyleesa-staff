@@ -4,11 +4,13 @@
   Reference screens for JIRA stories &ndash; {{ serviceName }}
 {% endblock %}
 
-{% block content %}
+{% block beforeContent %}
+  <div class="govuk-!-margin-bottom-5">
+    <a href="index" rel="prev" class="govuk-back-link">Index page</a>
+  </div>
+{% endblock %}
 
-<div style="margin-bottom: 30px;">
-  <a href="index" rel="prev" class="govuk-back-link">Index page</a>
-</div>
+{% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
