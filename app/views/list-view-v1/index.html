@@ -1,13 +1,14 @@
-
-{% extends "layout_staff_v1.html" %}
+{% extends "layout-staff.html" %}
 
 {% block pageTitle %}
   Unverified digital claims
 {% endblock %}
 
-{% block content %}
+{% block serviceName %}
+  {% include "mvp/_service-name.html" %}
+{% endblock %}
 
-<div style="margin-bottom: 30px;"></div>
+{% block content %}
 
 <div class="govuk-grid-row">
 
