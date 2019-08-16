@@ -4,11 +4,13 @@
   Iteration 2 &ndash; Reference screens &ndash; {{ serviceName }}
 {% endblock %}
 
-{% block content %}
+{% block beforeContent %}
+  <div class="govuk-!-margin-bottom-5">
+    <a href="/dev-index" rel="prev" class="govuk-back-link">Back to reference screens for JIRA stories</a>
+  </div>
+{% endblock %}
 
-<div style="margin-bottom: 30px;">
-  <a href="/dev-index" rel="prev" class="govuk-back-link">Back to reference screens for JIRA stories</a>
-</div>
+{% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
