@@ -4,17 +4,17 @@
   Work Coach view &ndash; Version 4 &ndash; Prototypes &ndash; {{ serviceName }}
 {% endblock %}
 
-{% block content %}
+{% block beforeContent %}
+  <div class="govuk-!-margin-bottom-5">
+    <a href="/proto-index" rel="prev" class="govuk-back-link">Back to prototypes for testing in user research</a>
+  </div>
+{% endblock %}
 
-<div style="margin-bottom: 30px;">
-  <a href="/proto-index" rel="prev" class="govuk-back-link">Back to prototypes for testing in user research</a>
-</div>
+{% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
     <h1 class="govuk-heading-l">Work Coach view – version 4</h1>
-
     <h2 class="govuk-heading-m">Screens</h2>
     <ul class="govuk-list govuk-list--bullet">
       <li><a href="/wcv4/home">Home</a></li>
@@ -23,7 +23,6 @@
       <li><a href="/wcv4/documents">Documents</a></li>
       <li><a href="/wcv4/withdraw-confirmation">Withdraw confirmation</a></li>
     </ul>
-
   </div>{# /govuk-grid-column-two-thirds #}
 </div>{# /govuk-grid-row #}
 

@@ -1,12 +1,11 @@
-{% extends "layout_staff_v3.html" %}
+{% extends "layout-staff.html" %}
 
 {% block pageTitle %}
-  {{ serviceName }}
+  {% include "wcv5/_service-name.html" %}
 {% endblock %}
 
-{% block beforeContent %}
-<div style="margin-bottom: 30px;">
-</div>
+{% block serviceName %}
+  {% include "wcv5/_service-name.html" %}
 {% endblock %}
 
 {% block content %}

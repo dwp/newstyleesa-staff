@@ -1,24 +1,30 @@
-{% extends "layout_staff_v3.html" %}
+{% extends "layout-staff.html" %}
 
 {% block pageTitle %}
-  {{ serviceName }}
+  {% include "wcv5/_service-name.html" %}
 {% endblock %}
 
-{% set bodyClasses = "hero-header" %}
+{% block serviceName %}
+  {% include "wcv5/_service-name.html" %}
+{% endblock %}
+
+{% block keyDetails %}
+  {% include "wcv5/_key-details.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-!-margin-bottom-5">
+    <a href="home" rel="prev" class="govuk-back-link">Find or add another claim</a>
+  </div>
+{% endblock %}
 
 {% block content %}
 
-{% include "wcv5/_header.html" %}
-
-<div style="margin-bottom: 30px;">
-  <a href="home" rel="prev" class="govuk-back-link">Find or add another claim</a>
-</div>
-
-<div class="govuk-grid-row container">
+<div class="govuk-grid-row">
 
   {% include "wcv5/_claim-actions.html" %}
 
-  <div class="govuk-grid-column-three-quarters" style="padding-left: 40px">
+  <div class="govuk-grid-column-three-quarters">
 
     {% include "wcv5/_special-rules-notice.html" %}
 

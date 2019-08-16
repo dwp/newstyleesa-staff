@@ -241,7 +241,7 @@ module.exports = function (app) {
     if (withdraw === 'yes') {
       res.redirect(`status-confirmation?status=withdrawn&nino=${nino}&early=${early}`)
     } else if (withdraw === 'no') {
-      res.redirect(`claimant?status=appointmentbooked&nino=${nino}`)
+      res.redirect(`claimant-overview?status=appointmentbooked&nino=${nino}`)
     } else {
       res.redirect('error')
     }
