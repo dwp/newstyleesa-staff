@@ -4,11 +4,13 @@
   Version 2 &ndash; Prototypes &ndash; {{ serviceName }}
 {% endblock %}
 
-{% block content %}
+{% block beforeContent %}
+  <div class="govuk-!-margin-bottom-5">
+    <a href="/proto-index" rel="prev" class="govuk-back-link">Back to prototypes for testing in user research</a>
+  </div>
+{% endblock %}
 
-<div style="margin-bottom: 30px;">
-  <a href="/proto-index" rel="prev" class="govuk-back-link">Back to prototypes for testing in user research</a>
-</div>
+{% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">

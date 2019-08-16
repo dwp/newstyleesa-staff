@@ -1,36 +1,40 @@
-{% extends "layout_staff_v2.html" %}
+{% extends "layout-staff.html" %}
 
 {% block pageTitle %}
-  {{ serviceName }}
+  {% include "wcv1/_service-name.html" %}
 {% endblock %}
 
-{% set bodyClasses = "hero-header" %}
+{% block serviceName %}
+  {% include "wcv1/_service-name.html" %}
+{% endblock %}
+
+{% block keyDetails %}
+  {% include "wcv1/_key-details.html" %}
+{% endblock %}
 
 {% block content %}
 
-{% include "wcv1/_header.html" %}
-
 <div class="govuk-grid-row">
 
-  <div class="govuk-grid-column-full govuk-!-margin-top-4">
+  <div class="govuk-grid-column-full">
 
     {% if getData.status === "verified" %}
-      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
         <h1 class="govuk-panel__title">Claim verified</h1>
         <div class="govuk-panel__body">This claim will now be picked up by the processing&nbsp;team.</div>
       </div>
     {% elif getData.status === "newappointmentneeded" %}
-      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
         <h1 class="govuk-panel__title">New appointment needed</h1>
 {#         <div class="govuk-panel__body">Something here.</div> #}
       </div>
     {% elif getData.status === "appointmentbooked" %}
-      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
         <h1 class="govuk-panel__title">Appointment booked</h1>
 {#         <div class="govuk-panel__body">Something here.</div> #}
       </div>
     {% elif getData.status === "withdrawn" %}
-      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
         <h1 class="govuk-panel__title">Withdrawn</h1>
 {#         <div class="govuk-panel__body">Something here.</div> #}
       </div>

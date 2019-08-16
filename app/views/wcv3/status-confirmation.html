@@ -1,54 +1,58 @@
-{% extends "layout_staff_v3.html" %}
+{% extends "layout-staff.html" %}
 
 {% block pageTitle %}
-  {{ serviceName }}
+  {% include "wcv3/_service-name.html" %}
 {% endblock %}
 
-{% set bodyClasses = "hero-header" %}
+{% block serviceName %}
+  {% include "wcv3/_service-name.html" %}
+{% endblock %}
+
+{% block keyDetails %}
+  {% include "wcv3/_key-details.html" %}
+{% endblock %}
 
 {% block content %}
 
-{% include "wcv3/_header.html" %}
-
 <div class="govuk-grid-row">
 
-  <div class="govuk-grid-column-full govuk-!-margin-top-4">
+  <div class="govuk-grid-column-full">
 
     {# Verified #}
     {% if getData.status === "verified" %}
-      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
         <h1 class="govuk-panel__title">Claim verified</h1>
         <div class="govuk-panel__body">This claim will now be picked up by the processing&nbsp;team.</div>
       </div>
     {# New appointment needed #}
     {% elif getData.status === "newappointmentneeded" %}
-      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
         <h1 class="govuk-panel__title">New appointment needed</h1>
       </div>
     {# Appointment booked #}
     {% elif getData.status === "appointmentbooked" %}
-      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
         <h1 class="govuk-panel__title">Appointment booked</h1>
       </div>
     {# New appointment booked #}
     {% elif getData.status === "newappointmentbooked" %}
-      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
         <h1 class="govuk-panel__title">New appointment booked</h1>
       </div>
     {# Failed to attend #}
     {% elif getData.status === "fta" %}
-      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
         <h1 class="govuk-panel__title">Failed to attend</h1>
       </div>
     {# Unverified #}
     {% elif getData.status === "unverified" %}
-      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
         <h1 class="govuk-panel__title">Could not verify their claim</h1>
         <div class="govuk-panel__body">The status is now ‘unverified’.</div>
       </div>
     {# Withdrawn #}
     {% elif getData.status === "withdrawn" %}
-      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
         <h1 class="govuk-panel__title">Withdrawn</h1>
       </div>
     {# Processed #}
@@ -58,7 +62,7 @@
       </div>
     {# Disallowed #}
     {% elif getData.status === "disallowed" %}
-      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
         <h1 class="govuk-panel__title">Disallowed</h1>
       </div>
     {% endif %}

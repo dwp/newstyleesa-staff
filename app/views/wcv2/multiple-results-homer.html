@@ -1,18 +1,20 @@
-{% extends "layout_staff_v3.html" %}
+{% extends "layout-staff.html" %}
 
 {% block pageTitle %}
-  {{ serviceName }}
+  {% include "wcv2/_service-name.html" %}
+{% endblock %}
+
+{% block serviceName %}
+  {% include "wcv2/_service-name.html" %}
 {% endblock %}
 
 {% block beforeContent %}
-<div class=""></div>
+  <div class="govuk-!-margin-bottom-5">
+    <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
+  </div>
 {% endblock %}
 
 {% block content %}
-
-<div style="margin-bottom: 30px;">
-  <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back to search</a>
-</div>
 
 <div class="govuk-grid-row">
 

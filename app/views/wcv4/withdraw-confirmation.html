@@ -1,20 +1,22 @@
-{% extends "layout_staff_v3.html" %}
+{% extends "layout-staff.html" %}
 
 {% block pageTitle %}
-  {{ serviceName }}
+  {% include "wcv4/_service-name.html" %}
+{% endblock %}
+
+{% block serviceName %}
+  {% include "wcv4/_service-name.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-!-margin-bottom-5">
+    <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
+  </div>
 {% endblock %}
 
 {% block content %}
 
-<div style="margin-bottom: 30px;">
-  <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
-</div>
-
-{# {% include "wcv4/_header.html" %}
-
-<br> #}
-
-<div class="govuk-grid-row container">
+<div class="govuk-grid-row">
 
   <div class="govuk-grid-column-two-thirds">
 
@@ -64,12 +66,6 @@
         You cannot undo this action
       </strong>
     </div>
-    
-
-
-
-
-
 
   </div>{# /govuk-grid-column-two-thirds #}
 

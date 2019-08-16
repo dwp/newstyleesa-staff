@@ -1,20 +1,26 @@
-{% extends "layout_staff_v1.html" %}
+{% extends "layout-staff.html" %}
 
 {% block pageTitle %}
-  Reason you are cancelling - Fred Flintstone - Apply for new style Employment and Support Allowance
+  {% include "v5/_service-name.html" %}
 {% endblock %}
 
-{% set bodyClasses = "hero-header" %}
+{% block serviceName %}
+  {% include "v5/_service-name.html" %}
+{% endblock %}
+
+{% block keyDetails %}
+  {% include "v5/_key-details.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-!-margin-bottom-5">
+    <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
+  </div>
+{% endblock %}
 
 {% block content %}
 
-{% include "v5/_header.html" %}
-
-<div style="margin-bottom: 30px;">
-  <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
-</div>
-
-<div class="govuk-grid-row container">
+<div class="govuk-grid-row">
 
   <div class="govuk-grid-column-two-thirds">
 
@@ -63,7 +69,17 @@
 
       </div>{# /govuk-form-group #}
 
-      {% from "textarea/macro.njk" import govukTextarea %}
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="comments">
+          Comments
+        </label>
+        <span id="comments-hint" class="govuk-hint">
+          Provide a short summary of anything you think is useful.
+        </span>
+        <textarea class="govuk-textarea" id="comments" name="comments" rows="5" aria-describedby="comments-hint"></textarea>
+      </div>
+
+{#       {% from "textarea/macro.njk" import govukTextarea %}
 
       {{ govukTextarea({
         name: "comments",
@@ -74,7 +90,7 @@
         hint: {
           text: "Provide a short summary of anything you think is useful."
         }
-      }) }}
+      }) }} #}
 
       <button type="submit" class="govuk-button">
         Confirm you want to cancel their claim

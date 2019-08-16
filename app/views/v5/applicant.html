@@ -1,26 +1,32 @@
-{% extends "layout_staff_v1.html" %}
+{% extends "layout-staff.html" %}
 
 {% block pageTitle %}
-  Claim summary - Fred Flintstone - Apply for ‘new style’ Employment and Support Allowance
+  {% include "v5/_service-name.html" %}
 {% endblock %}
 
-{% set bodyClasses = "hero-header" %}
+{% block serviceName %}
+  {% include "v5/_service-name.html" %}
+{% endblock %}
 
-{% block content %}
+{% block keyDetails %}
+  {% include "v5/_key-details.html" %}
+{% endblock %}
 
-{% include "v5/_header.html" %}
-
-<div style="margin-bottom: 30px;">
-  {% if origin === "cancelled" %}
+{% block beforeContent %}
+  <div class="govuk-!-margin-bottom-5">
+    {% if origin === "cancelled" %}
       <a href="/v5/applications-cancelled" class="govuk-back-link">Back</a>
     {% elif origin === "duplicates" %}
       <a href="/v5/applications-duplicate-ninos" class="govuk-back-link">Back</a>
     {% else %}
       <a href="/v5/home" class="govuk-back-link">Back</a>
     {% endif %}
-</div>
+  </div>
+{% endblock %}
 
-<div class="govuk-grid-row container">
+{% block content %}
+
+<div class="govuk-grid-row">
 
   <div class="govuk-grid-column-two-thirds">
 

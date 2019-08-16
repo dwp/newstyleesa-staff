@@ -1,12 +1,11 @@
-
-{% extends "layout_staff_v1.html" %}
+{% extends "layout-staff.html" %}
 
 {% block pageTitle %}
-  Find a claim - Apply for ‘new style’ Employment and Support Allowance
+  {% include "v3/_service-name.html" %}
 {% endblock %}
 
-{% block beforeContent %}
-<div class="govuk-!-margin-bottom-6"></div>
+{% block serviceName %}
+  {% include "v3/_service-name.html" %}
 {% endblock %}
 
 {% block content %}

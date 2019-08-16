@@ -1,15 +1,20 @@
-
-{% extends "layout_staff_v1.html" %}
+{% extends "layout-staff.html" %}
 
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+  {% include "v5/_service-name.html" %}
+{% endblock %}
+
+{% block serviceName %}
+  {% include "v5/_service-name.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-!-margin-bottom-5">
+    <a href="/v5/home" rel="prev" class="govuk-back-link">Back</a>
+  </div>
 {% endblock %}
 
 {% block content %}
-
-<div style="margin-bottom: 30px;">
-  <a href="/v5/" rel="prev" class="govuk-back-link">Back</a>
-</div>
 
 <div class="govuk-grid-row">
 

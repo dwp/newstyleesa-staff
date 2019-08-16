@@ -25,6 +25,8 @@ module.exports = {
     require('./routes/wcv1.js')(app);
     require('./routes/wcv2.js')(app);
     require('./routes/wcv3.js')(app);
+    require('./routes/wcv4.js')(app);
+    require('./routes/wcv5.js')(app);
 
     // Screens for JIRA stories
     require('./routes/iteration-1.js')(app);

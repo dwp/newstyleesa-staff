@@ -1,0 +1,56 @@
+{% extends "layout_staff_v3.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+<div style="margin-bottom: 30px;">
+</div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-one-half">
+
+    {% if getData.error === "empty" %}
+      <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+        <h2 class="govuk-error-summary__title" id="error-summary-title">
+          There is a problem
+        </h2>
+        <div class="govuk-error-summary__body">
+          <ul class="govuk-list govuk-error-summary__list">
+            <li>
+              <a href="#search">Enter a search term</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    {% endif %}
+
+    <h1 class="govuk-heading-l">Claims</h1>
+
+    <h2 class="govuk-heading-m">Find a claim</h2>
+
+    <form action="/wcv5/claimant-overview" method="post" style="margin-bottom: 10px">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="search">
+          Claimant’s name or National Insurance number
+        </label>
+        <input id="part2" name="part2" type="hidden" value="{{getData.part2}}">
+        <input class="govuk-input govuk-input--width-20" id="search" name="search" type="text" autocomplete="off" value="{% if getData.nino %}{{getData.nino}}{% endif %}">
+        <button type="submit" class="govuk-button search">Find claim</button>
+      </div>
+    </form>
+
+    <h2 class="govuk-heading-m">New clerical claims</h2>
+
+    <p><a href="add-clerical-personal-details">Add a new clerical claim</a></p>
+
+  </div>{# /govuk-grid-column-one-half #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

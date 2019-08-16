@@ -1,27 +1,31 @@
-{% extends "layout_staff_v1.html" %}
+{% extends "layout-staff.html" %}
 
 {% block pageTitle %}
-  Status updated - Fred Flintstone - Apply for new style Employment and Support Allowance
+  {% include "v4/_service-name.html" %}
 {% endblock %}
 
-{% set bodyClasses = "hero-header" %}
+{% block serviceName %}
+  {% include "v4/_service-name.html" %}
+{% endblock %}
+
+{% block keyDetails %}
+  {% include "v4/_key-details.html" %}
+{% endblock %}
 
 {% block content %}
 
-{% include "v4/_header.html" %}
-
 <div class="govuk-grid-row">
 
-  <div class="govuk-grid-column-full govuk-!-margin-top-4">
+  <div class="govuk-grid-column-full">
 
     {% if getData.status === "verified" %}
-      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
         <h1 class="govuk-panel__title">Application verified</h1>
         <div class="govuk-panel__body">Their application is now ready for processing.</div>
       </div>
       <a href="search?unverified=true" role="button" draggable="false" class="govuk-button">Find another application</a>
     {% elif getData.status === "failedtoattend" %}
-      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
         <h1 class="govuk-panel__title">Failed to attend</h1>
         <div class="govuk-panel__body">Their claim will be marked as ‘failed to attend’ for&nbsp;30&nbsp;days.</div>
       </div>

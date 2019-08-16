@@ -1,18 +1,27 @@
-{% extends "layout_staff_v3.html" %}
+{% extends "layout-staff.html" %}
 
 {% block pageTitle %}
-  {{ serviceName }}
+  {% include "wcv2/_service-name.html" %}
 {% endblock %}
 
-{% set bodyClasses = "hero-header" %}
+{% block serviceName %}
+  {% include "wcv2/_service-name.html" %}
+{% endblock %}
+
+
+{% block keyDetails %}
+  {% include "wcv2/_key-details.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+    <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
+{% endblock %}
 
 {% block content %}
 
-{% include "wcv2/_header.html" %}
-
 <div class="govuk-grid-row">
 
-  <div class="govuk-grid-column-full govuk-!-margin-top-4">
+  <div class="govuk-grid-column-full">
 
     {# Verified #}
     {% if getData.status === "verified" %}

@@ -1,18 +1,22 @@
-{% extends "layout_staff_v3.html" %}
+{% extends "layout-staff.html" %}
 
 {% block pageTitle %}
-  {{ serviceName }}
+  {% include "wcv3/_service-name.html" %}
 {% endblock %}
 
-{% set bodyClasses = "hero-header" %}
+{% block serviceName %}
+  {% include "wcv3/_service-name.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-!-margin-bottom-5">
+    <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
+  </div>
+{% endblock %}
 
 {% block content %}
 
-<div style="margin-bottom: 30px;">
-  <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
-</div>
-
-<div class="govuk-grid-row container">
+<div class="govuk-grid-row">
 
   <div class="govuk-grid-column-two-thirds">
 

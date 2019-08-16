@@ -1,0 +1,51 @@
+<ul class="govuk-list govuk-list--bullet">
+{% if getData.nino === "QQ111111Z" %}
+  <li><a href="#">ESANS_SSP1_BARNEY_RUBBLE.pdf</a></li>
+  <li><a href="#">ESANS_FITNOTE_BARNEY_RUBBLE.pdf</a></li>
+{#   <li><a href="#">ESANS_PENSION_BARNEY_RUBBLE.pdf</a></li> #}
+{% elif getData.nino === "QQ112233A" %}
+  <li><a href="#">ESANS_SSP1_CLARKE_KENT.pdf</a></li>
+  <li><a href="#">ESANS_FITNOTE_CLARKE_KENT.pdf</a></li>
+  <li><a href="#">ESANS_PENSION_CLARKE_KENT.pdf</a></li>
+{% elif getData.nino === "QQ000011A" %}
+  <li><a href="#">ESANS_SSP1_BUZZ_LIGHTYEAR.pdf</a></li>
+  <li><a href="#">ESANS_FITNOTE_BUZZ_LIGHTYEAR.pdf</a></li>
+  <li><a href="#">ESANS_PENSION_BUZZ_LIGHTYEAR.pdf</a></li>
+{% elif getData.nino === "QQ111122B" %}
+  <li><a href="#">ESANS_SSP1_LOIS_LANE.pdf</a></li>
+  <li><a href="#">ESANS_FITNOTE_LOIS_LANE.pdf</a></li>
+  <li><a href="#">ESANS_PENSION_LOIS_LANE.pdf</a></li>
+{% elif getData.nino === "QQ112233Z" %}
+  <li><a href="#">ESANS_SSP1_MICKY_MOUSE.pdf</a></li>
+  <li><a href="#">ESANS_FITNOTE_MICKY_MOUSE.pdf</a></li>
+  <li><a href="#">ESANS_PENSION_MICKY_MOUSE.pdf</a></li>
+{% elif getData.nino === "QQ231234Z" %}
+  <li><a href="#">ESANS_SSP1_MARGE_SIMPSON.pdf</a></li>
+  <li><a href="#">ESANS_FITNOTE_MARGE_SIMPSON.pdf</a></li>
+  <li><a href="#">ESANS_PENSION_MARGE_SIMPSON.pdf</a></li>
+{% elif getData.nino === "QQ112233B" %}
+  <li><a href="#">ESANS_SSP1_FRED_FLINTSTONE.pdf</a></li>
+  <li><a href="#">ESANS_FITNOTE_FRED_FLINTSTONE.pdf</a></li>
+  <li><a href="#">ESANS_PENSION_FRED_FLINTSTONE.pdf</a></li>
+{% elif getData.nino === "QQ112233C" %}
+  <li><a href="#">ESANS_SSP1_HOMER_SIMPSON.pdf</a></li>
+  <li><a href="#">ESANS_FITNOTE_HOMER_SIMPSON.pdf</a></li>
+  <li><a href="#">ESANS_PENSION_HOMER_SIMPSON.pdf</a></li>
+{% elif getData.nino === "QQ121212A" %}
+  <li><a href="#">ESANS_SSP1_SNOW_WHITE.pdf</a></li>
+  <li><a href="#">ESANS_FITNOTE_SNOW_WHITE.pdf</a></li>
+  <li><a href="#">ESANS_PENSION_SNOW_WHITE.pdf</a></li>
+{% elif getData.nino === "QQ010101A" %}
+  <li><a href="#">ESANS_SSP1_MINNIE_MOUSE.pdf</a></li>
+  <li><a href="#">ESANS_FITNOTE_MINNIE_MOUSE.pdf</a></li>
+  <li><a href="#">ESANS_PENSION_MINNIE_MOUSE.pdf</a></li>
+{% elif getData.nino === "QQ001122A" %}
+  <li><a href="#">ESANS_SSP1_LEX_LUTHER.pdf</a></li>
+  <li><a href="#">ESANS_FITNOTE_LEX_LUTHER.pdf</a></li>
+  <li><a href="#">ESANS_PENSION_LEX_LUTHER.pdf</a></li>
+{% else %}
+  <li><a href="#">ESANS_SSP1_FIRSTNAME_LASTNAME.pdf</a></li>
+  <li><a href="#">ESANS_FITNOTE_FIRSTNAME_LASTNAME.pdf</a></li>
+  <li><a href="#">ESANS_PENSION_FIRSTNAME_LASTNAME.pdf</a></li>
+{% endif %}
+</ul>

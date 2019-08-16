@@ -4,11 +4,13 @@
   Prototypes &ndash; {{ serviceName }}
 {% endblock %}
 
-{% block content %}
+{% block beforeContent %}
+  <div class="govuk-!-margin-bottom-5">
+    <a href="index" rel="prev" class="govuk-back-link">Index page</a>
+  </div>
+{% endblock %}
 
-<div style="margin-bottom: 30px;">
-  <a href="index" rel="prev" class="govuk-back-link">Index page</a>
-</div>
+{% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
@@ -46,7 +48,13 @@
       5 August 2019, Rotherham Jobcentre Plus 
       </li>
       <li><a href="wcv3/index">Work coach view – version 3</a><br>
-      Work in progress&hellip;
+      (not tested)
+      </li>
+      <li><a href="wcv4/index">Work coach view – version 4 (disregarded in favour of version 5)</a><br>
+      (not tested)
+      </li>
+      <li><a href="wcv5/index">Work coach view – version 5 (alternative approach)</a><br>
+      (not tested)
       </li>
     </ul>
 
