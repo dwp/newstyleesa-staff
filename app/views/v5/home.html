@@ -1,13 +1,11 @@
-
-{% extends "layout_staff_v1.html" %}
+{% extends "layout-staff.html" %}
 
 {% block pageTitle %}
-  Verify new claims - Apply for ‘new style’ Employment and Support Allowance
+  {% include "v5/_service-name.html" %}
 {% endblock %}
 
-{% block beforeContent %}
-<div style="margin-bottom: 30px;">
-</div>
+{% block serviceName %}
+  {% include "v5/_service-name.html" %}
 {% endblock %}
 
 {% block content %}
