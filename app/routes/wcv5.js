@@ -23,6 +23,8 @@ module.exports = function (app) {
     res.render('wcv5/home')
   })
 
+  // SEARCH
+
   app.post('/wcv5/search-entry', function (req, res) {
     // Get the answer from session data
     // The name between the quotes is the same as the 'name' attribute on the input elements
@@ -86,52 +88,54 @@ module.exports = function (app) {
 
   })
 
-  app.post('/wcv5/status-changing', function (req, res) {
-    // Get the answer from session data
-    // The name between the quotes is the same as the 'name' attribute on the input elements
-    // However in JavaScript we can't use hyphens in variable names
+  // STATUS QUESTIONS
 
+  // Has the claimant attended their appointment?
+  app.post('/wcv5/q-attended-logic', function (req, res) {
+
+    let question = req.session.data['question']
+    let nino = req.session.data['nino']
     let status = req.session.data['status']
 
-    let nino = req.session.data['nino']
-
-    let early = req.session.data['early']
-
-    // Verified
-    if (status === 'verified') {
-      res.redirect(`upload?status=appointmentbooked&nino=${nino}&early=${early}`)
-    // Failed to attend
-    } else if (status === 'fta') {
-      res.redirect(`status-confirmation?status=fta&nino=${nino}&early=${early}`)
-    // Could not be verified
-    } else if (status === 'not-verified') {
-      res.redirect(`not-verified-reason?status=appointmentbooked&nino=${nino}&early=${early}`)
-    // New appointment needed (is this still a thing?)
-    } else if (status === 'newappointmentneeded') {
-      res.redirect(`status-confirmation?status=newappointmentneeded&nino=${nino}&early=${early}`)
-    // Appointment booked
-    } else if (status === 'appointmentbooked') {
-      res.redirect(`status-confirmation?status=appointmentbooked&nino=${nino}&early=${early}`)
-    // New appointment booked
-    } else if (status === 'newappointmentbooked') {
-      res.redirect(`status-confirmation?status=newappointmentbooked&nino=${nino}&early=${early}`)
-    // Withdrawn or duplicate
-    } else if (status === 'withdrawn') {
-      res.redirect(`withdrawn-confirmation?status=appointmentbooked&nino=${nino}`)
-    // } else if (status === 'withdrawn') {
-    //   res.redirect(`status-confirmation?status=withdrawn&nino=${nino}&early=${early}`)
-    // Processed
-    } else if (status === 'processed') {
-      res.redirect(`status-confirmation?status=processed&nino=${nino}&early=${early}`)
-    // Disallowed
-    } else if (status === 'disallowed') {
-      res.redirect(`status-confirmation?status=disallowed&nino=${nino}&early=${early}`)
+    if (question === 'yes') {
+      res.redirect(`q-appointment-checklist?status=${status}&nino=${nino}`)
+    } else if (question === 'no') {
+      res.redirect(`q-arranged-another?=${status}&nino=${nino}`)
     } else {
       res.redirect('error')
     }
+
   })
 
-  app.post('/wcv5/upload-logic', function (req, res) {
+  // Appointment checklist
+  app.post('/wcv5/q-appointment-checklist-logic', function (req, res) {
+
+    let question = req.session.data['question']
+    let nino = req.session.data['nino']
+    let status = req.session.data['status']
+
+    if (question) {
+      if (question.includes('identity') && question.includes('commitment') && question.includes('evidence')) {
+        res.redirect(`q-upload?status=${status}&nino=${nino}`)
+      } else if (question.includes('identity') && question.includes('commitment')) {
+        res.redirect(`status-confirmation?status=verified&nino=${nino}`)
+      } else if (question.includes('identity')) {
+        res.redirect(`q-no-commitment-reason?status=${status}&nino=${nino}`)
+      } else if (question.includes('commitment')) {
+        res.redirect(`q-book-another?status=${status}&nino=${nino}&justcommitment=true`)
+      } else {
+        res.redirect(`q-book-another?status=${status}&nino=${nino}`)
+      }
+    } else {
+      res.redirect(`q-book-another?status=${status}&nino=${nino}`)
+    }
+
+    
+
+  })
+
+  // Upload logic
+  app.post('/wcv5/q-upload-logic', function (req, res) {
     // Get the answer from session data
     // The name between the quotes is the same as the 'name' attribute on the input elements
     // However in JavaScript we can't use hyphens in variable names
@@ -145,97 +149,80 @@ module.exports = function (app) {
     let status = req.session.data['status']
 
     if (file3) {
-      res.redirect(`upload?nino=${nino}&file1=true&filename1=${file1}&file2=true&filename2=${file2}&file3=true&filename3=${file3}&early=${early}&status=${status}`)
+      res.redirect(`q-upload?nino=${nino}&file1=true&filename1=${file1}&file2=true&filename2=${file2}&file3=true&filename3=${file3}&early=${early}&status=${status}`)
     } else if (file2) {
-      res.redirect(`upload?nino=${nino}&file1=true&filename1=${file1}&file2=true&filename2=${file2}&early=${early}&status=${status}`)
+      res.redirect(`q-upload?nino=${nino}&file1=true&filename1=${file1}&file2=true&filename2=${file2}&early=${early}&status=${status}`)
     } else {
       if (file1) {
-        res.redirect(`upload?nino=${nino}&file1=true&filename1=${file1}&early=${early}&status=${status}`)
+        res.redirect(`q-upload?nino=${nino}&file1=true&filename1=${file1}&early=${early}&status=${status}`)
       } else {
-        res.redirect(`upload?nino=${nino}&error=true&early=${early}&status=${status}`)
+        res.redirect(`q-upload?nino=${nino}&error=true&early=${early}&status=${status}`)
       }
     }
   })
 
-  app.post('/wcv5/not-verified-reason-logic', function (req, res) {
+  // No claimant commitment reason
+  app.post('/wcv5/q-no-commitment-reason-logic', function (req, res) {
 
-    let futureappointment = req.session.data['futureappointment']
-
+    let question = req.session.data['question']
     let nino = req.session.data['nino']
-
-    let early = req.session.data['early']
-
-    res.redirect(`not-verified-another-appointment?status=appointmentbooked&nino=${nino}&early=${early}`)
-
-  })
-
-  app.post('/wcv5/not-verified-another-appointment-logic', function (req, res) {
-
-    let futureappointment = req.session.data['futureappointment']
-
-    let nino = req.session.data['nino']
-
-    let early = req.session.data['early']
-
-    if (futureappointment === 'yes') {
-      res.redirect(`not-verified-has-another?status=appointmentbooked&nino=${nino}&early=${early}`)
-    } else if (futureappointment === 'no') {
-      res.redirect(`status-confirmation?status=unverified&nino=${nino}&early=${early}`)
-    } else {
-      res.redirect('error')
-    }
-  })
-
-
-  app.post('/wcv5/not-verified-has-another-logic', function (req, res) {
-
-    let another = req.session.data['another']
-
-    let nino = req.session.data['nino']
-
-    let early = req.session.data['early']
-
-    if (another === 'yes') {
-      res.redirect(`not-verified-book-confirm?status=appointmentbooked&nino=${nino}&early=${early}`)
-    } else if (another === 'no') {
-      res.redirect(`status-confirmation?status=newappointmentneeded&nino=${nino}&early=${early}`)
-    } else {
-      res.redirect('error')
-    }
-  })
-
-  app.post('/wcv5/add-clerical-upload-evidence-logic', function (req, res) {
-    // Get the answer from session data
-    // The name between the quotes is the same as the 'name' attribute on the input elements
-    // However in JavaScript we can't use hyphens in variable names
-
-    let file1 = req.session.data['file-upload-1']
-    let file2 = req.session.data['file-upload-2']
-    let file3 = req.session.data['file-upload-3']
-
-    let nino = req.session.data['nino']
-    let early = req.session.data['early']
     let status = req.session.data['status']
 
-    if (file3) {
-      res.redirect(`add-clerical-upload-evidence?nino=${nino}&file1=true&filename1=${file1}&file2=true&filename2=${file2}&file3=true&filename3=${file3}&early=${early}&status=${status}`)
-    } else if (file2) {
-      res.redirect(`add-clerical-upload-evidence?nino=${nino}&file1=true&filename1=${file1}&file2=true&filename2=${file2}&early=${early}&status=${status}`)
+    if (question === 'more-time') {
+      res.redirect(`q-book-another?status=${status}&nino=${nino}&justidentity=true`)
+    } else if (question === 'not-wanted') {
+      res.redirect(`status-confirmation?status=unverified&nino=${nino}`)
     } else {
-      if (file1) {
-        res.redirect(`add-clerical-upload-evidence?nino=${nino}&file1=true&filename1=${file1}&early=${early}&status=${status}`)
-      } else {
-        res.redirect(`add-clerical-upload-evidence?nino=${nino}&error=true&early=${early}&status=${status}`)
-      }
+      res.redirect('error')
     }
+
   })
+
+  // Book another appointment (to follow)
+  app.post('/wcv5/q-book-another-logic', function (req, res) {
+
+    let question = req.session.data['question']
+    let nino = req.session.data['nino']
+    let status = req.session.data['status']
+
+    if (question === 'yes') {
+      res.redirect(`status-confirmation?status=appointmentbooked&nino=${nino}`)
+    } else if (question === 'no-someone-else') {
+      res.redirect(`status-confirmation?status=newappointmentneeded&nino=${nino}`)
+    } else if (question === 'no-not-needed') {
+      res.redirect(`status-confirmation?status=unverified&nino=${nino}`)
+    }
+    else {
+      res.redirect('error')
+    }
+
+  })
+
+  // Have they arranged another appointment?
+  app.post('/wcv5/q-arranged-another-logic', function (req, res) {
+
+    let question = req.session.data['question']
+    let nino = req.session.data['nino']
+    let status = req.session.data['status']
+
+    if (question === 'yes') {
+      res.redirect(`status-confirmation?status=appointmentbooked&nino=${nino}`)
+    } else if (question === 'no') {
+      res.redirect(`status-confirmation?status=fta&nino=${nino}`)
+    } else if (question === 'dont-know') {
+      res.redirect(`status-confirmation?status=fta&nino=${nino}`)
+    } else {
+      res.redirect('error')
+    }
+
+  })
+
+  // WITHDRAWN
 
   app.post('/wcv5/withdrawn-confirmation-logic', function (req, res) {
 
     let withdraw = req.session.data['withdraw']
-
     let nino = req.session.data['nino']
-
     let early = req.session.data['early']
 
     if (withdraw === 'yes') {

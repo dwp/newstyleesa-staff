@@ -1,0 +1,78 @@
+{% extends "layout-staff.html" %}
+
+{% block pageTitle %}
+  {% include "wcv5/_service-name.html" %}
+{% endblock %}
+
+{% block serviceName %}
+  {% include "wcv5/_service-name.html" %}
+{% endblock %}
+
+{% block keyDetails %}
+  {% include "wcv5/_key-details.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-!-margin-bottom-5">
+    <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
+  </div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="q-book-another-logic" method="post" novalidate>
+
+      {% if getData.justidentity %}
+        <div class="govuk-inset-text alert-default" style="margin-top: 0;">
+          We cannot take their claim if they do not sign their claimant commitment.
+        </div>
+      {% elseif getData.justcommitment %}
+        <div class="govuk-inset-text alert-default" style="margin-top: 0;">
+          We cannot take their claim if they cannot prove their identity.
+        </div>
+      {% endif %}
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Have they arranged another appointment?
+            </h1>
+          </legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="yes" name="question" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="yes">
+                Yes, I have booked another appointment for them myself
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="no-someone-else" name="question" type="radio" value="no-someone-else">
+              <label class="govuk-label govuk-radios__label" for="no-someone-else">
+                No, someone else will book an appointment for them
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="no-not-needed" name="question" type="radio" value="no-not-needed">
+              <label class="govuk-label govuk-radios__label" for="no-not-needed">
+                No, they do not want another appointment
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+    </form>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

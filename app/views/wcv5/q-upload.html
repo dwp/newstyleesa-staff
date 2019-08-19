@@ -1,16 +1,15 @@
 {% extends "layout-staff.html" %}
 
 {% block pageTitle %}
-  {% include "wcv3/_service-name.html" %}
+  {% include "wcv5/_service-name.html" %}
 {% endblock %}
 
 {% block serviceName %}
-  {% include "wcv3/_service-name.html" %}
+  {% include "wcv5/_service-name.html" %}
 {% endblock %}
 
-
 {% block keyDetails %}
-  {% include "wcv3/_key-details.html" %}
+  {% include "wcv5/_key-details.html" %}
 {% endblock %}
 
 {% block beforeContent %}
@@ -25,7 +24,7 @@
 
   <div class="govuk-grid-column-full">
 
-    <form action="upload-logic" method="post">
+    <form action="q-upload-logic" method="post">
 
       <input type="hidden" name="early" value="{{getData.early}}">
 
@@ -146,10 +145,8 @@
       </div>
 
     </form>
-
     
-
-    <p><a href="upload-check?status={{getData.status}}&nino={{getData.nino}}&early={{getData.early}}&filename1={{getData.filename1}}&filename2={{getData.filename2}}&filename3={{getData.filename3}}" class="govuk-button">Continue</a></p>
+    <p><a href="q-upload-check?status={{getData.status}}&nino={{getData.nino}}&early={{getData.early}}&filename1={{getData.filename1}}&filename2={{getData.filename2}}&filename3={{getData.filename3}}" class="govuk-button">Continue</a></p>
 
   </div>{# /govuk-grid-column-full #}
 

@@ -47,8 +47,7 @@
     {# Unverified #}
     {% elif getData.status === "unverified" %}
       <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
-        <h1 class="govuk-panel__title">Could not verify their claim</h1>
-        <div class="govuk-panel__body">The status is now ‘unverified’.</div>
+        <h1 class="govuk-panel__title">Unverified</h1>
       </div>
     {# Withdrawn #}
     {% elif getData.status === "withdrawn" %}
@@ -67,11 +66,11 @@
       </div>
     {% endif %}
 
-    {% if origin === "duplicates" %}
-      <a href="/wcv5/applications-duplicate-ninos" role="button" draggable="false" class="govuk-button">Back to duplicate and old applications</a>
-    {% else %}
-      <a href="/wcv5/home?part2={{getData.nino}}" role="button" draggable="false" class="govuk-button">Finish</a>
-    {% endif %}
+
+      <a href="/wcv5/home?part2={{getData.nino}}" role="button" draggable="false" class="govuk-button">Find or add another claim</a>
+
+      <p><a href="claimant-overview?status=verified">Back to their claim</a></p>
+
 
   </div>{# /govuk-grid-column-full #}
 

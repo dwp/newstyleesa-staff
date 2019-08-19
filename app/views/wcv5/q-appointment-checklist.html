@@ -1,0 +1,85 @@
+{% extends "layout-staff.html" %}
+
+{% block pageTitle %}
+  {% include "wcv5/_service-name.html" %}
+{% endblock %}
+
+{% block serviceName %}
+  {% include "wcv5/_service-name.html" %}
+{% endblock %}
+
+{% block keyDetails %}
+  {% include "wcv5/_key-details.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-!-margin-bottom-5">
+    <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
+  </div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="q-appointment-checklist-logic" method="post" novalidate>
+
+        <fieldset class="govuk-fieldset">
+          
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Appointment checklist
+            </h1>
+          </legend>
+
+          <span id="waste-hint" class="govuk-hint">
+            Select all that apply.
+          </span>
+
+          <div class="govuk-form-group">
+            <div class="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="identity" name="question" type="checkbox" value="identity">
+                <label class="govuk-label govuk-checkboxes__label" for="identity">
+                  Identity checked
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="commitment" name="question" type="checkbox" value="commitment">
+                <label class="govuk-label govuk-checkboxes__label" for="commitment">
+                  Claimant commitment signed
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="evidence" name="question" type="checkbox" value="evidence">
+                <label class="govuk-label govuk-checkboxes__label" for="evidence">
+                  Supporting evidence provided
+                </label>
+              </div>
+            </div>
+          </div>{# /govuk-form-group #}
+
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="more-detail">
+              Add anything the processors should know
+            </label>
+            <span id="more-detail-hint" class="govuk-hint">
+              For example, what identity documents you have seen or if the claimant is bringing some evidence later.
+            </span>
+            <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5" aria-describedby="more-detail-hint"></textarea>
+          </div>
+        </fieldset>
+
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+      
+    </form>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
