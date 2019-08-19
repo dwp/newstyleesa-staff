@@ -71,12 +71,43 @@
           NG1 5TY
         </dd>
       </div>
-      
     </dl>
 
     <h2 class="govuk-heading-m">Timeline</h2>
 
       <ol class="dwp-timeline govuk-list">
+
+        {% if getData.status === "verified" %}
+        <li class="dwp-timeline__entry">
+          <h3 class="govuk-heading-s" style="margin-bottom: 5px;">Status changed to ‘failed to attend’</h3>
+          <p class="dwp-timeline__info">
+            <span class="dwp-timeline__author">by John Smith, Work Coach at Rotherham Jobcentre Plus</span>
+            <span class="dwp-timeline__date">2 minutes ago</span>
+          </p>
+        </li>
+        {% endif %}
+
+        {% if getData.status === "fta" %}
+        <li class="dwp-timeline__entry">
+          <h3 class="govuk-heading-s" style="margin-bottom: 5px;">Status changed to ‘failed to attend’</h3>
+          <p class="dwp-timeline__info">
+            <span class="dwp-timeline__author">by John Smith, Work Coach at Rotherham Jobcentre Plus</span>
+            <span class="dwp-timeline__date">2 minutes ago</span>
+          </p>
+        </li>
+        {% endif %}
+
+        {% if getData.status === "newappointmentneeded" %}
+        <li class="dwp-timeline__entry">
+          <h3 class="govuk-heading-s" style="margin-bottom: 5px;">Status changed to ‘new appointment needed’</h3>
+          <p class="dwp-timeline__info">
+            <span class="dwp-timeline__author">by John Smith, Work Coach at Rotherham Jobcentre Plus</span>
+            <span class="dwp-timeline__date">2 minutes ago</span>
+          </p>
+          <p>Claimant failed to prove their identity.</p>
+        </li>
+        {% endif %}
+
         <li class="dwp-timeline__entry">
           <h3 class="govuk-heading-s" style="margin-bottom: 5px;">Status changed to ‘appointment booked’</h3>
           <p class="dwp-timeline__info">
@@ -84,26 +115,7 @@
             <span class="dwp-timeline__date">21 July 2019 at 5pm</span>
           </p>
         </li>
-        <li class="dwp-timeline__entry">
-          <h3 class="govuk-heading-s" style="margin-bottom: 5px;">Status changed to ‘new appointment needed’</h3>
-          <p class="dwp-timeline__info">
-            <span class="dwp-timeline__author">by Paul Graham, Work Coach at Rotherham Jobcentre Plus</span>
-            <span class="dwp-timeline__date">17 July 2019 at 3pm</span>
-          </p>
-          <p class="dwp-timeline__body">
-            Claimant couldn’t prove their identity, so a follow up appointment is needed.
-          </p>
-        </li>
-        <li class="dwp-timeline__entry">
-          <h3 class="govuk-heading-s" style="margin-bottom: 5px;">Status changed to ‘appointment booked’</h3>
-          <p class="dwp-timeline__info">
-            <span class="dwp-timeline__author">by John Smith, PAC at Rotherham Jobcentre Plus</span>
-            <span class="dwp-timeline__date">13 July 2019 at 5pm</span>
-          </p>
-          <p class="dwp-timeline__body">
-            Marriage certificate uploaded to DRS.
-          </p>
-        </li>
+
         <li class="dwp-timeline__entry">
           <h3 class="govuk-heading-s" style="margin-bottom: 5px;">Claim submitted</h3>
           <p class="dwp-timeline__info">

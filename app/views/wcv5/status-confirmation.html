@@ -66,11 +66,9 @@
       </div>
     {% endif %}
 
+    <a href="/wcv5/home?part2={{getData.nino}}" role="button" draggable="false" class="govuk-button">Find or add another claim</a>
 
-      <a href="/wcv5/home?part2={{getData.nino}}" role="button" draggable="false" class="govuk-button">Find or add another claim</a>
-
-      <p><a href="claimant-overview?status=verified">Back to their claim</a></p>
-
+    <p><a href="claimant-overview?status={{getData.status}}&nino=status={{getData.nino}}">Back to their claim</a></p>
 
   </div>{# /govuk-grid-column-full #}
 
