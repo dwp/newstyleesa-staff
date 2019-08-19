@@ -34,6 +34,14 @@
         <div class="govuk-inset-text alert-default" style="margin-top: 0;">
           We cannot take their claim if they cannot prove their identity.
         </div>
+      {% else %}
+        <div class="govuk-inset-text alert-default" style="margin-top: 0;">
+          <p>We cannot take their claim if:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>they have not proved their identity</li>
+            <li>they have not signed their claimant commitment</li>
+          </ul>
+        </div>
       {% endif %}
 
       <div class="govuk-form-group">
