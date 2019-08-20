@@ -1,54 +1,52 @@
 <div class="govuk-grid-column-one-quarter">
-{# 	<h3 class="govuk-heading-m" id="claim-actions-title">This claim</h3> #}
-
   <nav aria-label="Sub navigation">
-  <ul class="dwp-vertical-navigation">
-    <li>
-      <a
-        {% if getData.current === "claimant-overview" %}
-          aria-current="page"
-        {% elseif getData.current %}
+    <ul class="dwp-vertical-navigation">
+      <li>
+        <a
+          {% if getData.current === "claimant-overview" %}
+            aria-current="page"
+          {% elseif getData.current %}
+          {% else %}
+            aria-current="page"
+          {% endif %}
+          href="claimant-overview?current=claimant-overview&amp;nino={{getData.nino}}&amp;status={{getData.status}}&amp;twojobs={{getData.twojobs}}&amp;early={{getData.early}}&amp;documents={{getData.documents}}"
+        >
+          Overview
+        </a>
+      </li>
+      <li>
+        <a
+        {% if getData.current === "claim-form" %}aria-current="page"{% endif %}
+        href="claim-form?current=claim-form&amp;nino={{getData.nino}}&amp;status={{getData.status}}&amp;twojobs={{getData.twojobs}}&amp;early={{getData.early}}&amp;documents={{getData.documents}}"
+        >
+          Full claim form
+        </a>
+      </li>
+      <li>
+        <a
+        {% if getData.current === "documents" %}aria-current="page"{% endif %}
+        href="documents?current=documents&amp;nino={{getData.nino}}&amp;status={{getData.status}}&amp;twojobs={{getData.twojobs}}&amp;early={{getData.early}}&amp;documents={{getData.documents}}"
+        >
+        Documents
+        {% if getData.documents === "true" %}
+          {% if getData.documentsfilename3 %}
+            (5)
+          {% elif getData.documentsfilename2 %}
+            (4)
+          {% elif getData.documentsfilename1 %}
+            (3)
+          {% else %}
+            (2)
+          {% endif %}
         {% else %}
-          aria-current="page"
+          (0)
         {% endif %}
-        href="claimant-overview?current=claimant-overview&amp;nino={{getData.nino}}&amp;status={{getData.status}}&amp;twojobs={{getData.twojobs}}&amp;early={{getData.early}}&amp;documents={{getData.documents}}"
-      >
-        Overview
-      </a>
-    </li>
-    <li>
-      <a
-      {% if getData.current === "claim-form" %}aria-current="page"{% endif %}
-      href="claim-form?current=claim-form&amp;nino={{getData.nino}}&amp;status={{getData.status}}&amp;twojobs={{getData.twojobs}}&amp;early={{getData.early}}&amp;documents={{getData.documents}}"
-      >
-        Full claim form
-      </a>
-    </li>
-    <li>
-      <a
-      {% if getData.current === "documents" %}aria-current="page"{% endif %}
-      href="documents?current=documents&amp;nino={{getData.nino}}&amp;status={{getData.status}}&amp;twojobs={{getData.twojobs}}&amp;early={{getData.early}}&amp;documents={{getData.documents}}"
-      >
-      Documents
-      {% if getData.documents === "true" %}
-        {% if getData.documentsfilename3 %}
-          (5)
-        {% elif getData.documentsfilename2 %}
-          (4)
-        {% elif getData.documentsfilename1 %}
-          (3)
-        {% else %}
-          (2)
-        {% endif %}
-      {% else %}
-        (0)
-      {% endif %}
-      </a>
-    </li>
-  </ul>
-</nav>
+        </a>
+      </li>
+    </ul>
+  </nav>
 
-  {% if getData.status === "withdrawn" %}
+  {% if getData.status === "withdrawn" or getData.status === "processed" %}
   {% else %}
     <aside class="" role="complementary">
       <a href="q-attended?nino={{getData.nino}}&amp;status={{getData.status}}&amp;twojobs={{getData.twojobs}}&amp;early={{getData.early}}&amp;documents={{getData.documents}}" class="govuk-button">Change claim status</a>
