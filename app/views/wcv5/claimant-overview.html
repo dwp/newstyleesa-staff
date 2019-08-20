@@ -77,6 +77,16 @@
 
       <ol class="dwp-timeline govuk-list">
 
+        {% if getData.status === "withdrawn" %}
+        <li class="dwp-timeline__entry">
+          <h3 class="govuk-heading-s" style="margin-bottom: 5px;">Status changed to ‘withdrawn’</h3>
+          <p class="dwp-timeline__info">
+            <span class="dwp-timeline__author">by John Smith, Work Coach at Rotherham Jobcentre Plus</span>
+            <span class="dwp-timeline__date">2 minutes ago</span>
+          </p>
+        </li>
+        {% endif %}
+
         {% if getData.status === "verified" %}
         <li class="dwp-timeline__entry">
           <h3 class="govuk-heading-s" style="margin-bottom: 5px;">Status changed to ‘failed to attend’</h3>

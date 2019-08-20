@@ -11,7 +11,7 @@
         {% else %}
           aria-current="page"
         {% endif %}
-        href="claimant-overview?current=claimant-overview&amp;nino={{getData.nino}}&amp;status={{getData.status}}&amp;twojobs={{getData.twojobs}}&amp;early={{getData.early}}"
+        href="claimant-overview?current=claimant-overview&amp;nino={{getData.nino}}&amp;status={{getData.status}}&amp;twojobs={{getData.twojobs}}&amp;early={{getData.early}}&amp;documents={{getData.documents}}"
       >
         Overview
       </a>
@@ -19,7 +19,7 @@
     <li>
       <a
       {% if getData.current === "claim-form" %}aria-current="page"{% endif %}
-      href="claim-form?current=claim-form&amp;nino={{getData.nino}}&amp;status={{getData.status}}&amp;twojobs={{getData.twojobs}}&amp;early={{getData.early}}"
+      href="claim-form?current=claim-form&amp;nino={{getData.nino}}&amp;status={{getData.status}}&amp;twojobs={{getData.twojobs}}&amp;early={{getData.early}}&amp;documents={{getData.documents}}"
       >
         Full claim form
       </a>
@@ -27,23 +27,38 @@
     <li>
       <a
       {% if getData.current === "documents" %}aria-current="page"{% endif %}
-      href="documents?current=documents&amp;nino={{getData.nino}}&amp;status={{getData.status}}&amp;twojobs={{getData.twojobs}}&amp;early={{getData.early}}"
+      href="documents?current=documents&amp;nino={{getData.nino}}&amp;status={{getData.status}}&amp;twojobs={{getData.twojobs}}&amp;early={{getData.early}}&amp;documents={{getData.documents}}"
       >
-        Documents (2)
+      Documents
+      {% if getData.documents === "true" %}
+        {% if getData.documentsfilename3 %}
+          (5)
+        {% elif getData.documentsfilename2 %}
+          (4)
+        {% elif getData.documentsfilename1 %}
+          (3)
+        {% else %}
+          (2)
+        {% endif %}
+      {% else %}
+        (0)
+      {% endif %}
       </a>
     </li>
   </ul>
 </nav>
 
-  <aside class="" role="complementary">
-    
-    <a href="q-attended?nino={{getData.nino}}&amp;status={{getData.status}}&amp;twojobs={{getData.twojobs}}&amp;early={{getData.early}}" class="govuk-button">Change claim status</a>
-    <nav role="navigation" aria-labelledby="claim-actions-title" style="margin-top:  0px">
-      <ul class="govuk-list govuk-!-font-size-16">
-        <li><a href="withdraw-confirmation">Withdraw this claim</a></li>
-      </ul>
-    </nav>
-  </aside>
+  {% if getData.status === "withdrawn" %}
+  {% else %}
+    <aside class="" role="complementary">
+      <a href="q-attended?nino={{getData.nino}}&amp;status={{getData.status}}&amp;twojobs={{getData.twojobs}}&amp;early={{getData.early}}&amp;documents={{getData.documents}}" class="govuk-button">Change claim status</a>
+      <nav role="navigation" aria-labelledby="claim-actions-title" style="margin-top:  0px">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li><a href="withdraw-confirmation">Withdraw this claim</a></li>
+        </ul>
+      </nav>
+    </aside>
+  {% endif %}
 
   <br>
   <br>

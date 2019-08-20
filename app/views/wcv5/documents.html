@@ -30,15 +30,24 @@
 
     <h1 class="govuk-heading-l">Documents</h1>
 
-    <h2 class="govuk-heading-m">Uploaded evidence</h2>
-      
-    <p>Links to documents open in a new tab:</p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li><a href="#">ESANS_SSP1_BARNEY_RUBBLE.pdf</a></li>
-      <li><a href="#">ESANS_FITNOTE_BARNEY_RUBBLE.pdf</a></li>
-    </ul>
-    <br>
-    <p><a href="#" class="govuk-button govuk-button--secondary">Upload documents</a></p>
+    {% if getData.documents === "true" %}
+      <h2 class="govuk-heading-m">Uploaded evidence</h2>
+      <p>Links to documents open in a new tab:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="#">ESANS_SSP1_BARNEY_RUBBLE.pdf</a></li>
+        <li><a href="#">ESANS_FITNOTE_BARNEY_RUBBLE.pdf</a></li>
+        {% if getData.documentsfilename1 %}<li><a href="#">{{data.documentsfilename1}}</a></li>{% endif %}
+        {% if getData.documentsfilename2 %}<li><a href="#">{{data.documentsfilename2}}</a></li>{% endif %}
+        {% if getData.documentsfilename3 %}<li><a href="#">{{data.documentsfilename3}}</a></li>{% endif %}
+      </ul>
+
+    {% else %}
+      <h2 class="govuk-heading-m">Uploaded evidence</h2>
+      <p>No documents have been uploaded yet.</p>
+    {% endif %}
+      <br>
+      <p><a href="documents-upload" class="govuk-button govuk-button--secondary">Upload documents</a></p>
 
   </div>{# /govuk-grid-column-three-quarters #}
 

@@ -161,6 +161,32 @@ module.exports = function (app) {
     }
   })
 
+  app.post('/wcv5/documents-upload-logic', function (req, res) {
+    // Get the answer from session data
+    // The name between the quotes is the same as the 'name' attribute on the input elements
+    // However in JavaScript we can't use hyphens in variable names
+
+    let documentsfile1 = req.session.data['documentsfile-upload-1']
+    let documentsfile2 = req.session.data['documentsfile-upload-2']
+    let documentsfile3 = req.session.data['documentsfile-upload-3']
+
+    let nino = req.session.data['nino']
+    let early = req.session.data['early']
+    let status = req.session.data['status']
+
+    if (documentsfile3) {
+      res.redirect(`documents-upload?nino=${nino}&documentsfile1=true&documentsfilename1=${documentsfile1}&documentsfile2=true&documentsfilename2=${documentsfile2}&documentsfile3=true&documentsfilename3=${documentsfile3}&early=${early}&status=${status}`)
+    } else if (documentsfile2) {
+      res.redirect(`documents-upload?nino=${nino}&documentsfile1=true&documentsfilename1=${documentsfile1}&documentsfile2=true&documentsfilename2=${documentsfile2}&early=${early}&status=${status}`)
+    } else {
+      if (documentsfile1) {
+        res.redirect(`documents-upload?nino=${nino}&documentsfile1=true&documentsfilename1=${documentsfile1}&early=${early}&status=${status}`)
+      } else {
+        res.redirect(`documents-upload?nino=${nino}&error=true&early=${early}&status=${status}`)
+      }
+    }
+  })
+
   // No claimant commitment reason
   app.post('/wcv5/q-no-commitment-reason-logic', function (req, res) {
 

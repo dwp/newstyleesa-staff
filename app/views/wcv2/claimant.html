@@ -72,33 +72,27 @@
 
     {% else %}
 
+    {# Failed to attend #}
     {% if getData.status === "fta" %}
-
       <div class="blue-border" style="margin-bottom: 40px">
         <h2 class="govuk-heading-s" style="margin-bottom: 10px">Marked as ‘failed to attend’ by Dave Smith, 20 July, 9:05am</h2>
         <p>Tried to ring them at 9:00am on 20 July.</p>
       </div>
-
     {% endif %}
 
+    {# Unverified #}
     {% if getData.status === "unverified" %}
-
       {% if getData.reason === "cc" %}
-
         <div class="blue-border" style="margin-bottom: 40px">
           <h2 class="govuk-heading-s" style="margin-bottom: 10px">Marked as ‘unverified’ by You, 5 August, 9:05am</h2>
           <p>They chose not to sign the claimant commitment and not to have a follow-up appointment.</p>
         </div>
-
       {% else %}
-
         <div class="blue-border" style="margin-bottom: 40px">
           <h2 class="govuk-heading-s" style="margin-bottom: 10px">Marked as ‘unverified’ by You, 5 August, 9:05am</h2>
           <p>They could not prove their identity in their last appointment. You do not need to book a new appointment unless they ask for it.</p>
         </div>
-        
       {% endif %}
-
     {% endif %}
 
       <h1 class="govuk-heading-l">Documents to check at the appointment</h1>
