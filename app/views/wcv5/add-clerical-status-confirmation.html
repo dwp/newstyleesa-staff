@@ -1,0 +1,28 @@
+{% extends "layout-staff.html" %}
+
+{% block pageTitle %}
+  {% include "wcv5/_service-name.html" %}
+{% endblock %}
+
+{% block serviceName %}
+  {% include "wcv5/_service-name.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-top-2 govuk-!-margin-bottom-6">
+      <h1 class="govuk-panel__title">Claim added and verified</h1>
+      <div class="govuk-panel__body">This claim will now be picked up by the processing&nbsp;team.</div>
+    </div>
+
+    <a href="/wcv5/home" role="button" draggable="false" class="govuk-button">Finish</a>
+
+  </div>{# /govuk-grid-column-full #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
