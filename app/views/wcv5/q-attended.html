@@ -25,6 +25,8 @@
   <div class="govuk-grid-column-two-thirds">
 
     <form action="q-attended-logic" method="post" novalidate>
+      <input type="hidden" name="nino" value="{{getData.nino}}">
+      <input type="hidden" name="status" value="{{getData.status}}">
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">

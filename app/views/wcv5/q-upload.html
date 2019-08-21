@@ -25,6 +25,8 @@
   <div class="govuk-grid-column-full">
 
     <form action="q-upload-logic" method="post">
+      <input type="hidden" name="nino" value="{{getData.nino}}">
+      <input type="hidden" name="status" value="{{getData.status}}">
 
       <input type="hidden" name="early" value="{{getData.early}}">
 

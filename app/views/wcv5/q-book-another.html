@@ -25,6 +25,8 @@
   <div class="govuk-grid-column-two-thirds">
 
     <form action="q-book-another-logic" method="post" novalidate>
+      <input type="hidden" name="nino" value="{{getData.nino}}">
+      <input type="hidden" name="status" value="{{getData.status}}">
 
       {% if getData.justidentity %}
         <div class="govuk-inset-text alert-default" style="margin-top: 0;">

@@ -100,7 +100,7 @@ module.exports = function (app) {
     if (question === 'yes') {
       res.redirect(`q-appointment-checklist?status=${status}&nino=${nino}`)
     } else if (question === 'no') {
-      res.redirect(`q-arranged-another?=${status}&nino=${nino}`)
+      res.redirect(`q-arranged-another?status=${status}&nino=${nino}`)
     } else {
       res.redirect('error')
     }
