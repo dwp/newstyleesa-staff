@@ -1,0 +1,37 @@
+{% extends "layout-staff.html" %}
+
+{% block pageTitle %}
+  {% include "wcv5/_service-name.html" %}
+{% endblock %}
+
+{% block serviceName %}
+  {% include "wcv5/_service-name.html" %}
+{% endblock %}
+
+{% block keyDetails %}
+  {% include "wcv5/_key-details.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-!-margin-bottom-5">
+    <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
+  </div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">You are about to change the status of this claim to ‘New appointment needed’</h1>
+
+    <p>The people who book your appointments will see this in their queue.</p>
+
+    <p><a class="govuk-button" href="status-confirmation?status=newappointmentneeded&nino={{getData.nino}}">Confirm</a></p>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

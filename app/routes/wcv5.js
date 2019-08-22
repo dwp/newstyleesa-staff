@@ -34,58 +34,13 @@ module.exports = function (app) {
     let part2 = req.session.data['part2']
 
     // Barney Rubble
-    if (search === 'QQ 11 11 11 Z' || search === 'QQ111111Z' || search === 'barney rubble' || search === 'Barney Rubble' || search === 'barney' || search === 'Barney' || search === 'rubble' || search === 'Rubble'){
-      if (part2 === 'QQ111111Z') {
-        res.redirect('claimant?nino=QQ111111Z&status=verified&ssp1=true&fitnotes=true&pension=true')
-      } else {
-        res.redirect('claimant?nino=QQ111111Z&status=appointmentbooked&ssp1=true&fitnotes=true&pension=true')
-      }
-    // Clark Kent
-    } else if (search === 'QQ 11 22 33 A' || search === 'QQ112233A' || search === 'clark kent' || search === 'Clark Kent' || search === 'clark' || search === 'Clark' || search === 'kent' || search === 'Kent') {
-      res.redirect('claimant?nino=QQ112233A&status=withdrawn&ssp1=true&fitnotes=true')
-    // Buzz Lightyear
-    } else if (search === 'QQ000011A' || search === 'QQ000011A' || search === 'buzz lightyear' || search === 'Buzz Lightyear' || search === 'buzz' || search === 'Buzz' || search === 'lightyear' || search === 'Lightyear') {
-      res.redirect('claimant?nino=QQ000011A&status=appointmentbooked&sr=true&ssp1=true&fitnotes=true')
-    // Lois Lane
-    } else if (search === 'QQ 11 11 22 B' || search === 'QQ111122B' || search === 'lois lane' || search === 'Lois Lane' || search === 'lois' || search === 'Lois' || search === 'lane' || search === 'Lane') {
-      res.redirect('claimant?nino=QQ111122B&status=verified&fitnotes=true&pension=true')
-    // Micky Mouse
-    } else if (search === 'QQ 11 22 33 Z' || search ==='QQ112233Z' || search === 'micky mouse' || search === 'Micky Mouse' || search === 'micky' || search === 'Micky' || search === 'mouse' || search === 'Mouse') {
-      if (part2 === 'QQ112233Z') {
-        res.redirect('claimant?nino=QQ112233Z&status=newappointmentbooked&ssp1=true&fitnotes=true')
-      } else {
-        res.redirect('claimant?nino=QQ112233Z&status=appointmentbooked&ssp1=true&fitnotes=true')
-      }
-    // Marge Simpson
-    } else if (search === 'QQ 23 12 34 Z' || search ==='QQ231234Z' || search === 'marge simpson' || search === 'Marge Simpson' || search === 'marge' || search === 'Marge' || search === 'simpson' || search === 'Simpson') {
-      res.redirect('claimant?nino=QQ231234Z&status=unverified&reason=cc&ssp1=true&fitnotes=true')
-    // Lex Luther
-    } else if (search === 'QQ 00 11 22 A' || search ==='QQ001122A' || search === 'lex luther' || search === 'Lex Luther' || search === 'lex' || search === 'Lex' || search === 'luther' || search === 'Luther') {
-      if (part2 === 'QQ001122A') {
-        res.redirect('claimant?nino=QQ001122A&status=verified&ssp1=true&fitnotes=true')
-        } else {
-        res.redirect('claimant?nino=QQ001122A&status=appointmentbooked&ssp1=true&fitnotes=true')
-      }
-    // Fred Flintstone
-    } else if (search === 'QQ 11 22 33 B' || search ==='QQ112233B' || search === 'fred flintstone' || search === 'Fred Flintstone' || search === 'fred' || search === 'Fred' || search === 'flintstone' || search === 'Flintstone') {
-      res.redirect('claimant?nino=QQ112233B&status=fta&ssp1=true')
-
-    // Homer Simpson
-    } else if (search === 'QQ 11 22 33 C' || search ==='QQ112233C' || search === 'homer simpson' || search === 'Homer Simpson' || search === 'homer' || search === 'Homer' || search === 'simpson' || search === 'Simpson') {
-      res.redirect(`multiple-results-homer?nino=QQ112233C&status=appointmentbooked&ssp1=true&ssp1=true&fitnotes=true&pension=true&searchterm=${search}`)
-    // Minnie Mouse
-    } else if (search === 'QQ 01 01 01 A' || search ==='QQ010101A' || search === 'minnie mouse' || search === 'Minnie Mouse' || search === 'minnie' || search === 'Minnie' || search === 'mouse' || search === 'Mouse') {
-      if (part2 === 'QQ010101A') {
-        res.redirect('claimant?nino=QQ010101A&status=verified&ssp1=true&fitnotes=true')
-        } else {
-        res.redirect('claimant?nino=QQ010101A&status=appointmentbooked&ssp1=true&fitnotes=true')
-      }
+    if (search === 'QQ 12 34 56 C' || search === 'QQ123456C' || search === 'fred flintstone' || search === 'Fred Flintstone' || search === 'fred' || search === 'Fred' || search === 'flintstone' || search === 'Flintstone') {
+      res.redirect('claimant-overview?nino=QQ123456C&status=appointmentbooked')
     } else if (search === '') {
       res.redirect(`home?error=empty`)
     } else {
       res.redirect(`search-not-found?searchterm=${search}`)
     }
-
   })
 
   // STATUS QUESTIONS
@@ -129,8 +84,6 @@ module.exports = function (app) {
     } else {
       res.redirect(`q-book-another?status=${status}&nino=${nino}`)
     }
-
-    
 
   })
 
@@ -197,7 +150,7 @@ module.exports = function (app) {
     if (question === 'more-time') {
       res.redirect(`q-book-another?status=${status}&nino=${nino}&justidentity=true`)
     } else if (question === 'not-wanted') {
-      res.redirect(`status-confirmation?status=unverified&nino=${nino}`)
+      res.redirect(`q-notes-unverified-commitment?status=${status}&nino=${nino}`)
     } else {
       res.redirect('error')
     }
@@ -212,11 +165,11 @@ module.exports = function (app) {
     let status = req.session.data['status']
 
     if (question === 'yes') {
-      res.redirect(`status-confirmation?status=appointmentbooked&nino=${nino}`)
+      res.redirect(`q-notes-appointmentbooked?status=${status}&nino=${nino}`)
     } else if (question === 'no-someone-else') {
-      res.redirect(`status-confirmation?status=newappointmentneeded&nino=${nino}`)
+      res.redirect(`q-notes-newappointmentneeded?status=${status}&nino=${nino}`)
     } else if (question === 'no-not-needed') {
-      res.redirect(`status-confirmation?status=unverified&nino=${nino}`)
+      res.redirect(`q-notes-unverified-both?status=${status}&nino=${nino}`)
     }
     else {
       res.redirect('error')
@@ -232,11 +185,11 @@ module.exports = function (app) {
     let status = req.session.data['status']
 
     if (question === 'yes') {
-      res.redirect(`status-confirmation?status=appointmentbooked&nino=${nino}`)
+      res.redirect(`q-notes-appointmentbooked?status=${status}&nino=${nino}`)
     } else if (question === 'no') {
-      res.redirect(`status-confirmation?status=fta&nino=${nino}`)
+      res.redirect(`q-notes-fta?status=${status}&nino=${nino}`)
     } else if (question === 'dont-know') {
-      res.redirect(`status-confirmation?status=fta&nino=${nino}`)
+      res.redirect(`q-notes-fta?status=${status}&nino=${nino}`)
     } else {
       res.redirect('error')
     }
@@ -287,7 +240,5 @@ module.exports = function (app) {
       }
     }
   })
-
-
 
 }
