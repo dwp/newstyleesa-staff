@@ -1,0 +1,36 @@
+{% extends "layout_master.html" %}
+
+{% block pageTitle %}
+  Iteration 3 &ndash; Reference screens &ndash; {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-!-margin-bottom-5">
+    <a href="/proto-index" rel="prev" class="govuk-back-link">Back to prototypes for testing in user research</a>
+  </div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">Work coach email link testing</h1>
+
+    <h2 class="govuk-heading-m">What we want to learn</h2>
+
+    <p></p>
+
+    <h2 class="govuk-heading-m">Screens</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="/wcel/search?version=1">Version 1</a></li>
+      <li><a href="/wcel/search?version=2">Version 2</a></li>
+    </ul>
+    
+  </div>{# /govuk-grid-column-two-thirds #}
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

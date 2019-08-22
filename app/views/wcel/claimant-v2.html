@@ -1,0 +1,49 @@
+{% extends "layout-staff.html" %}
+
+{% block pageTitle %}
+  Claim summary - Fred Flintstone - Apply for ‘new style’ Employment and Support Allowance
+{% endblock %}
+
+{% block serviceName %}
+  {% include "wcel/_service-name.html" %}
+{% endblock %}
+
+{% block keyDetails %}
+  {% include "wcel/_key-details.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-!-margin-bottom-5">
+    <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
+  </div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    {% include "wcel/_claimant-QQ123456C.html" %}
+
+  </div>{# /govuk-grid-column-two-thirds #}
+
+  {% if getData.status === "verified" %}
+  {% else %}
+    <div class="govuk-grid-column-one-third">
+      <aside class="app-related-items status-verified" role="complementary">
+        <h3 class="govuk-heading-m" id="claim-actions-title">Claim actions</h3>
+        <nav role="navigation" aria-labelledby="claim-actions-title">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li><a href="/public/pdf/Fred-Flintstone application-form.pdf" target="_blank">View full claim (opens new tab)</a></li>
+          <li><a href="email-templates">Email processing centre</a></li>
+        </ul>
+        </nav>
+        <a href="status?version=2" class="govuk-button">Update claim status</a>
+      </aside>
+    </div>{# /govuk-grid-column-one-third #}
+  {% endif %}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
