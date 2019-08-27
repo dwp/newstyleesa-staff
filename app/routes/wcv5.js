@@ -241,4 +241,51 @@ module.exports = function (app) {
     }
   })
 
+  // STATUS CHANGING
+
+  app.post('/wcv5/status-changing', function (req, res) {
+    // Get the answer from session data
+    // The name between the quotes is the same as the 'name' attribute on the input elements
+    // However in JavaScript we can't use hyphens in variable names
+
+    let status = req.session.data['status']
+
+    let nino = req.session.data['nino']
+
+    let early = req.session.data['early']
+
+    // Verified
+    if (status === 'verified') {
+      res.redirect(`upload?status=appointmentbooked&nino=${nino}&early=${early}`)
+    // Failed to attend
+    } else if (status === 'fta') {
+      res.redirect(`status-confirmation?status=fta&nino=${nino}&early=${early}`)
+    // Could not be verified
+    } else if (status === 'not-verified') {
+      res.redirect(`not-verified-reason?status=appointmentbooked&nino=${nino}&early=${early}`)
+    // New appointment needed (is this still a thing?)
+    } else if (status === 'newappointmentneeded') {
+      res.redirect(`status-confirmation?status=newappointmentneeded&nino=${nino}&early=${early}`)
+    // Appointment booked
+    } else if (status === 'appointmentbooked') {
+      res.redirect(`status-confirmation?status=appointmentbooked&nino=${nino}&early=${early}`)
+    // New appointment booked
+    } else if (status === 'newappointmentbooked') {
+      res.redirect(`status-confirmation?status=newappointmentbooked&nino=${nino}&early=${early}`)
+    // Withdrawn or duplicate
+    } else if (status === 'withdrawn') {
+      res.redirect(`withdrawn-confirmation?status=appointmentbooked&nino=${nino}`)
+    // } else if (status === 'withdrawn') {
+    //   res.redirect(`status-confirmation?status=withdrawn&nino=${nino}&early=${early}`)
+    // Processed
+    } else if (status === 'processed') {
+      res.redirect(`notes-processed?status=verified&nino=${nino}`)
+    // Disallowed
+    } else if (status === 'disallowed') {
+      res.redirect(`notes-disallowed?status=verified&nino=${nino}&early=${early}`)
+    } else {
+      res.redirect('error')
+    }
+  })
+
 }

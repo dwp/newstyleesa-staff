@@ -47,6 +47,27 @@
   </nav>
 
   {% if getData.status === "withdrawn" or getData.status === "processed" %}
+
+  {% elif getData.status === "fta" %}
+    <aside class="" role="complementary" style="margin-bottom: 40px">
+      <a href="status?nino={{getData.nino}}&amp;status={{getData.status}}&amp;twojobs={{getData.twojobs}}&amp;early={{getData.early}}&amp;documents={{getData.documents}}" class="govuk-button">Change claim status</a>
+      <nav role="navigation" aria-labelledby="claim-actions-title" style="margin-top:  0px">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li><a href="withdraw-confirmation">Withdraw this claim</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <p>(FTA)</p>
+  {% elif getData.status === "verified" %}
+    <aside class="" role="complementary" style="margin-bottom: 40px">
+      <a href="status?nino={{getData.nino}}&amp;status={{getData.status}}&amp;twojobs={{getData.twojobs}}&amp;early={{getData.early}}&amp;documents={{getData.documents}}" class="govuk-button">Change claim status</a>
+      <nav role="navigation" aria-labelledby="claim-actions-title" style="margin-top:  0px">
+        <ul class="govuk-list govuk-!-font-size-16">
+          <li><a href="withdraw-confirmation">Withdraw this claim</a></li>
+        </ul>
+      </nav>
+    </aside>
+    <p>(Verified)</p>
   {% else %}
     <aside class="" role="complementary" style="margin-bottom: 40px">
       <a href="q-attended?nino={{getData.nino}}&amp;status={{getData.status}}&amp;twojobs={{getData.twojobs}}&amp;early={{getData.early}}&amp;documents={{getData.documents}}" class="govuk-button">Change claim status</a>
