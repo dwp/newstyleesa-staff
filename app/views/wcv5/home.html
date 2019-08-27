@@ -38,7 +38,8 @@
         <label class="govuk-label" for="search">
           Claimant’s name or National Insurance number
         </label>
-        <input id="part2" name="part2" type="hidden" value="{{getData.part2}}">
+        <input id="status" name="status" type="hidden" value="{{getData.status}}">
+        <input id="nino" name="nino" type="hidden" value="{{getData.nino}}">
         <input class="govuk-input govuk-input--width-20" id="search" name="search" type="text" autocomplete="off" value="{% if getData.nino %}{{getData.nino}}{% endif %}">
         <button type="submit" class="govuk-button search">Find claim</button>
       </div>

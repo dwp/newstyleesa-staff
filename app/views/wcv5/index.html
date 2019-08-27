@@ -17,9 +17,28 @@
 
     <h1 class="govuk-heading-l">Work Coach view – version 5</h1>
 
-    <h2 class="govuk-heading-m">Screens</h2>
+    <h2 class="govuk-heading-m">Changes in this version</h2>
+
     <ul class="govuk-list govuk-list--bullet">
-      <li><a href="/wcv5/home?nino=QQ123456C&status=appointmentbooked">Fred Flintstone with status ‘Appointment booked’</a></li>
+      <li>Claim actions are now shown on the left of the screen</li>
+      <li>There’s now a ‘Claim overview’ made up of a claim summary and the timeline (blue header has less information in it)</li>
+      <li>‘Withdraw this claim’ has its own link in the sidebar</li>
+      <li>Exploring whether the agent UI can replace the Agent Lead Porcess sheet (ALP), so adopted more of a walkthrough approach to changing the claim status</li>
+      <li>A buffer screen informs users what will happen before they change the status</li>
+      <li>‘You cannot undo this action’ messages now appear above the button</li>
+      <li>There’s a ’Back to their claim’ link status confirmation screens</li>
+    </ul>
+
+    <h2 class="govuk-heading-m">Screens</h2>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="/wcv5/home?nino=QQ123456C&status=appointmentbooked">Appointment booked</a></li>
+      <li><a href="/wcv5/home?nino=QQ123456C&status=fta">Failed to attend</a></li>
+      <li><a href="/wcv5/home?nino=QQ123456C&status=verified">Verified</a></li>
+      <li><a href="/wcv5/home?nino=QQ123456C&status=newappointmentneeded">New appointment needed</a></li>
+      <li><a href="/wcv5/home?nino=QQ123456C&status=withdrawn">Withdrawn</a></li>
+      <li><a href="/wcv5/home?nino=QQ123456C&status=processed">Processed</a></li>
+      <li><a href="/wcv5/home?nino=QQ123456C&status=disallowed">Disallowed</a></li>    
     </ul>
 
   </div>{# /govuk-grid-column-two-thirds #}

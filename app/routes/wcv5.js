@@ -30,17 +30,11 @@ module.exports = function (app) {
     // The name between the quotes is the same as the 'name' attribute on the input elements
     // However in JavaScript we can't use hyphens in variable names
 
-    let search = req.session.data['search']
-    let part2 = req.session.data['part2']
+    let nino = req.session.data['nino']
+    let status = req.session.data['status']
+    
+    res.redirect(`claimant-overview?status=${status}&nino=${nino}`)
 
-    // Barney Rubble
-    if (search === 'QQ 12 34 56 C' || search === 'QQ123456C' || search === 'fred flintstone' || search === 'Fred Flintstone' || search === 'fred' || search === 'Fred' || search === 'flintstone' || search === 'Flintstone') {
-      res.redirect('claimant-overview?nino=QQ123456C&status=appointmentbooked')
-    } else if (search === '') {
-      res.redirect(`home?error=empty`)
-    } else {
-      res.redirect(`search-not-found?searchterm=${search}`)
-    }
   })
 
   // STATUS QUESTIONS

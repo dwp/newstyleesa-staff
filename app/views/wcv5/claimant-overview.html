@@ -150,6 +150,16 @@
         </li>
         {% endif %}
 
+        {% if getData.status === "disallowed" %}
+        <li class="dwp-timeline__entry">
+          <h3 class="govuk-heading-s" style="margin-bottom: 5px;">Status changed to ‘disallowed’</h3>
+          <p class="dwp-timeline__info">
+            <span class="dwp-timeline__author">by Jane Doe, Processor at Burnley Service Centre</span>
+            <span class="dwp-timeline__date">2 minutes ago</span>
+          </p>
+        </li>
+        {% endif %}
+
         {% if getData.status === "newappointmentneeded" %}
         <li class="dwp-timeline__entry">
           <h3 class="govuk-heading-s" style="margin-bottom: 5px;">Status changed to ‘new appointment needed’</h3>
