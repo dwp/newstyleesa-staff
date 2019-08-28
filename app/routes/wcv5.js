@@ -67,7 +67,7 @@ module.exports = function (app) {
       if (question.includes('identity') && question.includes('commitment') && question.includes('evidence')) {
         res.redirect(`q-upload?status=${status}&nino=${nino}`)
       } else if (question.includes('identity') && question.includes('commitment')) {
-        res.redirect(`status-confirmation?status=verified&nino=${nino}`)
+        res.redirect(`notes?status=${status}&nino=${nino}&next=verified`)
       } else if (question.includes('identity')) {
         res.redirect(`q-no-commitment-reason?status=${status}&nino=${nino}`)
       } else if (question.includes('commitment')) {
@@ -140,11 +140,12 @@ module.exports = function (app) {
     let question = req.session.data['question']
     let nino = req.session.data['nino']
     let status = req.session.data['status']
+    let next = req.session.data['next']
 
     if (question === 'more-time') {
       res.redirect(`q-book-another?status=${status}&nino=${nino}&justidentity=true`)
     } else if (question === 'not-wanted') {
-      res.redirect(`q-notes-unverified-commitment?status=${status}&nino=${nino}`)
+      res.redirect(`notes?status=${status}&nino=${nino}&next=unverified-commitment`)
     } else {
       res.redirect('error')
     }
@@ -159,11 +160,11 @@ module.exports = function (app) {
     let status = req.session.data['status']
 
     if (question === 'yes') {
-      res.redirect(`q-notes-appointmentbooked?status=${status}&nino=${nino}`)
+      res.redirect(`notes?status=${status}&nino=${nino}&next=appointmentbooked`)
     } else if (question === 'no-someone-else') {
-      res.redirect(`q-notes-newappointmentneeded?status=${status}&nino=${nino}`)
+      res.redirect(`notes?status=${status}&nino=${nino}&next=newappointmentneeded`)
     } else if (question === 'no-not-needed') {
-      res.redirect(`q-notes-unverified-both?status=${status}&nino=${nino}`)
+      res.redirect(`notes?status=${status}&nino=${nino}&next=unverified-identity`)
     }
     else {
       res.redirect('error')
@@ -177,13 +178,14 @@ module.exports = function (app) {
     let question = req.session.data['question']
     let nino = req.session.data['nino']
     let status = req.session.data['status']
+    let next = req.session.data['next']
 
     if (question === 'yes') {
-      res.redirect(`q-notes-appointmentbooked?status=${status}&nino=${nino}`)
+      res.redirect(`notes?status=${status}&nino=${nino}&next=appointmentbooked`)
     } else if (question === 'no') {
-      res.redirect(`q-notes-fta?status=${status}&nino=${nino}`)
+      res.redirect(`notes?status=${status}&nino=${nino}&next=fta`)
     } else if (question === 'dont-know') {
-      res.redirect(`q-notes-fta?status=${status}&nino=${nino}`)
+      res.redirect(`notes?status=${status}&nino=${nino}&next=fta`)
     } else {
       res.redirect('error')
     }
@@ -196,10 +198,10 @@ module.exports = function (app) {
 
     let withdraw = req.session.data['withdraw']
     let nino = req.session.data['nino']
-    let early = req.session.data['early']
+    let next = req.session.data['next']
 
     if (withdraw === 'yes') {
-      res.redirect(`status-confirmation?status=withdrawn&nino=${nino}&early=${early}`)
+      res.redirect(`notes?status=withdrawn&nino=${nino}&next=withdrawn`)
     } else if (withdraw === 'no') {
       res.redirect(`claimant-overview?status=appointmentbooked&nino=${nino}`)
     } else {
@@ -244,20 +246,45 @@ module.exports = function (app) {
 
     let status = req.session.data['status']
     let nino = req.session.data['nino']
-    let early = req.session.data['early']
+    let next = req.session.data['next']
 
-    // New appointment booked
-    if (status === 'newappointmentbooked') {
-      res.redirect(`status-confirmation?status=newappointmentbooked&nino=${nino}&early=${early}`)
     // Processed
-    } else if (status === 'processed') {
-      res.redirect(`notes-processed?status=verified&nino=${nino}`)
+    if (status === 'processed') {
+      res.redirect(`notes-processed?status=verified&nino=${nino}&next=processed`)
     // Disallowed
     } else if (status === 'disallowed') {
-      res.redirect(`notes-disallowed?status=verified&nino=${nino}&early=${early}`)
+      res.redirect(`notes-disallowed?status=verified&nino=${nino}&next=disallowed`)
     } else {
       res.redirect('error')
     }
   })
+
+  // RESTORE CLAIM
+
+  // app.post('/wcv5/restore-claim-logic', function (req, res) {
+  //   // Get the answer from session data
+  //   // The name between the quotes is the same as the 'name' attribute on the input elements
+  //   // However in JavaScript we can't use hyphens in variable names
+
+  //   let status = req.session.data['status']
+  //   let nino = req.session.data['nino']
+  //   let early = req.session.data['early']
+
+  //   // Verified
+  //   if (status === 'verified') {
+  //     res.redirect(`notes-verified?status=withdrawn&nino=${nino}&early=${early}`)
+  //   // Failed to attend
+  //   } else if (status === 'fta') {
+  //     res.redirect(`notes-fta?status=withdrawn&nino=${nino}&early=${early}`)
+  //   // Unverified
+  //   } else if (status === 'unverified') {
+  //     res.redirect(`notes-unverified?status=withdrawn&nino=${nino}&early=${early}`)
+  //   // New appointment needed
+  //   } else if (status === 'newappointmentneeded') {
+  //     res.redirect(`notes-newappointmentneeded?status=withdrawn&nino=${nino}&early=${early}`)
+  //   } else {
+  //     res.redirect('error')
+  //   }
+  // })
 
 }

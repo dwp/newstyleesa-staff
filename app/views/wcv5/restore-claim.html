@@ -1,0 +1,98 @@
+{% extends "layout-staff.html" %}
+
+{% block pageTitle %}
+  {% include "wcv5/_service-name.html" %}
+{% endblock %}
+
+{% block serviceName %}
+  {% include "wcv5/_service-name.html" %}
+{% endblock %}
+
+{% block keyDetails %}
+  {% include "wcv5/_key-details.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-!-margin-bottom-5">
+    <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
+  </div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+   
+    <form action="restore-claim-logic" method="post">
+
+      <div class="govuk-form-group">
+        
+        <fieldset class="govuk-fieldset">
+
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <h1 class="govuk-fieldset__heading">
+            Change the status of this claim to restore it
+          </h1>
+        </legend>
+
+        <input id="nino" name="nino" type="hidden" value="{{getData.nino}}">
+
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="verified" name="status" type="radio" value="verified" aria-describedby="hint-verified">
+              <label class="govuk-label govuk-radios__label govuk-label--s" for="verified">
+                Verified
+              </label>
+              <span id="hint-verified" class="govuk-hint govuk-radios__hint">Proved their identity and signed claimant commitment.</span>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="fta" name="status" type="radio" value="fta" aria-describedby="hint-fta" data-aria-controls="conditional-fta">
+              <label class="govuk-label govuk-radios__label govuk-label--s" for="fta">
+                Failed to attend
+              </label>
+              <span id="hint-fta" class="govuk-hint govuk-radios__hint">They missed their appointment.</span>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="not-verified" name="status" type="radio" value="not-verified" aria-describedby="hint-not-verified">
+              <label class="govuk-label govuk-radios__label govuk-label--s" for="not-verified">
+                Unverified
+              </label>
+              <span id="hint-not-verified" class="govuk-hint govuk-radios__hint">Attended, but could not prove their identity or did not sign their claimant commitment.</span>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="newappointmentneeded" name="status" type="radio" value="newappointmentneeded" aria-describedby="hint-newappointmentneeded">
+              <label class="govuk-label govuk-radios__label govuk-label--s" for="newappointmentneeded">
+                New appointment needed
+              </label>
+              <span id="hint-newappointmentneeded" class="govuk-hint govuk-radios__hint">Someone needs to contact the claimant to book an appointment.</span>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="newappointmentbooked" name="status" type="radio" value="newappointmentbooked" aria-describedby="hint-newappointmentbooked">
+              <label class="govuk-label govuk-radios__label govuk-label--s" for="newappointmentbooked">
+                New appointment booked
+              </label>
+              <span id="hint-newappointmentbooked" class="govuk-hint govuk-radios__hint">An appointment has been added to the calendar.</span>
+            </div>
+
+          </div>{# /govuk-radios #}
+
+        </fieldset>
+      </div>{# /govuk-form-group #}
+
+      <button type="submit" class="govuk-button">
+        Continue
+      </button>
+
+    </form>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
