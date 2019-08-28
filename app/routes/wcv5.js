@@ -250,10 +250,10 @@ module.exports = function (app) {
 
     // Processed
     if (status === 'processed') {
-      res.redirect(`notes-processed?status=verified&nino=${nino}&next=processed`)
+      res.redirect(`notes?status=verified&nino=${nino}&next=processed`)
     // Disallowed
     } else if (status === 'disallowed') {
-      res.redirect(`notes-disallowed?status=verified&nino=${nino}&next=disallowed`)
+      res.redirect(`notes?status=verified&nino=${nino}&next=disallowed`)
     } else {
       res.redirect('error')
     }

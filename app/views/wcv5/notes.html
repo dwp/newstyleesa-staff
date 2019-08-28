@@ -43,32 +43,50 @@
         {# verified #}
         {% if getData.next === "verified" %}
           <a class="govuk-button" href="status-confirmation?status=verified&nino={{getData.nino}}">
+            Verify their claim
+          </a>
         {# fta #}
         {% elif getData.next === "fta" %}
           <a class="govuk-button" href="q-buffer-fta?status={{getData.status}}&nino={{getData.nino}}">
+            Continue
+          </a>
         {# appointmentbooked #}
         {% elif getData.next === "appointmentbooked" %}
           <a class="govuk-button" href="q-buffer-appointmentbooked?status={{getData.status}}&nino={{getData.nino}}">
+            Continue
+          </a>
         {# newappointmentneeded #}
         {% elif getData.next === "newappointmentneeded" %}
           <a class="govuk-button" href="q-buffer-newappointmentneeded?status={{getData.status}}&nino={{getData.nino}}">
+            Continue
+          </a>
         {# unverified (not signed claimant commitment) #}
         {% elif getData.next === "unverified-commitment" %}
           <a class="govuk-button" href="q-buffer-unverified-commitment?status={{getData.status}}&nino={{getData.nino}}">
+            Continue
+          </a>
         {# unverified (not proved identity) #}
         {% elif getData.next === "unverified-identity" %}
           <a class="govuk-button" href="q-buffer-unverified-identity?status={{getData.status}}&nino={{getData.nino}}">
+            Continue
+          </a>
         {# processed #}
         {% elif getData.next === "processed" %}
           <a class="govuk-button" href="q-buffer-processed?status={{getData.status}}&nino={{getData.nino}}">
+            Continue
+          </a>
         {# disallowed #}
         {% elif getData.next === "disallowed" %}
           <a class="govuk-button" href="q-buffer-disallowed?status={{getData.status}}&nino={{getData.nino}}">
+            Continue
+          </a>
         {# withdrawn #}
-        {% elif getData.next === "confirmation-withdrawn" %}
+        {% elif getData.next === "withdrawn" %}
           <a class="govuk-button" href=status-confirmation?status=withdrawn&nino={{getData.nino}}">
+            Withdraw their claim
+          </a>
         {% endif %}
-        Continue</a>
+        
       </div>
 
     </form>
