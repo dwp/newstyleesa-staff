@@ -261,30 +261,32 @@ module.exports = function (app) {
 
   // RESTORE CLAIM
 
-  // app.post('/wcv5/restore-claim-logic', function (req, res) {
-  //   // Get the answer from session data
-  //   // The name between the quotes is the same as the 'name' attribute on the input elements
-  //   // However in JavaScript we can't use hyphens in variable names
+  app.post('/wcv5/restore-claim-logic', function (req, res) {
+    // Get the answer from session data
+    // The name between the quotes is the same as the 'name' attribute on the input elements
+    // However in JavaScript we can't use hyphens in variable names
 
-  //   let status = req.session.data['status']
-  //   let nino = req.session.data['nino']
-  //   let early = req.session.data['early']
+    let status = req.session.data['status']
+    let nino = req.session.data['nino']
 
-  //   // Verified
-  //   if (status === 'verified') {
-  //     res.redirect(`notes-verified?status=withdrawn&nino=${nino}&early=${early}`)
-  //   // Failed to attend
-  //   } else if (status === 'fta') {
-  //     res.redirect(`notes-fta?status=withdrawn&nino=${nino}&early=${early}`)
-  //   // Unverified
-  //   } else if (status === 'unverified') {
-  //     res.redirect(`notes-unverified?status=withdrawn&nino=${nino}&early=${early}`)
-  //   // New appointment needed
-  //   } else if (status === 'newappointmentneeded') {
-  //     res.redirect(`notes-newappointmentneeded?status=withdrawn&nino=${nino}&early=${early}`)
-  //   } else {
-  //     res.redirect('error')
-  //   }
-  // })
+    // Verified
+    if (status === 'verified') {
+      res.redirect(`notes?status=withdrawn&nino=${nino}&next=verified`)
+    // Failed to attend
+    } else if (status === 'fta') {
+      res.redirect(`notes?status=withdrawn&nino=${nino}&next=fta`)
+    // Unverified
+    } else if (status === 'unverified') {
+      res.redirect(`notes?status=withdrawn&nino=${nino}&next=unverified`)
+    // New appointment needed
+    } else if (status === 'newappointmentneeded') {
+      res.redirect(`notes?status=withdrawn&nino=${nino}&next=newappointmentneeded`)
+    // New appointment booked
+    } else if (status === 'appointmentbooked') {
+      res.redirect(`notes?status=withdrawn&nino=${nino}&next=appointmentbooked`)
+    } else {
+      res.redirect('error')
+    }
+  })
 
 }

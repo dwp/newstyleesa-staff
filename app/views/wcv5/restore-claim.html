@@ -41,11 +41,19 @@
           <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="verified" name="status" type="radio" value="verified" aria-describedby="hint-verified">
-              <label class="govuk-label govuk-radios__label govuk-label--s" for="verified">
-                Verified
+              <input class="govuk-radios__input" id="unverified" name="status" type="radio" value="unverified" aria-describedby="hint-unverified">
+              <label class="govuk-label govuk-radios__label govuk-label--s" for="unverified">
+                Unverified
               </label>
-              <span id="hint-verified" class="govuk-hint govuk-radios__hint">Proved their identity and signed claimant commitment.</span>
+              <span id="hint-unverified" class="govuk-hint govuk-radios__hint">Attended, but could not prove their identity or did not sign their claimant commitment.</span>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="appointmentbooked" name="status" type="radio" value="appointmentbooked" aria-describedby="hint-appointmentbooked">
+              <label class="govuk-label govuk-radios__label govuk-label--s" for="appointmentbooked">
+                Appointment booked
+              </label>
+              <span id="hint-appointmentbooked" class="govuk-hint govuk-radios__hint">An appointment has been added to the calendar.</span>
             </div>
 
             <div class="govuk-radios__item">
@@ -57,14 +65,6 @@
             </div>
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="not-verified" name="status" type="radio" value="not-verified" aria-describedby="hint-not-verified">
-              <label class="govuk-label govuk-radios__label govuk-label--s" for="not-verified">
-                Unverified
-              </label>
-              <span id="hint-not-verified" class="govuk-hint govuk-radios__hint">Attended, but could not prove their identity or did not sign their claimant commitment.</span>
-            </div>
-
-            <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="newappointmentneeded" name="status" type="radio" value="newappointmentneeded" aria-describedby="hint-newappointmentneeded">
               <label class="govuk-label govuk-radios__label govuk-label--s" for="newappointmentneeded">
                 New appointment needed
@@ -73,11 +73,11 @@
             </div>
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="newappointmentbooked" name="status" type="radio" value="newappointmentbooked" aria-describedby="hint-newappointmentbooked">
-              <label class="govuk-label govuk-radios__label govuk-label--s" for="newappointmentbooked">
-                New appointment booked
+              <input class="govuk-radios__input" id="verified" name="status" type="radio" value="verified" aria-describedby="hint-verified">
+              <label class="govuk-label govuk-radios__label govuk-label--s" for="verified">
+                Verified
               </label>
-              <span id="hint-newappointmentbooked" class="govuk-hint govuk-radios__hint">An appointment has been added to the calendar.</span>
+              <span id="hint-verified" class="govuk-hint govuk-radios__hint">Proved their identity and signed claimant commitment.</span>
             </div>
 
           </div>{# /govuk-radios #}

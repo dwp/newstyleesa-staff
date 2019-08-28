@@ -60,6 +60,11 @@
           <a class="govuk-button" href="q-buffer-newappointmentneeded?status={{getData.status}}&nino={{getData.nino}}">
             Continue
           </a>
+        {# unverified) #}
+        {% elif getData.next === "unverified" %}
+          <a class="govuk-button" href="q-buffer-unverified-identity?status={{getData.status}}&nino={{getData.nino}}">
+            Continue
+          </a>
         {# unverified (not signed claimant commitment) #}
         {% elif getData.next === "unverified-commitment" %}
           <a class="govuk-button" href="q-buffer-unverified-commitment?status={{getData.status}}&nino={{getData.nino}}">
@@ -85,6 +90,8 @@
           <a class="govuk-button" href=status-confirmation?status=withdrawn&nino={{getData.nino}}">
             Withdraw their claim
           </a>
+        {% else %}
+        ERROR
         {% endif %}
         
       </div>
