@@ -1,0 +1,97 @@
+{% extends "layout-staff.html" %}
+
+{% block pageTitle %}
+  {% include "v5/_service-name.html" %}
+{% endblock %}
+
+{% block serviceName %}
+  {% include "wcv5/_service-name.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-l">Claims that have not been verified</h1>
+
+{% set items = [
+  { name: 'Fred Flintstone', 		nino: 'QQ123456C',  status: 'Failed to attend',  changed: '50',   date: '-38',   time: '3:01pm',   special: 'yes' },
+  { name: 'Clark Kent',       	nino: 'QQ123456C',  status: 'Unverified',        changed: '42',   date: '-34',   time: '3:01pm',   special: 'yes' },
+  { name: 'Barney Rubble',  		nino: 'QQ123456C',  status: 'Failed to attend',  changed: '36',   date: '-33',   time: '3:01pm' },
+  { name: 'Top Cat',            nino: 'QQ123456C',  status: 'Failed to attend',  changed: '34',   date: '-32',   time: '3:01pm',   special: 'yes' },
+  { name: 'Buzz Lightyear',            nino: 'QQ123456C',  status: 'Failed to attend',  changed: '32',   date: '-32',   time: '3:01pm',   special: 'yes' },
+  { name: 'Wilma Flintstone',   nino: 'QQ123456C',  status: 'Failed to attend',  changed: '29',     date: '-29',   time: '3:01pm' },
+  { name: 'Daffy Duck',         nino: 'QQ123456C',  status: 'Unverified',        changed: '28',     date: '-28',   time: '3:01pm',   special: 'yes' },
+  { name: 'Micky Mouse',        nino: 'QQ123456C',  status: 'Failed to attend',  changed: '28',     date: '-28',   time: '3:01pm' },
+  { name: 'Sponge Bob',         nino: 'QQ123456C',  status: 'Failed to attend',  changed: '27',     date: '-27',   time: '3:01pm' },
+  { name: 'Lois Lane',         nino: 'QQ123456C',  status: 'Unverified',        changed: '27',     date: '-27',   time: '3:01pm' },
+  { name: 'Micky Mouse',        nino: 'QQ123456C',  status: 'Failed to attend',  changed: '26',     date: '-26',   time: '3:01pm' },
+  { name: 'Marge Simpson',         nino: 'QQ123456C',  status: 'Failed to attend',  changed: '26',     date: '-26',   time: '3:01pm' },
+  { name: 'Minnie Mouse',         nino: 'QQ123456C',  status: 'Unverified',        changed: '25',     date: '-25',   time: '3:01pm' },
+  { name: 'Homer Simpson',        nino: 'QQ123456C',  status: 'Failed to attend',  changed: '24',     date: '-24',   time: '3:01pm' },
+  { name: 'Snow White',         nino: 'QQ123456C',  status: 'Failed to attend',  changed: '24',     date: '-24',   time: '3:01pm' },
+  { name: 'Bugs Bunny',         nino: 'QQ123456C',  status: 'Unverified',        changed: '22',     date: '-22',   time: '3:01pm' }
+]
+%}
+
+
+
+{#     <ul>
+      <li><a href="#">All</a></li>
+      <li><a href="#">Status not changed within one calendar month</a></li>
+      <li><a href="#">Failed to attend</a></li>
+      <li><a href="#">Unverified</a></li>
+    </ul> #}
+
+
+
+
+      <table class="govuk-table govuk-body-s">
+        <caption class="govuk-visually-hidden">Search results</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col">Claimant</th>
+            <th class="govuk-table__header" scope="col">Status</th>
+            <th class="govuk-table__header" scope="col">Time at this status</th>
+            <th class="govuk-table__header" scope="col">Claim submitted</th>
+            <th class="govuk-table__header" scope="col"><span class="govuk-visually-hidden">Special rules</span></th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          {% for item in items %}
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" style="width: 25%">
+                <a href="#"><strong>{{ item.name }}</strong></a>
+                {{ item.nino }}
+              </td>
+              <td class="govuk-table__cell"><span class="app-c-tag">{{ item.status }}</span></td>
+              <td class="govuk-table__cell">
+                {% if item.changed > 30 %}
+                  <span style="color: #d4351c; font-weight:bold">{{ item.changed }} days ago</span>
+                {% else %}
+                  {{ item.changed }} days ago
+                {% endif %}
+              </td>
+              <td class="govuk-table__cell"><span class="moment">{{ item.date }}</span></td>
+              <td class="govuk-table__cell">
+                {% if item.special %}
+                  <div class="govuk-warning-text" style="margin-bottom: 0; padding: 0">
+                    <span class="govuk-warning-text__icon" aria-hidden="true" style="border: none; font-size: 20px; margin-top: -18px">!</span>
+                    <strong class="govuk-warning-text__text" style="padding-left: 42px">
+                      <span class="govuk-warning-text__assistive">Yes, </span>Special rules
+                    </strong>
+                  </div>
+                {% endif %}
+              </td>
+            </tr> 
+          {% endfor %}
+        </tbody>
+      </table>
+    
+  </div>{# /govuk-grid-column-full #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

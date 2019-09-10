@@ -27,16 +27,24 @@ $(document).ready(function() {
 
 });
 
-// Stick side bar
+// Moment dates on plan listing page
 
 $(document).ready(function() {
-
-  // DataTable
-  var a = new StickySidebar('#sticky-sidebar', {
-    topSpacing: 20,
-    bottomSpacing: 20,
-    containerSelector: '.container',
-    innerWrapperSelector: '.sticky-sidebar__inner'
+  
+  $moments = $(".moment");
+  
+  $moments.each(function() {
+    $dateOffset = $(this).text();
+    $dueDate = moment().add($dateOffset, 'days').format('D MMMM');
+    $(this).text($dueDate);
   });
+
+  // $shortMoments = $(".short-moment");
+  
+  // $shortMoments.each(function() {
+  //   $dateOffset = $(this).text();
+  //   $dueDate = moment().add($dateOffset, 'days').format('D MMMM');
+  //   $(this).text($dueDate);
+  // });
 
 });
