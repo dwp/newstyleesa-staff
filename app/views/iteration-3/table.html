@@ -36,17 +36,12 @@
 ]
 %}
 
-
-
 {#     <ul>
       <li><a href="#">All</a></li>
       <li><a href="#">Status not changed within one calendar month</a></li>
       <li><a href="#">Failed to attend</a></li>
       <li><a href="#">Unverified</a></li>
     </ul> #}
-
-
-
 
       <table class="govuk-table govuk-body-s">
         <caption class="govuk-visually-hidden">Search results</caption>
@@ -69,9 +64,9 @@
               <td class="govuk-table__cell"><span class="app-c-tag">{{ item.status }}</span></td>
               <td class="govuk-table__cell">
                 {% if item.changed > 30 %}
-                  <span style="color: #d4351c; font-weight:bold">{{ item.changed }} days ago</span>
+                  <span style="color: #d4351c; font-weight:bold">{{ item.changed }} days</span>
                 {% else %}
-                  {{ item.changed }} days ago
+                  {{ item.changed }} days
                 {% endif %}
               </td>
               <td class="govuk-table__cell"><span class="moment">{{ item.date }}</span></td>
