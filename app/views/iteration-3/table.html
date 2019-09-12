@@ -14,7 +14,7 @@
 
   <div class="govuk-grid-column-full">
 
-    <h1 class="govuk-heading-l" style="max-width: 800px;">Outstanding claims that have not been verified</h1>
+    <h1 class="govuk-heading-l" style="max-width: 800px;">Outstanding claims that are not verified</h1>
 
     <nav class="moj-sub-navigation" aria-label="Sub navigation">
       <ul class="moj-sub-navigation__list">
@@ -42,6 +42,7 @@
     name:     'Fred Flintstone',
     nino:     'QQ123456C',
     status:   'Failed to attend',
+    times:    '2',
     changed:  '50',
     date:     '-38',
     time:     '3:01pm',
@@ -109,6 +110,7 @@
     name:     'Micky Mouse',
     nino:     'QQ123456C',
     status:   'Failed to attend',
+    times:    '3',
     changed:  '28',
     date:     '-28',
     time:     '3:01pm',
@@ -194,10 +196,9 @@
       <caption class="govuk-visually-hidden">Search results</caption>
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-          <th class="govuk-table__header" scope="col">Claimant</th>
-          <th class="govuk-table__header" scope="col">Status</th>
+          <th class="govuk-table__header" scope="col" style="width: 26%">Claimant</th>
+          <th class="govuk-table__header" scope="col" style="width: 28%">Status</th>
           <th class="govuk-table__header" scope="col">Time at this status</th>
-    {#       <th class="govuk-table__header" scope="col">Claim submitted</th> #}
           <th class="govuk-table__header" scope="col">Postcode</th>
           <th class="govuk-table__header" scope="col"><span class="govuk-visually-hidden">Special rules</span></th>
         </tr>
@@ -208,11 +209,13 @@
           {# ALL #}
           {% for item in items %}
               <tr class="govuk-table__row">
-                <td class="govuk-table__cell" style="width: 22%">
+                <td class="govuk-table__cell">
                   <a href="#"><strong>{{ item.name }}</strong></a>
                   {{ item.nino }}
                 </td>
-                <td class="govuk-table__cell"><span class="app-c-tag">{{ item.status }}</span></td>
+                <td class="govuk-table__cell"><span class="app-c-tag">{{ item.status }}{% if item.times %}
+                      × {{ item.times }}
+                    {% endif %}</span></td>
                 <td class="govuk-table__cell">
                   {% if item.status == 'No claimant commitment' %}
                     {% if item.changed > 7 %}
@@ -246,7 +249,7 @@
           {% for item in items %}
             {% if item.status == "Unverified" %}
               <tr class="govuk-table__row">
-                <td class="govuk-table__cell" style="width: 22%">
+                <td class="govuk-table__cell">
                   <a href="#"><strong>{{ item.name }}</strong></a>
                   {{ item.nino }}
                 </td>
@@ -285,11 +288,18 @@
           {% for item in items %}
             {% if item.status == "Failed to attend" %}
               <tr class="govuk-table__row">
-                <td class="govuk-table__cell" style="width: 22%">
+                <td class="govuk-table__cell">
                   <a href="#"><strong>{{ item.name }}</strong></a>
                   {{ item.nino }}
                 </td>
-                <td class="govuk-table__cell"><span class="app-c-tag">{{ item.status }}</span></td>
+                <td class="govuk-table__cell">
+                  <span class="app-c-tag">
+                    {{ item.status }}
+                    {% if item.times %}
+                      × {{ item.times }}
+                    {% endif %}
+                  </span>
+                </td>
                 <td class="govuk-table__cell">
                   {% if item.status == 'No claimant commitment' %}
                     {% if item.changed > 7 %}
@@ -324,7 +334,7 @@
           {% for item in items %}
             {% if item.status == "No identity" %}
               <tr class="govuk-table__row">
-                <td class="govuk-table__cell" style="width: 22%">
+                <td class="govuk-table__cell">
                   <a href="#"><strong>{{ item.name }}</strong></a>
                   {{ item.nino }}
                 </td>
@@ -363,7 +373,7 @@
           {% for item in items %}
             {% if item.status == "No claimant commitment" %}
               <tr class="govuk-table__row">
-                <td class="govuk-table__cell" style="width: 22%">
+                <td class="govuk-table__cell">
                   <a href="#"><strong>{{ item.name }}</strong></a>
                   {{ item.nino }}
                 </td>
