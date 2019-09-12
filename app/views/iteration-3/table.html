@@ -14,76 +14,392 @@
 
   <div class="govuk-grid-column-full">
 
-    <h1 class="govuk-heading-l">Claims that have not been verified</h1>
+    <h1 class="govuk-heading-l" style="max-width: 800px;">Outstanding claims that have not been verified</h1>
+
+    <nav class="moj-sub-navigation" aria-label="Sub navigation">
+      <ul class="moj-sub-navigation__list">
+        
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link"{% if getData.filter === "all" %}aria-current="page"{% endif %}href="table?filter=all">All (16)</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link"{% if getData.filter === "unverified" %}aria-current="page"{% endif %}href="table?filter=unverified">Unverified (5)</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link"{% if getData.filter === "fta" %}aria-current="page"{% endif %}href="table?filter=fta">Failed to attend (7)</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link"{% if getData.filter === "id" %}aria-current="page"{% endif %}href="table?filter=id">No identity (3)</a>
+        </li>
+        <li class="moj-sub-navigation__item">
+          <a class="moj-sub-navigation__link"{% if getData.filter === "cc" %}aria-current="page"{% endif %}href="table?filter=cc">No claimant commitment (1)</a>
+        </li>
+      </ul>
+    </nav> 
 
 {% set items = [
-  { name: 'Fred Flintstone', 		nino: 'QQ123456C',  status: 'Failed to attend',  changed: '50',   date: '-38',   time: '3:01pm',   special: 'yes' },
-  { name: 'Clark Kent',       	nino: 'QQ123456C',  status: 'Unverified',        changed: '42',   date: '-34',   time: '3:01pm',   special: 'yes' },
-  { name: 'Barney Rubble',  		nino: 'QQ123456C',  status: 'Failed to attend',  changed: '36',   date: '-33',   time: '3:01pm' },
-  { name: 'Top Cat',            nino: 'QQ123456C',  status: 'Failed to attend',  changed: '34',   date: '-32',   time: '3:01pm',   special: 'yes' },
-  { name: 'Buzz Lightyear',            nino: 'QQ123456C',  status: 'Failed to attend',  changed: '32',   date: '-32',   time: '3:01pm',   special: 'yes' },
-  { name: 'Wilma Flintstone',   nino: 'QQ123456C',  status: 'Failed to attend',  changed: '29',     date: '-29',   time: '3:01pm' },
-  { name: 'Daffy Duck',         nino: 'QQ123456C',  status: 'Unverified',        changed: '28',     date: '-28',   time: '3:01pm',   special: 'yes' },
-  { name: 'Micky Mouse',        nino: 'QQ123456C',  status: 'Failed to attend',  changed: '28',     date: '-28',   time: '3:01pm' },
-  { name: 'Sponge Bob',         nino: 'QQ123456C',  status: 'Failed to attend',  changed: '27',     date: '-27',   time: '3:01pm' },
-  { name: 'Lois Lane',         nino: 'QQ123456C',  status: 'Unverified',        changed: '27',     date: '-27',   time: '3:01pm' },
-  { name: 'Micky Mouse',        nino: 'QQ123456C',  status: 'Failed to attend',  changed: '26',     date: '-26',   time: '3:01pm' },
-  { name: 'Marge Simpson',         nino: 'QQ123456C',  status: 'Failed to attend',  changed: '26',     date: '-26',   time: '3:01pm' },
-  { name: 'Minnie Mouse',         nino: 'QQ123456C',  status: 'Unverified',        changed: '25',     date: '-25',   time: '3:01pm' },
-  { name: 'Homer Simpson',        nino: 'QQ123456C',  status: 'Failed to attend',  changed: '24',     date: '-24',   time: '3:01pm' },
-  { name: 'Snow White',         nino: 'QQ123456C',  status: 'Failed to attend',  changed: '24',     date: '-24',   time: '3:01pm' },
-  { name: 'Bugs Bunny',         nino: 'QQ123456C',  status: 'Unverified',        changed: '22',     date: '-22',   time: '3:01pm' }
+  { 
+    name:     'Fred Flintstone',
+    nino:     'QQ123456C',
+    status:   'Failed to attend',
+    changed:  '50',
+    date:     '-38',
+    time:     '3:01pm',
+    postcode: 'HU6 2AA',
+    special:  'yes'
+  },
+  { 
+    name:     'Clark Kent',
+    nino:     'QQ123456C',
+    status:   'Unverified',
+    changed:  '42',
+    date:     '-34',
+    time:     '3:01pm',
+    postcode: 'HU6 2AA'
+  },
+  { 
+    name:     'Barney Rubble',
+    nino:     'QQ123456C',
+    status:   'Failed to attend',
+    changed:  '36',
+    date:     '-33',
+    time:     '3:01pm',
+    postcode: 'HU6 2AA'
+  },
+  { 
+    name:     'Top Cat',
+    nino:     'QQ123456C',
+    status:   'No identity',
+    changed:  '34',
+    date:     '-32',
+    time:     '3:01pm',
+    postcode: 'S60 1AA',
+    special:  'yes'
+  },
+  { 
+    name:     'Buzz Lightyear',
+    nino:     'QQ123456C',
+    status:   'No claimant commitment',
+    changed:  '12',
+    date:     '-12',
+    time:     '3:01pm',
+    postcode: 'S60 2DD',
+    special:  'yes'
+  },
+  { 
+    name:     'Wilma Flintstone',
+    nino:     'QQ123456C',
+    status:   'Failed to attend',
+    changed:  '32',
+    date:     '-32',
+    time:     '3:01pm',
+    postcode: 'S60 2DD'
+  },
+  { 
+    name:     'Daffy Duck',
+    nino:     'QQ123456C',
+    status:   'Unverified',
+    changed:  '28',
+    date:     '-28',
+    time:     '3:01pm',
+    postcode: 'HU8 1RT',
+    special:  'yes'
+  },
+  { 
+    name:     'Micky Mouse',
+    nino:     'QQ123456C',
+    status:   'Failed to attend',
+    changed:  '28',
+    date:     '-28',
+    time:     '3:01pm',
+    postcode: 'HU8 1RT'
+  },
+  { 
+    name:     'Sponge Bob',
+    nino:     'QQ123456C',
+    status:   'No identity',
+    changed:  '27',
+    date:     '-27',
+    time:     '3:01pm',
+    postcode: 'S11 2DD'
+  },
+  { 
+    name:     'Lois Lane',
+    nino:     'QQ123456C',
+    status:   'Unverified',
+    changed:  '27',
+    date:     '-27',
+    time:     '3:01pm',
+    postcode: 'S11 2DD'
+  },
+  { 
+    name:     'Micky Mouse',
+    nino:     'QQ123456C',
+    status:   'Failed to attend',
+    changed:  '26',
+    date:     '-26',
+    time:     '3:01pm',
+    postcode: 'S11 2DD'
+  },
+  { 
+    name:     'Marge Simpson',
+    nino:     'QQ123456C',
+    status:   'Failed to attend',
+    changed:  '26',
+    date:     '-26',
+    time:     '3:01pm',
+    postcode: 'S11 2DD'
+  },
+  { 
+    name:     'Minnie Mouse',
+    nino:     'QQ123456C',
+    status:   'Unverified',
+    changed:  '25',
+    date:     '-25',
+    time:     '3:01pm',
+    postcode: 'S11 2DD'
+  },
+  { 
+    name:     'Homer Simpson',
+    nino:     'QQ123456C',
+    status:   'Failed to attend',
+    changed:  '24',
+    date:     '-24',
+    time:     '3:01pm',
+    postcode: 'S11 2DD'
+  },
+  { 
+    name:     'Snow White',
+    nino:     'QQ123456C',
+    status:   'No identity',
+    changed:  '24',
+    date:     '-24',
+    time:     '3:01pm',
+    postcode: 'S11 2DD'
+  },
+  { 
+    name:     'Bugs Bunny',
+    nino:     'QQ123456C',
+    status:   'Unverified',
+    changed:  '22',
+    date:     '-22',
+    time:     '3:01pm',
+    postcode: 'S11 2DD'
+  }
 ]
 %}
 
-{#     <ul>
-      <li><a href="#">All</a></li>
-      <li><a href="#">Status not changed within one calendar month</a></li>
-      <li><a href="#">Failed to attend</a></li>
-      <li><a href="#">Unverified</a></li>
-    </ul> #}
+    {# Jobcentre view #}
+    <table class="govuk-table govuk-body-s">
+      <caption class="govuk-visually-hidden">Search results</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th class="govuk-table__header" scope="col">Claimant</th>
+          <th class="govuk-table__header" scope="col">Status</th>
+          <th class="govuk-table__header" scope="col">Time at this status</th>
+    {#       <th class="govuk-table__header" scope="col">Claim submitted</th> #}
+          <th class="govuk-table__header" scope="col">Postcode</th>
+          <th class="govuk-table__header" scope="col"><span class="govuk-visually-hidden">Special rules</span></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
 
-      <table class="govuk-table govuk-body-s">
-        <caption class="govuk-visually-hidden">Search results</caption>
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header" scope="col">Claimant</th>
-            <th class="govuk-table__header" scope="col">Status</th>
-            <th class="govuk-table__header" scope="col">Time at this status</th>
-            <th class="govuk-table__header" scope="col">Claim submitted</th>
-            <th class="govuk-table__header" scope="col"><span class="govuk-visually-hidden">Special rules</span></th>
-          </tr>
-        </thead>
-        <tbody class="govuk-table__body">
+        {% if getData.filter === "all" %}
+          {# ALL #}
           {% for item in items %}
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell" style="width: 25%">
-                <a href="#"><strong>{{ item.name }}</strong></a>
-                {{ item.nino }}
-              </td>
-              <td class="govuk-table__cell"><span class="app-c-tag">{{ item.status }}</span></td>
-              <td class="govuk-table__cell">
-                {% if item.changed > 30 %}
-                  <span style="color: #d4351c; font-weight:bold">{{ item.changed }} days</span>
-                {% else %}
-                  {{ item.changed }} days
-                {% endif %}
-              </td>
-              <td class="govuk-table__cell"><span class="moment">{{ item.date }}</span></td>
-              <td class="govuk-table__cell">
-                {% if item.special %}
-                  <div class="govuk-warning-text" style="margin-bottom: 0; padding: 0">
-                    <span class="govuk-warning-text__icon" aria-hidden="true" style="border: none; font-size: 20px; margin-top: -18px">!</span>
-                    <strong class="govuk-warning-text__text" style="padding-left: 42px">
-                      <span class="govuk-warning-text__assistive">Yes, </span>Special rules
-                    </strong>
-                  </div>
-                {% endif %}
-              </td>
-            </tr> 
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" style="width: 22%">
+                  <a href="#"><strong>{{ item.name }}</strong></a>
+                  {{ item.nino }}
+                </td>
+                <td class="govuk-table__cell"><span class="app-c-tag">{{ item.status }}</span></td>
+                <td class="govuk-table__cell">
+                  {% if item.status == 'No claimant commitment' %}
+                    {% if item.changed > 7 %}
+                      <span style="color: #d4351c; font-weight:bold">{{ item.changed }} days</span>
+                    {% else %}
+                      {{ item.changed }} days
+                    {% endif %}
+                  {% else %}
+                    {% if item.changed > 30 %}
+                      <span style="color: #d4351c; font-weight:bold">{{ item.changed }} days</span>
+                    {% else %}
+                      {{ item.changed }} days
+                    {% endif %}
+                  {% endif %}
+                </td>
+                <td class="govuk-table__cell">{{ item.postcode }}</td>
+                <td class="govuk-table__cell">
+                  {% if item.special %}
+                    <div class="govuk-warning-text" style="margin-bottom: 0; padding: 0">
+                      <span class="govuk-warning-text__icon" aria-hidden="true" style="border: none; font-size: 20px; margin-top: -18px">!</span>
+                      <strong class="govuk-warning-text__text" style="padding-left: 42px">
+                        <span class="govuk-warning-text__assistive">Yes, </span>Special rules
+                      </strong>
+                    </div>
+                  {% endif %}
+                </td>
+              </tr>
           {% endfor %}
-        </tbody>
-      </table>
+        {% elseif getData.filter === "unverified" %}
+          {# UNVERIFIED #}
+          {% for item in items %}
+            {% if item.status == "Unverified" %}
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" style="width: 22%">
+                  <a href="#"><strong>{{ item.name }}</strong></a>
+                  {{ item.nino }}
+                </td>
+                <td class="govuk-table__cell"><span class="app-c-tag">{{ item.status }}</span></td>
+                <td class="govuk-table__cell">
+                  {% if item.status == 'No claimant commitment' %}
+                    {% if item.changed > 7 %}
+                      <span style="color: #d4351c; font-weight:bold">{{ item.changed }} days</span>
+                    {% else %}
+                      {{ item.changed }} days
+                    {% endif %}
+                  {% else %}
+                    {% if item.changed > 30 %}
+                      <span style="color: #d4351c; font-weight:bold">{{ item.changed }} days</span>
+                    {% else %}
+                      {{ item.changed }} days
+                    {% endif %}
+                  {% endif %}
+                </td>
+                <td class="govuk-table__cell">{{ item.postcode }}</td>
+                <td class="govuk-table__cell">
+                  {% if item.special %}
+                    <div class="govuk-warning-text" style="margin-bottom: 0; padding: 0">
+                      <span class="govuk-warning-text__icon" aria-hidden="true" style="border: none; font-size: 20px; margin-top: -18px">!</span>
+                      <strong class="govuk-warning-text__text" style="padding-left: 42px">
+                        <span class="govuk-warning-text__assistive">Yes, </span>Special rules
+                      </strong>
+                    </div>
+                  {% endif %}
+                </td>
+              </tr>
+            {% endif %}
+          {% endfor %}
+        {% elseif getData.filter === "fta" %}
+          {# FAILED TO ATTEND #}
+          {% for item in items %}
+            {% if item.status == "Failed to attend" %}
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" style="width: 22%">
+                  <a href="#"><strong>{{ item.name }}</strong></a>
+                  {{ item.nino }}
+                </td>
+                <td class="govuk-table__cell"><span class="app-c-tag">{{ item.status }}</span></td>
+                <td class="govuk-table__cell">
+                  {% if item.status == 'No claimant commitment' %}
+                    {% if item.changed > 7 %}
+                      <span style="color: #d4351c; font-weight:bold">{{ item.changed }} days</span>
+                    {% else %}
+                      {{ item.changed }} days
+                    {% endif %}
+                  {% else %}
+                    {% if item.changed > 30 %}
+                      <span style="color: #d4351c; font-weight:bold">{{ item.changed }} days</span>
+                    {% else %}
+                      {{ item.changed }} days
+                    {% endif %}
+                  {% endif %}
+                </td>
+                <td class="govuk-table__cell">{{ item.postcode }}</td>
+                <td class="govuk-table__cell">
+                  {% if item.special %}
+                    <div class="govuk-warning-text" style="margin-bottom: 0; padding: 0">
+                      <span class="govuk-warning-text__icon" aria-hidden="true" style="border: none; font-size: 20px; margin-top: -18px">!</span>
+                      <strong class="govuk-warning-text__text" style="padding-left: 42px">
+                        <span class="govuk-warning-text__assistive">Yes, </span>Special rules
+                      </strong>
+                    </div>
+                  {% endif %}
+                </td>
+              </tr>
+            {% endif %}
+          {% endfor %}
+        {% elseif getData.filter === "id" %}
+          {# NO IDENTITY #}
+          {% for item in items %}
+            {% if item.status == "No identity" %}
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" style="width: 22%">
+                  <a href="#"><strong>{{ item.name }}</strong></a>
+                  {{ item.nino }}
+                </td>
+                <td class="govuk-table__cell"><span class="app-c-tag">{{ item.status }}</span></td>
+                <td class="govuk-table__cell">
+                  {% if item.status == 'No claimant commitment' %}
+                    {% if item.changed > 7 %}
+                      <span style="color: #d4351c; font-weight:bold">{{ item.changed }} days</span>
+                    {% else %}
+                      {{ item.changed }} days
+                    {% endif %}
+                  {% else %}
+                    {% if item.changed > 30 %}
+                      <span style="color: #d4351c; font-weight:bold">{{ item.changed }} days</span>
+                    {% else %}
+                      {{ item.changed }} days
+                    {% endif %}
+                  {% endif %}
+                </td>
+                <td class="govuk-table__cell">{{ item.postcode }}</td>
+                <td class="govuk-table__cell">
+                  {% if item.special %}
+                    <div class="govuk-warning-text" style="margin-bottom: 0; padding: 0">
+                      <span class="govuk-warning-text__icon" aria-hidden="true" style="border: none; font-size: 20px; margin-top: -18px">!</span>
+                      <strong class="govuk-warning-text__text" style="padding-left: 42px">
+                        <span class="govuk-warning-text__assistive">Yes, </span>Special rules
+                      </strong>
+                    </div>
+                  {% endif %}
+                </td>
+              </tr>
+            {% endif %}
+          {% endfor %}
+        {% elseif getData.filter === "cc" %}
+          {# NO CLAIMANT COMMITMENT #}
+          {% for item in items %}
+            {% if item.status == "No claimant commitment" %}
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell" style="width: 22%">
+                  <a href="#"><strong>{{ item.name }}</strong></a>
+                  {{ item.nino }}
+                </td>
+                <td class="govuk-table__cell"><span class="app-c-tag">{{ item.status }}</span></td>
+                <td class="govuk-table__cell">
+                  {% if item.status == 'No claimant commitment' %}
+                    {% if item.changed > 7 %}
+                      <span style="color: #d4351c; font-weight:bold">{{ item.changed }} days</span>
+                    {% else %}
+                      {{ item.changed }} days
+                    {% endif %}
+                  {% else %}
+                    {% if item.changed > 30 %}
+                      <span style="color: #d4351c; font-weight:bold">{{ item.changed }} days</span>
+                    {% else %}
+                      {{ item.changed }} days
+                    {% endif %}
+                  {% endif %}
+                </td>
+                <td class="govuk-table__cell">{{ item.postcode }}</td>
+                <td class="govuk-table__cell">
+                  {% if item.special %}
+                    <div class="govuk-warning-text" style="margin-bottom: 0; padding: 0">
+                      <span class="govuk-warning-text__icon" aria-hidden="true" style="border: none; font-size: 20px; margin-top: -18px">!</span>
+                      <strong class="govuk-warning-text__text" style="padding-left: 42px">
+                        <span class="govuk-warning-text__assistive">Yes, </span>Special rules
+                      </strong>
+                    </div>
+                  {% endif %}
+                </td>
+              </tr>
+            {% endif %}
+          {% endfor %}
+        {% endif %}
+      </tbody>
+    </table>
     
   </div>{# /govuk-grid-column-full #}
 
