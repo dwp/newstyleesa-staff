@@ -1,0 +1,157 @@
+{% extends "layout-staff.html" %}
+
+{% block pageTitle %}
+  {% include "wcv5/_service-name.html" %}
+{% endblock %}
+
+{% block serviceName %}
+  {% include "wcv5/_service-name.html" %}
+{% endblock %}
+
+{% block keyDetails %}
+  {% include "wcv5/_key-details.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-!-margin-bottom-5">
+    <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
+  </div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+    <form action="q-upload-logic" method="post">
+      <input type="hidden" name="nino" value="{{getData.nino}}">
+      <input type="hidden" name="status" value="{{getData.status}}">
+
+      <input type="hidden" name="early" value="{{getData.early}}">
+
+      {% if getData.error %}
+
+        <div class="govuk-error-summary" aria-labelledby="error-summary-title" role="alert" tabindex="-1" data-module="error-summary">
+          <h2 class="govuk-error-summary__title" id="error-summary-title">
+            There is a problem
+          </h2>
+          <div class="govuk-error-summary__body">
+            <ul class="govuk-list govuk-error-summary__list">
+              <li>
+                <a href="#file-upload-1">No file selected</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      {% endif %}
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Upload the supporting evidence{# <br>(no need for the claimant commitment or ID) #}
+            </h1>
+          </legend>
+
+          <p>Do not upload their claimant commitment or identity documents.</p>
+
+          <div class="upload-wrapper" style="border: 1px solid #bfc1c3; padding: 30px; padding-bottom: -20px">
+
+            {% if getData.file1 %}
+
+              <table class="govuk-table">
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th class="govuk-table__header" scope="col" width="55%">File name</th>
+                    <th class="govuk-table__header" scope="col" width="20%">Size</th>
+                    <th class="govuk-table__header" scope="col" width="20%">Status</th>
+                    <th class="govuk-table__header" scope="col">Action</th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">{{data.filename1}}</td>
+                    <td class="govuk-table__cell">0.57MB</td>
+                    <td class="govuk-table__cell"><strong class="app-c-tag">Uploaded</strong></td>
+                    <td class="govuk-table__cell"><a href="#">Delete</a></td>
+                  </tr>
+                {% if getData.file2 %}
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">{{data.filename2}}</td>
+                    <td class="govuk-table__cell">0.1MB</td>
+                    <td class="govuk-table__cell"><strong class="app-c-tag">Uploaded</strong></td>
+                    <td class="govuk-table__cell"><a href="#">Delete</a></td>
+                  </tr>
+                {% endif %}
+                {% if getData.file3 %}
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">{{data.filename3}}</td>
+                    <td class="govuk-table__cell">0.2MB</td>
+                    <td class="govuk-table__cell"><strong class="app-c-tag">Uploaded</strong></td>
+                    <td class="govuk-table__cell"><a href="#">Delete</a></td>
+                  </tr>
+                {% endif %}
+              </tbody>
+            </table>
+            <br>
+          {% endif %}
+
+          {% if getData.error %}
+
+            <div class="govuk-form-group govuk-form-group--error">
+              <label class="govuk-label" for="file-upload-1">
+                Upload a file
+              </label>
+              <span id="file-upload-1-error" class="govuk-error-message">
+                <span class="govuk-visually-hidden">Error:</span> No file selected
+              </span>
+              <input class="govuk-file-upload govuk-file-upload--error" id="file-upload-1" name="file-upload-1" type="file" aria-describedby="file-upload-1-error">
+            </div>
+
+          {% else %}
+
+            {% if getData.file2 %}
+
+              <div class="govuk-form-group">
+                <input class="govuk-file-upload" id="file-upload-3" name="file-upload-3" type="file" aria-describedby="file-upload-3-error">
+              </div>
+
+            {% elif getData.file1 %}
+
+              <div class="govuk-form-group">
+                <input class="govuk-file-upload" id="file-upload-2" name="file-upload-2" type="file" aria-describedby="file-upload-2-error">
+              </div>
+
+            {% else %}
+
+              <div class="govuk-form-group">
+                <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file" aria-describedby="file-upload-1-error">
+              </div>
+              
+            {% endif %}
+
+          {% endif %}
+
+            <br>
+
+            <button type="submit" class="govuk-button" style="margin-bottom: 0px">
+              Upload file
+            </button>
+
+          </div>{# /upload-wrapper #}
+
+        </fieldset>
+
+      </div>
+
+    </form>
+    
+    <p><a href="q-upload-check?status={{getData.status}}&nino={{getData.nino}}&early={{getData.early}}&filename1={{getData.filename1}}&filename2={{getData.filename2}}&filename3={{getData.filename3}}" class="govuk-button">Continue</a></p>
+
+  </div>{# /govuk-grid-column-full #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}
