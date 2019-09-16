@@ -1,0 +1,57 @@
+{% extends "layout-staff.html" %}
+
+{% block pageTitle %}
+  {% include "iteration-3/_service-name.html" %}
+{% endblock %}
+
+{% block serviceName %}
+  {% include "iteration-3/_service-name.html" %}
+{% endblock %}
+
+{% block keyDetails %}
+  {% include "iteration-3/_key-details.html" %}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-full">
+
+    {# Verified #}
+    {% if getData.status === "verified" %}
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
+        <h1 class="govuk-panel__title">Claim verified</h1>
+        <div class="govuk-panel__body">This claim will now be picked up by the processing&nbsp;team.</div>
+      </div>
+    {# No claimant commitment #}
+    {% elif getData.status === "noclaimantcommitment" %}
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
+        <h1 class="govuk-panel__title">No claimant commitment</h1>
+      </div>
+    {# No identity #}
+    {% elif getData.status === "noidentity" %}
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
+        <h1 class="govuk-panel__title">No identity</h1>
+      </div>
+    {# Failed to attend #}
+    {% elif getData.status === "fta" %}
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
+        <h1 class="govuk-panel__title">Failed to attend</h1>
+      </div>
+    {# Failed to attend × 2 #}
+    {% elif getData.status === "fta2" %}
+      <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
+        <h1 class="govuk-panel__title">Failed to attend × 2</h1>
+      </div>
+    {% endif %}
+
+    <a href="/iteration-3/home" role="button" draggable="false" class="govuk-button">Find another claim</a>
+
+    <p><a href="claimant-overview?status={{getData.status}}">Back to their claim</a></p>
+
+  </div>{# /govuk-grid-column-full #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

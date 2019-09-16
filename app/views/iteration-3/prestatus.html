@@ -1,0 +1,59 @@
+{% extends "layout-staff.html" %}
+
+{% block pageTitle %}
+  {% include "iteration-3/_service-name.html" %}
+{% endblock %}
+
+{% block serviceName %}
+  {% include "iteration-3/_service-name.html" %}
+{% endblock %}
+
+{% block keyDetails %}
+  {% include "iteration-3/_key-details.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-!-margin-bottom-5">
+    <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
+  </div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    {# Change to no claimant commitment #}
+    {% if getData.prestatus === "changetonoclaimantcommitment" %}
+      <h1 class="govuk-heading-l">You are about to change the status of this claim to ‘No claimant commitment’</h1>
+      <p>If they do not sign their claimant commitment within the next 7 days we will remove their claim and send them a letter.</p>
+    {# Stay as no claimant commitment #}
+    {% elif getData.prestatus === "stayasnoclaimantcommitment" %}
+      <h1 class="govuk-heading-l">The status of this claim will stay as ‘No claimant commitment’</h1>
+      <p>If they do not sign their claimant commitment within XXX the processing team will remove their claim and send them a letter.</p>
+    {# Change to no identity #}
+    {% elif getData.prestatus === "changetonoidentity" %}
+      <h1 class="govuk-heading-l">You are about to change the status of this claim to ‘No identity’</h1>
+      <p>If they do not prove their identity within the next month we will remove their claim and send them a letter.</p>
+    {# Stay as no identity #}
+    {% elif getData.prestatus === "stayasnoidentity" %}
+      <h1 class="govuk-heading-l">The status of this claim will stay as ‘No identity’</h1>
+      <p>If they do not sign their claimant commitment within XXX the processing team will remove their claim and send them a letter.</p>
+    {# Change to no fta #}
+    {% elif getData.prestatus === "changetofta" %}
+      <h1 class="govuk-heading-l">You are about to change the status of this claim to ‘Failed to attend’</h1>
+      <p>If the claimant does not arrange another appointment within 1 month, we will disallow their claim and send them a letter.</p>
+    {# Change to no fta2 #}
+    {% elif getData.prestatus === "changetofta2" %}
+      <h1 class="govuk-heading-l">You are about to change the status of this claim to ‘Failed to attend × 2’</h1>
+      <p>If the claimant does not arrange another appointment within 1 month, we will disallow their claim and send them a letter.</p>
+    {% endif %}
+
+    <p><a href="status-confirmation?status={{getData.nextstatus}}" class="govuk-button">Continue</a></p>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

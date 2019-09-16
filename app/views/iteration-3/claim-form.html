@@ -1,0 +1,41 @@
+{% extends "layout-staff.html" %}
+
+{% block pageTitle %}
+  {% include "iteration-3/_service-name.html" %}
+{% endblock %}
+
+{% block serviceName %}
+  {% include "iteration-3/_service-name.html" %}
+{% endblock %}
+
+{% block keyDetails %}
+  {% include "iteration-3/_key-details.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-!-margin-bottom-5">
+    <a href="home" rel="prev" class="govuk-back-link">Find another claim</a>
+  </div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  {% include "iteration-3/_claim-actions.html" %}
+
+  <div class="govuk-grid-column-three-quarters">
+
+    {% include "iteration-3/_special-rules-notice.html" %}
+
+    <h1 class="govuk-heading-l">Full claim</h1>
+
+    <p><a href="#">Download PDF version</a></p>
+
+    {% include "iteration-3/_claim-form-answers.html" %}
+
+  </div>{# /govuk-grid-column-three-quarters #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

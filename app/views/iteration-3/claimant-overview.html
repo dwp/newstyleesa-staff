@@ -1,0 +1,93 @@
+{% extends "layout-staff.html" %}
+
+{% block pageTitle %}
+  {% include "iteration-3/_service-name.html" %}
+{% endblock %}
+
+{% block serviceName %}
+  {% include "iteration-3/_service-name.html" %}
+{% endblock %}
+
+{% block keyDetails %}
+  {% include "iteration-3/_key-details.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-!-margin-bottom-5">
+    <a href="home" rel="prev" class="govuk-back-link">Find another claim</a>
+  </div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  {% include "iteration-3/_claim-actions.html" %}
+
+  <div class="govuk-grid-column-three-quarters">
+
+    {% include "iteration-3/_special-rules-notice.html" %}
+
+    <h1 class="govuk-heading-l">Claim overview</h1>
+
+    <dl class="govuk-summary-list govuk-!-margin-bottom-7 summary-view">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Claim submitted
+        </dt>
+        <dd class="govuk-summary-list__value">
+          22/08/2019, 10:30pm
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Claim start date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          22/08/2019
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          National Insurance number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          QQ123456C
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          05/01/1978
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Postcode
+        </dt>
+        <dd class="govuk-summary-list__value">
+          LS14 6UB
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Evidence required
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <ul class="govuk-list govuk-list--bullet">
+            <li>fit notes</li>
+            <li>SSP1 form</li>
+            <li>their most recent pension statement from Prudential</li>
+            <li>their 2 most recent monthly pay slips from Boots</li>
+          </ul>
+        </dd>
+      </div>
+    </dl>
+
+  </div>{# /govuk-grid-column-three-quarters #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

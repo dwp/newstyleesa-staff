@@ -1,0 +1,40 @@
+<div class="govuk-grid-column-one-quarter">
+  <nav aria-label="Sub navigation">
+    <ul class="dwp-vertical-navigation">
+      <li>
+        <a
+          {% if getData.current === "claimant-overview" %}
+            aria-current="page"
+          {% elseif getData.current %}
+          {% else %}
+            aria-current="page"
+          {% endif %}
+          href="claimant-overview?status={{getData.status}}"
+        >
+          Overview
+        </a>
+      </li>
+      <li>
+        <a
+        {% if getData.current === "claim-form" %}aria-current="page"{% endif %}
+        href="claim-form?status={{getData.status}}"
+        >
+          Full claim form
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <aside class="" role="complementary" style="margin-bottom: 40px">
+
+    {% if getData.status === "noidentity" %}
+      <a href="q-proved-identity?status={{getData.status}}" class="govuk-button">Change claim status</a>
+    {% elseif getData.status === "noclaimantcommitment" %}
+      <a href="q-signed-claimant-commitment?status={{getData.status}}" class="govuk-button">Change claim status</a>
+    {% else %}
+      <a href="q-attended?status={{getData.status}}" class="govuk-button">Change claim status</a>
+    {% endif %}
+
+  </aside>
+
+</div>{# /govuk-grid-column-one-third #}

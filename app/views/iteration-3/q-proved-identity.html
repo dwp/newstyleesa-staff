@@ -1,0 +1,82 @@
+{% extends "layout-staff.html" %}
+
+{% block pageTitle %}
+  {% include "iteration-3/_service-name.html" %}
+{% endblock %}
+
+{% block serviceName %}
+  {% include "iteration-3/_service-name.html" %}
+{% endblock %}
+
+{% block keyDetails %}
+  {% include "iteration-3/_key-details.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-!-margin-bottom-5">
+    <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
+  </div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="q-proved-identity-logic" method="post" novalidate>
+
+      <input type="hidden" name="status" value="{{getData.status}}">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Have they proved their identity?
+            </h1>
+          </legend>
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="yes" name="question" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="yes">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="no" name="question" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="no">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <details class="govuk-details" data-module="govuk-details" role="group">
+        <summary class="govuk-details__summary" role="button" aria-controls="details-content-46189833-a116-4524-b65f-dc1be508c5a0" aria-expanded="true">
+          <span class="govuk-details__summary-text">
+            Help with identity checks
+          </span>
+        </summary>
+        <div class="govuk-details__text" id="details-content-46189833-a116-4524-b65f-dc1be508c5a0" aria-hidden="false">
+          <p>Fred should bring 3 identity documents:</p><p>
+          </p><ul class="govuk-list govuk-list--bullet">
+              <li>1 current primary document, such as a passport or driving licence</li>
+              <li>2 original secondary documents, such as a recent bank statement, utility bill or council tax statement</li>
+          </ul>
+          <p>If they have not got enough proof of identity, you will need to do biographical checks.</p>
+        <p>More guidance on accepted identity documents and how to do biographical checks is available in the <a href="#">DWP common standards for identity verification (opens in a new tab)</a>.</p>
+        </div>
+      </details>
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+      
+    </form>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

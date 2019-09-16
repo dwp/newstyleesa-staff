@@ -30,6 +30,7 @@ module.exports = {
 
     // Screens for JIRA stories
     require('./routes/iteration-1.js')(app);
+    require('./routes/iteration-3.js')(app);
 
   }
 }

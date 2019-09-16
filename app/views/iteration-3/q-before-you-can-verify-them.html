@@ -1,0 +1,65 @@
+{% extends "layout-staff.html" %}
+
+{% block pageTitle %}
+  {% include "iteration-3/_service-name.html" %}
+{% endblock %}
+
+{% block serviceName %}
+  {% include "iteration-3/_service-name.html" %}
+{% endblock %}
+
+{% block keyDetails %}
+  {% include "iteration-3/_key-details.html" %}
+{% endblock %}
+
+{% block beforeContent %}
+  <div class="govuk-!-margin-bottom-5">
+    <a href="javascript:history.back()" rel="prev" class="govuk-back-link">Back</a>
+  </div>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+  <div class="govuk-grid-column-two-thirds">
+
+    <form action="q-before-you-can-verify-them-logic" method="post" novalidate>
+      
+      <input type="hidden" name="status" value="{{getData.status}}">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Before your can verify them
+            </h1>
+          </legend>
+
+          <p>Use the link below to generate an email. Attach any evidence the claimant has brought with them and then send it to the processing centre.</p>
+
+          <p class="govuk-!-margin-top-6 govuk-!-margin-bottom-7"><a href="mailto:emailaddresshere.gov.uk?subject=Digital%20claim%20-%20Verified%20-%20Fred%20Flintstone%2C%20QQ123456C&body=This%20claimant%20has%20proved%20their%20identity%20and%20signed%20their%20claimant%20commitment.%0A%0A%0AClaimant%0A--%0AFred%20Flintstone%0A%0A%0ANational%20Insurance%20number%0A--%0AQQ123456C%0A%0A%0AEvidence%20attached%0A--%0A*%0A*%0A*" class="email-link govuk-!-font-weight-bold">Generate an email to send to the processing centre</a></p>
+
+          <div class="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="sentemail" name="sentemail" type="checkbox" value="confirm">
+              <label class="govuk-label govuk-checkboxes__label" for="sentemail">
+                I have sent this email
+              </label>
+            </div>
+          </div>
+
+        </fieldset>
+      </div>
+
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Continue
+      </button>
+      
+    </form>
+
+  </div>{# /govuk-grid-column-two-thirds #}
+
+</div>{# /govuk-grid-row #}
+
+{% endblock %}

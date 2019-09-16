@@ -1,15 +1,15 @@
 {% extends "layout-staff.html" %}
 
 {% block pageTitle %}
-  {% include "wcv5/_service-name.html" %}
+  {% include "iteration-3/_service-name.html" %}
 {% endblock %}
 
 {% block serviceName %}
-  {% include "wcv5/_service-name.html" %}
+  {% include "iteration-3/_service-name.html" %}
 {% endblock %}
 
 {% block keyDetails %}
-  {% include "wcv5/_key-details.html" %}
+  {% include "iteration-3/_key-details.html" %}
 {% endblock %}
 
 {% block beforeContent %}
@@ -24,28 +24,28 @@
 
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="q-no-commitment-reason-logic" method="post" novalidate>
-      <input type="hidden" name="nino" value="{{getData.nino}}">
+    <form action="q-attended-logic" method="post" novalidate>
+      
       <input type="hidden" name="status" value="{{getData.status}}">
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              Why did they not sign the claimant commitment?
+              Has the claimant attended their appointment?
             </h1>
           </legend>
           <div class="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="more-time" name="question" type="radio" value="more-time">
-              <label class="govuk-label govuk-radios__label" for="more-time">
-                They want to take it away and think about it
+              <input class="govuk-radios__input" id="yes" name="question" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="yes">
+                Yes
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="not-wanted" name="question" type="radio" value="not-wanted">
-              <label class="govuk-label govuk-radios__label" for="not-wanted">
-                They did not want to sign it
+              <input class="govuk-radios__input" id="no" name="question" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="no">
+                No
               </label>
             </div>
           </div>

@@ -1,0 +1,505 @@
+<h2 class="govuk-heading-m">Dates</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Claim submitted
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {% if getData.early %}
+        22/08/2019, 10:30pm
+      {% else %}
+        22/08/2019, 10:30pm
+      {% endif %}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Claim start date
+    </dt>
+    <dd class="govuk-summary-list__value">
+      22/08/2019
+    </dd>
+  </div>
+</dl>
+
+<h2 class="govuk-heading-m">Personal details</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      First name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Fred
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Last name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Flintstone
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="govuk-summary-list__value">
+      05/01/1978
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      National Insurance number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      QQ123456C
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Home address
+    </dt>
+    <dd class="govuk-summary-list__value">
+      72 Guild Street<br>Leeds
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Home postcode
+    </dt>
+    <dd class="govuk-summary-list__value">
+      LS14 6UB
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Mobile number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      07700900457
+    </dd>
+  </div>
+</dl>
+
+<h2 class="govuk-heading-m">Paid work (1 of {% if getData.twojobs === "true" %}2{% else %}1{% endif %})</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Employment status
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Employee
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Employer
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Boots
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Address
+    </dt>
+    <dd class="govuk-summary-list__value">
+      71 High Street<br>
+      Leeds
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Postcode
+    </dt>
+    <dd class="govuk-summary-list__value">
+      LS1 7YY
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Telephone number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      01234567890
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Employed as
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Sales assistant
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Off sick from this work
+    </dt>
+    <dd class="govuk-summary-list__value">
+      No
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Pay
+    </dt>
+    <dd class="govuk-summary-list__value">
+      £124 weekly
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Hours worked a week
+    </dt>
+    <dd class="govuk-summary-list__value">
+      7
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Help from a professional support worker
+    </dt>
+    <dd class="govuk-summary-list__value">
+      No
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Expenses
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Travel and subsistence
+    </dd>
+  </div>
+</dl>
+
+
+{% if getData.twojobs === "true"  %}
+
+<h2 class="govuk-heading-m">Paid work (2 of 2)</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Employment status
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Employee
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Employer
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Co-op
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Address
+    </dt>
+    <dd class="govuk-summary-list__value">
+      155 Frankfurt Road<br>
+      London
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Postcode
+    </dt>
+    <dd class="govuk-summary-list__value">
+      S11 7AA
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Telephone number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      02079460076
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Employed as
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Operational coordinator
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Off sick from this work
+    </dt>
+    <dd class="govuk-summary-list__value">
+      No
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Pay
+    </dt>
+    <dd class="govuk-summary-list__value">
+      £98 weekly
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Hours worked a week
+    </dt>
+    <dd class="govuk-summary-list__value">
+      10
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Help from a professional support worker
+    </dt>
+    <dd class="govuk-summary-list__value">
+      No
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Expenses
+    </dt>
+    <dd class="govuk-summary-list__value">
+      None
+    </dd>
+  </div>
+</dl>
+{% else %}
+{% endif %}
+
+<h2 class="govuk-heading-m">Pension (1 of 1)</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Pension provider
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Prudential
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Date started
+    </dt>
+    <dd class="govuk-summary-list__value">
+      01/01/2018
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Address
+    </dt>
+    <dd class="govuk-summary-list__value">
+      72 Guild street<br>
+      London
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Postcode
+    </dt>
+    <dd class="govuk-summary-list__value">
+      SE23 6FH
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Telephone number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      02079460076
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Reference number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      245-485-198
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Payments from pension or annuity
+    </dt>
+    <dd class="govuk-summary-list__value">
+      &pound;75 a week
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Inherited pension or annuity
+    </dt>
+    <dd class="govuk-summary-list__value">
+      No
+    </dd>
+  </div>
+</dl>
+
+<h2 class="govuk-heading-m">Statutory pay</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Getting Statutory Sick Pay
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Yes
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Statutory Sick Pay ends
+    </dt>
+    <dd class="govuk-summary-list__value">
+      18/12/19
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Other statutory payments
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Statutory Maternity Pay
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Return to work date
+    </dt>
+    <dd class="govuk-summary-list__value">
+      2 to 4 weeks
+    </dd>
+  </div>
+</dl>
+
+<h2 class="govuk-heading-m">Health conditions</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Conditions
+    </dt>
+    <dd class="govuk-summary-list__value">
+      0001<br>Abdominal pain<br>Started: 02/05/18<br><br>0070<br>Broken leg<br>Started: 20/11/18<br><br>Cold<br>Started: 02/04/19
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Doctor’s details
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Dr Sarah Philips<br>
+      Manor Surgery<br>
+      17 Franklin Street<br>
+      Leeds<br>
+      LS23 6FH<br>
+      020 7946 0809
+    </dd>
+  </div>
+  {% if getData.sr %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Life expectancy
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Could be less than 6 months
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Doctor has sent DS1500 form
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Yes
+    </dd>
+  </div>
+  {% endif %}
+
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Currently in hospital
+    </dt>
+    <dd class="govuk-summary-list__value">
+      No
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Hospital details
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Ear, nose and throat ward<br>
+      Hallamshire Hospital
+      <br><br>
+      Admitted on 19/12/2018
+    </dd>
+  </div>
+</dl>
+
+<h2 class="govuk-heading-m">Consent to share information</h2>
+
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Doctor’s consent
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Yes, the doctor can share details with DWP
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      DWP’s consent
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Yes, the DWP can share the outcome of an assessment with the doctor
+    </dd>
+  </div>
+</dl>
+<h2 class="govuk-heading-m">Payment method</h2>
+<dl class="govuk-summary-list govuk-!-margin-bottom-9">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Sort code
+    </dt>
+    <dd class="govuk-summary-list__value">
+      11-22-33
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Account number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      12345678
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Account name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      F. Flintstone
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Building society roll number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      AA123456789
+    </dd>
+  </div>
+</dl>
