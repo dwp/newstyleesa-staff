@@ -27,8 +27,8 @@
 
   {% if getData.status === "verified" %}
   {% else %}
-    <aside class="" role="complementary" style="margin-bottom: 40px">
-      <a href="q-proved-identity?status={{getData.status}}" class="govuk-button">Change claim status</a>
+    <aside role="complementary">
+      <a href="q-attended?status={{getData.status}}" class="govuk-button">Change claim status</a>
     </aside>
   {% endif %}
 
