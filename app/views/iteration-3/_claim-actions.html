@@ -17,7 +17,7 @@
       <li>
         <a
         {% if getData.current === "claim-form" %}aria-current="page"{% endif %}
-        href="claim-form?status={{getData.status}}"
+        href="claim-form?current=claim-form&status={{getData.status}}"
         >
           Full claim form
         </a>
@@ -25,16 +25,11 @@
     </ul>
   </nav>
 
-  <aside class="" role="complementary" style="margin-bottom: 40px">
-
-    {% if getData.status === "noidentity" %}
+  {% if getData.status === "verified" %}
+  {% else %}
+    <aside class="" role="complementary" style="margin-bottom: 40px">
       <a href="q-proved-identity?status={{getData.status}}" class="govuk-button">Change claim status</a>
-    {% elseif getData.status === "noclaimantcommitment" %}
-      <a href="q-signed-claimant-commitment?status={{getData.status}}" class="govuk-button">Change claim status</a>
-    {% else %}
-      <a href="q-attended?status={{getData.status}}" class="govuk-button">Change claim status</a>
-    {% endif %}
-
-  </aside>
+    </aside>
+  {% endif %}
 
 </div>{# /govuk-grid-column-one-third #}
