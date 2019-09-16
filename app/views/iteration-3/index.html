@@ -23,12 +23,58 @@
       <img src="/public/images/iteration-3.png" style="width: 100%; border: 2px solid #ccc">
     View screens (PDF)</a></p>
 
-    <h2 class="govuk-heading-ml">Noteworthy screens</h2>
-
+    <h2 class="govuk-heading-m">Search</h2>
     <ul class="govuk-list govuk-list--bullet">
-      <li><a href="/iteration-3/table?filter=all">Jobcentre view – outstanding claims that are not verified</li>
+      <li><a href="/iteration-3/home">Find a claim</a></li>
     </ul>
-    
+
+    <h2 class="govuk-heading-m">Claim overview</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="/iteration-3/claimant-overview">Unverified</a></li>
+      <li><a href="/iteration-3/claimant-overview?sr=true">Unverified (special rules)</a></li>
+      <li><a href="/iteration-3/claimant-overview?status=noidentity">No identity</a></li>
+      <li><a href="/iteration-3/claimant-overview?status=noclaimantcommitment">No claimant commitment</a></li>
+      <li><a href="/iteration-3/claimant-overview?status=fta">Failed to attend</a></li>
+      <li><a href="/iteration-3/claimant-overview?status=fta2">Failed to attend × 2</a></li>
+    </ul>
+
+    <h2 class="govuk-heading-m">Questions</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="/iteration-3/q-attended">Has the claimant attended their appointment?</a></li>
+      <li><a href="/iteration-3/q-proved-identity">Have they proved their identity?</a></li>
+      <li><a href="/iteration-3/q-claimant-commitment">Have they signed their claimant commitment?</a></li>
+    </ul>
+
+    <h2 class="govuk-heading-m">Before you can verify them</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="/iteration-3/q-before-you-can-verify-them">Claimants who do not require special rules</a></li>
+      <li><a href="/iteration-3/q-before-you-can-verify-them?sr=true">Claimants who require special rules</a></li>
+    </ul>
+
+    <h2 class="govuk-heading-m">Status information</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="/iteration-3/prestatus?prestatus=changetonoidentity&nextstatus=noidentity">Change to ‘No identity’</a></li>
+      <li><a href="/iteration-3/prestatus?prestatus=stayasnoidentity&nextstatus=noidentity">Stay as ‘No identity’</a></li>
+      <li><a href="/iteration-3/prestatus?prestatus=changetonoclaimantcommitment&nextstatus=noclaimantcommitment">Change to ‘No claimant commitment’</a></li>
+      <li><a href="/iteration-3/prestatus?prestatus=stayasnoclaimantcommitment&nextstatus=noclaimantcommitment">Stay as ‘No claimant commitment’</a></li>
+      <li><a href="/iteration-3/prestatus?prestatus=changetofta&nextstatus=fta">Change to ‘Failed to attend’</a></li>
+      <li><a href="/iteration-3/prestatus?prestatus=changetofta2&nextstatus=fta2">Change to ‘Failed to attend × 2’</a></li>
+    </ul>
+
+    <h2 class="govuk-heading-m">Status changed</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="/iteration-3/status-confirmation?status=verified">Claim verified</a></li>
+      <li><a href="/iteration-3/status-confirmation?status=noidentity">No identity</a></li>
+      <li><a href="/iteration-3/status-confirmation?status=noclaimantcommitment">No claimant commitment</a></li>
+      <li><a href="/iteration-3/status-confirmation?status=fta">Failed to attend</a></li>
+      <li><a href="/iteration-3/status-confirmation?status=fta2">Failed to attend × 2</a></li>
+    </ul>
+
+    <h2 class="govuk-heading-m">Table view for jobcentres</h2>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="/iteration-3/table?filter=all">Outstanding claims that are not verified</a></li>
+    </ul>
+
   </div>{# /govuk-grid-column-two-thirds #}
 </div>{# /govuk-grid-row #}
 
