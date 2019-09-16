@@ -1,7 +1,27 @@
 {% extends "layout-staff.html" %}
 
 {% block pageTitle %}
-  {% include "iteration-3/_service-name.html" %}
+
+  Status changed to
+
+  {# Verified #}
+    {% if getData.status === "verified" %}
+      ‘Verified’
+    {# No claimant commitment #}
+    {% elif getData.status === "noclaimantcommitment" %}
+      ‘No claimant commitment’
+    {# No identity #}
+    {% elif getData.status === "noidentity" %}
+      ‘No identity’
+    {# Failed to attend #}
+    {% elif getData.status === "fta" %}
+      ‘Failed to attend’
+    {# Failed to attend × 2 #}
+    {% elif getData.status === "fta2" %}
+      ‘Failed to attend × 2’
+    {% endif %}
+
+  - Fred Flintstone - {% include "iteration-3/_service-name.html" %}
 {% endblock %}
 
 {% block serviceName %}
