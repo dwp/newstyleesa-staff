@@ -213,9 +213,8 @@
                   <a href="#"><strong>{{ item.name }}</strong></a>
                   {{ item.nino }}
                 </td>
-                <td class="govuk-table__cell"><span class="app-c-tag">{{ item.status }}{% if item.times %}
-                      × {{ item.times }}
-                    {% endif %}</span></td>
+                <td class="govuk-table__cell"><span class="app-c-tag">{% if item.times %}2nd
+                    {% endif %} {{ item.status }}</span></td>
                 <td class="govuk-table__cell">
                   {% if item.status == 'No claimant commitment' %}
                     {% if item.changed > 7 %}
