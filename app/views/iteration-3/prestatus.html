@@ -32,13 +32,13 @@
     {% elif getData.prestatus === "stayasnoclaimantcommitment" %}
       <h1 class="govuk-heading-l">The status of this claim will stay as ‘No claimant commitment’</h1>
       <p>If they do not sign their claimant commitment within XXX the processing team will remove their claim and send them a letter.</p>
-    {# Change to no identity #}
+    {# Change to no identity proven #}
     {% elif getData.prestatus === "changetonoidentity" %}
-      <h1 class="govuk-heading-l">You are about to change the status of this claim to ‘No identity’</h1>
+      <h1 class="govuk-heading-l">You are about to change the status of this claim to ‘No identity proven’</h1>
       <p>If they do not prove their identity within the next month we will remove their claim and send them a letter.</p>
-    {# Stay as no identity #}
+    {# Stay as no identity proven #}
     {% elif getData.prestatus === "stayasnoidentity" %}
-      <h1 class="govuk-heading-l">The status of this claim will stay as ‘No identity’</h1>
+      <h1 class="govuk-heading-l">The status of this claim will stay as ‘No identity proven’</h1>
       <p>If they do not sign their claimant commitment within XXX the processing team will remove their claim and send them a letter.</p>
     {# Change to no fta #}
     {% elif getData.prestatus === "changetofta" %}

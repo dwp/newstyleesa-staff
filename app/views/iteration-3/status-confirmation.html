@@ -10,9 +10,9 @@
     {# No claimant commitment #}
     {% elif getData.status === "noclaimantcommitment" %}
       ‘No claimant commitment’
-    {# No identity #}
+    {# No identity proven #}
     {% elif getData.status === "noidentity" %}
-      ‘No identity’
+      ‘No identity proven’
     {# Failed to attend #}
     {% elif getData.status === "fta" %}
       ‘Failed to attend’
@@ -49,10 +49,10 @@
       <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
         <h1 class="govuk-panel__title">No claimant commitment</h1>
       </div>
-    {# No identity #}
+    {# No identity proven #}
     {% elif getData.status === "noidentity" %}
       <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
-        <h1 class="govuk-panel__title">No identity</h1>
+        <h1 class="govuk-panel__title">No identity proven</h1>
       </div>
     {# Failed to attend #}
     {% elif getData.status === "fta" %}
