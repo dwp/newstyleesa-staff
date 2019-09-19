@@ -26,28 +26,42 @@
 
     {# Change to no claimant commitment #}
     {% if getData.prestatus === "changetonoclaimantcommitment" %}
-      <h1 class="govuk-heading-l">You are about to change the status of this claim to ‘No claimant commitment’</h1>
-      <p>If they do not sign their claimant commitment within the next 7 days we will remove their claim and send them a letter.</p>
+      <h1 class="govuk-heading-l">You are about to change the status to ‘No claimant commitment’</h1>
+      <p>They will have 7 days to sign their claimant commitment.</p>
+      <p>After that we will disallow their claim and send them a letter.</p>
     {# Stay as no claimant commitment #}
     {% elif getData.prestatus === "stayasnoclaimantcommitment" %}
-      <h1 class="govuk-heading-l">The status of this claim will stay as ‘No claimant commitment’</h1>
-      <p>If they do not sign their claimant commitment within XXX the processing team will remove their claim and send them a letter.</p>
-    {# Change to no identity proven #}
+      <h1 class="govuk-heading-l">The status will stay as ‘No claimant commitment’</h1>
+      <p>They still have X days to sign their claimant commitment.</p>
+      <p>After that we will disallow their claim and send them a letter.</p>
+    {# Timeout - no claimant commitment #}
+    {% elif getData.prestatus === "timeoutnoclaimantcommitment" %}
+      <h1 class="govuk-heading-l">The status will stay as ‘No claimant commitment’</h1>
+      <p>They have run out of time to sign their claimant commitment.</p>
+    {# Change to no identity proved #}
     {% elif getData.prestatus === "changetonoidentity" %}
-      <h1 class="govuk-heading-l">You are about to change the status of this claim to ‘No identity proven’</h1>
-      <p>If they do not prove their identity within the next month we will remove their claim and send them a letter.</p>
-    {# Stay as no identity proven #}
+      <h1 class="govuk-heading-l">You are about to change the status of this claim to ‘No identity proved’</h1>
+      <p>They will have 1 month to prove their identity.</p>
+      <p>After that we will remove their claim.</p>
+    {# Stay as no identity proved #}
     {% elif getData.prestatus === "stayasnoidentity" %}
-      <h1 class="govuk-heading-l">The status of this claim will stay as ‘No identity proven’</h1>
-      <p>If they do not sign their claimant commitment within XXX the processing team will remove their claim and send them a letter.</p>
+      <h1 class="govuk-heading-l">The status will stay as ‘No identity proved’</h1>
+      <p>They still have X days to prove their identity.</p>
+      <p>After that we will remove their claim.</p>
+    {# Timeout - no identity proved #}
+    {% elif getData.prestatus === "timeoutnoidentity" %}
+      <h1 class="govuk-heading-l">The status will stay as ‘No identity proved’</h1>
+      <p>They have run out of time to prove their identity.</p>
     {# Change to no fta #}
     {% elif getData.prestatus === "changetofta" %}
-      <h1 class="govuk-heading-l">You are about to change the status of this claim to ‘Failed to attend’</h1>
-      <p>If the claimant does not arrange another appointment within 1 month, we will disallow their claim and send them a letter.</p>
+      <h1 class="govuk-heading-l">You are about to change the status to ‘Failed to attend’</h1>
+      <p>They will have 1 month to attend another appointment.</p>
+      <p>After that we will disallow their claim and send them a letter.</p>
     {# Change to no fta2 #}
     {% elif getData.prestatus === "changetofta2" %}
-      <h1 class="govuk-heading-l">You are about to change the status of this claim to ‘2nd Failed to attend’</h1>
-      <p>If the claimant does not arrange another appointment within 1 month, we will disallow their claim and send them a letter.</p>
+      <h1 class="govuk-heading-l">You are about to change the status to ‘Failed to attend 2 times’</h1>
+      <p>They still have X days to attend another appointment.</p>
+      <p>After that we will disallow their claim and send them a letter.</p>
     {% endif %}
 
     <p><a href="status-confirmation?status={{getData.nextstatus}}" class="govuk-button">Continue</a></p>

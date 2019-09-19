@@ -36,13 +36,15 @@
             </h1>
           </legend>
 
-          <p>Use the link below to generate an email. Attach any evidence the claimant has brought with them and then send it to the processing centre.</p>
+          <p>Use the link below to email details of the claim to the processing centre.</p>
+
+          <p>Attach any supporting evidence that the claimant brought with them.</p>
 
           <p class="govuk-!-margin-top-6 govuk-!-margin-bottom-7">
           {% if getData.sr %}
-            <a href="mailto:emailaddresshere.gov.uk?subject=SPECIAL%20RULES%20-%20Digital%20claim%20-%20Verified%20-%20Fred%20Flintstone%2C%20QQ123456C&body=SPECIAL%20RULES%0A%0AThis%20claimant%20has%20proved%20their%20identity%20and%20signed%20their%20claimant%20commitment.%0A%0A%0AClaimant%0A--%0AFred%20Flintstone%0A%0A%0ANational%20Insurance%20number%0A--%0AQQ123456C%0A%0A%0AEvidence%20attached%0A--%0A*%0A*%0A*" class="email-link govuk-!-font-weight-bold">Generate an email to send to the processing centre</a>
+            <a href="mailto:emailaddresshere.gov.uk?subject=SPECIAL%20RULES%20-%20Digital%20claim%20-%20Verified%20-%20Fred%20Flintstone%2C%20QQ123456C&body=SPECIAL%20RULES%0A%0AThis%20claimant%20has%20proved%20their%20identity%20and%20signed%20their%20claimant%20commitment.%0A%0A%0AClaimant%0A--%0AFred%20Flintstone%0A%0A%0ANational%20Insurance%20number%0A--%0AQQ123456C%0A%0A%0AEvidence%20attached%0A--%0A*%0A*%0A*" class="email-link govuk-!-font-weight-bold">Open the email template and send it to the processing centre</a>
           {% else %}
-            <a href="mailto:emailaddresshere.gov.uk?subject=Digital%20claim%20-%20Verified%20-%20Fred%20Flintstone%2C%20QQ123456C&body=This%20claimant%20has%20proved%20their%20identity%20and%20signed%20their%20claimant%20commitment.%0A%0A%0AClaimant%0A--%0AFred%20Flintstone%0A%0A%0ANational%20Insurance%20number%0A--%0AQQ123456C%0A%0A%0AEvidence%20attached%0A--%0A*%0A*%0A*" class="email-link govuk-!-font-weight-bold">Generate an email to send to the processing centre</a>
+            <a href="mailto:emailaddresshere.gov.uk?subject=Digital%20claim%20-%20Verified%20-%20Fred%20Flintstone%2C%20QQ123456C&body=This%20claimant%20has%20proved%20their%20identity%20and%20signed%20their%20claimant%20commitment.%0A%0A%0AClaimant%0A--%0AFred%20Flintstone%0A%0A%0ANational%20Insurance%20number%0A--%0AQQ123456C%0A%0A%0AEvidence%20attached%0A--%0A*%0A*%0A*" class="email-link govuk-!-font-weight-bold">Open the email template and send it to the processing centre</a>
           {% endif %}
           </p>
 
@@ -50,7 +52,7 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="sentemail" name="sentemail" type="checkbox" value="confirm">
               <label class="govuk-label govuk-checkboxes__label" for="sentemail">
-                I have sent this email
+                I have sent the email
               </label>
             </div>
           </div>
